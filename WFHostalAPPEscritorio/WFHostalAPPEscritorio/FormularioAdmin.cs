@@ -19,8 +19,10 @@ namespace WFHostalAPPEscritorio
 
         private void mantenedorEmpleadosToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            this.Hide();
             MantenedorEmpleados formulario = new MantenedorEmpleados();
-            formulario.Show();
+            formulario.ShowDialog();
+            this.Close();
         }
     }
 }

@@ -67,14 +67,18 @@ namespace WFHostalAPPEscritorio
 
                             if (tipo == 1)
                             {
+                                this.Hide();
                                 FormularioAdmin formulario = new FormularioAdmin();
-                                formulario.Show();
+                                formulario.ShowDialog();
+                                this.Close();
                             }
                             else
                             {
+                                this.Hide();
                                 FormularioEmpleado formulario = new FormularioEmpleado();
-                                formulario.Show();
-                            }
+                                formulario.ShowDialog();
+                                this.Close();
+                        }
                         
                         }
                     }
