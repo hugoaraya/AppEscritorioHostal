@@ -50,22 +50,17 @@ namespace WFHostalAPPEscritorio
 
                     OracleDataReader lector = comando.ExecuteReader();
 
-                //
-                MantenedorUsuario man = new MantenedorUsuario();
-                if (lector.HasRows)
+                    //
+
+                    if (lector.HasRows)
                     {
                         while (lector.Read())
                         {
-                        //:::NO CREO SEA NECESARIO::: CREAR UNA CLASE USUARIO..
+                            //DEBERIAMOS CREAR UNA CLASE USUARIO...mientras ocupo String y int solos
                             String nombre = lector.GetString(0);
                             String clave = lector.GetString(1);
                             int tipo = lector.GetInt32(2);
 
-                        //nueva conexion para comprobar datos de usuario registrado
-                        conexion.Cerrar();
-                        List<string> usuarioKEY = man.traerUsuario(nombre);
-                            Console.Write(usuarioKEY);
-                            
 
                             if (tipo == 1)
                             {
