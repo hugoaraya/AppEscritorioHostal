@@ -237,6 +237,7 @@
             this.mantenedorProductoToolStripMenuItem.Name = "mantenedorProductoToolStripMenuItem";
             this.mantenedorProductoToolStripMenuItem.Size = new System.Drawing.Size(231, 22);
             this.mantenedorProductoToolStripMenuItem.Text = "Mantenedor Producto";
+            this.mantenedorProductoToolStripMenuItem.Click += new System.EventHandler(this.mantenedorProductoToolStripMenuItem_Click);
             // 
             // mantenedorProveedoresToolStripMenuItem
             // 

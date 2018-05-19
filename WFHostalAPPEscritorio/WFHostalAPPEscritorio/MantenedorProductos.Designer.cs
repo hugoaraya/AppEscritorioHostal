@@ -1,6 +1,6 @@
 ﻿namespace WFHostalAPPEscritorio
 {
-    partial class MantenedorEmpleados
+    partial class MantenedorProductos
     {
         /// <summary>
         /// Required designer variable.
@@ -34,20 +34,20 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(275, 187);
+            this.label1.Location = new System.Drawing.Point(82, 122);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(116, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "MantenedorEmpleados";
+            this.label1.Size = new System.Drawing.Size(112, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "MantenedorProductos";
             // 
-            // MantenedorEmpleados
+            // MantenedorProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(662, 386);
+            this.ClientSize = new System.Drawing.Size(284, 261);
             this.Controls.Add(this.label1);
-            this.Name = "MantenedorEmpleados";
-            this.Text = "MantenedorEmpleados";
+            this.Name = "MantenedorProductos";
+            this.Text = "MantenedorProductos";
             this.ResumeLayout(false);
             this.PerformLayout();
 
