@@ -1,0 +1,24 @@
+c:\users\hugo\documents\visual studio 2015\Projects\WFHostalAPPEscritorio\WFHostalAPPEscritorio\bin\Debug\WFHostalAPPEscritorio.exe.config
+c:\users\hugo\documents\visual studio 2015\Projects\WFHostalAPPEscritorio\WFHostalAPPEscritorio\bin\Debug\WFHostalAPPEscritorio.exe
+c:\users\hugo\documents\visual studio 2015\Projects\WFHostalAPPEscritorio\WFHostalAPPEscritorio\bin\Debug\WFHostalAPPEscritorio.pdb
+c:\users\hugo\documents\visual studio 2015\Projects\WFHostalAPPEscritorio\WFHostalAPPEscritorio\bin\Debug\Oracle.DataAccess.dll
+c:\users\hugo\documents\visual studio 2015\Projects\WFHostalAPPEscritorio\WFHostalAPPEscritorio\obj\Debug\WFHostalAPPEscritorio.FormularioAdmin.resources
+c:\users\hugo\documents\visual studio 2015\Projects\WFHostalAPPEscritorio\WFHostalAPPEscritorio\obj\Debug\WFHostalAPPEscritorio.Login.resources
+c:\users\hugo\documents\visual studio 2015\Projects\WFHostalAPPEscritorio\WFHostalAPPEscritorio\obj\Debug\WFHostalAPPEscritorio.Properties.Resources.resources
+c:\users\hugo\documents\visual studio 2015\Projects\WFHostalAPPEscritorio\WFHostalAPPEscritorio\obj\Debug\WFHostalAPPEscritorio.csproj.GenerateResource.Cache
+c:\users\hugo\documents\visual studio 2015\Projects\WFHostalAPPEscritorio\WFHostalAPPEscritorio\obj\Debug\WFHostalAPPEscritorio.exe
+c:\users\hugo\documents\visual studio 2015\Projects\WFHostalAPPEscritorio\WFHostalAPPEscritorio\obj\Debug\WFHostalAPPEscritorio.pdb
+C:\Users\Hugo\documents\visual studio 2015\Projects\WFHostalAPPEscritorio\WFHostalAPPEscritorio\obj\Debug\WFHostalAPPEscritorio.csprojResolveAssemblyReference.cache
+C:\Users\Hugo\documents\visual studio 2015\Projects\WFHostalAPPEscritorio\WFHostalAPPEscritorio\obj\Debug\WFHostalAPPEscritorio.FormularioEmpleado.resources
+C:\Users\Hugo\Desktop\PORTAL_2.0\WFHostalAPPEscritorio\WFHostalAPPEscritorio\bin\Debug\WFHostalAPPEscritorio.exe.config
+C:\Users\Hugo\Desktop\PORTAL_2.0\WFHostalAPPEscritorio\WFHostalAPPEscritorio\obj\Debug\WFHostalAPPEscritorio.exe
+C:\Users\Hugo\Desktop\PORTAL_2.0\WFHostalAPPEscritorio\WFHostalAPPEscritorio\obj\Debug\WFHostalAPPEscritorio.pdb
+C:\Users\Hugo\Desktop\PORTAL_2.0\WFHostalAPPEscritorio\WFHostalAPPEscritorio\bin\Debug\WFHostalAPPEscritorio.exe
+C:\Users\Hugo\Desktop\PORTAL_2.0\WFHostalAPPEscritorio\WFHostalAPPEscritorio\bin\Debug\WFHostalAPPEscritorio.pdb
+C:\Users\Hugo\Desktop\PORTAL_2.0\WFHostalAPPEscritorio\WFHostalAPPEscritorio\bin\Debug\Oracle.DataAccess.dll
+C:\Users\Hugo\Desktop\PORTAL_2.0\WFHostalAPPEscritorio\WFHostalAPPEscritorio\obj\Debug\WFHostalAPPEscritorio.csprojResolveAssemblyReference.cache
+C:\Users\Hugo\Desktop\PORTAL_2.0\WFHostalAPPEscritorio\WFHostalAPPEscritorio\obj\Debug\WFHostalAPPEscritorio.FormularioAdmin.resources
+C:\Users\Hugo\Desktop\PORTAL_2.0\WFHostalAPPEscritorio\WFHostalAPPEscritorio\obj\Debug\WFHostalAPPEscritorio.FormularioEmpleado.resources
+C:\Users\Hugo\Desktop\PORTAL_2.0\WFHostalAPPEscritorio\WFHostalAPPEscritorio\obj\Debug\WFHostalAPPEscritorio.Login.resources
+C:\Users\Hugo\Desktop\PORTAL_2.0\WFHostalAPPEscritorio\WFHostalAPPEscritorio\obj\Debug\WFHostalAPPEscritorio.Properties.Resources.resources
+C:\Users\Hugo\Desktop\PORTAL_2.0\WFHostalAPPEscritorio\WFHostalAPPEscritorio\obj\Debug\WFHostalAPPEscritorio.csproj.GenerateResource.Cache
