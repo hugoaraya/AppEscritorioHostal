@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Oracle.DataAccess.Client; // ODP.NET Oracle managed provider
 using Oracle.DataAccess.Types;
+using WFHostalAPPEscritorio.Clases;
 
 namespace WFHostalAPPEscritorio
 {
@@ -17,8 +18,6 @@ namespace WFHostalAPPEscritorio
         public Login()
         {
             InitializeComponent();
-            //picBLogo.ImageLocation = "~/img/logo_hostal.png"; //path to image
-            //picBLogo.SizeMode = PictureBoxSizeMode.AutoSize;
         }
 
         private void Login_Load(object sender, EventArgs e)
@@ -28,11 +27,10 @@ namespace WFHostalAPPEscritorio
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
-
-            OracleConnection conexion = new OracleConnection("DATA SOURCE=XE; PASSWORD= 1234; USER ID= Hostal;");
-
-            conexion.Open();
-
+            
+            Conectar conexion = new Conectar();
+            conexion.Abrir();
+            
             if (txtUsuario.Text.Trim() == "")
             {
                 lbMsg.Text = "Asegúrese de ingresar Usuario";
@@ -45,8 +43,7 @@ namespace WFHostalAPPEscritorio
             }
             else
             {
-                OracleCommand comando = new OracleCommand("SELECT NOMBRE_USUARIO, CONTRASENIA, TIPO_USUARIO_ID FROM USUARIO WHERE NOMBRE_USUARIO= :usuario AND CONTRASENIA= :contra ", conexion);
-
+                OracleCommand comando = new OracleCommand("SELECT NOMBRE_USUARIO, CONTRASENIA, TIPO_USUARIO_ID FROM USUARIO WHERE NOMBRE_USUARIO= :usuario AND CONTRASENIA= :contra ", conexion.con);
                     //Obtener información de los txt
                     comando.Parameters.Add(":usuario", txtUsuario.Text);
                     comando.Parameters.Add(":contra", txtContra.Text);               
@@ -89,13 +86,11 @@ namespace WFHostalAPPEscritorio
                     }
 
                     lector.Close();
-                    conexion.Close();
+                    
             
             }
-
-
+            conexion.Cerrar();
         }
 
- 
     }
-    }
+}
