@@ -10,17 +10,11 @@ using System.Windows.Forms;
 
 namespace WFHostalAPPEscritorio
 {
-    public partial class FormularioAdmin : Form
+    public partial class MantenedorEmpleados : Form
     {
-        public FormularioAdmin()
+        public MantenedorEmpleados()
         {
             InitializeComponent();
-        }
-
-        private void mantenedorEmpleadosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            MantenedorEmpleados formulario = new MantenedorEmpleados();
-            formulario.Show();
         }
     }
 }

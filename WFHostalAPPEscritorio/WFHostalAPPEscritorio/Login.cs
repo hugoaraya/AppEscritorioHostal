@@ -17,11 +17,13 @@ namespace WFHostalAPPEscritorio
         public Login()
         {
             InitializeComponent();
+            //picBLogo.ImageLocation = "~/img/logo_hostal.png"; //path to image
+            //picBLogo.SizeMode = PictureBoxSizeMode.AutoSize;
         }
 
         private void Login_Load(object sender, EventArgs e)
         {
-
+         
         }
 
         private void btnEntrar_Click(object sender, EventArgs e)
@@ -33,12 +35,12 @@ namespace WFHostalAPPEscritorio
 
             if (txtUsuario.Text.Trim() == "")
             {
-                MessageBox.Show("Asegúrese de ingresar Usuario");
+                lbMsg.Text = "Asegúrese de ingresar Usuario";
                 txtUsuario.Focus();
             }
             else if (txtContra.Text.Trim() == "")
             {
-                MessageBox.Show("Asegúrese de ingresar Contraseña");
+                lbMsg.Text = "Asegúrese de ingresar Contraseña";
                 txtContra.Focus();
             }
             else
@@ -79,7 +81,7 @@ namespace WFHostalAPPEscritorio
                     else
                     {
                         Console.WriteLine("No rows found.");
-                        MessageBox.Show("ERROR, intente nuevamente.");
+                        lbMsg.Text = "Usuario/Contraseña Invalido, intente nuevamente.";
                     }
 
                     lector.Close();

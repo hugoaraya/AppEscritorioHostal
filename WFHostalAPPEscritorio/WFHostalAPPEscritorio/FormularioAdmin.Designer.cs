@@ -54,6 +54,8 @@
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.mantenedorProductoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mantenedorProveedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.moduloAdministradorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mantenedorEmpleadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,7 +65,8 @@
             this.archivoToolStripMenuItem,
             this.moduloFacturaciónToolStripMenuItem,
             this.moduloHostalToolStripMenuItem,
-            this.moduloProveedoresToolStripMenuItem});
+            this.moduloProveedoresToolStripMenuItem,
+            this.moduloAdministradorToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(700, 24);
@@ -241,6 +244,21 @@
             this.mantenedorProveedoresToolStripMenuItem.Size = new System.Drawing.Size(231, 22);
             this.mantenedorProveedoresToolStripMenuItem.Text = "Mantenedor Proveedores";
             // 
+            // moduloAdministradorToolStripMenuItem
+            // 
+            this.moduloAdministradorToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mantenedorEmpleadosToolStripMenuItem});
+            this.moduloAdministradorToolStripMenuItem.Name = "moduloAdministradorToolStripMenuItem";
+            this.moduloAdministradorToolStripMenuItem.Size = new System.Drawing.Size(140, 20);
+            this.moduloAdministradorToolStripMenuItem.Text = "Modulo Administrador";
+            // 
+            // mantenedorEmpleadosToolStripMenuItem
+            // 
+            this.mantenedorEmpleadosToolStripMenuItem.Name = "mantenedorEmpleadosToolStripMenuItem";
+            this.mantenedorEmpleadosToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.mantenedorEmpleadosToolStripMenuItem.Text = "Mantenedor Empleados";
+            this.mantenedorEmpleadosToolStripMenuItem.Click += new System.EventHandler(this.mantenedorEmpleadosToolStripMenuItem_Click);
+            // 
             // FormularioAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -284,5 +302,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripMenuItem mantenedorProductoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mantenedorProveedoresToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem moduloAdministradorToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mantenedorEmpleadosToolStripMenuItem;
     }
 }

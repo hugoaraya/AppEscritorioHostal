@@ -34,11 +34,13 @@
             this.lblContra = new System.Windows.Forms.Label();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.lbMsg = new System.Windows.Forms.Label();
+            this.picBLogo = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.picBLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // btnEntrar
             // 
-            this.btnEntrar.Location = new System.Drawing.Point(164, 164);
+            this.btnEntrar.Location = new System.Drawing.Point(158, 217);
             this.btnEntrar.Name = "btnEntrar";
             this.btnEntrar.Size = new System.Drawing.Size(75, 23);
             this.btnEntrar.TabIndex = 9;
@@ -48,14 +50,15 @@
             // 
             // txtContra
             // 
-            this.txtContra.Location = new System.Drawing.Point(139, 123);
+            this.txtContra.Location = new System.Drawing.Point(133, 176);
             this.txtContra.Name = "txtContra";
+            this.txtContra.PasswordChar = '*';
             this.txtContra.Size = new System.Drawing.Size(100, 20);
             this.txtContra.TabIndex = 8;
             // 
             // txtUsuario
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(139, 87);
+            this.txtUsuario.Location = new System.Drawing.Point(133, 140);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(100, 20);
             this.txtUsuario.TabIndex = 7;
@@ -63,7 +66,7 @@
             // lblContra
             // 
             this.lblContra.AutoSize = true;
-            this.lblContra.Location = new System.Drawing.Point(60, 127);
+            this.lblContra.Location = new System.Drawing.Point(54, 180);
             this.lblContra.Name = "lblContra";
             this.lblContra.Size = new System.Drawing.Size(64, 13);
             this.lblContra.TabIndex = 6;
@@ -72,7 +75,7 @@
             // lblUsuario
             // 
             this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Location = new System.Drawing.Point(61, 91);
+            this.lblUsuario.Location = new System.Drawing.Point(55, 144);
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(46, 13);
             this.lblUsuario.TabIndex = 5;
@@ -81,16 +84,28 @@
             // lbMsg
             // 
             this.lbMsg.AutoSize = true;
-            this.lbMsg.Location = new System.Drawing.Point(175, 200);
+            this.lbMsg.Location = new System.Drawing.Point(12, 268);
             this.lbMsg.Name = "lbMsg";
             this.lbMsg.Size = new System.Drawing.Size(0, 13);
             this.lbMsg.TabIndex = 10;
+            this.lbMsg.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // picBLogo
+            // 
+            this.picBLogo.Image = global::WFHostalAPPEscritorio.Properties.Resources.logo_hostal;
+            this.picBLogo.Location = new System.Drawing.Point(87, 12);
+            this.picBLogo.Name = "picBLogo";
+            this.picBLogo.Size = new System.Drawing.Size(121, 93);
+            this.picBLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picBLogo.TabIndex = 11;
+            this.picBLogo.TabStop = false;
             // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(303, 290);
+            this.Controls.Add(this.picBLogo);
             this.Controls.Add(this.lbMsg);
             this.Controls.Add(this.btnEntrar);
             this.Controls.Add(this.txtContra);
@@ -100,6 +115,7 @@
             this.Name = "Login";
             this.Text = "Login";
             this.Load += new System.EventHandler(this.Login_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.picBLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -113,6 +129,7 @@
         private System.Windows.Forms.Label lblContra;
         private System.Windows.Forms.Label lblUsuario;
         private System.Windows.Forms.Label lbMsg;
+        private System.Windows.Forms.PictureBox picBLogo;
     }
 }
 
