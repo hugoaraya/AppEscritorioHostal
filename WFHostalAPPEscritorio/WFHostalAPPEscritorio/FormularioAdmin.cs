@@ -22,11 +22,5 @@ namespace WFHostalAPPEscritorio
             MantenedorEmpleados formulario = new MantenedorEmpleados();
             formulario.ShowDialog();
         }
-
-        private void mantenedorProductoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            MantenedorProductos formulario = new MantenedorProductos();
-            formulario.ShowDialog();
-        }
     }
 }

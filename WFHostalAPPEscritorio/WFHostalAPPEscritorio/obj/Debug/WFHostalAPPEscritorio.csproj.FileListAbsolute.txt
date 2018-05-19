@@ -35,4 +35,3 @@ C:\Users\Hugo\Desktop\GIT\AppEscritorioHostal\WFHostalAPPEscritorio\WFHostalAPPE
 C:\Users\Hugo\Desktop\GIT\AppEscritorioHostal\WFHostalAPPEscritorio\WFHostalAPPEscritorio\obj\Debug\WFHostalAPPEscritorio.Properties.Resources.resources
 C:\Users\Hugo\Desktop\GIT\AppEscritorioHostal\WFHostalAPPEscritorio\WFHostalAPPEscritorio\obj\Debug\WFHostalAPPEscritorio.csproj.GenerateResource.Cache
 C:\Users\Hugo\Desktop\GIT\AppEscritorioHostal\WFHostalAPPEscritorio\WFHostalAPPEscritorio\obj\Debug\WFHostalAPPEscritorio.MantenedorEmpleados.resources
-C:\Users\Hugo\Desktop\GIT\AppEscritorioHostal\WFHostalAPPEscritorio\WFHostalAPPEscritorio\obj\Debug\WFHostalAPPEscritorio.MantenedorProductos.resources
