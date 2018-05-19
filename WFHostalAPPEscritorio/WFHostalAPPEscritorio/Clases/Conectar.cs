@@ -8,5 +8,6 @@ namespace WFHostalAPPEscritorio.Clases
 {
     public class Conectar
     {
+    
     }
 }
