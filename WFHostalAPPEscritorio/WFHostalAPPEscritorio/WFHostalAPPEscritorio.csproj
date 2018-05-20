@@ -87,11 +87,71 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="MantenedorComedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MantenedorComedor.Designer.cs">
+      <DependentUpon>MantenedorComedor.cs</DependentUpon>
+    </Compile>
     <Compile Include="MantenedorEmpleados.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MantenedorEmpleados.Designer.cs">
       <DependentUpon>MantenedorEmpleados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MantenedorEmpresa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MantenedorEmpresa.Designer.cs">
+      <DependentUpon>MantenedorEmpresa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MantenedorFacturas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MantenedorFacturas.Designer.cs">
+      <DependentUpon>MantenedorFacturas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MantenedorHabitacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MantenedorHabitacion.Designer.cs">
+      <DependentUpon>MantenedorHabitacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MantenedorHuespedes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MantenedorHuespedes.Designer.cs">
+      <DependentUpon>MantenedorHuespedes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MantenedorOrdenDePedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MantenedorOrdenDePedido.Designer.cs">
+      <DependentUpon>MantenedorOrdenDePedido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MantenedorOrdenDeServicios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MantenedorOrdenDeServicios.Designer.cs">
+      <DependentUpon>MantenedorOrdenDeServicios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MantenedorProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MantenedorProducto.Designer.cs">
+      <DependentUpon>MantenedorProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MantenedorProveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MantenedorProveedores.Designer.cs">
+      <DependentUpon>MantenedorProveedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MantenedorUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MantenedorUsuarios.Designer.cs">
+      <DependentUpon>MantenedorUsuarios.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
