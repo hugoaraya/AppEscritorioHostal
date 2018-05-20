@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clases\Conectar.cs" />
+    <Compile Include="Clases\Global.cs" />
     <Compile Include="Clases\MantenedorUsuario.cs" />
     <Compile Include="FormularioAdmin.cs">
       <SubType>Form</SubType>

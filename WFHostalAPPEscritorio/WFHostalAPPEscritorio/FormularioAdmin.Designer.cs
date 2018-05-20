@@ -56,7 +56,10 @@
             this.mantenedorProveedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.moduloAdministradorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mantenedorEmpleadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.picBLogo = new System.Windows.Forms.PictureBox();
+            this.LbBienvenida = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -69,7 +72,7 @@
             this.moduloAdministradorToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(700, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(684, 24);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -85,14 +88,14 @@
             // cerrarSesiónToolStripMenuItem
             // 
             this.cerrarSesiónToolStripMenuItem.Name = "cerrarSesiónToolStripMenuItem";
-            this.cerrarSesiónToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.cerrarSesiónToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.cerrarSesiónToolStripMenuItem.Text = "Cerrar Sesión";
             this.cerrarSesiónToolStripMenuItem.Click += new System.EventHandler(this.cerrarSesiónToolStripMenuItem_Click);
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
@@ -271,16 +274,40 @@
             this.mantenedorEmpleadosToolStripMenuItem.Text = "Mantenedor Empleados";
             this.mantenedorEmpleadosToolStripMenuItem.Click += new System.EventHandler(this.mantenedorEmpleadosToolStripMenuItem_Click);
             // 
+            // picBLogo
+            // 
+            this.picBLogo.Image = global::WFHostalAPPEscritorio.Properties.Resources.logo_hostal;
+            this.picBLogo.Location = new System.Drawing.Point(60, 46);
+            this.picBLogo.Name = "picBLogo";
+            this.picBLogo.Size = new System.Drawing.Size(121, 93);
+            this.picBLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picBLogo.TabIndex = 12;
+            this.picBLogo.TabStop = false;
+            // 
+            // LbBienvenida
+            // 
+            this.LbBienvenida.AutoSize = true;
+            this.LbBienvenida.Location = new System.Drawing.Point(56, 144);
+            this.LbBienvenida.Name = "LbBienvenida";
+            this.LbBienvenida.Size = new System.Drawing.Size(35, 13);
+            this.LbBienvenida.TabIndex = 13;
+            this.LbBienvenida.Text = "label1";
+            this.LbBienvenida.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.LbBienvenida.Click += new System.EventHandler(this.LbBienvenida_Click);
+            // 
             // FormularioAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(700, 354);
+            this.ClientSize = new System.Drawing.Size(684, 311);
+            this.Controls.Add(this.LbBienvenida);
+            this.Controls.Add(this.picBLogo);
             this.Controls.Add(this.menuStrip1);
             this.Name = "FormularioAdmin";
             this.Text = "FormularioAdmin";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -316,5 +343,7 @@
         private System.Windows.Forms.ToolStripMenuItem mantenedorProveedoresToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem moduloAdministradorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mantenedorEmpleadosToolStripMenuItem;
+        private System.Windows.Forms.PictureBox picBLogo;
+        private System.Windows.Forms.Label LbBienvenida;
     }
 }

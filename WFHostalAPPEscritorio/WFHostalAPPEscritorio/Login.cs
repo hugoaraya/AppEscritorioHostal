@@ -49,8 +49,6 @@ namespace WFHostalAPPEscritorio
                     comando.Parameters.Add(":contra", txtContra.Text);               
 
                     OracleDataReader lector = comando.ExecuteReader();
-
-                //
                
                 if (lector.HasRows)
                     {
@@ -60,27 +58,30 @@ namespace WFHostalAPPEscritorio
                             String nombre = lector.GetString(0);
                             String clave = lector.GetString(1);
                             int tipo = lector.GetInt32(2);
-                        
-                        //MantenedorUsuario man = new MantenedorUsuario();
-                        ////nueva conexion para comprobar datos de usuario registrado
-                        
-                        //List<string> usuarioKEY = man.traerUsuario(nombre);
-                        // Console.Write(usuarioKEY);
-                            
 
-                            if (tipo == 1)
-                            {
-                                this.Hide();
-                                FormularioAdmin formulario = new FormularioAdmin();
-                                formulario.ShowDialog();
-                                this.Close();
-                            }
-                            else
-                            {
-                                this.Hide();
-                                FormularioEmpleado formulario = new FormularioEmpleado();
-                                formulario.ShowDialog();
-                                this.Close();
+                            //registros de Usuario
+                            MantenedorUsuario man = new MantenedorUsuario();
+                            //List<string> listUsuario = man.traerUsuario(txtUsuario.Text);
+                            //Console.Write(listUsuario[0] + listUsuario[1] + listUsuario[2] + listUsuario[3] + listUsuario[4]);
+                            Global.usuarioKEY = man.traerUsuario(txtUsuario.Text);
+
+                        if (tipo == 1)
+                        {
+                            this.Hide();
+                            FormularioAdmin formulario = new FormularioAdmin();
+                            formulario.ShowDialog();
+                            this.Close();
+                        }
+                        else if (tipo == 4)
+                        {
+                            this.Hide();
+                            FormularioEmpleado formulario = new FormularioEmpleado();
+                            formulario.ShowDialog();
+                            this.Close();
+                        }
+                        else
+                        {
+                            lbMsg.Text = "Usuario No habilitado, intente nuevamente.";
                         }
                         
                         }
@@ -98,5 +99,20 @@ namespace WFHostalAPPEscritorio
             conexion.Cerrar();
         }
 
+        //private void PruebaConexion_Click(object sender, EventArgs e)
+        //{
+        
+            //    //nueva conexion para comprobar datos de usuario registrado
+            //    MantenedorUsuario man = new MantenedorUsuario();
+
+                //    List<string> listUsuario = man.traerUsuario(txtUsuario.Text);
+                //    Console.Write(listUsuario[0] + listUsuario[1] + listUsuario[2] + listUsuario[3] + listUsuario[4]);
+        
+                //foreach (var item in Global.usuarioKEY)
+                //{
+                //    MessageBox.Show(item);
+                //}
+
+        //}
     }
 }

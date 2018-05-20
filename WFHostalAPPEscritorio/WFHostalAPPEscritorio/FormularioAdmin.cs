@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WFHostalAPPEscritorio.Clases;
 
 namespace WFHostalAPPEscritorio
 {
@@ -15,6 +16,9 @@ namespace WFHostalAPPEscritorio
         public FormularioAdmin()
         {
             InitializeComponent();
+            
+            //Datos de Bienvenida            
+            LbBienvenida.Text = ("Bienvenido "+ Global.usuarioKEY[1] + ", Tipo de Usuario: " +Global.usuarioKEY[4]);
         }
 
         private void mantenedorEmpleadosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -94,6 +98,11 @@ namespace WFHostalAPPEscritorio
             this.Hide();
             formulario.ShowDialog();
             this.Close();
+        }
+
+        private void LbBienvenida_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

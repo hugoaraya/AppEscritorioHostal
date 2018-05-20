@@ -54,7 +54,10 @@
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.mantenedorProductoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mantenedorProveedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.LbBienvenida = new System.Windows.Forms.Label();
+            this.picBLogo = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -66,7 +69,7 @@
             this.moduloProveedoresToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(707, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(684, 24);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -82,14 +85,14 @@
             // cerrarSesiónToolStripMenuItem
             // 
             this.cerrarSesiónToolStripMenuItem.Name = "cerrarSesiónToolStripMenuItem";
-            this.cerrarSesiónToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.cerrarSesiónToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.cerrarSesiónToolStripMenuItem.Text = "Cerrar Sesión";
             this.cerrarSesiónToolStripMenuItem.Click += new System.EventHandler(this.cerrarSesiónToolStripMenuItem_Click);
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
@@ -252,17 +255,38 @@
             this.mantenedorProveedoresToolStripMenuItem.Text = "Mantenedor Proveedores";
             this.mantenedorProveedoresToolStripMenuItem.Click += new System.EventHandler(this.mantenedorProveedoresToolStripMenuItem_Click);
             // 
+            // LbBienvenida
+            // 
+            this.LbBienvenida.AutoSize = true;
+            this.LbBienvenida.Location = new System.Drawing.Point(57, 142);
+            this.LbBienvenida.Name = "LbBienvenida";
+            this.LbBienvenida.Size = new System.Drawing.Size(35, 13);
+            this.LbBienvenida.TabIndex = 14;
+            this.LbBienvenida.Text = "label1";
+            // 
+            // picBLogo
+            // 
+            this.picBLogo.Image = global::WFHostalAPPEscritorio.Properties.Resources.logo_hostal;
+            this.picBLogo.Location = new System.Drawing.Point(60, 46);
+            this.picBLogo.Name = "picBLogo";
+            this.picBLogo.Size = new System.Drawing.Size(121, 93);
+            this.picBLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picBLogo.TabIndex = 15;
+            this.picBLogo.TabStop = false;
+            // 
             // FormularioEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(707, 291);
+            this.ClientSize = new System.Drawing.Size(684, 311);
+            this.Controls.Add(this.picBLogo);
+            this.Controls.Add(this.LbBienvenida);
             this.Controls.Add(this.menuStrip1);
             this.Name = "FormularioEmpleado";
             this.Text = "FormularioEmpleado";
-            this.Click += new System.EventHandler(this.cerrarSesiónToolStripMenuItem_Click);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -296,5 +320,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripMenuItem mantenedorProductoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mantenedorProveedoresToolStripMenuItem;
+        private System.Windows.Forms.Label LbBienvenida;
+        private System.Windows.Forms.PictureBox picBLogo;
     }
 }
