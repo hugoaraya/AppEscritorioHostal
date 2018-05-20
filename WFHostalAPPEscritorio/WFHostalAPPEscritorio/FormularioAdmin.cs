@@ -22,5 +22,79 @@ namespace WFHostalAPPEscritorio
             MantenedorEmpleados formulario = new MantenedorEmpleados();
             formulario.ShowDialog();
         }
+
+        private void mantenedorEmpresaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MantenedorEmpresa formulario = new MantenedorEmpresa();
+            formulario.ShowDialog();
+        }
+
+        private void mantenedorHuespedesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MantenedorHuespedes formulario = new MantenedorHuespedes();
+            formulario.ShowDialog();
+        }
+
+        private void mantenedorOrdenDeServiciosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MantenedorOrdenDeServicios formulario = new MantenedorOrdenDeServicios();
+            formulario.ShowDialog();
+        }
+
+        private void mantenedorHabitaciónToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MantenedorHabitacion formulario = new MantenedorHabitacion();
+            formulario.ShowDialog();
+        }
+
+        private void mantenedorComedorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MantenedorComedor formulario = new MantenedorComedor();
+            formulario.ShowDialog();
+        }
+
+        private void mantenedorFacturasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MantenedorFacturas formulario = new MantenedorFacturas();
+            formulario.ShowDialog();
+        }
+
+        private void mantenedorUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MantenedorUsuarios formulario = new MantenedorUsuarios();
+            formulario.ShowDialog();
+        }
+
+        private void mantenedorOrdenDePedidoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MantenedorOrdenDePedido formulario = new MantenedorOrdenDePedido();
+            formulario.ShowDialog();
+        }
+
+        private void mantenedorProductoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MantenedorProducto formulario = new MantenedorProducto();
+            formulario.ShowDialog();
+        }
+
+        private void mantenedorProveedoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MantenedorProveedores formulario = new MantenedorProveedores();
+            formulario.ShowDialog();
+        }
+
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void cerrarSesiónToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Login formulario = new Login();
+            this.Hide();
+            formulario.ShowDialog();
+            this.Close();
+        }
     }
 }
+

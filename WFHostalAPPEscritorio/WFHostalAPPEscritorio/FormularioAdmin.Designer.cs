@@ -87,12 +87,14 @@
             this.cerrarSesiónToolStripMenuItem.Name = "cerrarSesiónToolStripMenuItem";
             this.cerrarSesiónToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.cerrarSesiónToolStripMenuItem.Text = "Cerrar Sesión";
+            this.cerrarSesiónToolStripMenuItem.Click += new System.EventHandler(this.cerrarSesiónToolStripMenuItem_Click);
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
             this.salirToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.salirToolStripMenuItem.Text = "Salir";
+            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
             // moduloFacturaciónToolStripMenuItem
             // 
@@ -117,12 +119,14 @@
             this.mantenedorEmpresaToolStripMenuItem.Name = "mantenedorEmpresaToolStripMenuItem";
             this.mantenedorEmpresaToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
             this.mantenedorEmpresaToolStripMenuItem.Text = "Mantenedor Empresa";
+            this.mantenedorEmpresaToolStripMenuItem.Click += new System.EventHandler(this.mantenedorEmpresaToolStripMenuItem_Click);
             // 
             // mantenedorHuespedesToolStripMenuItem
             // 
             this.mantenedorHuespedesToolStripMenuItem.Name = "mantenedorHuespedesToolStripMenuItem";
             this.mantenedorHuespedesToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
             this.mantenedorHuespedesToolStripMenuItem.Text = "Mantenedor Huéspedes";
+            this.mantenedorHuespedesToolStripMenuItem.Click += new System.EventHandler(this.mantenedorHuespedesToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
@@ -161,6 +165,7 @@
             this.mantenedorOrdenDeServiciosToolStripMenuItem.Name = "mantenedorOrdenDeServiciosToolStripMenuItem";
             this.mantenedorOrdenDeServiciosToolStripMenuItem.Size = new System.Drawing.Size(240, 22);
             this.mantenedorOrdenDeServiciosToolStripMenuItem.Text = "Mantenedor Orden de Servicios";
+            this.mantenedorOrdenDeServiciosToolStripMenuItem.Click += new System.EventHandler(this.mantenedorOrdenDeServiciosToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
@@ -172,12 +177,14 @@
             this.mantenedorHabitaciónToolStripMenuItem.Name = "mantenedorHabitaciónToolStripMenuItem";
             this.mantenedorHabitaciónToolStripMenuItem.Size = new System.Drawing.Size(240, 22);
             this.mantenedorHabitaciónToolStripMenuItem.Text = "Mantenedor Habitación";
+            this.mantenedorHabitaciónToolStripMenuItem.Click += new System.EventHandler(this.mantenedorHabitaciónToolStripMenuItem_Click);
             // 
             // mantenedorComedorToolStripMenuItem
             // 
             this.mantenedorComedorToolStripMenuItem.Name = "mantenedorComedorToolStripMenuItem";
             this.mantenedorComedorToolStripMenuItem.Size = new System.Drawing.Size(240, 22);
             this.mantenedorComedorToolStripMenuItem.Text = "Mantenedor Comedor";
+            this.mantenedorComedorToolStripMenuItem.Click += new System.EventHandler(this.mantenedorComedorToolStripMenuItem_Click);
             // 
             // toolStripSeparator3
             // 
@@ -189,12 +196,14 @@
             this.mantenedorFacturasToolStripMenuItem.Name = "mantenedorFacturasToolStripMenuItem";
             this.mantenedorFacturasToolStripMenuItem.Size = new System.Drawing.Size(240, 22);
             this.mantenedorFacturasToolStripMenuItem.Text = "Mantenedor Facturas";
+            this.mantenedorFacturasToolStripMenuItem.Click += new System.EventHandler(this.mantenedorFacturasToolStripMenuItem_Click);
             // 
             // mantenedorUsuariosToolStripMenuItem
             // 
             this.mantenedorUsuariosToolStripMenuItem.Name = "mantenedorUsuariosToolStripMenuItem";
             this.mantenedorUsuariosToolStripMenuItem.Size = new System.Drawing.Size(240, 22);
             this.mantenedorUsuariosToolStripMenuItem.Text = "Mantenedor Usuarios";
+            this.mantenedorUsuariosToolStripMenuItem.Click += new System.EventHandler(this.mantenedorUsuariosToolStripMenuItem_Click);
             // 
             // moduloProveedoresToolStripMenuItem
             // 
@@ -226,6 +235,7 @@
             this.mantenedorOrdenDePedidoToolStripMenuItem.Name = "mantenedorOrdenDePedidoToolStripMenuItem";
             this.mantenedorOrdenDePedidoToolStripMenuItem.Size = new System.Drawing.Size(231, 22);
             this.mantenedorOrdenDePedidoToolStripMenuItem.Text = "Mantenedor Orden de Pedido";
+            this.mantenedorOrdenDePedidoToolStripMenuItem.Click += new System.EventHandler(this.mantenedorOrdenDePedidoToolStripMenuItem_Click);
             // 
             // toolStripSeparator4
             // 
@@ -237,12 +247,14 @@
             this.mantenedorProductoToolStripMenuItem.Name = "mantenedorProductoToolStripMenuItem";
             this.mantenedorProductoToolStripMenuItem.Size = new System.Drawing.Size(231, 22);
             this.mantenedorProductoToolStripMenuItem.Text = "Mantenedor Producto";
+            this.mantenedorProductoToolStripMenuItem.Click += new System.EventHandler(this.mantenedorProductoToolStripMenuItem_Click);
             // 
             // mantenedorProveedoresToolStripMenuItem
             // 
             this.mantenedorProveedoresToolStripMenuItem.Name = "mantenedorProveedoresToolStripMenuItem";
             this.mantenedorProveedoresToolStripMenuItem.Size = new System.Drawing.Size(231, 22);
             this.mantenedorProveedoresToolStripMenuItem.Text = "Mantenedor Proveedores";
+            this.mantenedorProveedoresToolStripMenuItem.Click += new System.EventHandler(this.mantenedorProveedoresToolStripMenuItem_Click);
             // 
             // moduloAdministradorToolStripMenuItem
             // 
