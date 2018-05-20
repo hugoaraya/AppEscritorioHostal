@@ -11,8 +11,7 @@ namespace WFHostalAPPEscritorio.Clases
 {
     public class MantenedorUsuario
     {
-
-
+        
         public List<string> traerUsuario(string nombreUsu) //ENVIAR TODOS LOS DATOS DEL USUARIO
         {
             List<String> lista = new List<String>();

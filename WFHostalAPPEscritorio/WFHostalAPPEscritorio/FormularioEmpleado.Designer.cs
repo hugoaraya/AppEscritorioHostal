@@ -113,6 +113,7 @@
             this.registrarEmpresaToolStripMenuItem.Name = "registrarEmpresaToolStripMenuItem";
             this.registrarEmpresaToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
             this.registrarEmpresaToolStripMenuItem.Text = "Registrar Empresa";
+            this.registrarEmpresaToolStripMenuItem.Click += new System.EventHandler(this.registrarEmpresaToolStripMenuItem_Click);
             // 
             // mantenedorEmpresaToolStripMenuItem
             // 
