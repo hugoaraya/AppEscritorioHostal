@@ -53,8 +53,25 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Oracle.DataAccess, Version=4.122.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=x86" />
+    <Reference Include="Oracle.ManagedDataAccess, Version=4.122.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
+      <HintPath>..\packages\Oracle.ManagedDataAccess.12.2.1100\lib\net40\Oracle.ManagedDataAccess.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Oracle.ManagedDataAccess.EntityFramework, Version=6.122.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
+      <HintPath>..\packages\Oracle.ManagedDataAccess.EntityFramework.12.2.1100\lib\net45\Oracle.ManagedDataAccess.EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -70,7 +87,9 @@
     <Compile Include="Clases\Conectar.cs" />
     <Compile Include="Clases\Global.cs" />
     <Compile Include="Clases\ManEmpresa.cs" />
-    <Compile Include="Clases\MantenedorUsuario.cs" />
+    <Compile Include="Clases\ManHuesped.cs" />
+    <Compile Include="Clases\ManUsuario.cs" />
+    <Compile Include="Clases\MetodosAPP.cs" />
     <Compile Include="FormularioAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -178,6 +197,12 @@
     <EmbeddedResource Include="MantenedorEmpresa.resx">
       <DependentUpon>MantenedorEmpresa.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MantenedorHuespedes.resx">
+      <DependentUpon>MantenedorHuespedes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MantenedorUsuarios.resx">
+      <DependentUpon>MantenedorUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -191,6 +216,7 @@
     <EmbeddedResource Include="RegistrarEmpresa.resx">
       <DependentUpon>RegistrarEmpresa.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -206,6 +232,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\logo_hostal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DAO\DAO.csproj">
+      <Project>{2e7c4c84-8d68-47ab-a904-ebc421e909bf}</Project>
+      <Name>DAO</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

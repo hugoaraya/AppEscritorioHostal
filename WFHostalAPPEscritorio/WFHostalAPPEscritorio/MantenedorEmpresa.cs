@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using WFHostalAPPEscritorio.Clases;
+using DAO;
+
 
 namespace WFHostalAPPEscritorio
 {
@@ -16,17 +12,6 @@ namespace WFHostalAPPEscritorio
         public MantenedorEmpresa()
         {
             InitializeComponent();
-            CargarDGVEmpresa();
-        }
-
-        private void CargarDGVEmpresa()
-        {
-            this.dgvEmpresa.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEmpresa.MultiSelect = false;
-            this.dgvEmpresa.ReadOnly = true;
-            ManEmpresa man = new ManEmpresa();
-            dgvEmpresa.DataSource = man.todasEmpresas();
-
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -42,6 +27,7 @@ namespace WFHostalAPPEscritorio
             txTelefono.Text = "";
             txCorreo.Text = "";
             txRut.Enabled = true;
+            lbMsg.Text = "";
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -75,10 +61,10 @@ namespace WFHostalAPPEscritorio
                             DataRow row = dt.Rows[0];
 
                             txRut.Text = row[1].ToString();
-                            txNombre.Text = row[2].ToString();
-                            txDireccion.Text = row[3].ToString();
-                            txTelefono.Text = row[4].ToString();
-                            txCorreo.Text = row[6].ToString();
+                            txNombre.Text = row[3].ToString();
+                            txDireccion.Text = row[4].ToString();
+                            txTelefono.Text = row[5].ToString();
+                            txCorreo.Text = row[7].ToString();
                             txRut.Enabled = false;
                             lbMsg.Text = "Rut Encontrado";
                         }
@@ -94,10 +80,20 @@ namespace WFHostalAPPEscritorio
 
             }
         }
+        public void LlenarGrilla()
+        {
+            this.dgvEmpresa.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            this.dgvEmpresa.MultiSelect = false;
+            this.dgvEmpresa.ReadOnly = true;
+            ManEmpresa man = new ManEmpresa();
+            dgvEmpresa.DataSource = man.todasEmpresas();
+        }
+
+
 
         private void btnTodas_Click(object sender, EventArgs e)
         {
-            CargarDGVEmpresa();
+            LlenarGrilla();
         }
 
         //Validar que campos  sean numericos
@@ -123,62 +119,52 @@ namespace WFHostalAPPEscritorio
 
 
 
-        private void dgvEmpresa_SelectionChanged(object sender, EventArgs e)
-        {
-            //MessageBox.Show("FALTA PROGRAMAR ESTO");
-            //rellenar con seleccion de fila. ?????
-            //DataTable dato = 
+        //private void dgvEmpresa_SelectionChanged(object sender, EventArgs e)
+        //{
+        //    //MessageBox.Show("FALTA PROGRAMAR ESTO");
+        //    //rellenar con seleccion de fila. ?????
+        //    //DataTable dato = 
 
-            //if (dato.Rows.Count == 0)
-            //{
-            //    return;
-            //}
-            //else
-            //{
-            //    DataRow row = dt.Rows[0];
+        //    //if (dato.Rows.Count == 0)
+        //    //{
+        //    //    return;
+        //    //}
+        //    //else
+        //    //{
+        //    //    DataRow row = dt.Rows[0];
 
-            //    txRut.Text = row[1].ToString();
-            //    txNombre.Text = row[2].ToString();
-            //    txDireccion.Text = row[3].ToString();
-            //    txTelefono.Text = row[4].ToString();
-            //    txCorreo.Text = row[6].ToString();
-            //    txRut.Enabled = false;
-        }
+        //    //    txRut.Text = row[1].ToString();
+        //    //    txNombre.Text = row[2].ToString();
+        //    //    txDireccion.Text = row[3].ToString();
+        //    //    txTelefono.Text = row[4].ToString();
+        //    //    txCorreo.Text = row[6].ToString();
+        //    //    txRut.Enabled = false;
+        //}
 
-        private void btnIngresar_Click(object sender, EventArgs e)
-        {
-            if (txRut.Text.Trim() == "")
-            {
-                lbMsg.Text = "Asegúrese de ingresar RUT sin DV";
-                txRut.Focus();
-            }
-            else
-            {
-                try
-                {
-                    ManEmpresa man = new ManEmpresa();
-                    DataTable dt = man.EmpresaXRut(txRut.Text.Trim());
-                    if (dt == null)
-                    {
-                        MessageBox.Show("FALTA PROGRAMAR ESTO");
-                    }
-                    else
-                    {
-                        lbMsg.Text = "RUT ya existe";
-                    }
-
-                }
-                catch (Exception ex)
-                {
-                    lbMsg.Text = "ERROR: " + ex;
-
-                }
-            }
-        }
+    
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("FALTA PROGRAMAR ESTO");
+
+            MessageBox.Show("PENDIENTE DE PROGRAMAR");
+            //MetodosAPP APP = new MetodosAPP();
+
+            //EMPRESA empr = new EMPRESA();
+            //empr.IDEMPRESA = 1;
+            //empr.RUT = int.Parse(txRut.Text);
+            //empr.DV = APP.GenerarDV(txRut.Text);
+            //empr.NOMBRE = txNombre.Text;
+            //empr.DIRECCION = txDireccion.Text;
+            //empr.TELEFONO = int.Parse(txTelefono.Text);
+            //empr.USUARIO_ID = 5;                            /// COMPROBAR CON USUARIO;
+            //empr.CORREO = txCorreo.Text;
+            ////APP.Update(empr);                             /// COMPROBAR CON USUARIO;
+            //lbMsg.Text = "aaaa";
+        }
+
+        private void MantenedorEmpresa_Load(object sender, EventArgs e)
+        {
+            LlenarGrilla();
         }
     }
 

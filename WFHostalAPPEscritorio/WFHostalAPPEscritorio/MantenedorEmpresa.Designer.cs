@@ -41,7 +41,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.btnBuscar = new System.Windows.Forms.Button();
-            this.btnIngresar = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
@@ -60,7 +59,6 @@
             this.dgvEmpresa.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvEmpresa.Size = new System.Drawing.Size(537, 295);
             this.dgvEmpresa.TabIndex = 0;
-            this.dgvEmpresa.SelectionChanged += new System.EventHandler(this.dgvEmpresa_SelectionChanged);
             // 
             // groupBox1
             // 
@@ -173,21 +171,11 @@
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
-            // btnIngresar
-            // 
-            this.btnIngresar.Location = new System.Drawing.Point(33, 228);
-            this.btnIngresar.Name = "btnIngresar";
-            this.btnIngresar.Size = new System.Drawing.Size(75, 23);
-            this.btnIngresar.TabIndex = 9;
-            this.btnIngresar.Text = "Ingresar";
-            this.btnIngresar.UseVisualStyleBackColor = true;
-            this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
-            // 
             // btnActualizar
             // 
-            this.btnActualizar.Location = new System.Drawing.Point(114, 228);
+            this.btnActualizar.Location = new System.Drawing.Point(90, 228);
             this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(75, 23);
+            this.btnActualizar.Size = new System.Drawing.Size(100, 23);
             this.btnActualizar.TabIndex = 10;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = true;
@@ -242,12 +230,12 @@
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.btnActualizar);
-            this.Controls.Add(this.btnIngresar);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgvEmpresa);
             this.Name = "MantenedorEmpresa";
             this.Text = "MantenedorEmpresa";
+            this.Load += new System.EventHandler(this.MantenedorEmpresa_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpresa)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -271,7 +259,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.Button btnIngresar;
         private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.Button btnSalir;

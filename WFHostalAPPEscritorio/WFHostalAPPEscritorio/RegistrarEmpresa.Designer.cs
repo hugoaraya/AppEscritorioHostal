@@ -41,6 +41,8 @@
             this.txRut = new System.Windows.Forms.TextBox();
             this.btnIngresar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.lbMsg = new System.Windows.Forms.Label();
+            this.txResult = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -106,7 +108,7 @@
             this.groupBox1.Size = new System.Drawing.Size(306, 195);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "1 - Ingrese Datos de Empresa:";
+            this.groupBox1.Text = "Ingrese Datos de Empresa:";
             // 
             // txCorreo
             // 
@@ -121,6 +123,7 @@
             this.txTelefono.Name = "txTelefono";
             this.txTelefono.Size = new System.Drawing.Size(178, 20);
             this.txTelefono.TabIndex = 10;
+            this.txTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tx_KeyPress_Numeric);
             // 
             // txDireccion
             // 
@@ -142,6 +145,7 @@
             this.txRut.Name = "txRut";
             this.txRut.Size = new System.Drawing.Size(178, 20);
             this.txRut.TabIndex = 7;
+            this.txRut.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tx_KeyPress_Numeric);
             // 
             // btnIngresar
             // 
@@ -163,11 +167,30 @@
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
+            // lbMsg
+            // 
+            this.lbMsg.AutoSize = true;
+            this.lbMsg.Location = new System.Drawing.Point(22, 295);
+            this.lbMsg.Name = "lbMsg";
+            this.lbMsg.Size = new System.Drawing.Size(0, 13);
+            this.lbMsg.TabIndex = 14;
+            // 
+            // txResult
+            // 
+            this.txResult.Location = new System.Drawing.Point(357, 54);
+            this.txResult.Multiline = true;
+            this.txResult.Name = "txResult";
+            this.txResult.Size = new System.Drawing.Size(234, 200);
+            this.txResult.TabIndex = 16;
+            this.txResult.Visible = false;
+            // 
             // RegistrarEmpresa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(629, 328);
+            this.Controls.Add(this.txResult);
+            this.Controls.Add(this.lbMsg);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnIngresar);
             this.Controls.Add(this.groupBox1);
@@ -176,6 +199,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -193,5 +217,7 @@
         private System.Windows.Forms.TextBox txRut;
         private System.Windows.Forms.Button btnIngresar;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Label lbMsg;
+        private System.Windows.Forms.TextBox txResult;
     }
 }
