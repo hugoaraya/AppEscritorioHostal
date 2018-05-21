@@ -194,10 +194,6 @@
     <EmbeddedResource Include="MantenedorEmpleados.resx">
       <DependentUpon>MantenedorEmpleados.cs</DependentUpon>
     </EmbeddedResource>
-<<<<<<< HEAD
-    <EmbeddedResource Include="MantenedorHabitacion.resx">
-      <DependentUpon>MantenedorHabitacion.cs</DependentUpon>
-=======
     <EmbeddedResource Include="MantenedorEmpresa.resx">
       <DependentUpon>MantenedorEmpresa.cs</DependentUpon>
     </EmbeddedResource>
@@ -206,7 +202,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MantenedorUsuarios.resx">
       <DependentUpon>MantenedorUsuarios.cs</DependentUpon>
->>>>>>> master
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
