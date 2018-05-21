@@ -16,7 +16,7 @@ namespace WFHostalAPPEscritorio.Clases
             try
             {
                 con.Open();
-                //MessageBox.Show("Conexión Existosa! ");
+                Console.WriteLine("Conexión ORACLE Existosa! ");
             }
             catch (Exception e)
             {
@@ -29,7 +29,7 @@ namespace WFHostalAPPEscritorio.Clases
             try
             {
                 con.Close();
-                //MessageBox.Show("Conexión Cerrada! ");
+                Console.WriteLine("Conexión ORACLE Cerrada! ");
             }
             catch (Exception e)
             {

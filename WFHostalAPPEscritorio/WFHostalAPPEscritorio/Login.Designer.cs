@@ -35,6 +35,7 @@
             this.lblUsuario = new System.Windows.Forms.Label();
             this.lbMsg = new System.Windows.Forms.Label();
             this.picBLogo = new System.Windows.Forms.PictureBox();
+            this.btnSalir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picBLogo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -44,7 +45,7 @@
             this.btnEntrar.Name = "btnEntrar";
             this.btnEntrar.Size = new System.Drawing.Size(75, 23);
             this.btnEntrar.TabIndex = 9;
-            this.btnEntrar.Text = "Entrar";
+            this.btnEntrar.Text = "Ingresar";
             this.btnEntrar.UseVisualStyleBackColor = true;
             this.btnEntrar.Click += new System.EventHandler(this.btnEntrar_Click);
             // 
@@ -100,11 +101,22 @@
             this.picBLogo.TabIndex = 11;
             this.picBLogo.TabStop = false;
             // 
+            // btnSalir
+            // 
+            this.btnSalir.Location = new System.Drawing.Point(77, 217);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(75, 23);
+            this.btnSalir.TabIndex = 13;
+            this.btnSalir.Text = "Cancelar";
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(303, 290);
+            this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.picBLogo);
             this.Controls.Add(this.lbMsg);
             this.Controls.Add(this.btnEntrar);
@@ -130,6 +142,7 @@
         private System.Windows.Forms.Label lblUsuario;
         private System.Windows.Forms.Label lbMsg;
         private System.Windows.Forms.PictureBox picBLogo;
+        private System.Windows.Forms.Button btnSalir;
     }
 }
 

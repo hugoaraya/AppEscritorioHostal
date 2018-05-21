@@ -61,7 +61,7 @@ namespace WFHostalAPPEscritorio
                             int tipo = lector.GetInt32(2);
 
                             //registros de Usuario
-                            MantenedorUsuario man = new MantenedorUsuario();
+                            ManUsuario man = new ManUsuario();
                             //List<string> listUsuario = man.traerUsuario(txtUsuario.Text);
                             //Console.Write(listUsuario[0] + listUsuario[1] + listUsuario[2] + listUsuario[3] + listUsuario[4]);
                             Global.usuarioKEY = man.traerUsuario(txtUsuario.Text);
@@ -100,19 +100,26 @@ namespace WFHostalAPPEscritorio
             conexion.Cerrar();
         }
 
+
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         //private void PruebaConexion_Click(object sender, EventArgs e)
         //{
-        
-            //    //nueva conexion para comprobar datos de usuario registrado
-            //    MantenedorUsuario man = new MantenedorUsuario();
 
-                //    List<string> listUsuario = man.traerUsuario(txtUsuario.Text);
-                //    Console.Write(listUsuario[0] + listUsuario[1] + listUsuario[2] + listUsuario[3] + listUsuario[4]);
-        
-                //foreach (var item in Global.usuarioKEY)
-                //{
-                //    MessageBox.Show(item);
-                //}
+        //    //nueva conexion para comprobar datos de usuario registrado
+        //    MantenedorUsuario man = new MantenedorUsuario();
+
+        //    List<string> listUsuario = man.traerUsuario(txtUsuario.Text);
+        //    Console.Write(listUsuario[0] + listUsuario[1] + listUsuario[2] + listUsuario[3] + listUsuario[4]);
+
+        //foreach (var item in Global.usuarioKEY)
+        //{
+        //    MessageBox.Show(item);
+        //}
 
         //}
     }
