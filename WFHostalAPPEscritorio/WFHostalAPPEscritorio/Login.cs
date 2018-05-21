@@ -55,6 +55,7 @@ namespace WFHostalAPPEscritorio
                         while (lector.Read())
                         {
                         //:::NO CREO SEA NECESARIO::: CREAR UNA CLASE USUARIO..
+                        //Mmmmm...... ño
                             String nombre = lector.GetString(0);
                             String clave = lector.GetString(1);
                             int tipo = lector.GetInt32(2);
@@ -89,7 +90,7 @@ namespace WFHostalAPPEscritorio
                     else
                     {
                         Console.WriteLine("No rows found.");
-                        lbMsg.Text = "Usuario/Contraseña Invalido, intente nuevamente.";
+                        lbMsg.Text = "Usuario/Contraseña Inválido, intente nuevamente.";
                     }
 
                     lector.Close();
