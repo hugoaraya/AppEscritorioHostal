@@ -43,6 +43,8 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.lbMsg = new System.Windows.Forms.Label();
             this.txResult = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtDv = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -80,7 +82,7 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(52, 13);
             this.label5.TabIndex = 4;
-            this.label5.Text = "Telefono:";
+            this.label5.Text = "Teléfono:";
             // 
             // label6
             // 
@@ -93,6 +95,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.txtDv);
             this.groupBox1.Controls.Add(this.txCorreo);
             this.groupBox1.Controls.Add(this.txTelefono);
             this.groupBox1.Controls.Add(this.txDireccion);
@@ -143,7 +147,7 @@
             // 
             this.txRut.Location = new System.Drawing.Point(107, 26);
             this.txRut.Name = "txRut";
-            this.txRut.Size = new System.Drawing.Size(178, 20);
+            this.txRut.Size = new System.Drawing.Size(122, 20);
             this.txRut.TabIndex = 7;
             this.txRut.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tx_KeyPress_Numeric);
             // 
@@ -184,6 +188,22 @@
             this.txResult.TabIndex = 16;
             this.txResult.Visible = false;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(230, 29);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(10, 13);
+            this.label1.TabIndex = 15;
+            this.label1.Text = "-";
+            // 
+            // txtDv
+            // 
+            this.txtDv.Location = new System.Drawing.Point(242, 26);
+            this.txtDv.Name = "txtDv";
+            this.txtDv.Size = new System.Drawing.Size(43, 20);
+            this.txtDv.TabIndex = 14;
+            // 
             // RegistrarEmpresa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -219,5 +239,7 @@
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Label lbMsg;
         private System.Windows.Forms.TextBox txResult;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtDv;
     }
 }

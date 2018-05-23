@@ -29,5 +29,14 @@ namespace WFHostalAPPEscritorio.Clases
             }
 
         }
+
+        public void InsertEmpleado(EMPLEADO emple)
+        {
+            using (EntitiesHostal ins = new EntitiesHostal())
+            {
+                ins.EMPLEADO.Add(emple);
+                ins.SaveChanges();
+            }
+        }
     }
 }

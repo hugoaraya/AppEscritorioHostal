@@ -9,3 +9,15 @@ C:\Users\Hugo\Desktop\WFHostalAPPEscritorio\DAO\bin\Debug\EntityFramework.xml
 C:\Users\Hugo\Desktop\WFHostalAPPEscritorio\DAO\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Hugo\Desktop\WFHostalAPPEscritorio\DAO\obj\Debug\DAO.dll
 C:\Users\Hugo\Desktop\WFHostalAPPEscritorio\DAO\obj\Debug\DAO.pdb
+C:\Users\Nibsa\Documents\GitHub\AppEscritorioHostal\WFHostalAPPEscritorio\DAO\bin\Debug\DAO.dll.config
+C:\Users\Nibsa\Documents\GitHub\AppEscritorioHostal\WFHostalAPPEscritorio\DAO\bin\Debug\DAO.dll
+C:\Users\Nibsa\Documents\GitHub\AppEscritorioHostal\WFHostalAPPEscritorio\DAO\bin\Debug\DAO.pdb
+C:\Users\Nibsa\Documents\GitHub\AppEscritorioHostal\WFHostalAPPEscritorio\DAO\bin\Debug\EntityFramework.dll
+C:\Users\Nibsa\Documents\GitHub\AppEscritorioHostal\WFHostalAPPEscritorio\DAO\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Nibsa\Documents\GitHub\AppEscritorioHostal\WFHostalAPPEscritorio\DAO\bin\Debug\Oracle.ManagedDataAccess.dll
+C:\Users\Nibsa\Documents\GitHub\AppEscritorioHostal\WFHostalAPPEscritorio\DAO\bin\Debug\Oracle.ManagedDataAccess.EntityFramework.dll
+C:\Users\Nibsa\Documents\GitHub\AppEscritorioHostal\WFHostalAPPEscritorio\DAO\bin\Debug\EntityFramework.xml
+C:\Users\Nibsa\Documents\GitHub\AppEscritorioHostal\WFHostalAPPEscritorio\DAO\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Nibsa\Documents\GitHub\AppEscritorioHostal\WFHostalAPPEscritorio\DAO\obj\Debug\DAO.csprojResolveAssemblyReference.cache
+C:\Users\Nibsa\Documents\GitHub\AppEscritorioHostal\WFHostalAPPEscritorio\DAO\obj\Debug\DAO.dll
+C:\Users\Nibsa\Documents\GitHub\AppEscritorioHostal\WFHostalAPPEscritorio\DAO\obj\Debug\DAO.pdb

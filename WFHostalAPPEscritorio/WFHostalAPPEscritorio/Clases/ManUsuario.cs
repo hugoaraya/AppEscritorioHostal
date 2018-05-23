@@ -46,7 +46,7 @@ namespace WFHostalAPPEscritorio.Clases
                     else
                     {
                         Console.WriteLine("No rows found.");
-                        Console.WriteLine("Usuario/Contraseña Invalido, intente nuevamente.");
+                        Console.WriteLine("Usuario/Contraseña Inválido, intente nuevamente.");
                         lector.Close();
                         conexion.Cerrar();
                         return null;

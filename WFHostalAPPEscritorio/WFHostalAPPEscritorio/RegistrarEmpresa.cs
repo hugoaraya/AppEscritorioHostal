@@ -34,6 +34,15 @@ namespace WFHostalAPPEscritorio
             //TIPO_USUARIO_ID
         }
 
+        private void CompararDv()
+        {
+
+            MetodosAPP APP = new MetodosAPP();
+            if (txtDv.Text == APP.GenerarDV(txtDv.Text))
+            {
+
+            }
+        }
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -43,32 +52,32 @@ namespace WFHostalAPPEscritorio
         {
             if (string.IsNullOrEmpty(txRut.Text))
             {
-                lbMsg.Text = ("Debe completar la informacion RUT");
+                lbMsg.Text = ("Ingrese la información RUT");
                 txRut.Focus();
                 return;
             }
             if (string.IsNullOrEmpty(txNombre.Text))
             {
-                lbMsg.Text = ("Debe completar la informacion NOMBRE");
+                lbMsg.Text = ("Ingrese la información NOMBRE");
                 txNombre.Focus();
                 return;
             }
             if (string.IsNullOrEmpty(txDireccion.Text))
             {
-                lbMsg.Text = ("Debe completar la informacion DIRECCION");
+                lbMsg.Text = ("Ingrese la información DIRECCIÓN");
                 txDireccion.Focus();
                 return;
             }
 
             if (string.IsNullOrEmpty(txTelefono.Text))
             {
-                lbMsg.Text = ("Debe completar la informacion TELEFONO");
+                lbMsg.Text = ("Ingrese la información TELÉFONO");
                 txTelefono.Focus();
                 return;
             }
             if (string.IsNullOrEmpty(txCorreo.Text))
             {
-                lbMsg.Text = ("Debe completar la informacion CORREO");
+                lbMsg.Text = ("Ingrese la información CORREO");
                 txCorreo.Focus();
                 return;
             }
@@ -82,18 +91,19 @@ namespace WFHostalAPPEscritorio
                 usu.IDUSUARIO = 1;
                 usu.NOMBRE_USUARIO = txRut.Text;
                 usu.CONTRASENIA = "123";                     // generar contraseña
-                usu.TIPO_USUARIO_ID = 4;                     // 4 Cliente Empresa
+                usu.TIPO_USUARIO_ID = 2;                     // 2 Cliente Empresa
                 AddUsuario(usu);
                 id_usu = man.ObtenerIDUsuario(txRut.Text);
                 if (id_usu == 0)
                 {
-                    lbMsg.Text = "Problemas con generacion de Usuario";
+                    lbMsg.Text = "Problemas con generación de Usuario";
                 }
                 else {
                     EMPRESA emp = new EMPRESA();
                     emp.IDEMPRESA = 1;
                     emp.RUT = int.Parse(txRut.Text);
-                    emp.DV = APP.GenerarDV(txRut.Text);
+                    //if(txtDv.Text==APP.GenerarDV(txtDv.Text))
+                    emp.DV = txtDv.Text;  
                     emp.NOMBRE = txNombre.Text;
                     emp.DIRECCION = txDireccion.Text;
                     emp.TELEFONO = int.Parse(txTelefono.Text);
@@ -103,7 +113,7 @@ namespace WFHostalAPPEscritorio
                     btnCancelar.Text = "Salir";
                     lbMsg.Text = "Usuario Creado";
                     txResult.Visible = true;
-                    txResult.Text = (" Usuario para el Sistema : " + txRut.Text +
+                    txResult.Text = (" Usuario para el Sistema : " + txRut.Text + "     \n"+
                                   " Clave para el Sistema   : 123 ");
 
                 }

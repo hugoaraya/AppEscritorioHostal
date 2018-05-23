@@ -110,6 +110,12 @@ namespace WFHostalAPPEscritorio
             RegistrarEmpresa formulario = new RegistrarEmpresa();
             formulario.ShowDialog();
         }
+
+        private void registrarEmpleadoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Ingresar_Empleado formulario = new Ingresar_Empleado();
+            formulario.ShowDialog();
+        }
     }
 }
 

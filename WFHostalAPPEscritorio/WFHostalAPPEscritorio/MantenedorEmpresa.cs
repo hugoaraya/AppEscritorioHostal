@@ -3,7 +3,7 @@ using System.Data;
 using System.Windows.Forms;
 using WFHostalAPPEscritorio.Clases;
 using DAO;
-
+using Oracle.DataAccess.Client;
 
 namespace WFHostalAPPEscritorio
 {
@@ -96,6 +96,11 @@ namespace WFHostalAPPEscritorio
             LlenarGrilla();
         }
 
+        private void MantenedorEmpresa_Load(object sender, EventArgs e)
+        {
+            LlenarGrilla();
+        }
+
         //Validar que campos  sean numericos
         private void tx_KeyPress_Numeric(object sender, KeyPressEventArgs e)
         {
@@ -115,6 +120,39 @@ namespace WFHostalAPPEscritorio
             {
                 e.Handled = true;
             }
+        }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            Conectar con = new Conectar();
+            if (txRut.Text.Trim() == "")
+            {
+                lbMsg.Text = "Asegúrese de ingresar RUT sin DV";
+                txRut.Focus();
+            }
+            else
+            {
+                try
+                {
+
+
+                    con.Abrir();
+                    OracleCommand cmd = new OracleCommand("UPDATE EMPRESA SET NOMBRE= '" + txNombre.Text + "', DIRECCION= '"+txDireccion+"', TELEFONO= '"+txTelefono+"', CORREO= '"+txCorreo+"' WHERE RUT= '"+txRut.Text+"'", con.con);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Actualización exitosa");
+                    con.Cerrar();
+                }
+                catch
+                {
+                    MessageBox.Show("Error:");
+                    con.Cerrar();
+                }
+            }
+        }
+
+        private void txRut_TextChanged(object sender, EventArgs e)
+        {
+
         }
 
 
@@ -141,32 +179,6 @@ namespace WFHostalAPPEscritorio
         //    //    txRut.Enabled = false;
         //}
 
-    
-
-        private void btnActualizar_Click(object sender, EventArgs e)
-        {
-
-            MessageBox.Show("PENDIENTE DE PROGRAMAR");
-            //MetodosAPP APP = new MetodosAPP();
-
-            //EMPRESA empr = new EMPRESA();
-            //empr.IDEMPRESA = 1;
-            //empr.RUT = int.Parse(txRut.Text);
-            //empr.DV = APP.GenerarDV(txRut.Text);
-            //empr.NOMBRE = txNombre.Text;
-            //empr.DIRECCION = txDireccion.Text;
-            //empr.TELEFONO = int.Parse(txTelefono.Text);
-            //empr.USUARIO_ID = 5;                            /// COMPROBAR CON USUARIO;
-            //empr.CORREO = txCorreo.Text;
-            ////APP.Update(empr);                             /// COMPROBAR CON USUARIO;
-            //lbMsg.Text = "aaaa";
-        }
-
-        private void MantenedorEmpresa_Load(object sender, EventArgs e)
-        {
-            LlenarGrilla();
-        }
     }
-
-
-}
+        
+    }

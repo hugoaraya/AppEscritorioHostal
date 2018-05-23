@@ -58,6 +58,7 @@
             this.mantenedorEmpleadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.picBLogo = new System.Windows.Forms.PictureBox();
             this.LbBienvenida = new System.Windows.Forms.Label();
+            this.registrarEmpleadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBLogo)).BeginInit();
             this.SuspendLayout();
@@ -263,7 +264,8 @@
             // moduloAdministradorToolStripMenuItem
             // 
             this.moduloAdministradorToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mantenedorEmpleadosToolStripMenuItem});
+            this.mantenedorEmpleadosToolStripMenuItem,
+            this.registrarEmpleadoToolStripMenuItem});
             this.moduloAdministradorToolStripMenuItem.Name = "moduloAdministradorToolStripMenuItem";
             this.moduloAdministradorToolStripMenuItem.Size = new System.Drawing.Size(140, 20);
             this.moduloAdministradorToolStripMenuItem.Text = "Modulo Administrador";
@@ -295,6 +297,13 @@
             this.LbBienvenida.Text = "label1";
             this.LbBienvenida.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.LbBienvenida.Click += new System.EventHandler(this.LbBienvenida_Click);
+            // 
+            // registrarEmpleadoToolStripMenuItem
+            // 
+            this.registrarEmpleadoToolStripMenuItem.Name = "registrarEmpleadoToolStripMenuItem";
+            this.registrarEmpleadoToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.registrarEmpleadoToolStripMenuItem.Text = "Registrar Empleado";
+            this.registrarEmpleadoToolStripMenuItem.Click += new System.EventHandler(this.registrarEmpleadoToolStripMenuItem_Click);
             // 
             // FormularioAdmin
             // 
@@ -346,5 +355,6 @@
         private System.Windows.Forms.ToolStripMenuItem mantenedorEmpleadosToolStripMenuItem;
         private System.Windows.Forms.PictureBox picBLogo;
         private System.Windows.Forms.Label LbBienvenida;
+        private System.Windows.Forms.ToolStripMenuItem registrarEmpleadoToolStripMenuItem;
     }
 }

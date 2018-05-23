@@ -30,6 +30,8 @@
         {
             this.dgvEmpresa = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtDv = new System.Windows.Forms.TextBox();
             this.txCorreo = new System.Windows.Forms.TextBox();
             this.txTelefono = new System.Windows.Forms.TextBox();
             this.txDireccion = new System.Windows.Forms.TextBox();
@@ -62,6 +64,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.txtDv);
             this.groupBox1.Controls.Add(this.txCorreo);
             this.groupBox1.Controls.Add(this.txTelefono);
             this.groupBox1.Controls.Add(this.txDireccion);
@@ -78,6 +82,22 @@
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos de Empresa:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(230, 29);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(10, 13);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "-";
+            // 
+            // txtDv
+            // 
+            this.txtDv.Location = new System.Drawing.Point(242, 26);
+            this.txtDv.Name = "txtDv";
+            this.txtDv.Size = new System.Drawing.Size(43, 20);
+            this.txtDv.TabIndex = 12;
             // 
             // txCorreo
             // 
@@ -112,8 +132,9 @@
             // 
             this.txRut.Location = new System.Drawing.Point(107, 26);
             this.txRut.Name = "txRut";
-            this.txRut.Size = new System.Drawing.Size(178, 20);
+            this.txRut.Size = new System.Drawing.Size(117, 20);
             this.txRut.TabIndex = 7;
+            this.txRut.TextChanged += new System.EventHandler(this.txRut_TextChanged);
             this.txRut.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tx_KeyPress_Numeric);
             // 
             // label2
@@ -206,9 +227,9 @@
             this.lbMsg.AutoSize = true;
             this.lbMsg.Location = new System.Drawing.Point(12, 299);
             this.lbMsg.Name = "lbMsg";
-            this.lbMsg.Size = new System.Drawing.Size(26, 13);
+            this.lbMsg.Size = new System.Drawing.Size(11, 13);
             this.lbMsg.TabIndex = 13;
-            this.lbMsg.Text = "msg";
+            this.lbMsg.Text = "*";
             // 
             // btnTodas
             // 
@@ -264,5 +285,7 @@
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Label lbMsg;
         private System.Windows.Forms.Button btnTodas;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtDv;
     }
 }
