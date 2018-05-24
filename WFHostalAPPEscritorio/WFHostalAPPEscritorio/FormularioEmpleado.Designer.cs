@@ -184,7 +184,7 @@
             this.mantenedorComedorToolStripMenuItem.Name = "mantenedorComedorToolStripMenuItem";
             this.mantenedorComedorToolStripMenuItem.Size = new System.Drawing.Size(240, 22);
             this.mantenedorComedorToolStripMenuItem.Text = "Mantenedor Comedor";
-            this.mantenedorComedorToolStripMenuItem.Click += new System.EventHandler(this.mantenedorComedorToolStripMenuItem_Click);
+            
             // 
             // toolStripSeparator3
             // 

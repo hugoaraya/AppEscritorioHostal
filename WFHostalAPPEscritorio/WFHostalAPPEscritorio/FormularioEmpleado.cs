@@ -50,11 +50,11 @@ namespace WFHostalAPPEscritorio
         //    formulario.ShowDialog();
         //}
 
-        private void mantenedorComedorToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            MantenedorComedor formulario = new MantenedorComedor();
-            formulario.ShowDialog();
-        }
+        //private void mantenedorComedorToolStripMenuItem_Click(object sender, EventArgs e)
+        //{
+        //    MantenedorComedor formulario = new MantenedorComedor();
+        //    formulario.ShowDialog();
+        //}
 
         private void mantenedorFacturasToolStripMenuItem_Click(object sender, EventArgs e)
         {
