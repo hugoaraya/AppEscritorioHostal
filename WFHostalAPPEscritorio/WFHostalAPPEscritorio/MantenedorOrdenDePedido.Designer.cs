@@ -35,6 +35,7 @@
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnTodas = new System.Windows.Forms.Button();
             this.lbMsg = new System.Windows.Forms.Label();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOP)).BeginInit();
             this.SuspendLayout();
@@ -103,11 +104,22 @@
             this.lbMsg.TabIndex = 4;
             this.lbMsg.Text = "*";
             // 
+            // btnCancel
+            // 
+            this.btnCancel.Location = new System.Drawing.Point(50, 285);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.TabIndex = 5;
+            this.btnCancel.Text = "Cancelar";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
             // MantenedorOrdenDePedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(703, 363);
+            this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.lbMsg);
             this.Controls.Add(this.btnTodas);
             this.Controls.Add(this.btnBuscar);
@@ -132,5 +144,6 @@
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnTodas;
         private System.Windows.Forms.Label lbMsg;
+        private System.Windows.Forms.Button btnCancel;
     }
 }
