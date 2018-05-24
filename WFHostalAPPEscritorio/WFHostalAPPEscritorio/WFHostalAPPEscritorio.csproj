@@ -89,6 +89,8 @@
     <Compile Include="Clases\ManEmpleado.cs" />
     <Compile Include="Clases\ManEmpresa.cs" />
     <Compile Include="Clases\ManHuesped.cs" />
+    <Compile Include="Clases\ManOrdenPedido.cs" />
+    <Compile Include="Clases\ManProveedor.cs" />
     <Compile Include="Clases\ManUsuario.cs" />
     <Compile Include="Clases\MetodosAPP.cs" />
     <Compile Include="FormularioAdmin.cs">
@@ -177,6 +179,12 @@
     <Compile Include="RegistrarEmpresa.Designer.cs">
       <DependentUpon>RegistrarEmpresa.cs</DependentUpon>
     </Compile>
+    <Compile Include="RegistrarProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistrarProveedor.Designer.cs">
+      <DependentUpon>RegistrarProveedor.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FormularioAdmin.resx">
       <DependentUpon>FormularioAdmin.cs</DependentUpon>
     </EmbeddedResource>
@@ -188,6 +196,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MantenedorOrdenDePedido.resx">
       <DependentUpon>MantenedorOrdenDePedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MantenedorProveedores.resx">
+      <DependentUpon>MantenedorProveedores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RegistrarEmpleado.resx">
       <DependentUpon>RegistrarEmpleado.cs</DependentUpon>
@@ -213,6 +224,9 @@
     </Compile>
     <EmbeddedResource Include="RegistrarEmpresa.resx">
       <DependentUpon>RegistrarEmpresa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegistrarProveedor.resx">
+      <DependentUpon>RegistrarProveedor.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

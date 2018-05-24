@@ -34,7 +34,7 @@ namespace WFHostalAPPEscritorio
         {
             if (txRut.Text.Trim() == "")
             {
-                lbMsg.Text = "Asegúrese de ingresar RUT sin DV";
+                lbMsg.Text = "Asegúrese de ingresar RUT";
                 txRut.Focus();
             }
             else
@@ -134,8 +134,6 @@ namespace WFHostalAPPEscritorio
             {
                 try
                 {
-
-
                     con.Abrir();
                     OracleCommand cmd = new OracleCommand("UPDATE EMPRESA SET NOMBRE= '" + txNombre.Text + "', DIRECCION= '"+txDireccion+"', TELEFONO= '"+txTelefono+"', CORREO= '"+txCorreo+"' WHERE RUT= '"+txRut.Text+"'", con.con);
                     cmd.ExecuteNonQuery();

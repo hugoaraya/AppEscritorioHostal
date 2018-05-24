@@ -32,11 +32,11 @@ namespace WFHostalAPPEscritorio
             formulario.ShowDialog();
         }
 
-        private void mantenedorHuespedesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            MantenedorHuespedes formulario = new MantenedorHuespedes();
-            formulario.ShowDialog();
-        }
+        //private void mantenedorHuespedesToolStripMenuItem_Click(object sender, EventArgs e)
+        //{
+        //    MantenedorHuespedes formulario = new MantenedorHuespedes();
+        //    formulario.ShowDialog();
+        //}
 
         private void mantenedorOrdenDeServiciosToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -44,11 +44,11 @@ namespace WFHostalAPPEscritorio
             formulario.ShowDialog();
         }
 
-        private void mantenedorHabitaciónToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            MantenedorHabitacion formulario = new MantenedorHabitacion();
-            formulario.ShowDialog();
-        }
+        //private void mantenedorHabitaciónToolStripMenuItem_Click(object sender, EventArgs e)
+        //{
+        //    MantenedorHabitacion formulario = new MantenedorHabitacion();
+        //    formulario.ShowDialog();
+        //}
 
         private void mantenedorComedorToolStripMenuItem_Click(object sender, EventArgs e)
         {

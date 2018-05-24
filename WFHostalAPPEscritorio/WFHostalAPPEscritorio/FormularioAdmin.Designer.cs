@@ -56,9 +56,9 @@
             this.mantenedorProveedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.moduloAdministradorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mantenedorEmpleadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.registrarEmpleadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.picBLogo = new System.Windows.Forms.PictureBox();
             this.LbBienvenida = new System.Windows.Forms.Label();
-            this.registrarEmpleadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBLogo)).BeginInit();
             this.SuspendLayout();
@@ -115,33 +115,31 @@
             // registrarEmpresaToolStripMenuItem
             // 
             this.registrarEmpresaToolStripMenuItem.Name = "registrarEmpresaToolStripMenuItem";
-            this.registrarEmpresaToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.registrarEmpresaToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
             this.registrarEmpresaToolStripMenuItem.Text = "Registrar Empresa";
             this.registrarEmpresaToolStripMenuItem.Click += new System.EventHandler(this.registrarEmpresaToolStripMenuItem_Click);
             // 
             // mantenedorEmpresaToolStripMenuItem
             // 
             this.mantenedorEmpresaToolStripMenuItem.Name = "mantenedorEmpresaToolStripMenuItem";
-            this.mantenedorEmpresaToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.mantenedorEmpresaToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
             this.mantenedorEmpresaToolStripMenuItem.Text = "Mantenedor Empresa";
             this.mantenedorEmpresaToolStripMenuItem.Click += new System.EventHandler(this.mantenedorEmpresaToolStripMenuItem_Click);
             // 
             // mantenedorHuespedesToolStripMenuItem
             // 
             this.mantenedorHuespedesToolStripMenuItem.Name = "mantenedorHuespedesToolStripMenuItem";
-            this.mantenedorHuespedesToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
-            this.mantenedorHuespedesToolStripMenuItem.Text = "Mantenedor Huéspedes";
-            this.mantenedorHuespedesToolStripMenuItem.Click += new System.EventHandler(this.mantenedorHuespedesToolStripMenuItem_Click);
+            this.mantenedorHuespedesToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(197, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(184, 6);
             // 
             // generarFacturasToolStripMenuItem
             // 
             this.generarFacturasToolStripMenuItem.Name = "generarFacturasToolStripMenuItem";
-            this.generarFacturasToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.generarFacturasToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
             this.generarFacturasToolStripMenuItem.Text = "Generar Facturas";
             // 
             // moduloHostalToolStripMenuItem
@@ -181,8 +179,8 @@
             // 
             this.mantenedorHabitaciónToolStripMenuItem.Name = "mantenedorHabitaciónToolStripMenuItem";
             this.mantenedorHabitaciónToolStripMenuItem.Size = new System.Drawing.Size(240, 22);
-            this.mantenedorHabitaciónToolStripMenuItem.Text = "Mantenedor Habitación";
-            this.mantenedorHabitaciónToolStripMenuItem.Click += new System.EventHandler(this.mantenedorHabitaciónToolStripMenuItem_Click);
+            this.mantenedorHabitaciónToolStripMenuItem.Text = "Ingresar Proveedor";
+            this.mantenedorHabitaciónToolStripMenuItem.Click += new System.EventHandler(this.mantenedorHabitaciónToolStripMenuItem_Click_1);
             // 
             // mantenedorComedorToolStripMenuItem
             // 
@@ -277,6 +275,13 @@
             this.mantenedorEmpleadosToolStripMenuItem.Text = "Mantenedor Empleados";
             this.mantenedorEmpleadosToolStripMenuItem.Click += new System.EventHandler(this.mantenedorEmpleadosToolStripMenuItem_Click);
             // 
+            // registrarEmpleadoToolStripMenuItem
+            // 
+            this.registrarEmpleadoToolStripMenuItem.Name = "registrarEmpleadoToolStripMenuItem";
+            this.registrarEmpleadoToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.registrarEmpleadoToolStripMenuItem.Text = "Registrar Empleado";
+            this.registrarEmpleadoToolStripMenuItem.Click += new System.EventHandler(this.registrarEmpleadoToolStripMenuItem_Click);
+            // 
             // picBLogo
             // 
             this.picBLogo.Image = global::WFHostalAPPEscritorio.Properties.Resources.logo_hostal;
@@ -297,13 +302,6 @@
             this.LbBienvenida.Text = "label1";
             this.LbBienvenida.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.LbBienvenida.Click += new System.EventHandler(this.LbBienvenida_Click);
-            // 
-            // registrarEmpleadoToolStripMenuItem
-            // 
-            this.registrarEmpleadoToolStripMenuItem.Name = "registrarEmpleadoToolStripMenuItem";
-            this.registrarEmpleadoToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
-            this.registrarEmpleadoToolStripMenuItem.Text = "Registrar Empleado";
-            this.registrarEmpleadoToolStripMenuItem.Click += new System.EventHandler(this.registrarEmpleadoToolStripMenuItem_Click);
             // 
             // FormularioAdmin
             // 

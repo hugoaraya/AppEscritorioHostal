@@ -57,9 +57,11 @@ C:\Users\Nibsa\Documents\GitHub\AppEscritorioHostal\WFHostalAPPEscritorio\WFHost
 C:\Users\Nibsa\Documents\GitHub\AppEscritorioHostal\WFHostalAPPEscritorio\WFHostalAPPEscritorio\obj\x86\Debug\WFHostalAPPEscritorio.Login.resources
 C:\Users\Nibsa\Documents\GitHub\AppEscritorioHostal\WFHostalAPPEscritorio\WFHostalAPPEscritorio\obj\x86\Debug\WFHostalAPPEscritorio.MantenedorEmpleados.resources
 C:\Users\Nibsa\Documents\GitHub\AppEscritorioHostal\WFHostalAPPEscritorio\WFHostalAPPEscritorio\obj\x86\Debug\WFHostalAPPEscritorio.MantenedorEmpresa.resources
-C:\Users\Nibsa\Documents\GitHub\AppEscritorioHostal\WFHostalAPPEscritorio\WFHostalAPPEscritorio\obj\x86\Debug\WFHostalAPPEscritorio.MantenedorHuespedes.resources
 C:\Users\Nibsa\Documents\GitHub\AppEscritorioHostal\WFHostalAPPEscritorio\WFHostalAPPEscritorio\obj\x86\Debug\WFHostalAPPEscritorio.MantenedorUsuarios.resources
 C:\Users\Nibsa\Documents\GitHub\AppEscritorioHostal\WFHostalAPPEscritorio\WFHostalAPPEscritorio\obj\x86\Debug\WFHostalAPPEscritorio.Properties.Resources.resources
 C:\Users\Nibsa\Documents\GitHub\AppEscritorioHostal\WFHostalAPPEscritorio\WFHostalAPPEscritorio\obj\x86\Debug\WFHostalAPPEscritorio.RegistrarEmpresa.resources
 C:\Users\Nibsa\Documents\GitHub\AppEscritorioHostal\WFHostalAPPEscritorio\WFHostalAPPEscritorio\obj\x86\Debug\WFHostalAPPEscritorio.csproj.GenerateResource.Cache
 C:\Users\Nibsa\Documents\GitHub\AppEscritorioHostal\WFHostalAPPEscritorio\WFHostalAPPEscritorio\obj\x86\Debug\WFHostalAPPEscritorio.Ingresar_Empleado.resources
+C:\Users\Nibsa\Documents\GitHub\AppEscritorioHostal\WFHostalAPPEscritorio\WFHostalAPPEscritorio\obj\x86\Debug\WFHostalAPPEscritorio.MantenedorOrdenDePedido.resources
+C:\Users\Nibsa\Documents\GitHub\AppEscritorioHostal\WFHostalAPPEscritorio\WFHostalAPPEscritorio\obj\x86\Debug\WFHostalAPPEscritorio.MantenedorProveedores.resources
+C:\Users\Nibsa\Documents\GitHub\AppEscritorioHostal\WFHostalAPPEscritorio\WFHostalAPPEscritorio\obj\x86\Debug\WFHostalAPPEscritorio.RegistrarProveedor.resources

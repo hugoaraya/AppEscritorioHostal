@@ -122,12 +122,12 @@
             this.mantenedorEmpresaToolStripMenuItem.Text = "Mantenedor Empresa";
             this.mantenedorEmpresaToolStripMenuItem.Click += new System.EventHandler(this.mantenedorEmpresaToolStripMenuItem_Click);
             // 
-            // mantenedorHuespedesToolStripMenuItem
-            // 
-            this.mantenedorHuespedesToolStripMenuItem.Name = "mantenedorHuespedesToolStripMenuItem";
-            this.mantenedorHuespedesToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
-            this.mantenedorHuespedesToolStripMenuItem.Text = "Mantenedor Huéspedes";
-            this.mantenedorHuespedesToolStripMenuItem.Click += new System.EventHandler(this.mantenedorHuespedesToolStripMenuItem_Click);
+            //// mantenedorHuespedesToolStripMenuItem
+            //// 
+            //this.mantenedorHuespedesToolStripMenuItem.Name = "mantenedorHuespedesToolStripMenuItem";
+            //this.mantenedorHuespedesToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            //this.mantenedorHuespedesToolStripMenuItem.Text = "Mantenedor Huéspedes";
+            //this.mantenedorHuespedesToolStripMenuItem.Click += new System.EventHandler(this.mantenedorHuespedesToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
@@ -174,10 +174,10 @@
             // 
             // mantenedorHabitaciónToolStripMenuItem
             // 
-            this.mantenedorHabitaciónToolStripMenuItem.Name = "mantenedorHabitaciónToolStripMenuItem";
-            this.mantenedorHabitaciónToolStripMenuItem.Size = new System.Drawing.Size(240, 22);
-            this.mantenedorHabitaciónToolStripMenuItem.Text = "Mantenedor Habitación";
-            this.mantenedorHabitaciónToolStripMenuItem.Click += new System.EventHandler(this.mantenedorHabitaciónToolStripMenuItem_Click);
+            //this.mantenedorHabitaciónToolStripMenuItem.Name = "mantenedorHabitaciónToolStripMenuItem";
+            //this.mantenedorHabitaciónToolStripMenuItem.Size = new System.Drawing.Size(240, 22);
+            //this.mantenedorHabitaciónToolStripMenuItem.Text = "Mantenedor Habitación";
+            //this.mantenedorHabitaciónToolStripMenuItem.Click += new System.EventHandler(this.mantenedorHabitaciónToolStripMenuItem_Click);
             // 
             // mantenedorComedorToolStripMenuItem
             // 
