@@ -136,8 +136,6 @@ namespace WFHostalAPPEscritorio
             int pTELEFONO = int.Parse(txTelefono.Text);
             string pCORREO = txCorreo.Text;
 
-            try
-            {
                 using (EntitiesHostal con = new EntitiesHostal())
                 {
                     var test = con.EMPRESA.Where(x => x.RUT == pRUT).FirstOrDefault();
@@ -147,17 +145,18 @@ namespace WFHostalAPPEscritorio
                     test.DIRECCION = pDIRECC;
                     test.TELEFONO = pTELEFONO;
                     test.CORREO = pCORREO;
-                    con.SaveChanges();
+                    if (con.SaveChanges() > 0)
+                    {
+                        lbMsg.Text = "Registro Actualizado";
+                    }
+                    else
+                    {
+                        Console.Write("PREOBLEMAS AL ACTUALIZAR:" + e);
+                        lbMsg.Text = "ERROR AL ACTUALIZAR DATOS";
+                    }
+                    
                 }
-            }
-            catch (Exception e)
-            {
-                Console.Write("PREOBLEMAS AL ACTUALIZAR:"+e);
-                lbMsg.Text = "ERROR AL ACTUALIZAR DATOS";
-            }
-
-
-
+            
         }
 
         private void txRut_TextChanged(object sender, EventArgs e)
