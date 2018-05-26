@@ -67,7 +67,7 @@
             // lblContra
             // 
             this.lblContra.AutoSize = true;
-            this.lblContra.Location = new System.Drawing.Point(54, 180);
+            this.lblContra.Location = new System.Drawing.Point(64, 180);
             this.lblContra.Name = "lblContra";
             this.lblContra.Size = new System.Drawing.Size(64, 13);
             this.lblContra.TabIndex = 6;
@@ -76,11 +76,11 @@
             // lblUsuario
             // 
             this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Location = new System.Drawing.Point(55, 144);
+            this.lblUsuario.Location = new System.Drawing.Point(27, 144);
             this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(46, 13);
+            this.lblUsuario.Size = new System.Drawing.Size(105, 13);
             this.lblUsuario.TabIndex = 5;
-            this.lblUsuario.Text = "Usuario:";
+            this.lblUsuario.Text = "Usuario / Rut sin dv:";
             // 
             // lbMsg
             // 

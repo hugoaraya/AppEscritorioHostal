@@ -6,7 +6,7 @@ using DAO;
 using Oracle.DataAccess.Client;
 using System.Linq;
 using System.Collections.Generic;
-
+using System.Data.OracleClient;
 
 namespace WFHostalAPPEscritorio
 {
@@ -25,6 +25,7 @@ namespace WFHostalAPPEscritorio
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             txRut.Text = "";
+            txtDv.Text = "";
             txNombre.Text = "";
             txDireccion.Text = "";
             txTelefono.Text = "";
@@ -129,51 +130,34 @@ namespace WFHostalAPPEscritorio
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            Conectar conexion = new Conectar();
-            conexion.Abrir();
             int pRUT = int.Parse(txRut.Text);
             string pNOMBRE = txNombre.Text;
+            string pDIRECC = txDireccion.Text;
+            int pTELEFONO = int.Parse(txTelefono.Text);
+            string pCORREO = txCorreo.Text;
 
-            OracleDataAdapter da = new OracleDataAdapter();
-            OracleCommand cmd;
-            OracleParameter parm;
-
-            // Create the SelectCommand.
-            
-            cmd = new OracleCommand("SELECT * FROM EMPRESA " +
-                                 "WHERE RUT = pRUT", conexion.con);
-
-            cmd.Parameters.Add("pRUT", OracleDbType.Int32, 10);
-
-
-            da.SelectCommand = cmd;
-
-
-            //string pDV = txtDv.Text;
-            
-            //string DIRECCION = txDireccion.Text;
-            //int TELEFONO
-            
-
+            try
+            {
+                using (EntitiesHostal con = new EntitiesHostal())
+                {
+                    var test = con.EMPRESA.Where(x => x.RUT == pRUT).FirstOrDefault();
+                    Console.Write(test);
+                    Console.Write(test.NOMBRE.ToString());
+                    test.NOMBRE = pNOMBRE;
+                    test.DIRECCION = pDIRECC;
+                    test.TELEFONO = pTELEFONO;
+                    test.CORREO = pCORREO;
+                    con.SaveChanges();
+                }
+            }
+            catch (Exception e)
+            {
+                Console.Write("PREOBLEMAS AL ACTUALIZAR:"+e);
+                lbMsg.Text = "ERROR AL ACTUALIZAR DATOS";
+            }
 
 
-            // Create the UpdateCommand.
-            //IDEMPRESA,RUT,DV,NOMBRE,DIRECCION,TELEFONO,USUARIO_ID,CORREO
-            cmd = new OracleCommand("UPDATE EMPRESA SET NOMBRE = pNOMBRE " +
-                                 "WHERE RUT = pRUT", conexion.con);
 
-            cmd.Parameters.Add("pRUT", OracleDbType.Int32, 10, "RUT");
-            cmd.Parameters.Add("pNOMBRE", OracleDbType.NVarchar2, 50, "NOMBRE");
-
-            parm = cmd.Parameters.Add("pRUT", OracleDbType.Int32, 10, "RUT");
-            parm.SourceVersion = DataRowVersion.Original;
-
-            da.UpdateCommand = cmd;
-
-            cmd.ExecuteNonQuery();                
-
-            lbMsg.Text = "OK update";
-            conexion.Cerrar();
         }
 
         private void txRut_TextChanged(object sender, EventArgs e)
