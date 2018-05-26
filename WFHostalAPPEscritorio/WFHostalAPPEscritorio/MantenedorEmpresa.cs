@@ -4,6 +4,9 @@ using System.Windows.Forms;
 using WFHostalAPPEscritorio.Clases;
 using DAO;
 using Oracle.DataAccess.Client;
+using System.Linq;
+using System.Collections.Generic;
+
 
 namespace WFHostalAPPEscritorio
 {
@@ -42,6 +45,7 @@ namespace WFHostalAPPEscritorio
                 try
                 {
                     ManEmpresa man = new ManEmpresa();
+                    Console.Write(man.ToString());
                     DataTable dt = man.EmpresaXRut(txRut.Text.Trim());
                     dgvEmpresa.DataSource = dt;
                     if (dt == null)
@@ -99,6 +103,7 @@ namespace WFHostalAPPEscritorio
         private void MantenedorEmpresa_Load(object sender, EventArgs e)
         {
             LlenarGrilla();
+            txtDv.Enabled = false;
         }
 
         //Validar que campos  sean numericos
@@ -124,28 +129,51 @@ namespace WFHostalAPPEscritorio
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            Conectar con = new Conectar();
-            if (txRut.Text.Trim() == "")
-            {
-                lbMsg.Text = "Asegúrese de ingresar RUT sin DV";
-                txRut.Focus();
-            }
-            else
-            {
-                try
-                {
-                    con.Abrir();
-                    OracleCommand cmd = new OracleCommand("UPDATE EMPRESA SET NOMBRE= '" + txNombre.Text + "', DIRECCION= '"+txDireccion+"', TELEFONO= '"+txTelefono+"', CORREO= '"+txCorreo+"' WHERE RUT= '"+txRut.Text+"'", con.con);
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show("Actualización exitosa");
-                    con.Cerrar();
-                }
-                catch
-                {
-                    MessageBox.Show("Error:");
-                    con.Cerrar();
-                }
-            }
+            Conectar conexion = new Conectar();
+            conexion.Abrir();
+            int pRUT = int.Parse(txRut.Text);
+            string pNOMBRE = txNombre.Text;
+
+            OracleDataAdapter da = new OracleDataAdapter();
+            OracleCommand cmd;
+            OracleParameter parm;
+
+            // Create the SelectCommand.
+            
+            cmd = new OracleCommand("SELECT * FROM EMPRESA " +
+                                 "WHERE RUT = pRUT", conexion.con);
+
+            cmd.Parameters.Add("pRUT", OracleDbType.Int32, 10);
+
+
+            da.SelectCommand = cmd;
+
+
+            //string pDV = txtDv.Text;
+            
+            //string DIRECCION = txDireccion.Text;
+            //int TELEFONO
+            
+
+
+
+            // Create the UpdateCommand.
+            //IDEMPRESA,RUT,DV,NOMBRE,DIRECCION,TELEFONO,USUARIO_ID,CORREO
+            cmd = new OracleCommand("UPDATE EMPRESA SET NOMBRE = pNOMBRE " +
+                                 "WHERE RUT = pRUT", conexion.con);
+
+            cmd.Parameters.Add("pRUT", OracleDbType.Int32, 10, "RUT");
+            cmd.Parameters.Add("pNOMBRE", OracleDbType.NVarchar2, 50, "NOMBRE");
+
+            parm = cmd.Parameters.Add("pRUT", OracleDbType.Int32, 10, "RUT");
+            parm.SourceVersion = DataRowVersion.Original;
+
+            da.UpdateCommand = cmd;
+
+            cmd.ExecuteNonQuery();                
+
+            lbMsg.Text = "OK update";
+            conexion.Cerrar();
         }
 
         private void txRut_TextChanged(object sender, EventArgs e)

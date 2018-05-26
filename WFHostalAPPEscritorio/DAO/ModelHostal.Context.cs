@@ -45,7 +45,7 @@ namespace DAO
         public virtual DbSet<PROVEEDOR> PROVEEDOR { get; set; }
         public virtual DbSet<RECEPCION_PRODUCTO> RECEPCION_PRODUCTO { get; set; }
         public virtual DbSet<SERVICIO> SERVICIO { get; set; }
-        public virtual DbSet<USUARIO> TIPO_USUARIO { get; set; }
+        public virtual DbSet<TIPO_USUARIO> TIPO_USUARIO { get; set; }
         public virtual DbSet<USUARIO> USUARIO { get; set; }
     }
 }

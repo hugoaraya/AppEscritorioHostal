@@ -66,3 +66,17 @@ C:\Users\Nibsa\Documents\GitHub\AppEscritorioHostal\WFHostalAPPEscritorio\WFHost
 C:\Users\Nibsa\Documents\GitHub\AppEscritorioHostal\WFHostalAPPEscritorio\WFHostalAPPEscritorio\obj\x86\Debug\WFHostalAPPEscritorio.MantenedorProveedores.resources
 C:\Users\Nibsa\Documents\GitHub\AppEscritorioHostal\WFHostalAPPEscritorio\WFHostalAPPEscritorio\obj\x86\Debug\WFHostalAPPEscritorio.RegistrarProveedor.resources
 C:\Users\Nibsa\Documents\GitHub\AppEscritorioHostal\WFHostalAPPEscritorio\WFHostalAPPEscritorio\obj\x86\Debug\WFHostalAPPEscritorio.MantenedorHuespedes.resources
+C:\Users\Hugo\Desktop\GIT\AppEscritorioHostal\WFHostalAPPEscritorio\WFHostalAPPEscritorio\bin\x86\Debug\DAO.dll
+C:\Users\Hugo\Desktop\GIT\AppEscritorioHostal\WFHostalAPPEscritorio\WFHostalAPPEscritorio\bin\x86\Debug\EntityFramework.dll
+C:\Users\Hugo\Desktop\GIT\AppEscritorioHostal\WFHostalAPPEscritorio\WFHostalAPPEscritorio\bin\x86\Debug\EntityFramework.SqlServer.dll
+C:\Users\Hugo\Desktop\GIT\AppEscritorioHostal\WFHostalAPPEscritorio\WFHostalAPPEscritorio\bin\x86\Debug\Oracle.ManagedDataAccess.dll
+C:\Users\Hugo\Desktop\GIT\AppEscritorioHostal\WFHostalAPPEscritorio\WFHostalAPPEscritorio\bin\x86\Debug\Oracle.ManagedDataAccess.EntityFramework.dll
+C:\Users\Hugo\Desktop\GIT\AppEscritorioHostal\WFHostalAPPEscritorio\WFHostalAPPEscritorio\bin\x86\Debug\DAO.pdb
+C:\Users\Hugo\Desktop\GIT\AppEscritorioHostal\WFHostalAPPEscritorio\WFHostalAPPEscritorio\bin\x86\Debug\EntityFramework.xml
+C:\Users\Hugo\Desktop\GIT\AppEscritorioHostal\WFHostalAPPEscritorio\WFHostalAPPEscritorio\bin\x86\Debug\EntityFramework.SqlServer.xml
+C:\Users\Hugo\Desktop\GIT\AppEscritorioHostal\WFHostalAPPEscritorio\WFHostalAPPEscritorio\obj\x86\Debug\WFHostalAPPEscritorio.MantenedorHuespedes.resources
+C:\Users\Hugo\Desktop\GIT\AppEscritorioHostal\WFHostalAPPEscritorio\WFHostalAPPEscritorio\obj\x86\Debug\WFHostalAPPEscritorio.MantenedorOrdenDePedido.resources
+C:\Users\Hugo\Desktop\GIT\AppEscritorioHostal\WFHostalAPPEscritorio\WFHostalAPPEscritorio\obj\x86\Debug\WFHostalAPPEscritorio.MantenedorProveedores.resources
+C:\Users\Hugo\Desktop\GIT\AppEscritorioHostal\WFHostalAPPEscritorio\WFHostalAPPEscritorio\obj\x86\Debug\WFHostalAPPEscritorio.Ingresar_Empleado.resources
+C:\Users\Hugo\Desktop\GIT\AppEscritorioHostal\WFHostalAPPEscritorio\WFHostalAPPEscritorio\obj\x86\Debug\WFHostalAPPEscritorio.MantenedorUsuarios.resources
+C:\Users\Hugo\Desktop\GIT\AppEscritorioHostal\WFHostalAPPEscritorio\WFHostalAPPEscritorio\obj\x86\Debug\WFHostalAPPEscritorio.RegistrarProveedor.resources
