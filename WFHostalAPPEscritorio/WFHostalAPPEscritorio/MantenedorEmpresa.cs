@@ -206,10 +206,5 @@ namespace WFHostalAPPEscritorio
             txCorreo.Text = row.Cells[5].Value.ToString();
             
         }
-
-        private void dgvEmpresa_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
     }
 }

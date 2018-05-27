@@ -24,8 +24,8 @@ namespace WFHostalAPPEscritorio
             this.dgvEmpleados.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             this.dgvEmpleados.MultiSelect = false;
             this.dgvEmpleados.ReadOnly = true;
-            ManEmpleado man = new ManEmpleado();
-            dgvEmpleados.DataSource = man.todosEmpleados();
+            ManEmpresa man = new ManEmpresa();
+            dgvEmpleados.DataSource = man.todasEmpresas();
         }
 
 
@@ -150,24 +150,6 @@ namespace WFHostalAPPEscritorio
 
                 }
             }
-        }
-
-        private void dgvEmpleados_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void dgvEmpleados_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex <= -1)
-            {
-                return;
-            }
-
-            var row = (sender as DataGridView).CurrentRow;
-            txtRut.Text = row.Cells[0].Value.ToString() + "-" + row.Cells[1].Value.ToString();
-            txtNombre.Text = row.Cells[2].Value.ToString();
-            txtApellidoEmp.Text = row.Cells[3].Value.ToString();
         }
     }
     
