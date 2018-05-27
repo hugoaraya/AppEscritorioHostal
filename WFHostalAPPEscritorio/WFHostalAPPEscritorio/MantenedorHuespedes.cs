@@ -35,11 +35,11 @@ namespace WFHostalAPPEscritorio
             try
             {
                 ManHuesped man = new ManHuesped();
-                DataTable dt = man.UnHueped(txRut.Text.Trim());
+                DataTable dt = man.UnHuesped(txRut.Text.Trim());
                 dgvHuesped.DataSource = dt;
                 if (dt == null)
                 {
-                    lbMsg.Text = "Huesped No existe";
+                    lbMsg.Text = "Huésped No existe";
                     dgvHuesped.DataSource = "";
                     txRut.Enabled = true;
                     txRut.Focus();
@@ -61,7 +61,7 @@ namespace WFHostalAPPEscritorio
                         txCorreo.Text = row[5].ToString();
                         txCargo.Text = row[6].ToString();
                         txRutEmp.Text = row[7].ToString();
-                        lbMsg.Text = "Heusped Encontrado";
+                        lbMsg.Text = "Huésped Encontrado";
                         txRut.Enabled = false;
 
                     }

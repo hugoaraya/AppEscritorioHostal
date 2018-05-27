@@ -194,11 +194,17 @@
     <EmbeddedResource Include="MantenedorEmpleados.resx">
       <DependentUpon>MantenedorEmpleados.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MantenedorFacturas.resx">
+      <DependentUpon>MantenedorFacturas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MantenedorHuespedes.resx">
       <DependentUpon>MantenedorHuespedes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MantenedorOrdenDePedido.resx">
       <DependentUpon>MantenedorOrdenDePedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MantenedorOrdenDeServicios.resx">
+      <DependentUpon>MantenedorOrdenDeServicios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MantenedorProveedores.resx">
       <DependentUpon>MantenedorProveedores.cs</DependentUpon>
