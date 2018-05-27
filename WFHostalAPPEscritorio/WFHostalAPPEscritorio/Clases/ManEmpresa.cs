@@ -18,7 +18,7 @@ namespace WFHostalAPPEscritorio.Clases
             conexion.Abrir();
             try
             {
-                OracleCommand comando = new OracleCommand("select RUT||'-'||DV as RUT,NOMBRE,DIRECCION,TELEFONO,USUARIO_ID,CORREO from empresa", conexion.con);
+                OracleCommand comando = new OracleCommand("select RUT,DV,NOMBRE,DIRECCION,TELEFONO,CORREO from empresa", conexion.con);
                 OracleDataReader lector = comando.ExecuteReader();
 
                 if (lector.HasRows)
@@ -95,7 +95,7 @@ namespace WFHostalAPPEscritorio.Clases
             Conectar conexion = new Conectar();
             conexion.Abrir();
             try {
-                OracleCommand comando = new OracleCommand("select IDEMPRESA,RUT,DV,NOMBRE,DIRECCION,TELEFONO,USUARIO_ID,CORREO from empresa where RUT = :rut", conexion.con);
+                OracleCommand comando = new OracleCommand("select RUT,DV,NOMBRE,DIRECCION,TELEFONO,CORREO from empresa where RUT = :rut", conexion.con);
                 comando.Parameters.Add(":rut", rut);
                 OracleDataReader lector = comando.ExecuteReader();
 
@@ -173,83 +173,5 @@ namespace WFHostalAPPEscritorio.Clases
                 return 0;
             }
         }
-
-        //public Boolean InsertarEmpresa(int pIDEMPRESA, int pRUT,char pDV,string pNOMBRE, string pDIRECCION, int pTELEFONO, int pUSUARIO_ID, string pCORREO) {
-
-        //    Conectar conexion = new Conectar();
-        //    conexion.Abrir();
-        //    try
-        //    {
-        //        // Create the SelectCommand.
-        //        OracleDataAdapter datAdap = new OracleDataAdapter();
-        //        OracleCommand comando = new OracleCommand("select * from empresa", conexion.con);
-        //        datAdap.SelectCommand = comando;
-
-        //        ////Create the InsertCommand.
-
-        //        comando = new OracleCommand("INSERT INTO empresa (IDEMPRESA, RUT, DV, NOMBRE, DIRECCION, TELEFONO, USUARIO_ID, CORREO) VALUES (:pIDEMPRESA, :pRUT, :pDV, :pNOMBRE, :pDIRECCION, :pTELEFONO,:pUSUARIO_ID,:pCORREO)", conexion.con);
-        //        comando.Parameters.Add("pIDEMPRESA", OracleDbType.Int32, 38, "IDEMPRESA");
-        //        comando.Parameters.Add("pRUT", OracleDbType.Int32, 38, "RUT");
-        //        comando.Parameters.Add("pDV", OracleDbType.NChar, 1, "DV");
-        //        comando.Parameters.Add("pNOMBRE", OracleDbType.NVarchar2, 50, "NOMBRE");
-        //        comando.Parameters.Add("pDIRECCION", OracleDbType.NVarchar2, 50, "DIRECCION");
-        //        comando.Parameters.Add("pTELEFONO", OracleDbType.Int32, 38, "TELEFONO");
-        //        comando.Parameters.Add("pUSUARIO_ID", OracleDbType.Int32, 38, "USUARIO_ID");
-        //        comando.Parameters.Add("pCORREO", OracleDbType.NVarchar2, 50, "CORREO");
-        //        datAdap.InsertCommand = comando;
-        //        Console.Write("asdasdasd" + comando.Parameters.ToString());
-        //        if (datAdap.InsertCommand.ExecuteNonQuery() > 0)
-        //        {
-        //            conexion.Cerrar();
-        //            return true;
-        //        }
-        //        else {
-        //            return false;
-        //        }
-
-
-        //    }
-        //    catch (OracleException ex)
-        //    {
-        //        Console.WriteLine("ERROR SQL: " + ex);
-        //        conexion.Cerrar();
-        //        return false;
-        //    }
-
-        //    catch (Exception ex)
-        //    {
-        //        Console.WriteLine("ERROR APP: " + ex);
-        //        conexion.Cerrar();
-        //        return false;
-        //    }
-        //}
-
-
-        //public void CreateOracleCommand(OracleConnection connection,
-        //                      string queryString, OracleParameter[] myParamArray)
-        //{
-
-        //    OracleCommand command = new OracleCommand(queryString, connection);
-        //    command.CommandText =
-        //        "SELECT * FROM Emp WHERE Job = :pJob AND Sal = :pSal";
-
-        //    for (int j = 0; j < myParamArray.Length; j++)
-        //        command.Parameters.Add(myParamArray[j]);
-
-        //    string message = "";
-
-        //    for (int i = 0; i < command.Parameters.Count; i++)
-        //        message += command.Parameters[i].ToString() + "\n";
-
-        //    Console.WriteLine(message);
-
-        //    using (OracleDataReader row = command.ExecuteReader())
-        //    {
-        //        while (row.Read())
-        //        {
-        //            Console.WriteLine(row.GetValue(0));
-        //        }
-        //    }
-        //}
     }
 }

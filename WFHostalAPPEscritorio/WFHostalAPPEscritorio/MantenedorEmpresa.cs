@@ -65,11 +65,11 @@ namespace WFHostalAPPEscritorio
                         {
                             DataRow row = dt.Rows[0];
 
-                            txRut.Text = row[1].ToString()+"-"+ row[2].ToString();
-                            txNombre.Text = row[3].ToString();
-                            txDireccion.Text = row[4].ToString();
-                            txTelefono.Text = row[5].ToString();
-                            txCorreo.Text = row[7].ToString();
+                            txRut.Text = row[0].ToString()+"-"+ row[1].ToString();
+                            txNombre.Text = row[2].ToString();
+                            txDireccion.Text = row[3].ToString();
+                            txTelefono.Text = row[4].ToString();
+                            txCorreo.Text = row[5].ToString();
                             txRut.Enabled = false;
                             lbMsg.Text = "Rut Encontrado";
                         }
@@ -180,8 +180,8 @@ namespace WFHostalAPPEscritorio
                     if (con.SaveChanges() > 0)
                     {
                         lbMsg.Text = "Registro Actualizado";
-                        
-                    }
+                        dgvEmpresa.DataSource = "";
+                   }
                     else
                     {
                         Console.Write("PREOBLEMAS AL ACTUALIZAR DATOS_:" + e);
@@ -190,29 +190,22 @@ namespace WFHostalAPPEscritorio
                     }
                 }
         }
-        
-        //private void dgvEmpresa_SelectionChanged(object sender, EventArgs e)
-        //{
-        //    //MessageBox.Show("FALTA PROGRAMAR ESTO");
-        //    //rellenar con seleccion de fila. ?????
-        //    //DataTable dato = 
 
-        //    //if (dato.Rows.Count == 0)
-        //    //{
-        //    //    return;
-        //    //}
-        //    //else
-        //    //{
-        //    //    DataRow row = dt.Rows[0];
+        private void dgvEmpresa_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0)
+            {
+                return;
+            }
 
-        //    //    txRut.Text = row[1].ToString();
-        //    //    txNombre.Text = row[2].ToString();
-        //    //    txDireccion.Text = row[3].ToString();
-        //    //    txTelefono.Text = row[4].ToString();
-        //    //    txCorreo.Text = row[6].ToString();
-        //    //    txRut.Enabled = false;
-        //}
-
+            var row = (sender as DataGridView).CurrentRow;
+            txRut.Text = row.Cells[0].Value.ToString() + "-" + row.Cells[1].Value.ToString();
+            txNombre.Text = row.Cells[2].Value.ToString();
+            txDireccion.Text = row.Cells[3].Value.ToString();
+            txTelefono.Text = row.Cells[4].Value.ToString();
+            txCorreo.Text = row.Cells[5].Value.ToString();
+            
+        }
     }
         
     }
