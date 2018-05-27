@@ -51,6 +51,11 @@ C:\Users\Nibsa\Documents\GitHub\AppEscritorioHostal\WFHostalAPPEscritorio\WFHost
 C:\Users\Nibsa\Documents\GitHub\AppEscritorioHostal\WFHostalAPPEscritorio\WFHostalAPPEscritorio\obj\x86\Debug\WFHostalAPPEscritorio.MantenedorProveedores.resources
 C:\Users\Nibsa\Documents\GitHub\AppEscritorioHostal\WFHostalAPPEscritorio\WFHostalAPPEscritorio\obj\x86\Debug\WFHostalAPPEscritorio.RegistrarProveedor.resources
 C:\Users\Nibsa\Documents\GitHub\AppEscritorioHostal\WFHostalAPPEscritorio\WFHostalAPPEscritorio\obj\x86\Debug\WFHostalAPPEscritorio.MantenedorHuespedes.resources
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> master
 C:\Users\Hugo\Desktop\GIT\AppEscritorioHostal\WFHostalAPPEscritorio\WFHostalAPPEscritorio\bin\x86\Debug\WFHostalAPPEscritorio.exe.config
 C:\Users\Hugo\Desktop\GIT\AppEscritorioHostal\WFHostalAPPEscritorio\WFHostalAPPEscritorio\bin\x86\Debug\WFHostalAPPEscritorio.exe
 C:\Users\Hugo\Desktop\GIT\AppEscritorioHostal\WFHostalAPPEscritorio\WFHostalAPPEscritorio\bin\x86\Debug\WFHostalAPPEscritorio.pdb
@@ -82,6 +87,7 @@ C:\Users\Hugo\Desktop\GIT\AppEscritorioHostal\WFHostalAPPEscritorio\WFHostalAPPE
 C:\Users\Hugo\Desktop\GIT\AppEscritorioHostal\WFHostalAPPEscritorio\WFHostalAPPEscritorio\obj\x86\Debug\WFHostalAPPEscritorio.pdb
 C:\Users\Nibsa\Documents\GitHub\AppEscritorioHostal\WFHostalAPPEscritorio\WFHostalAPPEscritorio\obj\x86\Debug\WFHostalAPPEscritorio.MantenedorFacturas.resources
 C:\Users\Hugo\Desktop\GIT\AppEscritorioHostal\WFHostalAPPEscritorio\WFHostalAPPEscritorio\obj\x86\Debug\WFHostalAPPEscritorio.MantenedorFacturas.resources
+<<<<<<< HEAD
 C:\Users\Nibsa\Desktop\WFHostalAPPEscritorio\WFHostalAPPEscritorio\bin\x86\Debug\WFHostalAPPEscritorio.exe.config
 C:\Users\Nibsa\Desktop\WFHostalAPPEscritorio\WFHostalAPPEscritorio\obj\x86\Debug\WFHostalAPPEscritorio.exe
 C:\Users\Nibsa\Desktop\WFHostalAPPEscritorio\WFHostalAPPEscritorio\obj\x86\Debug\WFHostalAPPEscritorio.pdb
@@ -111,3 +117,6 @@ C:\Users\Nibsa\Desktop\WFHostalAPPEscritorio\WFHostalAPPEscritorio\obj\x86\Debug
 C:\Users\Nibsa\Desktop\WFHostalAPPEscritorio\WFHostalAPPEscritorio\obj\x86\Debug\WFHostalAPPEscritorio.RegistrarEmpresa.resources
 C:\Users\Nibsa\Desktop\WFHostalAPPEscritorio\WFHostalAPPEscritorio\obj\x86\Debug\WFHostalAPPEscritorio.RegistrarProveedor.resources
 C:\Users\Nibsa\Desktop\WFHostalAPPEscritorio\WFHostalAPPEscritorio\obj\x86\Debug\WFHostalAPPEscritorio.csproj.GenerateResource.Cache
+=======
+>>>>>>> 28a324fe6967fcb88939aa96171762183695db13
+>>>>>>> master

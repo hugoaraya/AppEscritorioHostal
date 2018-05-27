@@ -4,6 +4,30 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+      <Diagram DiagramId="98960456137246079a0fe885c6a9fbc8" Name="Diagram1" ZoomLevel="48">
+        <EntityTypeShape EntityType="Model.COMEDOR" Width="1.5" PointX="7.5" PointY="26.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.EMPLEADO" Width="1.5" PointX="5.25" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.EMPRESA" Width="1.5" PointX="5.25" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ESTADO_HABITACION" Width="1.5" PointX="8.25" PointY="21.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ESTADO_ORDEN_PEDIDO" Width="1.5" PointX="8.25" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ESTADO_RECEPCION" Width="1.5" PointX="10.5" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.FACTURA" Width="1.5" PointX="9.75" PointY="13.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.HABITACION" Width="1.5" PointX="10.5" PointY="20.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.HUESPED" Width="1.5" PointX="7.5" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.HUESPED_HABITACION" Width="1.5" PointX="12.75" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.MINUTA" Width="1.5" PointX="5.25" PointY="24.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ORDEN_COMEDOR" Width="1.5" PointX="9.75" PointY="16.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ORDEN_COMPRA" Width="1.5" PointX="7.5" PointY="13.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ORDEN_HABITACION" Width="1.5" PointX="12.75" PointY="13.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ORDEN_PEDIDO" Width="1.5" PointX="10.5" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.PLATO" Width="1.5" PointX="5.25" PointY="27.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.PRODUCTO" Width="1.5" PointX="10.5" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.PROVEEDOR" Width="1.5" PointX="5.25" PointY="16.875" IsExpanded="true" />
+=======
+>>>>>>> master
       <Diagram DiagramId="cc76584767414d48ab047c34f94001c3" Name="Diagram1">
         <EntityTypeShape EntityType="Model.EMPLEADO" Width="1.5" PointX="5.25" PointY="3.125" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.EMPRESA" Width="1.5" PointX="5.25" PointY="6.5" IsExpanded="true" />
@@ -23,6 +47,10 @@
         <EntityTypeShape EntityType="Model.PLATO" Width="1.5" PointX="13.5" PointY="10.875" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.PRODUCTO" Width="1.5" PointX="10.5" PointY="10.875" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.PROVEEDOR" Width="1.5" PointX="5.25" PointY="10.375" IsExpanded="true" />
+<<<<<<< HEAD
+=======
+>>>>>>> 28a324fe6967fcb88939aa96171762183695db13
+>>>>>>> master
         <EntityTypeShape EntityType="Model.RECEPCION_PRODUCTO" Width="1.5" PointX="12.75" PointY="6.625" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.SERVICIO" Width="1.5" PointX="13.5" PointY="19.625" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.TIPO_USUARIO" Width="1.5" PointX="0.75" PointY="7.375" IsExpanded="true" />

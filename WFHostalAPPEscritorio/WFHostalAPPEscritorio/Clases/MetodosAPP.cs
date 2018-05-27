@@ -39,6 +39,11 @@ namespace WFHostalAPPEscritorio.Clases
                 ins.SaveChanges();
             }
         }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> master
 
         public Boolean validarRut(string rut)
         {
@@ -115,5 +120,9 @@ namespace WFHostalAPPEscritorio.Clases
             string clave = (pNombre.Substring(0, 4 ) + pRut.Substring(0, 4));
             return clave;
         }
+<<<<<<< HEAD
+=======
+>>>>>>> 28a324fe6967fcb88939aa96171762183695db13
+>>>>>>> master
     }
 }

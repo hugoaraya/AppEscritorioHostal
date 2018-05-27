@@ -1,3 +1,31 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+C:\Users\Hugo\Desktop\WFHostalAPPEscritorio\DAO\bin\Debug\DAO.dll.config
+C:\Users\Hugo\Desktop\WFHostalAPPEscritorio\DAO\bin\Debug\DAO.dll
+C:\Users\Hugo\Desktop\WFHostalAPPEscritorio\DAO\bin\Debug\DAO.pdb
+C:\Users\Hugo\Desktop\WFHostalAPPEscritorio\DAO\bin\Debug\EntityFramework.dll
+C:\Users\Hugo\Desktop\WFHostalAPPEscritorio\DAO\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Hugo\Desktop\WFHostalAPPEscritorio\DAO\bin\Debug\Oracle.ManagedDataAccess.dll
+C:\Users\Hugo\Desktop\WFHostalAPPEscritorio\DAO\bin\Debug\Oracle.ManagedDataAccess.EntityFramework.dll
+C:\Users\Hugo\Desktop\WFHostalAPPEscritorio\DAO\bin\Debug\EntityFramework.xml
+C:\Users\Hugo\Desktop\WFHostalAPPEscritorio\DAO\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Hugo\Desktop\WFHostalAPPEscritorio\DAO\obj\Debug\DAO.dll
+C:\Users\Hugo\Desktop\WFHostalAPPEscritorio\DAO\obj\Debug\DAO.pdb
+C:\Users\Nibsa\Documents\GitHub\AppEscritorioHostal\WFHostalAPPEscritorio\DAO\bin\Debug\DAO.dll.config
+C:\Users\Nibsa\Documents\GitHub\AppEscritorioHostal\WFHostalAPPEscritorio\DAO\bin\Debug\DAO.dll
+C:\Users\Nibsa\Documents\GitHub\AppEscritorioHostal\WFHostalAPPEscritorio\DAO\bin\Debug\DAO.pdb
+C:\Users\Nibsa\Documents\GitHub\AppEscritorioHostal\WFHostalAPPEscritorio\DAO\bin\Debug\EntityFramework.dll
+C:\Users\Nibsa\Documents\GitHub\AppEscritorioHostal\WFHostalAPPEscritorio\DAO\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Nibsa\Documents\GitHub\AppEscritorioHostal\WFHostalAPPEscritorio\DAO\bin\Debug\Oracle.ManagedDataAccess.dll
+C:\Users\Nibsa\Documents\GitHub\AppEscritorioHostal\WFHostalAPPEscritorio\DAO\bin\Debug\Oracle.ManagedDataAccess.EntityFramework.dll
+C:\Users\Nibsa\Documents\GitHub\AppEscritorioHostal\WFHostalAPPEscritorio\DAO\bin\Debug\EntityFramework.xml
+C:\Users\Nibsa\Documents\GitHub\AppEscritorioHostal\WFHostalAPPEscritorio\DAO\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Nibsa\Documents\GitHub\AppEscritorioHostal\WFHostalAPPEscritorio\DAO\obj\Debug\DAO.csprojResolveAssemblyReference.cache
+C:\Users\Nibsa\Documents\GitHub\AppEscritorioHostal\WFHostalAPPEscritorio\DAO\obj\Debug\DAO.dll
+C:\Users\Nibsa\Documents\GitHub\AppEscritorioHostal\WFHostalAPPEscritorio\DAO\obj\Debug\DAO.pdb
+=======
+>>>>>>> master
 C:\Users\Hugo\Desktop\GIT\AppEscritorioHostal\WFHostalAPPEscritorio\DAO\bin\Debug\DAO.dll.config
 C:\Users\Hugo\Desktop\GIT\AppEscritorioHostal\WFHostalAPPEscritorio\DAO\bin\Debug\DAO.dll
 C:\Users\Hugo\Desktop\GIT\AppEscritorioHostal\WFHostalAPPEscritorio\DAO\bin\Debug\DAO.pdb
@@ -9,3 +37,7 @@ C:\Users\Hugo\Desktop\GIT\AppEscritorioHostal\WFHostalAPPEscritorio\DAO\bin\Debu
 C:\Users\Hugo\Desktop\GIT\AppEscritorioHostal\WFHostalAPPEscritorio\DAO\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Hugo\Desktop\GIT\AppEscritorioHostal\WFHostalAPPEscritorio\DAO\obj\Debug\DAO.dll
 C:\Users\Hugo\Desktop\GIT\AppEscritorioHostal\WFHostalAPPEscritorio\DAO\obj\Debug\DAO.pdb
+<<<<<<< HEAD
+=======
+>>>>>>> 28a324fe6967fcb88939aa96171762183695db13
+>>>>>>> master

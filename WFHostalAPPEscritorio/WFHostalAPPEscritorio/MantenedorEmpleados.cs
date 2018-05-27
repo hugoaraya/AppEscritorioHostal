@@ -130,6 +130,7 @@ namespace WFHostalAPPEscritorio
             int pRUT = int.Parse(APP.ObtenerRut(txtRut.Text));
             string pNOMBRE = txtNombre.Text;
             string pAPE = txtApellidoEmp.Text;
+<<<<<<< HEAD
 
             using (EntitiesHostal con = new EntitiesHostal())
             {
@@ -168,6 +169,28 @@ namespace WFHostalAPPEscritorio
             txtRut.Text = row.Cells[0].Value.ToString() + "-" + row.Cells[1].Value.ToString();
             txtNombre.Text = row.Cells[2].Value.ToString();
             txtApellidoEmp.Text = row.Cells[3].Value.ToString();
+=======
+
+            using (EntitiesHostal con = new EntitiesHostal())
+            {
+                var test = con.EMPLEADO.Where(x => x.RUT == pRUT).FirstOrDefault();
+                Console.Write(test);
+                Console.Write(test.NOMBRE.ToString());
+                test.NOMBRE = pNOMBRE;
+                test.APELLIDO = pAPE;
+                if (con.SaveChanges() > 0)
+                {
+                    lblMsg.Text = "Registro Actualizado";
+
+                }
+                else
+                {
+                    Console.Write("PREOBLEMAS AL ACTUALIZAR DATOS_:" + e);
+                    lblMsg.Text = "Problemas al actualizar. Revise los datos";
+
+                }
+            }
+>>>>>>> master
         }
     }
     
