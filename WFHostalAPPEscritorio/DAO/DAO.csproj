@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{2E7C4C84-8D68-47AB-A904-EBC421E909BF}</ProjectGuid>
+    <ProjectGuid>{69353EE7-A522-48F0-AAFA-7FB88F732931}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>DAO</RootNamespace>
@@ -59,9 +59,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="COMEDOR.cs">
-      <DependentUpon>ModelHostal.tt</DependentUpon>
-    </Compile>
     <Compile Include="EMPLEADO.cs">
       <DependentUpon>ModelHostal.tt</DependentUpon>
     </Compile>
@@ -71,6 +68,9 @@
     <Compile Include="ESTADO_HABITACION.cs">
       <DependentUpon>ModelHostal.tt</DependentUpon>
     </Compile>
+    <Compile Include="ESTADO_HUESPED.cs">
+      <DependentUpon>ModelHostal.tt</DependentUpon>
+    </Compile>
     <Compile Include="ESTADO_ORDEN_PEDIDO.cs">
       <DependentUpon>ModelHostal.tt</DependentUpon>
     </Compile>
@@ -78,6 +78,9 @@
       <DependentUpon>ModelHostal.tt</DependentUpon>
     </Compile>
     <Compile Include="FACTURA.cs">
+      <DependentUpon>ModelHostal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FECHAS_RESERVAS.cs">
       <DependentUpon>ModelHostal.tt</DependentUpon>
     </Compile>
     <Compile Include="HABITACION.cs">
@@ -111,9 +114,6 @@
       <DependentUpon>ModelHostal.tt</DependentUpon>
     </Compile>
     <Compile Include="ORDEN_COMPRA.cs">
-      <DependentUpon>ModelHostal.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ORDEN_HABITACION.cs">
       <DependentUpon>ModelHostal.tt</DependentUpon>
     </Compile>
     <Compile Include="ORDEN_PEDIDO.cs">

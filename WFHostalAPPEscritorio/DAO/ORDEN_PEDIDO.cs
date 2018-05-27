@@ -25,7 +25,7 @@ namespace DAO
         public Nullable<decimal> EMPLEADO_ID { get; set; }
         public System.DateTime FECHA { get; set; }
         public Nullable<decimal> PROVEEDOR_ID { get; set; }
-        public Nullable<decimal> ESTADO_ORDEN_ID { get; set; }
+        public Nullable<decimal> ESTADO_ORDEN_PEDIDO_ID { get; set; }
     
         public virtual EMPLEADO EMPLEADO { get; set; }
         public virtual ESTADO_ORDEN_PEDIDO ESTADO_ORDEN_PEDIDO { get; set; }

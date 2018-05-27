@@ -12,28 +12,19 @@ namespace DAO
     using System;
     using System.Collections.Generic;
     
-    public partial class HUESPED
+    public partial class FECHAS_RESERVAS
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public HUESPED()
+        public FECHAS_RESERVAS()
         {
-            this.HUESPED_HABITACION = new HashSet<HUESPED_HABITACION>();
+            this.HABITACION = new HashSet<HABITACION>();
         }
     
-        public decimal IDHUESPED { get; set; }
-        public decimal RUT { get; set; }
-        public string DV { get; set; }
-        public string NOMBRE { get; set; }
-        public string APELLIDO { get; set; }
-        public decimal TELEFONO { get; set; }
-        public string CORREO { get; set; }
-        public string CARGO { get; set; }
-        public Nullable<decimal> EMPRESA_ID { get; set; }
-        public Nullable<decimal> ESTADO_HUESPED_ID { get; set; }
+        public decimal IDFECHAS_RESERVAS { get; set; }
+        public System.DateTime FECHA_INGRESO { get; set; }
+        public System.DateTime FECHA_SALIDA { get; set; }
     
-        public virtual EMPRESA EMPRESA { get; set; }
-        public virtual ESTADO_HUESPED ESTADO_HUESPED { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<HUESPED_HABITACION> HUESPED_HABITACION { get; set; }
+        public virtual ICollection<HABITACION> HABITACION { get; set; }
     }
 }

@@ -17,7 +17,7 @@ namespace DAO
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public PLATO()
         {
-            this.COMEDOR = new HashSet<COMEDOR>();
+            this.ORDEN_COMEDOR = new HashSet<ORDEN_COMEDOR>();
         }
     
         public decimal IDPLATO { get; set; }
@@ -26,6 +26,6 @@ namespace DAO
         public decimal PRECIO { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<COMEDOR> COMEDOR { get; set; }
+        public virtual ICollection<ORDEN_COMEDOR> ORDEN_COMEDOR { get; set; }
     }
 }

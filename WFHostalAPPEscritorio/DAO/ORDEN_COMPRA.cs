@@ -18,21 +18,19 @@ namespace DAO
         public ORDEN_COMPRA()
         {
             this.FACTURA = new HashSet<FACTURA>();
-            this.ORDEN_COMEDOR = new HashSet<ORDEN_COMEDOR>();
-            this.ORDEN_HABITACION = new HashSet<ORDEN_HABITACION>();
         }
     
         public decimal IDORDEN_COMPRA { get; set; }
         public decimal NRO_ORDEN { get; set; }
         public Nullable<decimal> EMPRESA_ID { get; set; }
         public System.DateTime FECHA { get; set; }
+        public Nullable<decimal> ORDEN_COMEDOR_ID { get; set; }
+        public Nullable<decimal> HUESPED_HABITACION_ID { get; set; }
     
         public virtual EMPRESA EMPRESA { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<FACTURA> FACTURA { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ORDEN_COMEDOR> ORDEN_COMEDOR { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ORDEN_HABITACION> ORDEN_HABITACION { get; set; }
+        public virtual HUESPED_HABITACION HUESPED_HABITACION { get; set; }
+        public virtual ORDEN_COMEDOR ORDEN_COMEDOR { get; set; }
     }
 }

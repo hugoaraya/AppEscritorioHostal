@@ -256,7 +256,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DAO\DAO.csproj">
-      <Project>{2e7c4c84-8d68-47ab-a904-ebc421e909bf}</Project>
+      <Project>{69353ee7-a522-48f0-aafa-7fb88f732931}</Project>
       <Name>DAO</Name>
     </ProjectReference>
   </ItemGroup>

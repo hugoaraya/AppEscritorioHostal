@@ -25,20 +25,20 @@ namespace DAO
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<COMEDOR> COMEDOR { get; set; }
         public virtual DbSet<EMPLEADO> EMPLEADO { get; set; }
         public virtual DbSet<EMPRESA> EMPRESA { get; set; }
         public virtual DbSet<ESTADO_HABITACION> ESTADO_HABITACION { get; set; }
+        public virtual DbSet<ESTADO_HUESPED> ESTADO_HUESPED { get; set; }
         public virtual DbSet<ESTADO_ORDEN_PEDIDO> ESTADO_ORDEN_PEDIDO { get; set; }
         public virtual DbSet<ESTADO_RECEPCION> ESTADO_RECEPCION { get; set; }
         public virtual DbSet<FACTURA> FACTURA { get; set; }
+        public virtual DbSet<FECHAS_RESERVAS> FECHAS_RESERVAS { get; set; }
         public virtual DbSet<HABITACION> HABITACION { get; set; }
         public virtual DbSet<HUESPED> HUESPED { get; set; }
         public virtual DbSet<HUESPED_HABITACION> HUESPED_HABITACION { get; set; }
         public virtual DbSet<MINUTA> MINUTA { get; set; }
         public virtual DbSet<ORDEN_COMEDOR> ORDEN_COMEDOR { get; set; }
         public virtual DbSet<ORDEN_COMPRA> ORDEN_COMPRA { get; set; }
-        public virtual DbSet<ORDEN_HABITACION> ORDEN_HABITACION { get; set; }
         public virtual DbSet<ORDEN_PEDIDO> ORDEN_PEDIDO { get; set; }
         public virtual DbSet<PLATO> PLATO { get; set; }
         public virtual DbSet<PRODUCTO> PRODUCTO { get; set; }

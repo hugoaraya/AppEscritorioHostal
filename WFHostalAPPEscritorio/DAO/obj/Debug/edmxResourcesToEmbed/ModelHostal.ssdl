@@ -1,14 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="Model.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="11.2" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-  <EntityType Name="COMEDOR">
-    <Key>
-      <PropertyRef Name="IDCOMEDOR" />
-    </Key>
-    <Property Name="IDCOMEDOR" Type="number" Precision="38" Scale="0" Nullable="false" />
-    <Property Name="PLATO_ID" Type="number" Precision="38" Scale="0" />
-    <Property Name="MINUTA_ID" Type="number" Precision="38" Scale="0" />
-    <Property Name="SERVICIO_ID" Type="number" Precision="38" Scale="0" />
-  </EntityType>
   <EntityType Name="EMPLEADO">
     <Key>
       <PropertyRef Name="IDEMPLEADO" />
@@ -40,12 +31,19 @@
     <Property Name="IDESTADO_HABITACION" Type="number" Precision="38" Scale="0" Nullable="false" />
     <Property Name="DESCRIPCION" Type="varchar2" MaxLength="255" Nullable="false" />
   </EntityType>
+  <EntityType Name="ESTADO_HUESPED">
+    <Key>
+      <PropertyRef Name="IDESTADO_HUESPED" />
+    </Key>
+    <Property Name="IDESTADO_HUESPED" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ESTADO" Type="varchar2" MaxLength="10" Nullable="false" />
+  </EntityType>
   <EntityType Name="ESTADO_ORDEN_PEDIDO">
     <Key>
       <PropertyRef Name="IDESTADO_ORDEN_PEDIDO" />
     </Key>
     <Property Name="IDESTADO_ORDEN_PEDIDO" Type="number" Precision="38" Scale="0" Nullable="false" />
-    <Property Name="DESCIPCION" Type="varchar2" MaxLength="255" Nullable="false" />
+    <Property Name="DESCRIPCION" Type="varchar2" MaxLength="255" Nullable="false" />
   </EntityType>
   <EntityType Name="ESTADO_RECEPCION">
     <Key>
@@ -63,6 +61,14 @@
     <Property Name="ORDEN_COMPRA_ID" Type="number" Precision="38" Scale="0" />
     <Property Name="FECHA" Type="date" Nullable="false" />
   </EntityType>
+  <EntityType Name="FECHAS_RESERVAS">
+    <Key>
+      <PropertyRef Name="IDFECHAS_RESERVAS" />
+    </Key>
+    <Property Name="IDFECHAS_RESERVAS" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="FECHA_INGRESO" Type="date" Nullable="false" />
+    <Property Name="FECHA_SALIDA" Type="date" Nullable="false" />
+  </EntityType>
   <EntityType Name="HABITACION">
     <Key>
       <PropertyRef Name="IDHABITACION" />
@@ -74,6 +80,7 @@
     <Property Name="DESCRIPCION" Type="varchar2" MaxLength="255" Nullable="false" />
     <Property Name="NOMBRE" Type="varchar2" MaxLength="50" Nullable="false" />
     <Property Name="ESTADO_HABITACION_ID" Type="number" Precision="38" Scale="0" />
+    <Property Name="FECHAS_RESERVAS_ID" Type="number" Precision="38" Scale="0" />
   </EntityType>
   <EntityType Name="HUESPED">
     <Key>
@@ -88,6 +95,7 @@
     <Property Name="CORREO" Type="varchar2" MaxLength="255" Nullable="false" />
     <Property Name="CARGO" Type="varchar2" MaxLength="50" Nullable="false" />
     <Property Name="EMPRESA_ID" Type="number" Precision="38" Scale="0" />
+    <Property Name="ESTADO_HUESPED_ID" Type="number" Precision="38" Scale="0" />
   </EntityType>
   <EntityType Name="HUESPED_HABITACION">
     <Key>
@@ -103,7 +111,7 @@
     </Key>
     <Property Name="IDMINUTA" Type="number" Precision="38" Scale="0" Nullable="false" />
     <Property Name="NOMBRE_MINUTA" Type="varchar2" MaxLength="50" Nullable="false" />
-    <Property Name="DESCIPCION" Type="varchar2" MaxLength="255" Nullable="false" />
+    <Property Name="DESCRIPCION" Type="varchar2" MaxLength="255" Nullable="false" />
     <Property Name="FECHA_INICIO" Type="date" Nullable="false" />
     <Property Name="FECHA_FIN" Type="date" Nullable="false" />
   </EntityType>
@@ -112,8 +120,9 @@
       <PropertyRef Name="IDORDEN_COMEDOR" />
     </Key>
     <Property Name="IDORDEN_COMEDOR" Type="number" Precision="38" Scale="0" Nullable="false" />
-    <Property Name="COMEDOR_ID" Type="number" Precision="38" Scale="0" />
-    <Property Name="ORDEN_COMPRA_ID" Type="number" Precision="38" Scale="0" />
+    <Property Name="PLATO_ID" Type="number" Precision="38" Scale="0" />
+    <Property Name="MINUTA_ID" Type="number" Precision="38" Scale="0" />
+    <Property Name="SERVICIO_ID" Type="number" Precision="38" Scale="0" />
   </EntityType>
   <EntityType Name="ORDEN_COMPRA">
     <Key>
@@ -123,14 +132,8 @@
     <Property Name="NRO_ORDEN" Type="number" Precision="38" Scale="0" Nullable="false" />
     <Property Name="EMPRESA_ID" Type="number" Precision="38" Scale="0" />
     <Property Name="FECHA" Type="date" Nullable="false" />
-  </EntityType>
-  <EntityType Name="ORDEN_HABITACION">
-    <Key>
-      <PropertyRef Name="IDORDEN_HABITACION" />
-    </Key>
-    <Property Name="IDORDEN_HABITACION" Type="number" Precision="38" Scale="0" Nullable="false" />
-    <Property Name="HABITACION_ID" Type="number" Precision="38" Scale="0" />
-    <Property Name="ORDEN_COMPRA_ID" Type="number" Precision="38" Scale="0" />
+    <Property Name="ORDEN_COMEDOR_ID" Type="number" Precision="38" Scale="0" />
+    <Property Name="HUESPED_HABITACION_ID" Type="number" Precision="38" Scale="0" />
   </EntityType>
   <EntityType Name="ORDEN_PEDIDO">
     <Key>
@@ -141,7 +144,7 @@
     <Property Name="EMPLEADO_ID" Type="number" Precision="38" Scale="0" />
     <Property Name="FECHA" Type="date" Nullable="false" />
     <Property Name="PROVEEDOR_ID" Type="number" Precision="38" Scale="0" />
-    <Property Name="ESTADO_ORDEN_ID" Type="number" Precision="38" Scale="0" />
+    <Property Name="ESTADO_ORDEN_PEDIDO_ID" Type="number" Precision="38" Scale="0" />
   </EntityType>
   <EntityType Name="PLATO">
     <Key>
@@ -213,51 +216,27 @@
     <Property Name="CONTRASENIA" Type="varchar2" MaxLength="255" Nullable="false" />
     <Property Name="TIPO_USUARIO_ID" Type="number" Precision="38" Scale="0" />
   </EntityType>
-  <Association Name="COMEDOR_MINUTA_FK">
-    <End Role="MINUTA" Type="Self.MINUTA" Multiplicity="0..1" />
-    <End Role="COMEDOR" Type="Self.COMEDOR" Multiplicity="*" />
+  <Association Name="COMPRA_HUESPED_HABITACION_FK">
+    <End Role="HUESPED_HABITACION" Type="Self.HUESPED_HABITACION" Multiplicity="0..1" />
+    <End Role="ORDEN_COMPRA" Type="Self.ORDEN_COMPRA" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="MINUTA">
-        <PropertyRef Name="IDMINUTA" />
+      <Principal Role="HUESPED_HABITACION">
+        <PropertyRef Name="IDHUESPED_HABITACION" />
       </Principal>
-      <Dependent Role="COMEDOR">
-        <PropertyRef Name="MINUTA_ID" />
+      <Dependent Role="ORDEN_COMPRA">
+        <PropertyRef Name="HUESPED_HABITACION_ID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="COMEDOR_ORDEN_FK">
-    <End Role="COMEDOR" Type="Self.COMEDOR" Multiplicity="0..1" />
-    <End Role="ORDEN_COMEDOR" Type="Self.ORDEN_COMEDOR" Multiplicity="*" />
+  <Association Name="COMPRA_ORDEN_COMEDOR_FK">
+    <End Role="ORDEN_COMEDOR" Type="Self.ORDEN_COMEDOR" Multiplicity="0..1" />
+    <End Role="ORDEN_COMPRA" Type="Self.ORDEN_COMPRA" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="COMEDOR">
-        <PropertyRef Name="IDCOMEDOR" />
+      <Principal Role="ORDEN_COMEDOR">
+        <PropertyRef Name="IDORDEN_COMEDOR" />
       </Principal>
-      <Dependent Role="ORDEN_COMEDOR">
-        <PropertyRef Name="COMEDOR_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="COMEDOR_PLATO_FK">
-    <End Role="PLATO" Type="Self.PLATO" Multiplicity="0..1" />
-    <End Role="COMEDOR" Type="Self.COMEDOR" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="PLATO">
-        <PropertyRef Name="IDPLATO" />
-      </Principal>
-      <Dependent Role="COMEDOR">
-        <PropertyRef Name="PLATO_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="COMEDOR_SERVICIO_FK">
-    <End Role="SERVICIO" Type="Self.SERVICIO" Multiplicity="0..1" />
-    <End Role="COMEDOR" Type="Self.COMEDOR" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="SERVICIO">
-        <PropertyRef Name="IDSERVICIO" />
-      </Principal>
-      <Dependent Role="COMEDOR">
-        <PropertyRef Name="SERVICIO_ID" />
+      <Dependent Role="ORDEN_COMPRA">
+        <PropertyRef Name="ORDEN_COMEDOR_ID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -285,7 +264,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="ESTADO_ORDEN_FK">
+  <Association Name="ESTADO_ORDEN_PEDIDO_FK">
     <End Role="ESTADO_ORDEN_PEDIDO" Type="Self.ESTADO_ORDEN_PEDIDO" Multiplicity="0..1" />
     <End Role="ORDEN_PEDIDO" Type="Self.ORDEN_PEDIDO" Multiplicity="*" />
     <ReferentialConstraint>
@@ -293,7 +272,7 @@
         <PropertyRef Name="IDESTADO_ORDEN_PEDIDO" />
       </Principal>
       <Dependent Role="ORDEN_PEDIDO">
-        <PropertyRef Name="ESTADO_ORDEN_ID" />
+        <PropertyRef Name="ESTADO_ORDEN_PEDIDO_ID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -321,6 +300,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="HABITACION_FECHAS_RESERVAS_FK">
+    <End Role="FECHAS_RESERVAS" Type="Self.FECHAS_RESERVAS" Multiplicity="0..1" />
+    <End Role="HABITACION" Type="Self.HABITACION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FECHAS_RESERVAS">
+        <PropertyRef Name="IDFECHAS_RESERVAS" />
+      </Principal>
+      <Dependent Role="HABITACION">
+        <PropertyRef Name="FECHAS_RESERVAS_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="HABITACION_HUESPED_FK">
     <End Role="HABITACION" Type="Self.HABITACION" Multiplicity="0..1" />
     <End Role="HUESPED_HABITACION" Type="Self.HUESPED_HABITACION" Multiplicity="*" />
@@ -345,6 +336,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="HUESPED_ESTADO_HUESPED_FK">
+    <End Role="ESTADO_HUESPED" Type="Self.ESTADO_HUESPED" Multiplicity="0..1" />
+    <End Role="HUESPED" Type="Self.HUESPED" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ESTADO_HUESPED">
+        <PropertyRef Name="IDESTADO_HUESPED" />
+      </Principal>
+      <Dependent Role="HUESPED">
+        <PropertyRef Name="ESTADO_HUESPED_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="HUESPED_HABITACION_FK">
     <End Role="HUESPED" Type="Self.HUESPED" Multiplicity="0..1" />
     <End Role="HUESPED_HABITACION" Type="Self.HUESPED_HABITACION" Multiplicity="*" />
@@ -357,15 +360,39 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="ORDEN_COMEDOR_FK">
-    <End Role="ORDEN_COMPRA" Type="Self.ORDEN_COMPRA" Multiplicity="0..1" />
+  <Association Name="ORDEN_COMEDOR_MINUTA_FK">
+    <End Role="MINUTA" Type="Self.MINUTA" Multiplicity="0..1" />
     <End Role="ORDEN_COMEDOR" Type="Self.ORDEN_COMEDOR" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="ORDEN_COMPRA">
-        <PropertyRef Name="IDORDEN_COMPRA" />
+      <Principal Role="MINUTA">
+        <PropertyRef Name="IDMINUTA" />
       </Principal>
       <Dependent Role="ORDEN_COMEDOR">
-        <PropertyRef Name="ORDEN_COMPRA_ID" />
+        <PropertyRef Name="MINUTA_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ORDEN_COMEDOR_PLATO_FK">
+    <End Role="PLATO" Type="Self.PLATO" Multiplicity="0..1" />
+    <End Role="ORDEN_COMEDOR" Type="Self.ORDEN_COMEDOR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PLATO">
+        <PropertyRef Name="IDPLATO" />
+      </Principal>
+      <Dependent Role="ORDEN_COMEDOR">
+        <PropertyRef Name="PLATO_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ORDEN_COMEDOR_SERVICIO_FK">
+    <End Role="SERVICIO" Type="Self.SERVICIO" Multiplicity="0..1" />
+    <End Role="ORDEN_COMEDOR" Type="Self.ORDEN_COMEDOR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SERVICIO">
+        <PropertyRef Name="IDSERVICIO" />
+      </Principal>
+      <Dependent Role="ORDEN_COMEDOR">
+        <PropertyRef Name="SERVICIO_ID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -393,30 +420,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="ORDEN_HAB_COMPRA_FK">
-    <End Role="ORDEN_COMPRA" Type="Self.ORDEN_COMPRA" Multiplicity="0..1" />
-    <End Role="ORDEN_HABITACION" Type="Self.ORDEN_HABITACION" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="ORDEN_COMPRA">
-        <PropertyRef Name="IDORDEN_COMPRA" />
-      </Principal>
-      <Dependent Role="ORDEN_HABITACION">
-        <PropertyRef Name="ORDEN_COMPRA_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="ORDEN_HABITACION_FK">
-    <End Role="HABITACION" Type="Self.HABITACION" Multiplicity="0..1" />
-    <End Role="ORDEN_HABITACION" Type="Self.ORDEN_HABITACION" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="HABITACION">
-        <PropertyRef Name="IDHABITACION" />
-      </Principal>
-      <Dependent Role="ORDEN_HABITACION">
-        <PropertyRef Name="HABITACION_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="ORDEN_PROVEEDOR_FK">
     <End Role="PROVEEDOR" Type="Self.PROVEEDOR" Multiplicity="0..1" />
     <End Role="ORDEN_PEDIDO" Type="Self.ORDEN_PEDIDO" Multiplicity="*" />
@@ -426,6 +429,18 @@
       </Principal>
       <Dependent Role="ORDEN_PEDIDO">
         <PropertyRef Name="PROVEEDOR_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PROVEEDOR_USUARIO_FK">
+    <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="0..1" />
+    <End Role="PROVEEDOR" Type="Self.PROVEEDOR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USUARIO">
+        <PropertyRef Name="IDUSUARIO" />
+      </Principal>
+      <Dependent Role="PROVEEDOR">
+        <PropertyRef Name="USUARIO_ID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -465,18 +480,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="USUARIO_PROVEEDOR_FK">
-    <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="0..1" />
-    <End Role="PROVEEDOR" Type="Self.PROVEEDOR" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="USUARIO">
-        <PropertyRef Name="IDUSUARIO" />
-      </Principal>
-      <Dependent Role="PROVEEDOR">
-        <PropertyRef Name="USUARIO_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="USUARIO_TIPO_FK">
     <End Role="TIPO_USUARIO" Type="Self.TIPO_USUARIO" Multiplicity="0..1" />
     <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="*" />
@@ -498,20 +501,20 @@
     <Parameter Name="P_PASSWORD" Type="varchar2" Mode="In" />
   </Function>
   <EntityContainer Name="ModelStoreContainer">
-    <EntitySet Name="COMEDOR" EntityType="Self.COMEDOR" Schema="HOSTAL" store:Type="Tables" />
     <EntitySet Name="EMPLEADO" EntityType="Self.EMPLEADO" Schema="HOSTAL" store:Type="Tables" />
     <EntitySet Name="EMPRESA" EntityType="Self.EMPRESA" Schema="HOSTAL" store:Type="Tables" />
     <EntitySet Name="ESTADO_HABITACION" EntityType="Self.ESTADO_HABITACION" Schema="HOSTAL" store:Type="Tables" />
+    <EntitySet Name="ESTADO_HUESPED" EntityType="Self.ESTADO_HUESPED" Schema="HOSTAL" store:Type="Tables" />
     <EntitySet Name="ESTADO_ORDEN_PEDIDO" EntityType="Self.ESTADO_ORDEN_PEDIDO" Schema="HOSTAL" store:Type="Tables" />
     <EntitySet Name="ESTADO_RECEPCION" EntityType="Self.ESTADO_RECEPCION" Schema="HOSTAL" store:Type="Tables" />
     <EntitySet Name="FACTURA" EntityType="Self.FACTURA" Schema="HOSTAL" store:Type="Tables" />
+    <EntitySet Name="FECHAS_RESERVAS" EntityType="Self.FECHAS_RESERVAS" Schema="HOSTAL" store:Type="Tables" />
     <EntitySet Name="HABITACION" EntityType="Self.HABITACION" Schema="HOSTAL" store:Type="Tables" />
     <EntitySet Name="HUESPED" EntityType="Self.HUESPED" Schema="HOSTAL" store:Type="Tables" />
     <EntitySet Name="HUESPED_HABITACION" EntityType="Self.HUESPED_HABITACION" Schema="HOSTAL" store:Type="Tables" />
     <EntitySet Name="MINUTA" EntityType="Self.MINUTA" Schema="HOSTAL" store:Type="Tables" />
     <EntitySet Name="ORDEN_COMEDOR" EntityType="Self.ORDEN_COMEDOR" Schema="HOSTAL" store:Type="Tables" />
     <EntitySet Name="ORDEN_COMPRA" EntityType="Self.ORDEN_COMPRA" Schema="HOSTAL" store:Type="Tables" />
-    <EntitySet Name="ORDEN_HABITACION" EntityType="Self.ORDEN_HABITACION" Schema="HOSTAL" store:Type="Tables" />
     <EntitySet Name="ORDEN_PEDIDO" EntityType="Self.ORDEN_PEDIDO" Schema="HOSTAL" store:Type="Tables" />
     <EntitySet Name="PLATO" EntityType="Self.PLATO" Schema="HOSTAL" store:Type="Tables" />
     <EntitySet Name="PRODUCTO" EntityType="Self.PRODUCTO" Schema="HOSTAL" store:Type="Tables" />
@@ -520,21 +523,13 @@
     <EntitySet Name="SERVICIO" EntityType="Self.SERVICIO" Schema="HOSTAL" store:Type="Tables" />
     <EntitySet Name="TIPO_USUARIO" EntityType="Self.TIPO_USUARIO" Schema="HOSTAL" store:Type="Tables" />
     <EntitySet Name="USUARIO" EntityType="Self.USUARIO" Schema="HOSTAL" store:Type="Tables" />
-    <AssociationSet Name="COMEDOR_MINUTA_FK" Association="Self.COMEDOR_MINUTA_FK">
-      <End Role="MINUTA" EntitySet="MINUTA" />
-      <End Role="COMEDOR" EntitySet="COMEDOR" />
+    <AssociationSet Name="COMPRA_HUESPED_HABITACION_FK" Association="Self.COMPRA_HUESPED_HABITACION_FK">
+      <End Role="HUESPED_HABITACION" EntitySet="HUESPED_HABITACION" />
+      <End Role="ORDEN_COMPRA" EntitySet="ORDEN_COMPRA" />
     </AssociationSet>
-    <AssociationSet Name="COMEDOR_ORDEN_FK" Association="Self.COMEDOR_ORDEN_FK">
-      <End Role="COMEDOR" EntitySet="COMEDOR" />
+    <AssociationSet Name="COMPRA_ORDEN_COMEDOR_FK" Association="Self.COMPRA_ORDEN_COMEDOR_FK">
       <End Role="ORDEN_COMEDOR" EntitySet="ORDEN_COMEDOR" />
-    </AssociationSet>
-    <AssociationSet Name="COMEDOR_PLATO_FK" Association="Self.COMEDOR_PLATO_FK">
-      <End Role="PLATO" EntitySet="PLATO" />
-      <End Role="COMEDOR" EntitySet="COMEDOR" />
-    </AssociationSet>
-    <AssociationSet Name="COMEDOR_SERVICIO_FK" Association="Self.COMEDOR_SERVICIO_FK">
-      <End Role="SERVICIO" EntitySet="SERVICIO" />
-      <End Role="COMEDOR" EntitySet="COMEDOR" />
+      <End Role="ORDEN_COMPRA" EntitySet="ORDEN_COMPRA" />
     </AssociationSet>
     <AssociationSet Name="EMPLEADO_USUARIO_FK" Association="Self.EMPLEADO_USUARIO_FK">
       <End Role="USUARIO" EntitySet="USUARIO" />
@@ -544,7 +539,7 @@
       <End Role="USUARIO" EntitySet="USUARIO" />
       <End Role="EMPRESA" EntitySet="EMPRESA" />
     </AssociationSet>
-    <AssociationSet Name="ESTADO_ORDEN_FK" Association="Self.ESTADO_ORDEN_FK">
+    <AssociationSet Name="ESTADO_ORDEN_PEDIDO_FK" Association="Self.ESTADO_ORDEN_PEDIDO_FK">
       <End Role="ESTADO_ORDEN_PEDIDO" EntitySet="ESTADO_ORDEN_PEDIDO" />
       <End Role="ORDEN_PEDIDO" EntitySet="ORDEN_PEDIDO" />
     </AssociationSet>
@@ -556,6 +551,10 @@
       <End Role="ESTADO_HABITACION" EntitySet="ESTADO_HABITACION" />
       <End Role="HABITACION" EntitySet="HABITACION" />
     </AssociationSet>
+    <AssociationSet Name="HABITACION_FECHAS_RESERVAS_FK" Association="Self.HABITACION_FECHAS_RESERVAS_FK">
+      <End Role="FECHAS_RESERVAS" EntitySet="FECHAS_RESERVAS" />
+      <End Role="HABITACION" EntitySet="HABITACION" />
+    </AssociationSet>
     <AssociationSet Name="HABITACION_HUESPED_FK" Association="Self.HABITACION_HUESPED_FK">
       <End Role="HABITACION" EntitySet="HABITACION" />
       <End Role="HUESPED_HABITACION" EntitySet="HUESPED_HABITACION" />
@@ -564,12 +563,24 @@
       <End Role="EMPRESA" EntitySet="EMPRESA" />
       <End Role="HUESPED" EntitySet="HUESPED" />
     </AssociationSet>
+    <AssociationSet Name="HUESPED_ESTADO_HUESPED_FK" Association="Self.HUESPED_ESTADO_HUESPED_FK">
+      <End Role="ESTADO_HUESPED" EntitySet="ESTADO_HUESPED" />
+      <End Role="HUESPED" EntitySet="HUESPED" />
+    </AssociationSet>
     <AssociationSet Name="HUESPED_HABITACION_FK" Association="Self.HUESPED_HABITACION_FK">
       <End Role="HUESPED" EntitySet="HUESPED" />
       <End Role="HUESPED_HABITACION" EntitySet="HUESPED_HABITACION" />
     </AssociationSet>
-    <AssociationSet Name="ORDEN_COMEDOR_FK" Association="Self.ORDEN_COMEDOR_FK">
-      <End Role="ORDEN_COMPRA" EntitySet="ORDEN_COMPRA" />
+    <AssociationSet Name="ORDEN_COMEDOR_MINUTA_FK" Association="Self.ORDEN_COMEDOR_MINUTA_FK">
+      <End Role="MINUTA" EntitySet="MINUTA" />
+      <End Role="ORDEN_COMEDOR" EntitySet="ORDEN_COMEDOR" />
+    </AssociationSet>
+    <AssociationSet Name="ORDEN_COMEDOR_PLATO_FK" Association="Self.ORDEN_COMEDOR_PLATO_FK">
+      <End Role="PLATO" EntitySet="PLATO" />
+      <End Role="ORDEN_COMEDOR" EntitySet="ORDEN_COMEDOR" />
+    </AssociationSet>
+    <AssociationSet Name="ORDEN_COMEDOR_SERVICIO_FK" Association="Self.ORDEN_COMEDOR_SERVICIO_FK">
+      <End Role="SERVICIO" EntitySet="SERVICIO" />
       <End Role="ORDEN_COMEDOR" EntitySet="ORDEN_COMEDOR" />
     </AssociationSet>
     <AssociationSet Name="ORDEN_COMPRA_EMPRESA_FK" Association="Self.ORDEN_COMPRA_EMPRESA_FK">
@@ -580,17 +591,13 @@
       <End Role="EMPLEADO" EntitySet="EMPLEADO" />
       <End Role="ORDEN_PEDIDO" EntitySet="ORDEN_PEDIDO" />
     </AssociationSet>
-    <AssociationSet Name="ORDEN_HAB_COMPRA_FK" Association="Self.ORDEN_HAB_COMPRA_FK">
-      <End Role="ORDEN_COMPRA" EntitySet="ORDEN_COMPRA" />
-      <End Role="ORDEN_HABITACION" EntitySet="ORDEN_HABITACION" />
-    </AssociationSet>
-    <AssociationSet Name="ORDEN_HABITACION_FK" Association="Self.ORDEN_HABITACION_FK">
-      <End Role="HABITACION" EntitySet="HABITACION" />
-      <End Role="ORDEN_HABITACION" EntitySet="ORDEN_HABITACION" />
-    </AssociationSet>
     <AssociationSet Name="ORDEN_PROVEEDOR_FK" Association="Self.ORDEN_PROVEEDOR_FK">
       <End Role="PROVEEDOR" EntitySet="PROVEEDOR" />
       <End Role="ORDEN_PEDIDO" EntitySet="ORDEN_PEDIDO" />
+    </AssociationSet>
+    <AssociationSet Name="PROVEEDOR_USUARIO_FK" Association="Self.PROVEEDOR_USUARIO_FK">
+      <End Role="USUARIO" EntitySet="USUARIO" />
+      <End Role="PROVEEDOR" EntitySet="PROVEEDOR" />
     </AssociationSet>
     <AssociationSet Name="RECEPCION_ESTADO_FK" Association="Self.RECEPCION_ESTADO_FK">
       <End Role="ESTADO_RECEPCION" EntitySet="ESTADO_RECEPCION" />
@@ -603,10 +610,6 @@
     <AssociationSet Name="RECEPCION_PRODUCTO_FK" Association="Self.RECEPCION_PRODUCTO_FK">
       <End Role="PRODUCTO" EntitySet="PRODUCTO" />
       <End Role="RECEPCION_PRODUCTO" EntitySet="RECEPCION_PRODUCTO" />
-    </AssociationSet>
-    <AssociationSet Name="USUARIO_PROVEEDOR_FK" Association="Self.USUARIO_PROVEEDOR_FK">
-      <End Role="USUARIO" EntitySet="USUARIO" />
-      <End Role="PROVEEDOR" EntitySet="PROVEEDOR" />
     </AssociationSet>
     <AssociationSet Name="USUARIO_TIPO_FK" Association="Self.USUARIO_TIPO_FK">
       <End Role="TIPO_USUARIO" EntitySet="TIPO_USUARIO" />

@@ -34,7 +34,11 @@ namespace WFHostalAPPEscritorio
         {
             if (txRut.Text.Trim() == "")
             {
+<<<<<<< HEAD
                 lbMsg.Text = "Asegúrese de ingresar RUT";
+=======
+                lbMsg.Text = ("Ingrese Rut Válido");
+>>>>>>> 28a324fe6967fcb88939aa96171762183695db13
                 txRut.Focus();
             }
             else
@@ -150,6 +154,13 @@ namespace WFHostalAPPEscritorio
 
         private void txRut_TextChanged(object sender, EventArgs e)
         {
+<<<<<<< HEAD
+=======
+            if (e.RowIndex <= -1)
+            {
+                return;
+            }
+>>>>>>> 28a324fe6967fcb88939aa96171762183695db13
 
         }
 
