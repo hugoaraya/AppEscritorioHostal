@@ -100,7 +100,7 @@ namespace WFHostalAPPEscritorio
                     emp.DV = APP.GenerarDV(APP.ObtenerRut(txRut.Text));
                     emp.NOMBRE = txNombre.Text;
                     emp.DIRECCION = txDireccion.Text;
-                    emp.TELEFONO = int.Parse(txTelefono.Text);
+                    emp.TELEFONO = Int64.Parse(txTelefono.Text);
                     emp.USUARIO_ID = id_usu;
                     emp.CORREO = txCorreo.Text;
                     AddEmpresa(emp);

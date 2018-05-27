@@ -165,7 +165,7 @@ namespace WFHostalAPPEscritorio
             int pRUT = int.Parse(APP.ObtenerRut(txRut.Text));
             string pNOMBRE = txNombre.Text;
             string pDIRECC = txDireccion.Text;
-            int pTELEFONO = int.Parse(txTelefono.Text);
+            Int64 pTELEFONO = Int64.Parse(txTelefono.Text);
             string pCORREO = txCorreo.Text;
 
                 using (EntitiesHostal con = new EntitiesHostal())
