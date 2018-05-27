@@ -65,7 +65,7 @@ namespace WFHostalAPPEscritorio.Clases
             }
             catch (Exception)
             {
-                Console.Write("ERROR RUUTTT");
+                Console.Write("ERROR RUT");
             }
             return validacion;
         }
@@ -85,7 +85,7 @@ namespace WFHostalAPPEscritorio.Clases
             }
             catch (Exception)
             {
-                Console.Write("ERROR RUUTTT");
+                Console.Write("ERROR RUT");
             }
             return validacion;
         }

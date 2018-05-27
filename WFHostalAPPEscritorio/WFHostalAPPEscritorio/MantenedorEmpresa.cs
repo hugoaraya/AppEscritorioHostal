@@ -38,7 +38,7 @@ namespace WFHostalAPPEscritorio
             MetodosAPP APP = new MetodosAPP();
             if (APP.validarRut(txRut.Text) == false)
             {
-                lbMsg.Text = ("Ingrese Rut Valido");
+                lbMsg.Text = ("Ingrese Rut Válido");
                 txRut.Focus();
                 return;
             }

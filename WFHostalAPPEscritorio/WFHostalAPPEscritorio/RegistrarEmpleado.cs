@@ -85,8 +85,8 @@ namespace WFHostalAPPEscritorio
                 {
                     EMPLEADO emp = new EMPLEADO();
                     emp.IDEMPLEADO = 1;
-                    emp.RUT = int.Parse(txtRutEmp.Text);
-                    emp.DV = APP.GenerarDV(txtRutEmp.Text);
+                    emp.RUT = int.Parse(APP.ObtenerRut(txtRutEmp.Text));
+                    emp.DV = APP.GenerarDV(APP.ObtenerRut(txtRutEmp.Text));
                     emp.NOMBRE = txtNombreEmp.Text;
                     emp.APELLIDO = txtApellidoEmp.Text;
                     emp.USUARIO_ID = id_empl;
