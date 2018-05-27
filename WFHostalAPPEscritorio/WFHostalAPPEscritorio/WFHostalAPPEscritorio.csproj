@@ -73,6 +73,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.OracleClient" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -203,9 +204,6 @@
     <EmbeddedResource Include="MantenedorOrdenDePedido.resx">
       <DependentUpon>MantenedorOrdenDePedido.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MantenedorOrdenDeServicios.resx">
-      <DependentUpon>MantenedorOrdenDeServicios.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="MantenedorProveedores.resx">
       <DependentUpon>MantenedorProveedores.cs</DependentUpon>
     </EmbeddedResource>
@@ -256,7 +254,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DAO\DAO.csproj">
-      <Project>{2e7c4c84-8d68-47ab-a904-ebc421e909bf}</Project>
+      <Project>{69353ee7-a522-48f0-aafa-7fb88f732931}</Project>
       <Name>DAO</Name>
     </ProjectReference>
   </ItemGroup>

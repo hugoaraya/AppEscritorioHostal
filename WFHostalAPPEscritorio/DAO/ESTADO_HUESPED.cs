@@ -12,23 +12,18 @@ namespace DAO
     using System;
     using System.Collections.Generic;
     
-    public partial class COMEDOR
+    public partial class ESTADO_HUESPED
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public COMEDOR()
+        public ESTADO_HUESPED()
         {
-            this.ORDEN_COMEDOR = new HashSet<ORDEN_COMEDOR>();
+            this.HUESPED = new HashSet<HUESPED>();
         }
     
-        public decimal IDCOMEDOR { get; set; }
-        public Nullable<decimal> PLATO_ID { get; set; }
-        public Nullable<decimal> MINUTA_ID { get; set; }
-        public Nullable<decimal> SERVICIO_ID { get; set; }
+        public decimal IDESTADO_HUESPED { get; set; }
+        public string ESTADO { get; set; }
     
-        public virtual MINUTA MINUTA { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ORDEN_COMEDOR> ORDEN_COMEDOR { get; set; }
-        public virtual PLATO PLATO { get; set; }
-        public virtual SERVICIO SERVICIO { get; set; }
+        public virtual ICollection<HUESPED> HUESPED { get; set; }
     }
 }

@@ -14,11 +14,21 @@ namespace DAO
     
     public partial class ORDEN_COMEDOR
     {
-        public decimal IDORDEN_COMEDOR { get; set; }
-        public Nullable<decimal> COMEDOR_ID { get; set; }
-        public Nullable<decimal> ORDEN_COMPRA_ID { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public ORDEN_COMEDOR()
+        {
+            this.ORDEN_COMPRA = new HashSet<ORDEN_COMPRA>();
+        }
     
-        public virtual COMEDOR COMEDOR { get; set; }
-        public virtual ORDEN_COMPRA ORDEN_COMPRA { get; set; }
+        public decimal IDORDEN_COMEDOR { get; set; }
+        public Nullable<decimal> PLATO_ID { get; set; }
+        public Nullable<decimal> MINUTA_ID { get; set; }
+        public Nullable<decimal> SERVICIO_ID { get; set; }
+    
+        public virtual MINUTA MINUTA { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ORDEN_COMPRA> ORDEN_COMPRA { get; set; }
+        public virtual PLATO PLATO { get; set; }
+        public virtual SERVICIO SERVICIO { get; set; }
     }
 }

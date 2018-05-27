@@ -18,7 +18,6 @@ namespace DAO
         public HABITACION()
         {
             this.HUESPED_HABITACION = new HashSet<HUESPED_HABITACION>();
-            this.ORDEN_HABITACION = new HashSet<ORDEN_HABITACION>();
         }
     
         public decimal IDHABITACION { get; set; }
@@ -28,11 +27,11 @@ namespace DAO
         public string DESCRIPCION { get; set; }
         public string NOMBRE { get; set; }
         public Nullable<decimal> ESTADO_HABITACION_ID { get; set; }
+        public Nullable<decimal> FECHAS_RESERVAS_ID { get; set; }
     
         public virtual ESTADO_HABITACION ESTADO_HABITACION { get; set; }
+        public virtual FECHAS_RESERVAS FECHAS_RESERVAS { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HUESPED_HABITACION> HUESPED_HABITACION { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ORDEN_HABITACION> ORDEN_HABITACION { get; set; }
     }
 }

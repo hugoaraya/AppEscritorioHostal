@@ -4,6 +4,9 @@ using System.Windows.Forms;
 using WFHostalAPPEscritorio.Clases;
 using DAO;
 using Oracle.DataAccess.Client;
+using System.Linq;
+using System.Collections.Generic;
+using System.Data.OracleClient;
 
 namespace WFHostalAPPEscritorio
 {
@@ -32,17 +35,19 @@ namespace WFHostalAPPEscritorio
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            if (txRut.Text.Trim() == "")
+            MetodosAPP APP = new MetodosAPP();
+            if (APP.validarRut(txRut.Text) == false)
             {
-                lbMsg.Text = "Asegúrese de ingresar RUT";
+                lbMsg.Text = ("Ingrese Rut Válido");
                 txRut.Focus();
+                return;
             }
             else
             {
                 try
                 {
                     ManEmpresa man = new ManEmpresa();
-                    DataTable dt = man.EmpresaXRut(txRut.Text.Trim());
+                    DataTable dt = man.EmpresaXRut(APP.ObtenerRut(txRut.Text));
                     dgvEmpresa.DataSource = dt;
                     if (dt == null)
                     {
@@ -60,11 +65,11 @@ namespace WFHostalAPPEscritorio
                         {
                             DataRow row = dt.Rows[0];
 
-                            txRut.Text = row[1].ToString();
-                            txNombre.Text = row[3].ToString();
-                            txDireccion.Text = row[4].ToString();
-                            txTelefono.Text = row[5].ToString();
-                            txCorreo.Text = row[7].ToString();
+                            txRut.Text = row[0].ToString()+"-"+ row[1].ToString();
+                            txNombre.Text = row[2].ToString();
+                            txDireccion.Text = row[3].ToString();
+                            txTelefono.Text = row[4].ToString();
+                            txCorreo.Text = row[5].ToString();
                             txRut.Enabled = false;
                             lbMsg.Text = "Rut Encontrado";
                         }
@@ -124,59 +129,88 @@ namespace WFHostalAPPEscritorio
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            Conectar con = new Conectar();
-            if (txRut.Text.Trim() == "")
+            MetodosAPP APP = new MetodosAPP();
+            if (APP.validarRut(txRut.Text) == false || txRut.Text.Length <= 3)
             {
-                lbMsg.Text = "Asegúrese de ingresar RUT sin DV";
+                lbMsg.Text = ("Ingrese Rut Valido");
                 txRut.Focus();
+                return;
             }
-            else
+            if (string.IsNullOrEmpty(txNombre.Text) || txNombre.Text.Length <= 3)
             {
-                try
-                {
-                    con.Abrir();
-                    OracleCommand cmd = new OracleCommand("UPDATE EMPRESA SET NOMBRE= '" + txNombre.Text + "', DIRECCION= '"+txDireccion+"', TELEFONO= '"+txTelefono+"', CORREO= '"+txCorreo+"' WHERE RUT= '"+txRut.Text+"'", con.con);
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show("Actualización exitosa");
-                    con.Cerrar();
-                }
-                catch
-                {
-                    MessageBox.Show("Error:");
-                    con.Cerrar();
-                }
+                lbMsg.Text = ("Ingrese la información NOMBRE +4");
+                txNombre.Focus();
+                return;
             }
+            if (string.IsNullOrEmpty(txDireccion.Text))
+            {
+                lbMsg.Text = ("Ingrese la información DIRECCIÓN");
+                txDireccion.Focus();
+                return;
+            }
+
+            if (string.IsNullOrEmpty(txTelefono.Text))
+            {
+                lbMsg.Text = ("Ingrese la información TELÉFONO");
+                txTelefono.Focus();
+                return;
+            }
+            if (APP.ValidacionEmail(txCorreo.Text) == false)
+            {
+                lbMsg.Text = ("Ingrese la información CORREO valido");
+                txCorreo.Focus();
+                return;
+            }
+
+            int pRUT = int.Parse(APP.ObtenerRut(txRut.Text));
+            string pNOMBRE = txNombre.Text;
+            string pDIRECC = txDireccion.Text;
+            int pTELEFONO = int.Parse(txTelefono.Text);
+            string pCORREO = txCorreo.Text;
+
+                using (EntitiesHostal con = new EntitiesHostal())
+                {
+                    var test = con.EMPRESA.Where(x => x.RUT == pRUT).FirstOrDefault();
+                    Console.Write(test);
+                    Console.Write(test.NOMBRE.ToString());
+                    test.NOMBRE = pNOMBRE;
+                    test.DIRECCION = pDIRECC;
+                    test.TELEFONO = pTELEFONO;
+                    test.CORREO = pCORREO;
+                    if (con.SaveChanges() > 0)
+                    {
+                        lbMsg.Text = "Registro Actualizado";
+                        dgvEmpresa.DataSource = "";
+                   }
+                    else
+                    {
+                        Console.Write("PREOBLEMAS AL ACTUALIZAR DATOS_:" + e);
+                        lbMsg.Text = "Problemas al actualizar. Revise los datos";
+                        
+                    }
+                }
         }
 
-        private void txRut_TextChanged(object sender, EventArgs e)
+        private void dgvEmpresa_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex <= -1)
+            {
+                return;
+            }
+
+            var row = (sender as DataGridView).CurrentRow;
+            txRut.Text = row.Cells[0].Value.ToString() + "-" + row.Cells[1].Value.ToString();
+            txNombre.Text = row.Cells[2].Value.ToString();
+            txDireccion.Text = row.Cells[3].Value.ToString();
+            txTelefono.Text = row.Cells[4].Value.ToString();
+            txCorreo.Text = row.Cells[5].Value.ToString();
+            
+        }
+
+        private void dgvEmpresa_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
-
-
-
-        //private void dgvEmpresa_SelectionChanged(object sender, EventArgs e)
-        //{
-        //    //MessageBox.Show("FALTA PROGRAMAR ESTO");
-        //    //rellenar con seleccion de fila. ?????
-        //    //DataTable dato = 
-
-        //    //if (dato.Rows.Count == 0)
-        //    //{
-        //    //    return;
-        //    //}
-        //    //else
-        //    //{
-        //    //    DataRow row = dt.Rows[0];
-
-        //    //    txRut.Text = row[1].ToString();
-        //    //    txNombre.Text = row[2].ToString();
-        //    //    txDireccion.Text = row[3].ToString();
-        //    //    txTelefono.Text = row[4].ToString();
-        //    //    txCorreo.Text = row[6].ToString();
-        //    //    txRut.Enabled = false;
-        //}
-
     }
         
     }

@@ -49,7 +49,7 @@ namespace WFHostalAPPEscritorio.Clases
             }
 
         }
-        public DataTable UnHuesped(string pRutH)
+        public DataTable UnHueped(string pRutH)
         {
             DataTable dt = new DataTable();
             Conectar conexion = new Conectar();

@@ -36,6 +36,7 @@
             this.lbMsg = new System.Windows.Forms.Label();
             this.picBLogo = new System.Windows.Forms.PictureBox();
             this.btnSalir = new System.Windows.Forms.Button();
+            this.btnTest = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picBLogo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -67,7 +68,7 @@
             // lblContra
             // 
             this.lblContra.AutoSize = true;
-            this.lblContra.Location = new System.Drawing.Point(54, 180);
+            this.lblContra.Location = new System.Drawing.Point(64, 180);
             this.lblContra.Name = "lblContra";
             this.lblContra.Size = new System.Drawing.Size(64, 13);
             this.lblContra.TabIndex = 6;
@@ -76,11 +77,11 @@
             // lblUsuario
             // 
             this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Location = new System.Drawing.Point(55, 144);
+            this.lblUsuario.Location = new System.Drawing.Point(27, 144);
             this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(46, 13);
+            this.lblUsuario.Size = new System.Drawing.Size(105, 13);
             this.lblUsuario.TabIndex = 5;
-            this.lblUsuario.Text = "Usuario:";
+            this.lblUsuario.Text = "Usuario / Rut sin dv:";
             // 
             // lbMsg
             // 
@@ -111,11 +112,22 @@
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
+            // btnTest
+            // 
+            this.btnTest.Location = new System.Drawing.Point(214, 12);
+            this.btnTest.Name = "btnTest";
+            this.btnTest.Size = new System.Drawing.Size(75, 23);
+            this.btnTest.TabIndex = 14;
+            this.btnTest.Text = "Test";
+            this.btnTest.UseVisualStyleBackColor = true;
+            this.btnTest.Click += new System.EventHandler(this.btnTest_Click);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(303, 290);
+            this.Controls.Add(this.btnTest);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.picBLogo);
             this.Controls.Add(this.lbMsg);
@@ -143,6 +155,7 @@
         private System.Windows.Forms.Label lbMsg;
         private System.Windows.Forms.PictureBox picBLogo;
         private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.Button btnTest;
     }
 }
 

@@ -14,11 +14,19 @@ namespace DAO
     
     public partial class HUESPED_HABITACION
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public HUESPED_HABITACION()
+        {
+            this.ORDEN_COMPRA = new HashSet<ORDEN_COMPRA>();
+        }
+    
         public decimal IDHUESPED_HABITACION { get; set; }
         public Nullable<decimal> HUESPED_ID { get; set; }
         public Nullable<decimal> HABITACION_ID { get; set; }
     
         public virtual HABITACION HABITACION { get; set; }
         public virtual HUESPED HUESPED { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ORDEN_COMPRA> ORDEN_COMPRA { get; set; }
     }
 }

@@ -48,7 +48,7 @@ namespace WFHostalAPPEscritorio.Clases
             }
         }
 
-        public DataTable OPXNumero(string numero) 
+        public DataTable OPXNumero(String numero) 
         {
             DataTable dt = new DataTable();
             Conectar conexion = new Conectar();
@@ -90,33 +90,6 @@ namespace WFHostalAPPEscritorio.Clases
 
         }
 
-        public DataTable UnaOP(string num)
-        {
-            DataTable dt = new DataTable();
-            Conectar conexion = new Conectar();
-            conexion.Abrir();
-
-            OracleCommand comando = new OracleCommand("SELECT H.RUT,H.DV,H.NOMBRE,H.APELLIDO,H.TELEFONO,H.CORREO,H.CARGO,E.RUT AS RUT_EMPRESA FROM HUESPED H JOIN EMPRESA E ON(H.EMPRESA_ID = E.IDEMPRESA) WHERE NRO_ORDEN = :num", conexion.con);
-            //Obtener información de los txt
-            comando.Parameters.Add("num", num);
-            OracleDataReader lector = comando.ExecuteReader();
-
-            if (lector.HasRows)
-            {
-                dt.Load(lector);
-                lector.Close();
-                conexion.Cerrar();
-                return dt;
-            }
-            else
-            {
-                Console.WriteLine("No rows found.");
-                Console.WriteLine("intente nuevamente.");
-                lector.Close();
-                conexion.Cerrar();
-                return null;
-            }
-        }
 
     }
 }
