@@ -51,7 +51,7 @@ namespace WFHostalAPPEscritorio
             txtApellidoEmp.Text = "";
         }
 
-
+        
 
         private void btnBuscar_Click_1(object sender, EventArgs e)
         {
@@ -85,9 +85,9 @@ namespace WFHostalAPPEscritorio
                         {
                             DataRow row = dt.Rows[0];
 
-                            txtRut.Text = row[1].ToString() + "-" + row[2].ToString();
-                            txtNombre.Text = row[3].ToString();
-                            txtApellidoEmp.Text = row[4].ToString();
+                            txtRut.Text = row[0].ToString() + "-" + row[1].ToString();
+                            txtNombre.Text = row[2].ToString();
+                            txtApellidoEmp.Text = row[3].ToString();
                             txtRut.Enabled = false;
                             lblMsg.Text = "Rut Encontrado";
                         }
@@ -103,7 +103,7 @@ namespace WFHostalAPPEscritorio
 
             }
         }
-
+    
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
@@ -159,11 +159,6 @@ namespace WFHostalAPPEscritorio
 
         private void dgvEmpleados_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            
-        }
-
-        private void dgvEmpleados_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
             if (e.RowIndex <= -1)
             {
                 return;
@@ -175,5 +170,5 @@ namespace WFHostalAPPEscritorio
             txtApellidoEmp.Text = row.Cells[3].Value.ToString();
         }
     }
-
+    
 }

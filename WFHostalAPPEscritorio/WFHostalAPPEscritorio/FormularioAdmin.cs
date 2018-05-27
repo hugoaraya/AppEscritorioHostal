@@ -113,18 +113,13 @@ namespace WFHostalAPPEscritorio
 
         private void mantenedorHabitaciónToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-          
+            RegistrarProveedor formulario = new RegistrarProveedor();
+            formulario.ShowDialog();
         }
 
         private void mantenedorComedorToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MantenedorHuespedes formulario = new MantenedorHuespedes();
-            formulario.ShowDialog();
-        }
-
-        private void registrarProveedorToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            RegistrarProveedor formulario = new RegistrarProveedor();
             formulario.ShowDialog();
         }
     }

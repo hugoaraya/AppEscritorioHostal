@@ -141,7 +141,7 @@ namespace WFHostalAPPEscritorio.Clases
             conexion.Abrir();
             try
             {
-                OracleCommand comando = new OracleCommand("select IDEMPLEADO,RUT,DV,NOMBRE,APELLIDO,USUARIO_ID from EMPLEADO where RUT = :rut", conexion.con);
+                OracleCommand comando = new OracleCommand("select RUT,DV,NOMBRE,APELLIDO from EMPLEADO where RUT = :rut", conexion.con);
                 comando.Parameters.Add(":rut", rut);
                 OracleDataReader lector = comando.ExecuteReader();
 

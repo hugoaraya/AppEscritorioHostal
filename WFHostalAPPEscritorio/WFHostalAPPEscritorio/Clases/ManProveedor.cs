@@ -18,7 +18,7 @@ namespace WFHostalAPPEscritorio.Clases
             conexion.Abrir();
             try
             {
-                OracleCommand comando = new OracleCommand("select RUT,DV,NOMBRE,DIRECCION,RUBRO,USUARIO_ID from PROVEEDOR", conexion.con);
+                OracleCommand comando = new OracleCommand("select IDPROVEEDOR,RUT||'-'||DV as RUT,NOMBRE,DIRECCION,RUBRO,USUARIO_ID from PROVEEDOR", conexion.con);
                 OracleDataReader lector = comando.ExecuteReader();
 
                 if (lector.HasRows)
@@ -56,7 +56,7 @@ namespace WFHostalAPPEscritorio.Clases
             conexion.Abrir();
             try
             {
-                OracleCommand comando = new OracleCommand("select RUT,DV,NOMBRE,DIRECCION,RUBRO,USUARIO_ID from PROVEEDOR where RUT = :rut", conexion.con);
+                OracleCommand comando = new OracleCommand("select IDPROVEEDOR,RUT,DV,NOMBRE,DIRECCION,RUBRO,USUARIO_ID from PROVEEDOR where RUT = :rut", conexion.con);
                 comando.Parameters.Add(":rut", rut);
                 OracleDataReader lector = comando.ExecuteReader();
 
@@ -143,7 +143,7 @@ namespace WFHostalAPPEscritorio.Clases
             conexion.Abrir();
             try
             {
-                OracleCommand comando = new OracleCommand("select RUT,DV,NOMBRE,DIRECCION,RUBRO,USUARIO_ID from PROVEEDOR where RUT = :rut", conexion.con);
+                OracleCommand comando = new OracleCommand("select IDPROVEEDOR,RUT,DV,NOMBRE,DIRECCION,RUBRO,USUARIO_ID from PROVEEDOR where RUT = :rut", conexion.con);
                 comando.Parameters.Add(":rut", rut);
                 OracleDataReader lector = comando.ExecuteReader();
 

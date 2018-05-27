@@ -32,12 +32,23 @@ namespace WFHostalAPPEscritorio
             formulario.ShowDialog();
         }
 
+        //private void mantenedorHuespedesToolStripMenuItem_Click(object sender, EventArgs e)
+        //{
+        //    MantenedorHuespedes formulario = new MantenedorHuespedes();
+        //    formulario.ShowDialog();
+        //}
 
         private void mantenedorOrdenDeServiciosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MantenedorOrdenDeServicios formulario = new MantenedorOrdenDeServicios();
             formulario.ShowDialog();
         }
+
+        //private void mantenedorHabitaciónToolStripMenuItem_Click(object sender, EventArgs e)
+        //{
+        //    MantenedorHabitacion formulario = new MantenedorHabitacion();
+        //    formulario.ShowDialog();
+        //}
 
         //private void mantenedorComedorToolStripMenuItem_Click(object sender, EventArgs e)
         //{
@@ -88,42 +99,9 @@ namespace WFHostalAPPEscritorio
             this.Close();
         }
 
-        private void LbBienvenida_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void registrarEmpresaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             RegistrarEmpresa formulario = new RegistrarEmpresa();
-            formulario.ShowDialog();
-        }
-
-        private void registrarEmpleadoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Ingresar_Empleado formulario = new Ingresar_Empleado();
-            formulario.ShowDialog();
-        }
-
-        private void mantenedorHabitaciónToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void mantenedorHabitaciónToolStripMenuItem_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void mantenedorComedorToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            MantenedorHuespedes formulario = new MantenedorHuespedes();
-            formulario.ShowDialog();
-        }
-
-        private void registrarProveedorToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            RegistrarProveedor formulario = new RegistrarProveedor();
             formulario.ShowDialog();
         }
     }
