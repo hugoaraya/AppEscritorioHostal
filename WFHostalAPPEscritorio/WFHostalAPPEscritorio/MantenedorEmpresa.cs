@@ -25,7 +25,6 @@ namespace WFHostalAPPEscritorio
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             txRut.Text = "";
-            txtDv.Text = "";
             txNombre.Text = "";
             txDireccion.Text = "";
             txTelefono.Text = "";
@@ -36,18 +35,19 @@ namespace WFHostalAPPEscritorio
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            if (txRut.Text.Trim() == "")
+            MetodosAPP APP = new MetodosAPP();
+            if (APP.validarRut(txRut.Text) == false)
             {
-                lbMsg.Text = "Asegúrese de ingresar RUT";
+                lbMsg.Text = ("Ingrese Rut Valido");
                 txRut.Focus();
+                return;
             }
             else
             {
                 try
                 {
                     ManEmpresa man = new ManEmpresa();
-                    Console.Write(man.ToString());
-                    DataTable dt = man.EmpresaXRut(txRut.Text.Trim());
+                    DataTable dt = man.EmpresaXRut(APP.ObtenerRut(txRut.Text));
                     dgvEmpresa.DataSource = dt;
                     if (dt == null)
                     {
@@ -65,7 +65,7 @@ namespace WFHostalAPPEscritorio
                         {
                             DataRow row = dt.Rows[0];
 
-                            txRut.Text = row[1].ToString();
+                            txRut.Text = row[1].ToString()+"-"+ row[2].ToString();
                             txNombre.Text = row[3].ToString();
                             txDireccion.Text = row[4].ToString();
                             txTelefono.Text = row[5].ToString();
@@ -104,7 +104,6 @@ namespace WFHostalAPPEscritorio
         private void MantenedorEmpresa_Load(object sender, EventArgs e)
         {
             LlenarGrilla();
-            txtDv.Enabled = false;
         }
 
         //Validar que campos  sean numericos
@@ -130,7 +129,40 @@ namespace WFHostalAPPEscritorio
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            int pRUT = int.Parse(txRut.Text);
+            MetodosAPP APP = new MetodosAPP();
+            if (APP.validarRut(txRut.Text) == false || txRut.Text.Length <= 3)
+            {
+                lbMsg.Text = ("Ingrese Rut Valido");
+                txRut.Focus();
+                return;
+            }
+            if (string.IsNullOrEmpty(txNombre.Text) || txNombre.Text.Length <= 3)
+            {
+                lbMsg.Text = ("Ingrese la información NOMBRE +4");
+                txNombre.Focus();
+                return;
+            }
+            if (string.IsNullOrEmpty(txDireccion.Text))
+            {
+                lbMsg.Text = ("Ingrese la información DIRECCIÓN");
+                txDireccion.Focus();
+                return;
+            }
+
+            if (string.IsNullOrEmpty(txTelefono.Text))
+            {
+                lbMsg.Text = ("Ingrese la información TELÉFONO");
+                txTelefono.Focus();
+                return;
+            }
+            if (APP.ValidacionEmail(txCorreo.Text) == false)
+            {
+                lbMsg.Text = ("Ingrese la información CORREO valido");
+                txCorreo.Focus();
+                return;
+            }
+
+            int pRUT = int.Parse(APP.ObtenerRut(txRut.Text));
             string pNOMBRE = txNombre.Text;
             string pDIRECC = txDireccion.Text;
             int pTELEFONO = int.Parse(txTelefono.Text);
@@ -148,24 +180,17 @@ namespace WFHostalAPPEscritorio
                     if (con.SaveChanges() > 0)
                     {
                         lbMsg.Text = "Registro Actualizado";
+                        
                     }
                     else
                     {
-                        Console.Write("PREOBLEMAS AL ACTUALIZAR:" + e);
-                        lbMsg.Text = "ERROR AL ACTUALIZAR DATOS";
+                        Console.Write("PREOBLEMAS AL ACTUALIZAR DATOS_:" + e);
+                        lbMsg.Text = "Problemas al actualizar. Revise los datos";
+                        
                     }
-                    
                 }
-            
         }
-
-        private void txRut_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-
-
+        
         //private void dgvEmpresa_SelectionChanged(object sender, EventArgs e)
         //{
         //    //MessageBox.Show("FALTA PROGRAMAR ESTO");

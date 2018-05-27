@@ -18,7 +18,7 @@ namespace WFHostalAPPEscritorio.Clases
             conexion.Abrir();
             try
             {
-                OracleCommand comando = new OracleCommand("select IDEMPRESA,RUT||'-'||DV as RUT,NOMBRE,DIRECCION,TELEFONO,USUARIO_ID,CORREO from empresa", conexion.con);
+                OracleCommand comando = new OracleCommand("select RUT||'-'||DV as RUT,NOMBRE,DIRECCION,TELEFONO,USUARIO_ID,CORREO from empresa", conexion.con);
                 OracleDataReader lector = comando.ExecuteReader();
 
                 if (lector.HasRows)

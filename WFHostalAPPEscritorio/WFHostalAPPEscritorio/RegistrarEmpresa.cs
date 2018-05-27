@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using DAO;
 using WFHostalAPPEscritorio.Clases;
 
+
 namespace WFHostalAPPEscritorio
 {
     public partial class RegistrarEmpresa : Form
@@ -34,15 +35,6 @@ namespace WFHostalAPPEscritorio
             //TIPO_USUARIO_ID
         }
 
-        private void CompararDv()
-        {
-
-            MetodosAPP APP = new MetodosAPP();
-            if (txtDv.Text == APP.GenerarDV(txtDv.Text))
-            {
-
-            }
-        }
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -50,15 +42,17 @@ namespace WFHostalAPPEscritorio
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txRut.Text))
+            MetodosAPP APP = new MetodosAPP();
+            if (APP.validarRut(txRut.Text)==false || txRut.Text.Length <= 3)
             {
-                lbMsg.Text = ("Ingrese la información RUT");
+                lbMsg.Text = ("Ingrese Rut Valido");
                 txRut.Focus();
                 return;
             }
-            if (string.IsNullOrEmpty(txNombre.Text))
+            
+            if (string.IsNullOrEmpty(txNombre.Text) || txNombre.Text.Length <= 3)
             {
-                lbMsg.Text = ("Ingrese la información NOMBRE");
+                lbMsg.Text = ("Ingrese la información NOMBRE +4");
                 txNombre.Focus();
                 return;
             }
@@ -75,35 +69,35 @@ namespace WFHostalAPPEscritorio
                 txTelefono.Focus();
                 return;
             }
-            if (string.IsNullOrEmpty(txCorreo.Text))
+            if (APP.ValidacionEmail(txCorreo.Text)==false)
             {
-                lbMsg.Text = ("Ingrese la información CORREO");
+                lbMsg.Text = ("Ingrese la información CORREO valido");
                 txCorreo.Focus();
                 return;
             }
             
             int id_usu = 0;
             ManEmpresa man = new ManEmpresa();
-            MetodosAPP APP = new MetodosAPP();
-            if (man.validarRutEmpresa(txRut.Text))
+            
+            if (man.validarRutEmpresa(APP.ObtenerRut(txRut.Text)))
             {
                 USUARIO usu = new USUARIO();
                 usu.IDUSUARIO = 1;
-                usu.NOMBRE_USUARIO = txRut.Text;
-                usu.CONTRASENIA = "123";                     // generar contraseña
-                usu.TIPO_USUARIO_ID = 2;                     // 2 Cliente Empresa
+                usu.NOMBRE_USUARIO = APP.ObtenerRut(txRut.Text);
+                usu.CONTRASENIA = APP.GenerarClave(txNombre.Text, txRut.Text); 
+                usu.TIPO_USUARIO_ID = 2;       // 2 Cliente Empresa
                 AddUsuario(usu);
-                id_usu = man.ObtenerIDUsuario(txRut.Text);
+                id_usu = man.ObtenerIDUsuario(APP.ObtenerRut(txRut.Text));
                 if (id_usu == 0)
                 {
                     lbMsg.Text = "Problemas con generación de Usuario";
+                    return;
                 }
                 else {
                     EMPRESA emp = new EMPRESA();
                     emp.IDEMPRESA = 1;
-                    emp.RUT = int.Parse(txRut.Text);
-                    //if(txtDv.Text==APP.GenerarDV(txtDv.Text))
-                    emp.DV = txtDv.Text;  
+                    emp.RUT = int.Parse(APP.ObtenerRut(txRut.Text));
+                    emp.DV = APP.GenerarDV(APP.ObtenerRut(txRut.Text));
                     emp.NOMBRE = txNombre.Text;
                     emp.DIRECCION = txDireccion.Text;
                     emp.TELEFONO = int.Parse(txTelefono.Text);
@@ -113,9 +107,19 @@ namespace WFHostalAPPEscritorio
                     btnCancelar.Text = "Salir";
                     lbMsg.Text = "Usuario Creado";
                     txResult.Visible = true;
-                    txResult.Text = (" Usuario para el Sistema : " + txRut.Text + "     \n"+
-                                  " Clave para el Sistema   : 123 ");
 
+                    txResult.Text += "Estimados " + txNombre.Text + "\r\n \r\n";
+                    txResult.Text += "Estos son sus datos para poder acceder a nuestro Sistema.\r\n \r\n";
+                    txResult.Text += ("     Usuario: " + APP.ObtenerRut(txRut.Text) + "\r\n"+
+                                      "     Clave: " + APP.GenerarClave(txNombre.Text, txRut.Text))+"\r\n \r\n";
+
+                    txResult.Text += "Lo invitamos a disfrutar de nuestros Servicios.\r\n";
+                    txResult.Text += "Ingrese a www.HostalDonaClarita.cl \r\n \r\n \r\n";
+
+                    txResult.Text += "Saludos. Hostal Doña Clarita\r\n \r\n \r\n";
+
+                    txResult.Text += "**Enviar datos a "+ txCorreo.Text;
+                    
                 }
                 
             }
@@ -166,5 +170,7 @@ namespace WFHostalAPPEscritorio
                 e.Handled = true;
             }
         }
+
+
     }
 }

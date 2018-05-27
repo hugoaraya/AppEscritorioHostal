@@ -36,6 +36,7 @@
             this.lbMsg = new System.Windows.Forms.Label();
             this.picBLogo = new System.Windows.Forms.PictureBox();
             this.btnSalir = new System.Windows.Forms.Button();
+            this.btnTest = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picBLogo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -111,11 +112,22 @@
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
+            // btnTest
+            // 
+            this.btnTest.Location = new System.Drawing.Point(214, 12);
+            this.btnTest.Name = "btnTest";
+            this.btnTest.Size = new System.Drawing.Size(75, 23);
+            this.btnTest.TabIndex = 14;
+            this.btnTest.Text = "Test";
+            this.btnTest.UseVisualStyleBackColor = true;
+            this.btnTest.Click += new System.EventHandler(this.btnTest_Click);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(303, 290);
+            this.Controls.Add(this.btnTest);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.picBLogo);
             this.Controls.Add(this.lbMsg);
@@ -143,6 +155,7 @@
         private System.Windows.Forms.Label lbMsg;
         private System.Windows.Forms.PictureBox picBLogo;
         private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.Button btnTest;
     }
 }
 

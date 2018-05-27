@@ -106,6 +106,19 @@ namespace WFHostalAPPEscritorio
             this.Close();
         }
 
+        private void btnTest_Click(object sender, EventArgs e)
+        {
+            MetodosAPP APP = new MetodosAPP();
+            if (APP.validarRut("12920024h"))
+            {
+                MessageBox.Show("TRUE");
+            }
+            else
+            {
+                MessageBox.Show("FALSE");
+            };
+        }
+
         //private void PruebaConexion_Click(object sender, EventArgs e)
         //{
 
