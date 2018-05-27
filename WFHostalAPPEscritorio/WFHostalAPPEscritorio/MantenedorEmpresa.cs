@@ -38,15 +38,7 @@ namespace WFHostalAPPEscritorio
             MetodosAPP APP = new MetodosAPP();
             if (APP.validarRut(txRut.Text) == false)
             {
-<<<<<<< HEAD
                 lbMsg.Text = ("Ingrese Rut Válido");
-=======
-<<<<<<< HEAD
-                lbMsg.Text = "Asegúrese de ingresar RUT";
-=======
-                lbMsg.Text = ("Ingrese Rut Válido");
->>>>>>> 28a324fe6967fcb88939aa96171762183695db13
->>>>>>> master
                 txRut.Focus();
                 return;
             }
@@ -201,19 +193,10 @@ namespace WFHostalAPPEscritorio
 
         private void dgvEmpresa_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
->>>>>>> master
             if (e.RowIndex <= -1)
             {
                 return;
             }
-<<<<<<< HEAD
-=======
->>>>>>> 28a324fe6967fcb88939aa96171762183695db13
->>>>>>> master
 
             var row = (sender as DataGridView).CurrentRow;
             txRut.Text = row.Cells[0].Value.ToString() + "-" + row.Cells[1].Value.ToString();
