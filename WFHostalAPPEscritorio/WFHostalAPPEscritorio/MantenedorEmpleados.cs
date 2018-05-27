@@ -24,8 +24,8 @@ namespace WFHostalAPPEscritorio
             this.dgvEmpleados.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             this.dgvEmpleados.MultiSelect = false;
             this.dgvEmpleados.ReadOnly = true;
-            ManEmpresa man = new ManEmpresa();
-            dgvEmpleados.DataSource = man.todasEmpresas();
+            ManEmpleado man = new ManEmpleado();
+            dgvEmpleados.DataSource = man.todosEmpleados();
         }
 
 
