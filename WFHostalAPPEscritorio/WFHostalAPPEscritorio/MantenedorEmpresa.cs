@@ -193,7 +193,7 @@ namespace WFHostalAPPEscritorio
 
         private void dgvEmpresa_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex < 0)
+            if (e.RowIndex <= -1)
             {
                 return;
             }

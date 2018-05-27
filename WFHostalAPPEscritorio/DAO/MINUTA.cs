@@ -17,16 +17,16 @@ namespace DAO
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public MINUTA()
         {
-            this.COMEDOR = new HashSet<COMEDOR>();
+            this.ORDEN_COMEDOR = new HashSet<ORDEN_COMEDOR>();
         }
     
         public decimal IDMINUTA { get; set; }
         public string NOMBRE_MINUTA { get; set; }
-        public string DESCIPCION { get; set; }
+        public string DESCRIPCION { get; set; }
         public System.DateTime FECHA_INICIO { get; set; }
         public System.DateTime FECHA_FIN { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<COMEDOR> COMEDOR { get; set; }
+        public virtual ICollection<ORDEN_COMEDOR> ORDEN_COMEDOR { get; set; }
     }
 }

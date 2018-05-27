@@ -21,7 +21,7 @@ namespace DAO
         }
     
         public decimal IDESTADO_ORDEN_PEDIDO { get; set; }
-        public string DESCIPCION { get; set; }
+        public string DESCRIPCION { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ORDEN_PEDIDO> ORDEN_PEDIDO { get; set; }

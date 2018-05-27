@@ -81,3 +81,4 @@ C:\Users\Hugo\Desktop\GIT\AppEscritorioHostal\WFHostalAPPEscritorio\WFHostalAPPE
 C:\Users\Hugo\Desktop\GIT\AppEscritorioHostal\WFHostalAPPEscritorio\WFHostalAPPEscritorio\obj\x86\Debug\WFHostalAPPEscritorio.exe
 C:\Users\Hugo\Desktop\GIT\AppEscritorioHostal\WFHostalAPPEscritorio\WFHostalAPPEscritorio\obj\x86\Debug\WFHostalAPPEscritorio.pdb
 C:\Users\Nibsa\Documents\GitHub\AppEscritorioHostal\WFHostalAPPEscritorio\WFHostalAPPEscritorio\obj\x86\Debug\WFHostalAPPEscritorio.MantenedorFacturas.resources
+C:\Users\Hugo\Desktop\GIT\AppEscritorioHostal\WFHostalAPPEscritorio\WFHostalAPPEscritorio\obj\x86\Debug\WFHostalAPPEscritorio.MantenedorFacturas.resources
