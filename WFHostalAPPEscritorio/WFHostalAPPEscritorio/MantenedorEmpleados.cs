@@ -49,6 +49,8 @@ namespace WFHostalAPPEscritorio
             txtRut.Text = "";
             txtNombre.Text = "";
             txtApellidoEmp.Text = "";
+            txtRut.Enabled = true;
+            lblMsg.Text = "";
         }
 
         
@@ -152,11 +154,6 @@ namespace WFHostalAPPEscritorio
             }
         }
 
-        private void dgvEmpleados_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void dgvEmpleados_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex <= -1)
@@ -168,6 +165,7 @@ namespace WFHostalAPPEscritorio
             txtRut.Text = row.Cells[0].Value.ToString() + "-" + row.Cells[1].Value.ToString();
             txtNombre.Text = row.Cells[2].Value.ToString();
             txtApellidoEmp.Text = row.Cells[3].Value.ToString();
+            txtRut.Enabled = false;
         }
     }
     
