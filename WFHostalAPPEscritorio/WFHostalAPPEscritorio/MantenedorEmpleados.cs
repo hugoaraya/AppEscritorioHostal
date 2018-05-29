@@ -49,6 +49,8 @@ namespace WFHostalAPPEscritorio
             txtRut.Text = "";
             txtNombre.Text = "";
             txtApellidoEmp.Text = "";
+            txtRut.Enabled = true;
+            lblMsg.Text = "";
         }
 
         
