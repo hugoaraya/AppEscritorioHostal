@@ -14,6 +14,7 @@ namespace WFHostalAPPEscritorio
 {
     public partial class RegistrarProveedor : Form
     {
+
         #region Métodos
         public void AddProveedor(PROVEEDOR prov)
         {
@@ -39,32 +40,22 @@ namespace WFHostalAPPEscritorio
             InitializeComponent();
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-             if (string.IsNullOrEmpty(txtRut.Text))
+            MetodosAPP APP = new MetodosAPP();
+            if (APP.validarRut(txtRut.Text) == false || txtRut.Text.Length <= 3)
             {
-                lbMsg.Text = ("Ingrese la información RUT");
+                lbMsg.Text = ("Ingrese Rut Valido");
                 txtRut.Focus();
                 return;
             }
-            if (string.IsNullOrEmpty(txtDv.Text))
+
+            if (string.IsNullOrEmpty(txtNombre.Text) || txtNombre.Text.Length <= 3)
             {
-                lbMsg.Text = ("Ingrese la información DV");
-                txtDv.Focus();
-                return;
-            }
-            if (string.IsNullOrEmpty(txtNombre.Text))
-            {
-                lbMsg.Text = ("Ingrese la información NOMBRE");
+                lbMsg.Text = ("Ingrese la información NOMBRE +4");
                 txtNombre.Focus();
                 return;
             }
-
             if (string.IsNullOrEmpty(txtDireccion.Text))
             {
                 lbMsg.Text = ("Ingrese la información DIRECCIÓN");
@@ -77,45 +68,55 @@ namespace WFHostalAPPEscritorio
                 txtRubro.Focus();
                 return;
             }
-            
+
             int id_usu = 0;
             ManProveedor man = new ManProveedor();
-            MetodosAPP APP = new MetodosAPP();
-            if (man.validarRutProveedor(txtRut.Text))
+
+            if (man.validarRutProveedor(APP.ObtenerRut(txtRut.Text)))
             {
                 USUARIO usu = new USUARIO();
                 usu.IDUSUARIO = 1;
-                usu.NOMBRE_USUARIO = txtRut.Text;
-                usu.CONTRASENIA = "123";                     // Generar contraseña
-                usu.TIPO_USUARIO_ID = 3;                     // 3 Usuario Proveedor
+                usu.NOMBRE_USUARIO = APP.ObtenerRut(txtRut.Text);
+                usu.CONTRASENIA = APP.GenerarClave(txtNombre.Text, txtRut.Text);
+                usu.TIPO_USUARIO_ID = 3;       // 3 Proveedor
                 AddUsuario(usu);
-                id_usu = man.ObtenerIDUsuario(txtRut.Text);
+                id_usu = man.ObtenerIDUsuario(APP.ObtenerRut(txtRut.Text));
                 if (id_usu == 0)
                 {
                     lbMsg.Text = "Problemas con generación de Usuario";
+                    return;
                 }
-                else {
-                    PROVEEDOR emp = new PROVEEDOR();
-                    emp.IDPROVEEDOR = 1;
-                    emp.RUT = int.Parse(txtRut.Text);
-                    emp.DV = txtDv.Text;  
-                    emp.NOMBRE = txtNombre.Text;
-                    emp.DIRECCION = txtDireccion.Text;
-                    emp.RUBRO = txtRubro.Text;
-                    emp.USUARIO_ID = id_usu;
-                    AddProveedor(emp);
+                else
+                {
+                    PROVEEDOR prov = new PROVEEDOR();
+                    prov.IDPROVEEDOR = 1;
+                    prov.RUT = int.Parse(APP.ObtenerRut(txtRut.Text));
+                    prov.DV = APP.GenerarDV(APP.ObtenerRut(txtRut.Text));
+                    prov.NOMBRE = txtNombre.Text;
+                    prov.DIRECCION = txtDireccion.Text;
+                    prov.RUBRO = txtRubro.Text;
+                    prov.USUARIO_ID = id_usu;
+                    AddProveedor(prov);
                     btnCancel.Text = "Salir";
                     lbMsg.Text = "Usuario Creado";
                     txResult.Visible = true;
-                    txResult.Text = (" Usuario para el Sistema : " + txtRut.Text + "     \n"+
-                                  " Clave para el Sistema   : 123 ");
+
+                    txResult.Text += "Estimado " + txtNombre.Text + "\r\n \r\n";
+                    txResult.Text += "Estos son sus datos para poder acceder a nuestro Sistema.\r\n \r\n";
+                    txResult.Text += ("     Usuario: " + APP.ObtenerRut(txtRut.Text) + "\r\n" +
+                                      "     Clave: " + APP.GenerarClave(txtNombre.Text, txtRut.Text)) + "\r\n \r\n";
+                   
+                    txResult.Text += "Ingrese a www.HostalDonaClarita.cl para revisar Ordenes de Pedidos.\r\n \r\n \r\n";
+                    txResult.Text += "Hostal Doña Clarita\r\n \r\n \r\n";
+
+                    txResult.Text += "**Informar datos al Proveedor";
 
                 }
-                
+
             }
             else
             {
-                lbMsg.Text = "Rut Cliente ya Existe";
+                lbMsg.Text = "Rut Proveedor ya Existe";
                 txtRut.Focus();
                 return;
             }
