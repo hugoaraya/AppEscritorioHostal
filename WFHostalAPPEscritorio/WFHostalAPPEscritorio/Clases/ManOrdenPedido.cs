@@ -55,7 +55,7 @@ namespace WFHostalAPPEscritorio.Clases
             conexion.Abrir();
             try
             {
-                OracleCommand comando = new OracleCommand("SELECT NRO_ORDEN,EMPLEADO_ID,FECHA,PROVEEDOR_ID,ESTADO_ORDEN_PEDIDO_ID from ORDEN_PEDIDO where NRO_ORDEN = :num", conexion.con);
+                OracleCommand comando = new OracleCommand("IDORDEN_PEDIDO,NRO_ORDEN,EMPLEADO_ID,FECHA,PROVEEDOR_ID,ESTADO_ORDEN_PEDIDO_ID from ORDEN_PEDIDO where NRO_ORDEN = :num", conexion.con);
                 comando.Parameters.Add(":num", numero);
                 OracleDataReader lector = comando.ExecuteReader();
 

@@ -31,25 +31,23 @@ namespace WFHostalAPPEscritorio
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            MetodosAPP APP = new MetodosAPP();
-            if (APP.validarRut(txtNOP.Text) == false)
+            if (txtNOP.Text.Trim() == "")
             {
-                lbMsg.Text = ("Ingrese Rut Válido");
+                lbMsg.Text = "Asegúrese de ingresar NÚMERO OP";
                 txtNOP.Focus();
-                return;
             }
             else
             {
                 try
                 {
                     ManOrdenPedido man = new ManOrdenPedido();
-                    DataTable dt = man.OPXNumero(APP.ObtenerRut(txtNOP.Text));
+                    DataTable dt = man.OPXNumero(txtNOP.Text.Trim());
                     dgvOP.DataSource = dt;
                     if (dt == null)
                     {
-                        lbMsg.Text = "RUT No existe";
-                        dgvEmpresa.DataSource = "";
-                        txRut.Enabled = true;
+                        lbMsg.Text = "ORDEN DE PEDIDO No existe";
+                        dgvOP.DataSource = "";
+                        txtNOP.Enabled = true;
                     }
                     else
                     {
@@ -61,13 +59,9 @@ namespace WFHostalAPPEscritorio
                         {
                             DataRow row = dt.Rows[0];
 
-                            txRut.Text = row[0].ToString() + "-" + row[1].ToString();
-                            txNombre.Text = row[2].ToString();
-                            txDireccion.Text = row[3].ToString();
-                            txTelefono.Text = row[4].ToString();
-                            txCorreo.Text = row[5].ToString();
-                            txRut.Enabled = false;
-                            lbMsg.Text = "Rut Encontrado";
+                            txtNOP.Text = row[1].ToString();
+                            txtNOP.Enabled = false;
+                            lbMsg.Text = "OP Encontrada";
                         }
 
                     }
