@@ -85,6 +85,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CheckHuesped.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CheckHuesped.Designer.cs">
+      <DependentUpon>CheckHuesped.cs</DependentUpon>
+    </Compile>
     <Compile Include="Clases\Conectar.cs" />
     <Compile Include="Clases\Global.cs" />
     <Compile Include="Clases\ManEmpleado.cs" />
@@ -186,6 +192,9 @@
     <Compile Include="RegistrarProveedor.Designer.cs">
       <DependentUpon>RegistrarProveedor.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="CheckHuesped.resx">
+      <DependentUpon>CheckHuesped.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormularioAdmin.resx">
       <DependentUpon>FormularioAdmin.cs</DependentUpon>
     </EmbeddedResource>

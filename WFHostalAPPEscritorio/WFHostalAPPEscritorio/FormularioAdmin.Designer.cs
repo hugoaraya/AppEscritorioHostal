@@ -154,6 +154,7 @@
             this.checkINCheckOutToolStripMenuItem.Name = "checkINCheckOutToolStripMenuItem";
             this.checkINCheckOutToolStripMenuItem.Size = new System.Drawing.Size(240, 22);
             this.checkINCheckOutToolStripMenuItem.Text = "CheckIN/CheckOut";
+            this.checkINCheckOutToolStripMenuItem.Click += new System.EventHandler(this.checkINCheckOutToolStripMenuItem_Click);
             // 
             // mantenedorOrdenDeServiciosToolStripMenuItem
             // 

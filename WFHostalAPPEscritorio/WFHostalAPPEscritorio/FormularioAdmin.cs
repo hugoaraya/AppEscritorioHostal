@@ -127,6 +127,12 @@ namespace WFHostalAPPEscritorio
             RegistrarProveedor formulario = new RegistrarProveedor();
             formulario.ShowDialog();
         }
+
+        private void checkINCheckOutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CheckHuesped formulario = new CheckHuesped();
+            formulario.ShowDialog();
+        }
     }
 }
 
