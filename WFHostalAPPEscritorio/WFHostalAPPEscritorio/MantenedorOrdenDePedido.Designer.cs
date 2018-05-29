@@ -74,6 +74,7 @@
             this.dgvOP.Name = "dgvOP";
             this.dgvOP.Size = new System.Drawing.Size(397, 227);
             this.dgvOP.TabIndex = 1;
+            
             // 
             // btnBuscar
             // 
