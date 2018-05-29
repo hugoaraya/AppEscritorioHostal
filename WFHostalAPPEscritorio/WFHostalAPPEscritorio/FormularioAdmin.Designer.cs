@@ -52,12 +52,12 @@
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.mantenedorProductoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mantenedorProveedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.registrarProveedorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.moduloAdministradorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mantenedorEmpleadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registrarEmpleadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.picBLogo = new System.Windows.Forms.PictureBox();
             this.LbBienvenida = new System.Windows.Forms.Label();
-            this.mantenedorHabitaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBLogo)).BeginInit();
             this.SuspendLayout();
@@ -141,7 +141,6 @@
             this.checkINCheckOutToolStripMenuItem,
             this.mantenedorOrdenDeServiciosToolStripMenuItem,
             this.toolStripSeparator2,
-            this.mantenedorHabitaciónToolStripMenuItem,
             this.mantenedorComedorToolStripMenuItem,
             this.toolStripSeparator3,
             this.mantenedorFacturasToolStripMenuItem,
@@ -155,6 +154,7 @@
             this.checkINCheckOutToolStripMenuItem.Name = "checkINCheckOutToolStripMenuItem";
             this.checkINCheckOutToolStripMenuItem.Size = new System.Drawing.Size(240, 22);
             this.checkINCheckOutToolStripMenuItem.Text = "CheckIN/CheckOut";
+            this.checkINCheckOutToolStripMenuItem.Click += new System.EventHandler(this.checkINCheckOutToolStripMenuItem_Click);
             // 
             // mantenedorOrdenDeServiciosToolStripMenuItem
             // 
@@ -202,7 +202,8 @@
             this.mantenedorOrdenDePedidoToolStripMenuItem,
             this.toolStripSeparator4,
             this.mantenedorProductoToolStripMenuItem,
-            this.mantenedorProveedoresToolStripMenuItem});
+            this.mantenedorProveedoresToolStripMenuItem,
+            this.registrarProveedorToolStripMenuItem});
             this.moduloProveedoresToolStripMenuItem.Name = "moduloProveedoresToolStripMenuItem";
             this.moduloProveedoresToolStripMenuItem.Size = new System.Drawing.Size(129, 20);
             this.moduloProveedoresToolStripMenuItem.Text = "Modulo Proveedores";
@@ -244,6 +245,13 @@
             this.mantenedorProveedoresToolStripMenuItem.Size = new System.Drawing.Size(231, 22);
             this.mantenedorProveedoresToolStripMenuItem.Text = "Mantenedor Proveedores";
             this.mantenedorProveedoresToolStripMenuItem.Click += new System.EventHandler(this.mantenedorProveedoresToolStripMenuItem_Click);
+            // 
+            // registrarProveedorToolStripMenuItem
+            // 
+            this.registrarProveedorToolStripMenuItem.Name = "registrarProveedorToolStripMenuItem";
+            this.registrarProveedorToolStripMenuItem.Size = new System.Drawing.Size(231, 22);
+            this.registrarProveedorToolStripMenuItem.Text = "Registrar Proveedor";
+            this.registrarProveedorToolStripMenuItem.Click += new System.EventHandler(this.registrarProveedorToolStripMenuItem_Click);
             // 
             // moduloAdministradorToolStripMenuItem
             // 
@@ -288,13 +296,6 @@
             this.LbBienvenida.Text = "label1";
             this.LbBienvenida.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.LbBienvenida.Click += new System.EventHandler(this.LbBienvenida_Click);
-            // 
-            // mantenedorHabitaciónToolStripMenuItem
-            // 
-            this.mantenedorHabitaciónToolStripMenuItem.Name = "mantenedorHabitaciónToolStripMenuItem";
-            this.mantenedorHabitaciónToolStripMenuItem.Size = new System.Drawing.Size(240, 22);
-            this.mantenedorHabitaciónToolStripMenuItem.Text = "Ingresar Proveedor";
-            this.mantenedorHabitaciónToolStripMenuItem.Click += new System.EventHandler(this.mantenedorHabitaciónToolStripMenuItem_Click_1);
             // 
             // FormularioAdmin
             // 
@@ -345,6 +346,6 @@
         private System.Windows.Forms.PictureBox picBLogo;
         private System.Windows.Forms.Label LbBienvenida;
         private System.Windows.Forms.ToolStripMenuItem registrarEmpleadoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem mantenedorHabitaciónToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem registrarProveedorToolStripMenuItem;
     }
 }

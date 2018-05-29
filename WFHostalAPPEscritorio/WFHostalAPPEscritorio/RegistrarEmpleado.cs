@@ -45,14 +45,16 @@ namespace WFHostalAPPEscritorio
         }
 
         private void btnIngresar_Click(object sender, EventArgs e)
+
         {
-            if (string.IsNullOrEmpty(txtRutEmp.Text))
+            MetodosAPP APP = new MetodosAPP();
+            if (APP.validarRut(txtRutEmp.Text) == false || txtRutEmp.Text.Length <= 3)
             {
                 lblMsg.Text = ("Debe completar la información RUT");
                 txtRutEmp.Focus();
                 return;
             }
-            if (string.IsNullOrEmpty(txtNombreEmp.Text))
+            if (string.IsNullOrEmpty(txtNombreEmp.Text) || txtNombreEmp.Text.Length <= 3)
             {
                 lblMsg.Text = ("Debe completar la información NOMBRE");
                 txtNombreEmp.Focus();
@@ -67,16 +69,16 @@ namespace WFHostalAPPEscritorio
 
             int id_empl = 0;
             ManEmpleado man = new ManEmpleado();
-            MetodosAPP APP = new MetodosAPP();
-            if (man.validarRutEmpleado(txtRutEmp.Text))
+            
+            if (man.validarRutEmpleado(APP.ObtenerRut(txtRutEmp.Text)))
             {
                 USUARIO usu = new USUARIO();
                 usu.IDUSUARIO = 1;
-                usu.NOMBRE_USUARIO = txtRutEmp.Text;
-                usu.CONTRASENIA = "123";                     // generar contraseña
-                usu.TIPO_USUARIO_ID = 4;                     // 4 Cliente Empleado
+                usu.NOMBRE_USUARIO = APP.ObtenerRut(txtRutEmp.Text);
+                usu.CONTRASENIA = APP.GenerarClave(txtNombreEmp.Text, txtRutEmp.Text);
+                usu.TIPO_USUARIO_ID = 4; // 4 Cliente Empleado
                 AddUsuario(usu);
-                id_empl = man.ObtenerIDUsuario(txtRutEmp.Text);
+                id_empl = man.ObtenerIDUsuario(APP.ObtenerRut(txtRutEmp.Text));
                 if (id_empl == 0)
                 {
                     lblMsg.Text = "Problemas con generación de Usuario";
@@ -94,7 +96,7 @@ namespace WFHostalAPPEscritorio
                     btnCancel.Text = "Salir";
                     lblMsg.Text = "Empleado Creado";
                     txResult.Visible = true;
-                    txResult.Text = (" Usuario para el Sistema : " + txtRutEmp.Text +
+                    txResult.Text = (" Usuario para el Sistema : " + APP.ObtenerRut(txtRutEmp.Text) +
                                   " Clave para el Sistema   : 123 ");
 
                 }

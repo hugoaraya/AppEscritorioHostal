@@ -31,23 +31,36 @@ namespace WFHostalAPPEscritorio
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             MetodosAPP APP = new MetodosAPP();
             if (txtNOP.Text.Trim() == "")
             {
                 lbMsg.Text = ("Ingrese Número Válido");
+=======
+            if (txtNOP.Text.Trim() == "")
+            {
+                lbMsg.Text = "Asegúrese de ingresar NÚMERO OP";
+>>>>>>> master
                 txtNOP.Focus();
-                return;
             }
             else
             {
                 try
                 {
                     ManOrdenPedido man = new ManOrdenPedido();
+<<<<<<< HEAD
                     DataTable dt = man.OPXNumero(txtNOP.Text);
                     dgvOP.DataSource = dt;
                     if (dt == null)
                     {
                         lbMsg.Text = "NRO DE ORDEN No existe";
+=======
+                    DataTable dt = man.OPXNumero(txtNOP.Text.Trim());
+                    dgvOP.DataSource = dt;
+                    if (dt == null)
+                    {
+                        lbMsg.Text = "ORDEN DE PEDIDO No existe";
+>>>>>>> master
                         dgvOP.DataSource = "";
                         txtNOP.Enabled = true;
                     }
@@ -61,6 +74,7 @@ namespace WFHostalAPPEscritorio
                         {
                             DataRow row = dt.Rows[0];
 
+<<<<<<< HEAD
                             txtNOP.Text = row[0].ToString();
                             row[1].ToString();
                             row[2].ToString();
@@ -71,6 +85,11 @@ namespace WFHostalAPPEscritorio
                             //row[7].ToString(); nombre producto
                             txtNOP.Enabled = false;
                             lbMsg.Text = "ODP Encontrada";
+=======
+                            txtNOP.Text = row[1].ToString();
+                            txtNOP.Enabled = false;
+                            lbMsg.Text = "OP Encontrada";
+>>>>>>> master
                         }
 
                     }

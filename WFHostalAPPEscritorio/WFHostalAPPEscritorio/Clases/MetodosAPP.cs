@@ -21,25 +21,6 @@ namespace WFHostalAPPEscritorio.Clases
             return digito;
         }
 
-        public void InsertEmpresa(EMPRESA em)
-        { 
-            using (EntitiesHostal con = new EntitiesHostal())
-            {   
-                con.EMPRESA.Add(em);
-                con.SaveChanges();
-            }
-
-        }
-
-        public void InsertEmpleado(EMPLEADO emple)
-        {
-            using (EntitiesHostal ins = new EntitiesHostal())
-            {
-                ins.EMPLEADO.Add(emple);
-                ins.SaveChanges();
-            }
-        }
-
         public Boolean validarRut(string rut)
         {
 
