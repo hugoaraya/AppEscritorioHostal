@@ -127,6 +127,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "MantenedorOrdenDePedido";
             this.Text = "MantenedorOrdenDePedido";
+            this.Load += new System.EventHandler(this.MantenedorOrdenDePedido_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOP)).EndInit();
