@@ -30,14 +30,16 @@
         {
             this.dgvProveedor = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txRubro = new System.Windows.Forms.TextBox();
-            this.txDireccion = new System.Windows.Forms.TextBox();
-            this.txNombre = new System.Windows.Forms.TextBox();
-            this.txRut = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txRut = new System.Windows.Forms.TextBox();
+            this.txDv = new System.Windows.Forms.TextBox();
+            this.txNombre = new System.Windows.Forms.TextBox();
+            this.txDireccion = new System.Windows.Forms.TextBox();
+            this.txRubro = new System.Windows.Forms.TextBox();
             this.btnTodos = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
@@ -55,17 +57,18 @@
             this.dgvProveedor.Name = "dgvProveedor";
             this.dgvProveedor.Size = new System.Drawing.Size(537, 295);
             this.dgvProveedor.TabIndex = 0;
-            this.dgvProveedor.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProveedor_CellDoubleClick);
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.txRubro);
             this.groupBox1.Controls.Add(this.txDireccion);
             this.groupBox1.Controls.Add(this.txNombre);
+            this.groupBox1.Controls.Add(this.txDv);
             this.groupBox1.Controls.Add(this.txRut);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(13, 13);
             this.groupBox1.Name = "groupBox1";
@@ -73,61 +76,6 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos de Proveedor";
-            // 
-            // txRubro
-            // 
-            this.txRubro.Location = new System.Drawing.Point(70, 130);
-            this.txRubro.Name = "txRubro";
-            this.txRubro.Size = new System.Drawing.Size(145, 20);
-            this.txRubro.TabIndex = 9;
-            // 
-            // txDireccion
-            // 
-            this.txDireccion.Location = new System.Drawing.Point(70, 95);
-            this.txDireccion.Name = "txDireccion";
-            this.txDireccion.Size = new System.Drawing.Size(145, 20);
-            this.txDireccion.TabIndex = 8;
-            // 
-            // txNombre
-            // 
-            this.txNombre.Location = new System.Drawing.Point(70, 60);
-            this.txNombre.Name = "txNombre";
-            this.txNombre.Size = new System.Drawing.Size(145, 20);
-            this.txNombre.TabIndex = 7;
-            // 
-            // txRut
-            // 
-            this.txRut.Location = new System.Drawing.Point(70, 24);
-            this.txRut.Name = "txRut";
-            this.txRut.Size = new System.Drawing.Size(145, 20);
-            this.txRut.TabIndex = 5;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(7, 133);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(39, 13);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Rubro:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(7, 98);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(55, 13);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Dirección:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(7, 63);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(47, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Nombre:";
             // 
             // label1
             // 
@@ -138,9 +86,80 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "RUT:";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(221, 31);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(10, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "-";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(7, 63);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(47, 13);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Nombre:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(7, 98);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(55, 13);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Dirección:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(7, 133);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(39, 13);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "Rubro:";
+            // 
+            // txRut
+            // 
+            this.txRut.Location = new System.Drawing.Point(70, 24);
+            this.txRut.Name = "txRut";
+            this.txRut.Size = new System.Drawing.Size(145, 20);
+            this.txRut.TabIndex = 5;
+            // 
+            // txDv
+            // 
+            this.txDv.Location = new System.Drawing.Point(238, 23);
+            this.txDv.Name = "txDv";
+            this.txDv.Size = new System.Drawing.Size(37, 20);
+            this.txDv.TabIndex = 6;
+            // 
+            // txNombre
+            // 
+            this.txNombre.Location = new System.Drawing.Point(70, 60);
+            this.txNombre.Name = "txNombre";
+            this.txNombre.Size = new System.Drawing.Size(145, 20);
+            this.txNombre.TabIndex = 7;
+            // 
+            // txDireccion
+            // 
+            this.txDireccion.Location = new System.Drawing.Point(70, 95);
+            this.txDireccion.Name = "txDireccion";
+            this.txDireccion.Size = new System.Drawing.Size(145, 20);
+            this.txDireccion.TabIndex = 8;
+            // 
+            // txRubro
+            // 
+            this.txRubro.Location = new System.Drawing.Point(70, 130);
+            this.txRubro.Name = "txRubro";
+            this.txRubro.Size = new System.Drawing.Size(145, 20);
+            this.txRubro.TabIndex = 9;
+            // 
             // btnTodos
             // 
-            this.btnTodos.Location = new System.Drawing.Point(219, 256);
+            this.btnTodos.Location = new System.Drawing.Point(196, 256);
             this.btnTodos.Name = "btnTodos";
             this.btnTodos.Size = new System.Drawing.Size(92, 23);
             this.btnTodos.TabIndex = 2;
@@ -150,7 +169,7 @@
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(236, 224);
+            this.btnBuscar.Location = new System.Drawing.Point(213, 214);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(75, 23);
             this.btnBuscar.TabIndex = 3;
@@ -160,17 +179,16 @@
             // 
             // btnActualizar
             // 
-            this.btnActualizar.Location = new System.Drawing.Point(85, 224);
+            this.btnActualizar.Location = new System.Drawing.Point(112, 214);
             this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(92, 23);
+            this.btnActualizar.Size = new System.Drawing.Size(75, 23);
             this.btnActualizar.TabIndex = 4;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = true;
-            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // btnLimpiar
             // 
-            this.btnLimpiar.Location = new System.Drawing.Point(102, 256);
+            this.btnLimpiar.Location = new System.Drawing.Point(112, 256);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(75, 23);
             this.btnLimpiar.TabIndex = 5;
@@ -180,7 +198,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(21, 256);
+            this.btnCancel.Location = new System.Drawing.Point(31, 256);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 6;
@@ -227,10 +245,12 @@
         private System.Windows.Forms.TextBox txRubro;
         private System.Windows.Forms.TextBox txDireccion;
         private System.Windows.Forms.TextBox txNombre;
+        private System.Windows.Forms.TextBox txDv;
         private System.Windows.Forms.TextBox txRut;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnTodos;
         private System.Windows.Forms.Button btnBuscar;

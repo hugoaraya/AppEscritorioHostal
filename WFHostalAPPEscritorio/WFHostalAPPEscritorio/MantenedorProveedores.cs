@@ -28,6 +28,7 @@ namespace WFHostalAPPEscritorio
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             txRut.Text = "";
+            txDv.Text = "";
             txNombre.Text = "";
             txDireccion.Text = "";
             txRubro.Text = "";
@@ -37,24 +38,46 @@ namespace WFHostalAPPEscritorio
 
         public void LlenarGrilla()
         {
+            this.dgvProveedor.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            this.dgvProveedor.MultiSelect = false;
+            this.dgvProveedor.ReadOnly = true;
             ManProveedor man = new ManProveedor();
             dgvProveedor.DataSource = man.todosEmpleados();
         }
 
+        private void tx_KeyPress_Numeric(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            MetodosAPP APP = new MetodosAPP();
-            if (APP.validarRut(txRut.Text) == false || txRut.Text.Length <= 3)
+            if (txRut.Text.Trim() == "")
             {
-                lbMsg.Text = ("Ingrese Rut Valido");
+                lbMsg.Text = "Asegúrese de ingresar RUT";
                 txRut.Focus();
-                return;
             }
-         
+            else
+            {
                 try
                 {
                     ManProveedor man = new ManProveedor();
-                    DataTable dt = man.ProveedorXRut(APP.ObtenerRut(txRut.Text));
+                    DataTable dt = man.ProveedorXRut(txRut.Text.Trim());
                     dgvProveedor.DataSource = dt;
                     if (dt == null)
                     {
@@ -72,10 +95,11 @@ namespace WFHostalAPPEscritorio
                         {
                             DataRow row = dt.Rows[0];
 
-                            txRut.Text = row[0].ToString()+ "-" + row[1].ToString();
-                            txNombre.Text = row[2].ToString();
-                            txDireccion.Text = row[3].ToString();
-                            txRubro.Text = row[4].ToString();
+                            txRut.Text = row[1].ToString();
+                            txDv.Text = row[2].ToString();
+                            txNombre.Text = row[3].ToString();
+                            txDireccion.Text = row[4].ToString();
+                            txRubro.Text = row[5].ToString();
                             txRut.Enabled = false;
                             lbMsg.Text = "Rut Encontrado";
                         }
@@ -88,6 +112,8 @@ namespace WFHostalAPPEscritorio
                     lbMsg.Text = "ERROR: " + ex;
 
                 }
+
+            }
         }
 
         private void btnTodos_Click(object sender, EventArgs e)
@@ -97,81 +123,7 @@ namespace WFHostalAPPEscritorio
 
         private void MantenedorProveedores_Load(object sender, EventArgs e)
         {
-            this.dgvProveedor.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            this.dgvProveedor.MultiSelect = false;
-            this.dgvProveedor.ReadOnly = true;
             LlenarGrilla();
-        }
-
-        private void dgvProveedor_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex <= -1)
-            {
-                return;
-            }
-
-            var row = (sender as DataGridView).CurrentRow;
-            txRut.Text = row.Cells[0].Value.ToString() + "-" + row.Cells[1].Value.ToString();
-            txNombre.Text = row.Cells[2].Value.ToString();
-            txDireccion.Text = row.Cells[3].Value.ToString();
-            txRubro.Text = row.Cells[4].Value.ToString();
-        }
-
-        private void btnActualizar_Click(object sender, EventArgs e)
-        {
-            MetodosAPP APP = new MetodosAPP();
-            if (APP.validarRut(txRut.Text) == false || txRut.Text.Length <= 3)
-            {
-                lbMsg.Text = ("Ingrese Rut Valido");
-                txRut.Focus();
-                return;
-            }
-
-            if (string.IsNullOrEmpty(txNombre.Text) || txNombre.Text.Length <= 3)
-            {
-                lbMsg.Text = ("Ingrese la información NOMBRE +4");
-                txNombre.Focus();
-                return;
-            }
-            if (string.IsNullOrEmpty(txDireccion.Text))
-            {
-                lbMsg.Text = ("Ingrese la información DIRECCIÓN");
-                txDireccion.Focus();
-                return;
-            }
-            if (string.IsNullOrEmpty(txRubro.Text))
-            {
-                lbMsg.Text = ("Ingrese la información RUBRO");
-                txRubro.Focus();
-                return;
-            }
-
-            int pRUT = int.Parse(APP.ObtenerRut(txRut.Text));
-            string pNOMBRE = txNombre.Text;
-            string pDIRECC = txDireccion.Text;
-            string pRubro = txRubro.Text;
-
-            using (EntitiesHostal con = new EntitiesHostal())
-            {
-                var test = con.PROVEEDOR.Where(x => x.RUT == pRUT).FirstOrDefault();
-                Console.Write(test);
-                Console.Write(test.NOMBRE.ToString());
-                test.NOMBRE = pNOMBRE;
-                test.DIRECCION = pDIRECC;
-                test.RUBRO = pRubro;
-                if (con.SaveChanges() > 0)
-                {
-                    lbMsg.Text = "Registro Actualizado";
-                    dgvProveedor.DataSource = "";
-                }
-                else
-                {
-                    Console.Write("PREOBLEMAS AL ACTUALIZAR DATOS_:" + e);
-                    lbMsg.Text = "Problemas al actualizar. Revise los datos";
-
-                }
-            }
-
         }
     }
 }

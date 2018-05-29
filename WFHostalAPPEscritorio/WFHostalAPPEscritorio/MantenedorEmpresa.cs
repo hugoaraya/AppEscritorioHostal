@@ -86,7 +86,10 @@ namespace WFHostalAPPEscritorio
             }
         }
         public void LlenarGrilla()
-        {           
+        {
+            this.dgvEmpresa.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            this.dgvEmpresa.MultiSelect = false;
+            this.dgvEmpresa.ReadOnly = true;
             ManEmpresa man = new ManEmpresa();
             dgvEmpresa.DataSource = man.todasEmpresas();
         }
@@ -100,9 +103,6 @@ namespace WFHostalAPPEscritorio
 
         private void MantenedorEmpresa_Load(object sender, EventArgs e)
         {
-            this.dgvEmpresa.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEmpresa.MultiSelect = false;
-            this.dgvEmpresa.ReadOnly = true;
             LlenarGrilla();
         }
 
@@ -206,5 +206,11 @@ namespace WFHostalAPPEscritorio
             txCorreo.Text = row.Cells[5].Value.ToString();
             
         }
+
+        private void dgvEmpresa_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
-}
+        
+    }

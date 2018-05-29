@@ -53,9 +53,6 @@ namespace WFHostalAPPEscritorio.Clases
                     }   
                 }
 
-
-
-
         public DataTable TodosUsuarios() //ENVIAR TODOS LOS USUARIOS
         {
             
@@ -63,7 +60,7 @@ namespace WFHostalAPPEscritorio.Clases
             Conectar conexion = new Conectar();
             conexion.Abrir();
 
-            OracleCommand comando = new OracleCommand("SELECT USUARIO.NOMBRE_USUARIO, TIPO_USUARIO.DESCRIPCION FROM USUARIO JOIN TIPO_USUARIO ON (USUARIO.TIPO_USUARIO_ID = TIPO_USUARIO.IDTIPO_USUARIO)", conexion.con);
+            OracleCommand comando = new OracleCommand("SELECT USUARIO.IDUSUARIO, USUARIO.NOMBRE_USUARIO, TIPO_USUARIO.DESCRIPCION FROM USUARIO JOIN TIPO_USUARIO ON (USUARIO.TIPO_USUARIO_ID = TIPO_USUARIO.IDTIPO_USUARIO)", conexion.con);
             //Obtener información de los txt
 
             OracleDataReader lector = comando.ExecuteReader();
@@ -84,66 +81,6 @@ namespace WFHostalAPPEscritorio.Clases
                 return null;
             }
         }
-
-        
-        public DataTable GetUsuariosEliminados() //ENVIAR TODOS LOS USUARIOS ELIMINADOS
-        {
-            
-            DataTable dt = new DataTable();
-            Conectar conexion = new Conectar();
-            conexion.Abrir();
-
-            OracleCommand comando = new OracleCommand("SELECT USUARIO.NOMBRE_USUARIO, TIPO_USUARIO.DESCRIPCION FROM USUARIO JOIN TIPO_USUARIO ON (USUARIO.TIPO_USUARIO_ID = TIPO_USUARIO.IDTIPO_USUARIO) WHERE TIPO_USUARIO.IDTIPO_USUARIO = 0 ", conexion.con);
-            //Obtener información de los txt
-
-            OracleDataReader lector = comando.ExecuteReader();
-
-            if (lector.HasRows)
-            {
-                dt.Load(lector);
-                lector.Close();
-                conexion.Cerrar();
-                return dt;
-            }
-            else
-            {
-                Console.WriteLine("No rows found.");
-                Console.WriteLine("intente nuevamente.");
-                lector.Close();
-                conexion.Cerrar();
-                return null;
-            }
-        }
-
-        public DataTable GetUsuariosActivos() //ENVIAR TODOS LOS USUARIOS ACTIVOS
-        {
-
-            DataTable dt = new DataTable();
-            Conectar conexion = new Conectar();
-            conexion.Abrir();
-
-            OracleCommand comando = new OracleCommand("SELECT USUARIO.NOMBRE_USUARIO, TIPO_USUARIO.DESCRIPCION FROM USUARIO JOIN TIPO_USUARIO ON (USUARIO.TIPO_USUARIO_ID = TIPO_USUARIO.IDTIPO_USUARIO) WHERE TIPO_USUARIO.IDTIPO_USUARIO <> 0 ", conexion.con);
-            //Obtener información de los txt
-
-            OracleDataReader lector = comando.ExecuteReader();
-
-            if (lector.HasRows)
-            {
-                dt.Load(lector);
-                lector.Close();
-                conexion.Cerrar();
-                return dt;
-            }
-            else
-            {
-                Console.WriteLine("No rows found.");
-                Console.WriteLine("intente nuevamente.");
-                lector.Close();
-                conexion.Cerrar();
-                return null;
-            }
-        }
-
         public DataTable UnUsuario(string pNombre) //ENVIAR TODOS LOS USUARIOS
         {
 
@@ -151,7 +88,7 @@ namespace WFHostalAPPEscritorio.Clases
             Conectar conexion = new Conectar();
             conexion.Abrir();
 
-            OracleCommand comando = new OracleCommand("SELECT USUARIO.NOMBRE_USUARIO, TIPO_USUARIO.DESCRIPCION FROM USUARIO JOIN TIPO_USUARIO ON (USUARIO.TIPO_USUARIO_ID = TIPO_USUARIO.IDTIPO_USUARIO) WHERE USUARIO.NOMBRE_USUARIO = :pNOMBRE_USUARIO", conexion.con);
+            OracleCommand comando = new OracleCommand("SELECT IDUSUARIO, NOMBRE_USUARIO, CONTRASENIA FROM USUARIO WHERE NOMBRE_USUARIO = :pNOMBRE_USUARIO", conexion.con);
             //Obtener información de los txt
             comando.Parameters.Add("pNOMBRE_USUARIO", pNombre);
             OracleDataReader lector = comando.ExecuteReader();
