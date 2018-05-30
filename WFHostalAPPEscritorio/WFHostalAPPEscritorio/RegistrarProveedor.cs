@@ -106,7 +106,7 @@ namespace WFHostalAPPEscritorio
                     txResult.Text += ("     Usuario: " + APP.ObtenerRut(txtRut.Text) + "\r\n" +
                                       "     Clave: " + APP.GenerarClave(txtNombre.Text, txtRut.Text)) + "\r\n \r\n";
                    
-                    txResult.Text += "Ingrese a www.HostalDonaClarita.cl para revisar Ordenes de Pedidos.\r\n \r\n \r\n";
+                    txResult.Text += "Ingrese a www.HostalDonaClarita.cl para revisar Órdenes de Pedidos.\r\n \r\n \r\n";
                     txResult.Text += "Hostal Doña Clarita\r\n \r\n \r\n";
 
                     txResult.Text += "**Informar datos al Proveedor";
