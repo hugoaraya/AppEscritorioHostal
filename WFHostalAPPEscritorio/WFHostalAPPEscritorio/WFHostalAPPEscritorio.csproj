@@ -96,6 +96,7 @@
     <Compile Include="Clases\ManEmpleado.cs" />
     <Compile Include="Clases\ManEmpresa.cs" />
     <Compile Include="Clases\ManHuesped.cs" />
+    <Compile Include="Clases\ManOrdenCompra.cs" />
     <Compile Include="Clases\ManOrdenPedido.cs" />
     <Compile Include="Clases\ManProveedor.cs" />
     <Compile Include="Clases\ManUsuario.cs" />
