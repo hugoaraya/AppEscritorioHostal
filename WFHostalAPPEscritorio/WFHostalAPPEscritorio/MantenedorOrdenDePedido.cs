@@ -31,9 +31,10 @@ namespace WFHostalAPPEscritorio
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
+            MetodosAPP APP = new MetodosAPP();
             if (txtNOP.Text.Trim() == "")
             {
-                lbMsg.Text = "Asegúrese de ingresar NÚMERO OP";
+                lbMsg.Text = ("Ingrese Número Válido");
                 txtNOP.Focus();
             }
             else
@@ -41,11 +42,11 @@ namespace WFHostalAPPEscritorio
                 try
                 {
                     ManOrdenPedido man = new ManOrdenPedido();
-                    DataTable dt = man.OPXNumero(txtNOP.Text.Trim());
+                    DataTable dt = man.OPXNumero(txtNOP.Text);
                     dgvOP.DataSource = dt;
                     if (dt == null)
                     {
-                        lbMsg.Text = "ORDEN DE PEDIDO No existe";
+                        lbMsg.Text = "NRO DE ORDEN No existe";
                         dgvOP.DataSource = "";
                         txtNOP.Enabled = true;
                     }
@@ -58,10 +59,16 @@ namespace WFHostalAPPEscritorio
                         else
                         {
                             DataRow row = dt.Rows[0];
-
-                            txtNOP.Text = row[1].ToString();
+                            txtNOP.Text = row[0].ToString();
+                            row[1].ToString();
+                            row[2].ToString();
+                            row[3].ToString();
+                            row[4].ToString();
+                            row[5].ToString();
+                            row[6].ToString();
+                            row[7].ToString(); 
                             txtNOP.Enabled = false;
-                            lbMsg.Text = "OP Encontrada";
+                            lbMsg.Text = "ODP Encontrada";
                         }
 
                     }
@@ -85,5 +92,12 @@ namespace WFHostalAPPEscritorio
         {
             this.Close();
         }
+
+        private void MantenedorOrdenDePedido_Load(object sender, EventArgs e)
+        {
+            LlenarGrilla();
+        }
+
+       
     }
 }

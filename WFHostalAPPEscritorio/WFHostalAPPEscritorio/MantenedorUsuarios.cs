@@ -175,7 +175,7 @@ namespace WFHostalAPPEscritorio
                 {
                     var test = con.USUARIO.Where(x => x.NOMBRE_USUARIO == pNOMBRE).FirstOrDefault();
                     test.NOMBRE_USUARIO = pNOMBRE;
-                    test.TIPO_USUARIO_ID = 0;
+                    test.TIPO_USUARIO_ID = 5;
 
                     if (con.SaveChanges() > 0)
                     {
