@@ -119,6 +119,23 @@ namespace WFHostalAPPEscritorio
             };
         }
 
+        private void txtUsuario_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtContra.Focus();
+            }
+        }
+
+        private void txtContra_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnEntrar.Focus();
+                btnEntrar_Click(Keys.Enter, e);
+            }
+        }
+
         //private void PruebaConexion_Click(object sender, EventArgs e)
         //{
 
