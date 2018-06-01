@@ -30,13 +30,14 @@
         {
             this.dgvCheck = new System.Windows.Forms.DataGridView();
             this.btnBuscarOC = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txOrdenCom = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnSalir = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.lbMsg = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCheck)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -57,13 +58,15 @@
             this.btnBuscarOC.TabIndex = 1;
             this.btnBuscarOC.Text = "Buscar OC";
             this.btnBuscarOC.UseVisualStyleBackColor = true;
+            this.btnBuscarOC.Click += new System.EventHandler(this.btnBuscarOC_Click);
             // 
-            // textBox1
+            // txOrdenCom
             // 
-            this.textBox1.Location = new System.Drawing.Point(402, 32);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 3;
+            this.txOrdenCom.Location = new System.Drawing.Point(402, 32);
+            this.txOrdenCom.Name = "txOrdenCom";
+            this.txOrdenCom.Size = new System.Drawing.Size(100, 20);
+            this.txOrdenCom.TabIndex = 3;
+            this.txOrdenCom.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tx_KeyPress_Numeric);
             // 
             // label1
             // 
@@ -92,6 +95,7 @@
             this.button2.TabIndex = 6;
             this.button2.Text = "Limpiar";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // groupBox1
             // 
@@ -104,15 +108,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Huesped";
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(130, 234);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Ingreso";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(211, 234);
@@ -122,20 +117,39 @@
             this.button3.Text = "Salida";
             this.button3.UseVisualStyleBackColor = true;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(130, 234);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Ingreso";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // lbMsg
+            // 
+            this.lbMsg.AutoSize = true;
+            this.lbMsg.Location = new System.Drawing.Point(13, 405);
+            this.lbMsg.Name = "lbMsg";
+            this.lbMsg.Size = new System.Drawing.Size(0, 13);
+            this.lbMsg.TabIndex = 8;
+            // 
             // CheckHuesped
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(907, 429);
+            this.Controls.Add(this.lbMsg);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txOrdenCom);
             this.Controls.Add(this.btnBuscarOC);
             this.Controls.Add(this.dgvCheck);
             this.Name = "CheckHuesped";
             this.Text = "CheckHuesped";
+            this.Load += new System.EventHandler(this.CheckHuesped_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCheck)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -147,12 +161,13 @@
 
         private System.Windows.Forms.DataGridView dgvCheck;
         private System.Windows.Forms.Button btnBuscarOC;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txOrdenCom;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label lbMsg;
     }
 }
