@@ -89,3 +89,7 @@ C:\Users\Hugo\Desktop\PORTAL_2.0\Programacion\WFHostalAPPEscritorio\WFHostalAPPE
 C:\Users\Hugo\Desktop\PORTAL_2.0\Programacion\WFHostalAPPEscritorio\WFHostalAPPEscritorio\obj\x86\Debug\WFHostalAPPEscritorio.exe
 C:\Users\Hugo\Desktop\PORTAL_2.0\Programacion\WFHostalAPPEscritorio\WFHostalAPPEscritorio\obj\x86\Debug\WFHostalAPPEscritorio.pdb
 C:\Users\Hugo\Desktop\GIT\AppEscritorioHostal\WFHostalAPPEscritorio\WFHostalAPPEscritorio\obj\x86\Debug\WFHostalAPPEscritorio.CheckHuesped.resources
+C:\Users\Nibsa\Documents\GitHub\AppEscritorioHostal\WFHostalAPPEscritorio\WFHostalAPPEscritorio\obj\x86\Debug\WFHostalAPPEscritorio.CheckHuesped.resources
+C:\Users\Hugo\Desktop\AppEscritorioHostal-b5ec88f9851593425975ec86ba7f99891d81a161\WFHostalAPPEscritorio\WFHostalAPPEscritorio\bin\x86\Debug\WFHostalAPPEscritorio.exe.config
+C:\Users\Hugo\Desktop\AppEscritorioHostal-b5ec88f9851593425975ec86ba7f99891d81a161\WFHostalAPPEscritorio\WFHostalAPPEscritorio\obj\x86\Debug\WFHostalAPPEscritorio.exe
+C:\Users\Hugo\Desktop\AppEscritorioHostal-b5ec88f9851593425975ec86ba7f99891d81a161\WFHostalAPPEscritorio\WFHostalAPPEscritorio\obj\x86\Debug\WFHostalAPPEscritorio.pdb

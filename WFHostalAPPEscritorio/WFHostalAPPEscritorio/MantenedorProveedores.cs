@@ -122,7 +122,7 @@ namespace WFHostalAPPEscritorio
             MetodosAPP APP = new MetodosAPP();
             if (APP.validarRut(txRut.Text) == false || txRut.Text.Length <= 3)
             {
-                lbMsg.Text = ("Ingrese Rut Valido");
+                lbMsg.Text = ("Ingrese Rut Válido");
                 txRut.Focus();
                 return;
             }
@@ -166,7 +166,7 @@ namespace WFHostalAPPEscritorio
                 }
                 else
                 {
-                    Console.Write("PREOBLEMAS AL ACTUALIZAR DATOS_:" + e);
+                    Console.Write("PROBLEMAS AL ACTUALIZAR DATOS_:" + e);
                     lbMsg.Text = "Problemas al actualizar. Revise los datos";
 
                 }

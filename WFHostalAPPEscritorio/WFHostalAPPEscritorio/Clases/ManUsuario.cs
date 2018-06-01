@@ -93,7 +93,7 @@ namespace WFHostalAPPEscritorio.Clases
             Conectar conexion = new Conectar();
             conexion.Abrir();
 
-            OracleCommand comando = new OracleCommand("SELECT USUARIO.NOMBRE_USUARIO, TIPO_USUARIO.DESCRIPCION FROM USUARIO JOIN TIPO_USUARIO ON (USUARIO.TIPO_USUARIO_ID = TIPO_USUARIO.IDTIPO_USUARIO) WHERE TIPO_USUARIO.IDTIPO_USUARIO = 0 ", conexion.con);
+            OracleCommand comando = new OracleCommand("SELECT USUARIO.NOMBRE_USUARIO, TIPO_USUARIO.DESCRIPCION FROM USUARIO JOIN TIPO_USUARIO ON (USUARIO.TIPO_USUARIO_ID = TIPO_USUARIO.IDTIPO_USUARIO) WHERE TIPO_USUARIO.IDTIPO_USUARIO = 5 ", conexion.con);
             //Obtener información de los txt
 
             OracleDataReader lector = comando.ExecuteReader();
@@ -122,7 +122,7 @@ namespace WFHostalAPPEscritorio.Clases
             Conectar conexion = new Conectar();
             conexion.Abrir();
 
-            OracleCommand comando = new OracleCommand("SELECT USUARIO.NOMBRE_USUARIO, TIPO_USUARIO.DESCRIPCION FROM USUARIO JOIN TIPO_USUARIO ON (USUARIO.TIPO_USUARIO_ID = TIPO_USUARIO.IDTIPO_USUARIO) WHERE TIPO_USUARIO.IDTIPO_USUARIO <> 0 ", conexion.con);
+            OracleCommand comando = new OracleCommand("SELECT USUARIO.NOMBRE_USUARIO, TIPO_USUARIO.DESCRIPCION FROM USUARIO JOIN TIPO_USUARIO ON (USUARIO.TIPO_USUARIO_ID = TIPO_USUARIO.IDTIPO_USUARIO) WHERE TIPO_USUARIO.IDTIPO_USUARIO <> 5 ", conexion.con);
             //Obtener información de los txt
 
             OracleDataReader lector = comando.ExecuteReader();
