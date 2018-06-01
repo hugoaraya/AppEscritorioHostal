@@ -167,7 +167,7 @@ namespace WFHostalAPPEscritorio
                 return;
             }
             string pNOMBRE = txNombre.Text;
-            DialogResult result = MessageBox.Show("¿Esta Seguro de Eliminar Usuario?", "Confirmacion de Eliminación", MessageBoxButtons.YesNo);
+            DialogResult result = MessageBox.Show("¿Está seguro de Eliminar Usuario?", "Confirmación de Eliminación", MessageBoxButtons.YesNo);
             Console.Write(result);
             if (result == DialogResult.Yes)
             {
@@ -186,11 +186,11 @@ namespace WFHostalAPPEscritorio
                         txContra.Enabled = false;
                         txNombre.Enabled = true;
                         txUpdate.Visible = true;
-                        txUpdate.Text = "Ultimo Cambio: Usuario: " + pNOMBRE + " eliminado";
+                        txUpdate.Text = "Último Cambio: Usuario: " + pNOMBRE + " eliminado";
                     }
                     else
                     {
-                        Console.Write("PREOBLEMAS AL ELIMINAR DATOS_:" + e);
+                        Console.Write("PROBLEMAS AL ELIMINAR DATOS_:" + e);
                         lbMsg.Text = "Problemas al eliminar. Revise los datos";
                     }
                 }
