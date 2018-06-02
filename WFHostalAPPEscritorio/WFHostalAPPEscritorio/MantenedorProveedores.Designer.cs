@@ -30,7 +30,6 @@
         {
             this.dgvProveedor = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.cboRubro = new System.Windows.Forms.ComboBox();
             this.txDireccion = new System.Windows.Forms.TextBox();
             this.txNombre = new System.Windows.Forms.TextBox();
             this.txRut = new System.Windows.Forms.TextBox();
@@ -45,6 +44,7 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.lbMsg = new System.Windows.Forms.Label();
             this.btnEliminar = new System.Windows.Forms.Button();
+            this.txRubro = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProveedor)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -60,7 +60,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.cboRubro);
+            this.groupBox1.Controls.Add(this.txRubro);
             this.groupBox1.Controls.Add(this.txDireccion);
             this.groupBox1.Controls.Add(this.txNombre);
             this.groupBox1.Controls.Add(this.txRut);
@@ -74,14 +74,6 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos de Proveedor";
-            // 
-            // cboRubro
-            // 
-            this.cboRubro.FormattingEnabled = true;
-            this.cboRubro.Location = new System.Drawing.Point(72, 130);
-            this.cboRubro.Name = "cboRubro";
-            this.cboRubro.Size = new System.Drawing.Size(143, 21);
-            this.cboRubro.TabIndex = 9;
             // 
             // txDireccion
             // 
@@ -207,6 +199,13 @@
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
             // 
+            // txRubro
+            // 
+            this.txRubro.Location = new System.Drawing.Point(69, 129);
+            this.txRubro.Name = "txRubro";
+            this.txRubro.Size = new System.Drawing.Size(145, 20);
+            this.txRubro.TabIndex = 9;
+            // 
             // MantenedorProveedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -250,6 +249,6 @@
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Label lbMsg;
         private System.Windows.Forms.Button btnEliminar;
-        private System.Windows.Forms.ComboBox cboRubro;
+        private System.Windows.Forms.TextBox txRubro;
     }
 }
