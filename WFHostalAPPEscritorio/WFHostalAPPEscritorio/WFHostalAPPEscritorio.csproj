@@ -113,6 +113,18 @@
     <Compile Include="FormularioEmpleado.Designer.cs">
       <DependentUpon>FormularioEmpleado.cs</DependentUpon>
     </Compile>
+    <Compile Include="GenerarFacturas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GenerarFacturas.Designer.cs">
+      <DependentUpon>GenerarFacturas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IngresoOrdenPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IngresoOrdenPedido.Designer.cs">
+      <DependentUpon>IngresoOrdenPedido.cs</DependentUpon>
+    </Compile>
     <Compile Include="MantenedorEmpleados.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,6 +136,12 @@
     </Compile>
     <Compile Include="MantenedorHuespedes.Designer.cs">
       <DependentUpon>MantenedorHuespedes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RecepcionOrdenPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RecepcionOrdenPedido.Designer.cs">
+      <DependentUpon>RecepcionOrdenPedido.cs</DependentUpon>
     </Compile>
     <Compile Include="RegistrarEmpleado.cs">
       <SubType>Form</SubType>

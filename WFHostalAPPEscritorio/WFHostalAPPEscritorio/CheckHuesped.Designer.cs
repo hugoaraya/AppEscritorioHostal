@@ -35,8 +35,8 @@
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnSalida = new System.Windows.Forms.Button();
+            this.btnIngreso = new System.Windows.Forms.Button();
             this.lbMsg = new System.Windows.Forms.Label();
             this.txDatosHue = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCheck)).BeginInit();
@@ -102,8 +102,8 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.txDatosHue);
-            this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.btnSalida);
+            this.groupBox1.Controls.Add(this.btnIngreso);
             this.groupBox1.Location = new System.Drawing.Point(34, 30);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(292, 326);
@@ -111,23 +111,25 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Huesped";
             // 
-            // button3
+            // btnSalida
             // 
-            this.button3.Location = new System.Drawing.Point(211, 292);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 1;
-            this.button3.Text = "Salida";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnSalida.Location = new System.Drawing.Point(211, 292);
+            this.btnSalida.Name = "btnSalida";
+            this.btnSalida.Size = new System.Drawing.Size(75, 23);
+            this.btnSalida.TabIndex = 1;
+            this.btnSalida.Text = "Salida";
+            this.btnSalida.UseVisualStyleBackColor = true;
+            this.btnSalida.Click += new System.EventHandler(this.btnSalida_Click);
             // 
-            // button1
+            // btnIngreso
             // 
-            this.button1.Location = new System.Drawing.Point(130, 292);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Ingreso";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnIngreso.Location = new System.Drawing.Point(130, 292);
+            this.btnIngreso.Name = "btnIngreso";
+            this.btnIngreso.Size = new System.Drawing.Size(75, 23);
+            this.btnIngreso.TabIndex = 0;
+            this.btnIngreso.Text = "Ingreso";
+            this.btnIngreso.UseVisualStyleBackColor = true;
+            this.btnIngreso.Click += new System.EventHandler(this.btnIngreso_Click);
             // 
             // lbMsg
             // 
@@ -181,8 +183,8 @@
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSalida;
+        private System.Windows.Forms.Button btnIngreso;
         private System.Windows.Forms.Label lbMsg;
         private System.Windows.Forms.TextBox txDatosHue;
     }

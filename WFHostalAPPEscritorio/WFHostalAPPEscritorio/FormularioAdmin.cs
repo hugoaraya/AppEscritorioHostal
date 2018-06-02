@@ -52,11 +52,7 @@ namespace WFHostalAPPEscritorio
             formulario.ShowDialog();
         }
 
-        private void mantenedorUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            MantenedorUsuarios formulario = new MantenedorUsuarios();
-            formulario.ShowDialog();
-        }
+     
 
         private void mantenedorOrdenDePedidoToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -100,11 +96,7 @@ namespace WFHostalAPPEscritorio
             formulario.ShowDialog();
         }
 
-        private void registrarEmpleadoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Ingresar_Empleado formulario = new Ingresar_Empleado();
-            formulario.ShowDialog();
-        }
+     
 
         private void mantenedorHabitaciónToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -131,6 +123,42 @@ namespace WFHostalAPPEscritorio
         private void checkINCheckOutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CheckHuesped formulario = new CheckHuesped();
+            formulario.ShowDialog();
+        }
+
+        private void mantenedorFacturasToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            MantenedorFacturas formulario = new MantenedorFacturas();
+            formulario.ShowDialog();
+        }
+
+        private void registrarEmpleadoToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            Ingresar_Empleado formulario = new Ingresar_Empleado();
+            formulario.ShowDialog();
+        }
+
+        private void mantenedorUsuariosToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            MantenedorUsuarios formulario = new MantenedorUsuarios();
+            formulario.ShowDialog();
+        }
+
+        private void ingresarOrdenDePedidoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            IngresoOrdenPedido formulario = new IngresoOrdenPedido();
+            formulario.ShowDialog();
+        }
+
+        private void recepciónDePedidoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RecepcionOrdenPedido formulario = new RecepcionOrdenPedido();
+            formulario.ShowDialog();
+        }
+
+        private void generarFacturasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GenerarFacturas formulario = new GenerarFacturas();
             formulario.ShowDialog();
         }
     }
