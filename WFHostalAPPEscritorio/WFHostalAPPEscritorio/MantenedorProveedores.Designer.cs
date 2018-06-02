@@ -30,7 +30,7 @@
         {
             this.dgvProveedor = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txRubro = new System.Windows.Forms.TextBox();
+            this.cboRubro = new System.Windows.Forms.ComboBox();
             this.txDireccion = new System.Windows.Forms.TextBox();
             this.txNombre = new System.Windows.Forms.TextBox();
             this.txRut = new System.Windows.Forms.TextBox();
@@ -44,6 +44,7 @@
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.lbMsg = new System.Windows.Forms.Label();
+            this.btnEliminar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProveedor)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -59,7 +60,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.txRubro);
+            this.groupBox1.Controls.Add(this.cboRubro);
             this.groupBox1.Controls.Add(this.txDireccion);
             this.groupBox1.Controls.Add(this.txNombre);
             this.groupBox1.Controls.Add(this.txRut);
@@ -69,17 +70,18 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(13, 13);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(306, 195);
+            this.groupBox1.Size = new System.Drawing.Size(306, 205);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos de Proveedor";
             // 
-            // txRubro
+            // cboRubro
             // 
-            this.txRubro.Location = new System.Drawing.Point(70, 130);
-            this.txRubro.Name = "txRubro";
-            this.txRubro.Size = new System.Drawing.Size(145, 20);
-            this.txRubro.TabIndex = 9;
+            this.cboRubro.FormattingEnabled = true;
+            this.cboRubro.Location = new System.Drawing.Point(72, 130);
+            this.cboRubro.Name = "cboRubro";
+            this.cboRubro.Size = new System.Drawing.Size(143, 21);
+            this.cboRubro.TabIndex = 9;
             // 
             // txDireccion
             // 
@@ -196,11 +198,21 @@
             this.lbMsg.Size = new System.Drawing.Size(0, 13);
             this.lbMsg.TabIndex = 7;
             // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Location = new System.Drawing.Point(236, 285);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminar.TabIndex = 8;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            // 
             // MantenedorProveedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(884, 331);
+            this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.lbMsg);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnLimpiar);
@@ -224,7 +236,6 @@
 
         private System.Windows.Forms.DataGridView dgvProveedor;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox txRubro;
         private System.Windows.Forms.TextBox txDireccion;
         private System.Windows.Forms.TextBox txNombre;
         private System.Windows.Forms.TextBox txRut;
@@ -238,5 +249,7 @@
         private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Label lbMsg;
+        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.ComboBox cboRubro;
     }
 }
