@@ -83,6 +83,9 @@ namespace WFHostalAPPEscritorio
 
         private void MantenedorHuespedes_Load(object sender, EventArgs e)
         {
+            this.dgvHuesped.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            this.dgvHuesped.MultiSelect = false;
+            this.dgvHuesped.ReadOnly = true;
             llenarGrilla();
         }
 
@@ -104,12 +107,43 @@ namespace WFHostalAPPEscritorio
             txRut.Focus();
             txRut.Enabled = true;
             lbMsg.Text = "";
+            txRut.ReadOnly = false;
+            txRutEmp.ReadOnly = false;
 
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void dgvHuesped_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex <= -1)
+            {
+                return;
+            }
+
+            var row = (sender as DataGridView).CurrentRow;
+            //0.RUT,1.DV,2.NOMBRE,3.APELLIDO,4.TELEFONO,5.CORREO,6.CARGO,7.RUT AS RUT_EMPRESA
+            txRut.Text = row.Cells[0].Value.ToString() + "-" + row.Cells[1].Value.ToString();
+            txNombre.Text = row.Cells[2].Value.ToString();
+            txApellido.Text = row.Cells[3].Value.ToString();
+            txTelefono.Text = row.Cells[4].Value.ToString();
+            txCorreo.Text = row.Cells[5].Value.ToString();
+            txCargo.Text = row.Cells[6].Value.ToString();
+            txRutEmp.Text = row.Cells[7].Value.ToString() + "-" + row.Cells[8].Value.ToString();
+            txRut.ReadOnly = true;
+            txRutEmp.ReadOnly = true;
+        }
+
+        private void btnXRut_Click(object sender, EventArgs e)
+        {
+            ManHuesped man = new ManHuesped();
+            MetodosAPP APP = new MetodosAPP();
+            dgvHuesped.DataSource = man.GetHuespedesXRut(APP.ObtenerRut(txRutEmp.Text));
+            txRut.ReadOnly = true;
+            txRutEmp.ReadOnly = true;
         }
     }
 }

@@ -9,3 +9,4 @@ C:\Users\Hugo\Desktop\GIT\AppEscritorioHostal\WFHostalAPPEscritorio\DAO\bin\Debu
 C:\Users\Hugo\Desktop\GIT\AppEscritorioHostal\WFHostalAPPEscritorio\DAO\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Hugo\Desktop\GIT\AppEscritorioHostal\WFHostalAPPEscritorio\DAO\obj\Debug\DAO.dll
 C:\Users\Hugo\Desktop\GIT\AppEscritorioHostal\WFHostalAPPEscritorio\DAO\obj\Debug\DAO.pdb
+C:\Users\Hugo\Desktop\GIT\AppEscritorioHostal\WFHostalAPPEscritorio\DAO\obj\Debug\DAO.csprojResolveAssemblyReference.cache

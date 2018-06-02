@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.txtApellidoEmp = new System.Windows.Forms.TextBox();
+            this.txtNombreEmp = new System.Windows.Forms.TextBox();
+            this.txtRutEmp = new System.Windows.Forms.TextBox();
             this.lblApellidoEmp = new System.Windows.Forms.Label();
             this.lblNombreEmp = new System.Windows.Forms.Label();
             this.lblRutEmp = new System.Windows.Forms.Label();
-            this.txtRutEmp = new System.Windows.Forms.TextBox();
-            this.txtNombreEmp = new System.Windows.Forms.TextBox();
-            this.txtApellidoEmp = new System.Windows.Forms.TextBox();
             this.btnIngresar = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
             this.txResult = new System.Windows.Forms.TextBox();
             this.btnCancel = new System.Windows.Forms.Button();
             this.lblMsg = new System.Windows.Forms.Label();
@@ -58,6 +58,36 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ingresar Datos de Empleado";
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Location = new System.Drawing.Point(101, 204);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.TabIndex = 7;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            // 
+            // txtApellidoEmp
+            // 
+            this.txtApellidoEmp.Location = new System.Drawing.Point(87, 108);
+            this.txtApellidoEmp.Name = "txtApellidoEmp";
+            this.txtApellidoEmp.Size = new System.Drawing.Size(142, 20);
+            this.txtApellidoEmp.TabIndex = 5;
+            // 
+            // txtNombreEmp
+            // 
+            this.txtNombreEmp.Location = new System.Drawing.Point(87, 71);
+            this.txtNombreEmp.Name = "txtNombreEmp";
+            this.txtNombreEmp.Size = new System.Drawing.Size(142, 20);
+            this.txtNombreEmp.TabIndex = 4;
+            // 
+            // txtRutEmp
+            // 
+            this.txtRutEmp.Location = new System.Drawing.Point(87, 35);
+            this.txtRutEmp.Name = "txtRutEmp";
+            this.txtRutEmp.Size = new System.Drawing.Size(142, 20);
+            this.txtRutEmp.TabIndex = 3;
             // 
             // lblApellidoEmp
             // 
@@ -86,27 +116,6 @@
             this.lblRutEmp.TabIndex = 0;
             this.lblRutEmp.Text = "RUT:";
             // 
-            // txtRutEmp
-            // 
-            this.txtRutEmp.Location = new System.Drawing.Point(87, 35);
-            this.txtRutEmp.Name = "txtRutEmp";
-            this.txtRutEmp.Size = new System.Drawing.Size(142, 20);
-            this.txtRutEmp.TabIndex = 3;
-            // 
-            // txtNombreEmp
-            // 
-            this.txtNombreEmp.Location = new System.Drawing.Point(87, 71);
-            this.txtNombreEmp.Name = "txtNombreEmp";
-            this.txtNombreEmp.Size = new System.Drawing.Size(142, 20);
-            this.txtNombreEmp.TabIndex = 4;
-            // 
-            // txtApellidoEmp
-            // 
-            this.txtApellidoEmp.Location = new System.Drawing.Point(87, 108);
-            this.txtApellidoEmp.Name = "txtApellidoEmp";
-            this.txtApellidoEmp.Size = new System.Drawing.Size(142, 20);
-            this.txtApellidoEmp.TabIndex = 5;
-            // 
             // btnIngresar
             // 
             this.btnIngresar.Location = new System.Drawing.Point(254, 235);
@@ -117,15 +126,6 @@
             this.btnIngresar.UseVisualStyleBackColor = true;
             this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
             // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Location = new System.Drawing.Point(101, 204);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 7;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            // 
             // txResult
             // 
             this.txResult.Location = new System.Drawing.Point(365, 31);
@@ -133,6 +133,7 @@
             this.txResult.Name = "txResult";
             this.txResult.Size = new System.Drawing.Size(234, 200);
             this.txResult.TabIndex = 17;
+            this.txResult.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txResult.Visible = false;
             // 
             // btnCancel

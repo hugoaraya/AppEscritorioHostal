@@ -96,8 +96,10 @@ namespace WFHostalAPPEscritorio
                     btnCancel.Text = "Salir";
                     lblMsg.Text = "Empleado Creado";
                     txResult.Visible = true;
-                    txResult.Text = (" Usuario para el Sistema : " + APP.ObtenerRut(txtRutEmp.Text) +
-                                  " Clave para el Sistema   : 123 ");
+
+                    txResult.Text = ("\r\n \r\n Usuario para el Sistema : " + APP.ObtenerRut(txtRutEmp.Text) + "\r\n \r\n");
+                    txResult.Text += (" Clave para el Sistema : " + APP.GenerarClave(txtNombreEmp.Text, txtRutEmp.Text));
+
 
                 }
 

@@ -18,7 +18,7 @@ namespace WFHostalAPPEscritorio.Clases
             conexion.Abrir();
             try
             {
-                OracleCommand comando = new OracleCommand("SELECT H.RUT,H.DV,H.NOMBRE,H.APELLIDO,H.TELEFONO,H.CORREO,H.CARGO,E.RUT AS RUT_EMPRESA FROM HUESPED H JOIN EMPRESA E ON(H.EMPRESA_ID = E.IDEMPRESA)", conexion.con);
+                OracleCommand comando = new OracleCommand("SELECT H.RUT, H.DV, H.NOMBRE, H.APELLIDO, H.TELEFONO, H.CORREO, H.CARGO, E.RUT AS RUT_EMPRESA, E.DV AS DV_EMPRESA FROM HUESPED H JOIN EMPRESA E ON(H.EMPRESA_ID = E.IDEMPRESA)", conexion.con);
                 OracleDataReader lector = comando.ExecuteReader();
 
                 if (lector.HasRows)
@@ -57,7 +57,7 @@ namespace WFHostalAPPEscritorio.Clases
 
             OracleCommand comando = new OracleCommand("SELECT H.RUT,H.DV,H.NOMBRE,H.APELLIDO,H.TELEFONO,H.CORREO,H.CARGO,E.RUT AS RUT_EMPRESA FROM HUESPED H JOIN EMPRESA E ON(H.EMPRESA_ID = E.IDEMPRESA) WHERE H.RUT = :pRut", conexion.con);
             //Obtener información de los txt
-            comando.Parameters.Add("pRut", pRutH);
+            comando.Parameters.Add(":pRut", pRutH);
             OracleDataReader lector = comando.ExecuteReader();
 
             if (lector.HasRows)
@@ -161,5 +161,38 @@ namespace WFHostalAPPEscritorio.Clases
             }
 
         }
+
+
+        //SELECT H.RUT, H.DV, H.NOMBRE, H.APELLIDO, H.TELEFONO, H.CORREO, H.CARGO, E.RUT AS RUT_EMPRESA, E.DV AS DV_EMPRESA FROM HUESPED H JOIN EMPRESA E ON(H.EMPRESA_ID = E.IDEMPRESA) WHERE E.RUT = :pRut_Empresa
+
+        public DataTable GetHuespedesXRut(string pRutE)
+        {
+            DataTable dt = new DataTable();
+            Conectar conexion = new Conectar();
+            conexion.Abrir();
+
+            OracleCommand comando = new OracleCommand("SELECT H.RUT, H.DV, H.NOMBRE, H.APELLIDO, H.TELEFONO, H.CORREO, H.CARGO, E.RUT AS RUT_EMPRESA, E.DV AS DV_EMPRESA FROM HUESPED H JOIN EMPRESA E ON(H.EMPRESA_ID = E.IDEMPRESA) WHERE E.RUT = :pRut_Empresa", conexion.con);
+            //Obtener información de los txt
+            comando.Parameters.Add(":pRut_Empresa", pRutE);
+            OracleDataReader lector = comando.ExecuteReader();
+
+            if (lector.HasRows)
+            {
+                dt.Load(lector);
+                lector.Close();
+                conexion.Cerrar();
+                return dt;
+            }
+            else
+            {
+                Console.WriteLine("No rows found.");
+                Console.WriteLine("intente nuevamente.");
+                lector.Close();
+                conexion.Cerrar();
+                return null;
+            }
+        }
+
+
     }
 }
