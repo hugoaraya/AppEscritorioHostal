@@ -55,7 +55,7 @@ namespace WFHostalAPPEscritorio.Clases
             Conectar conexion = new Conectar();
             conexion.Abrir();
 
-            OracleCommand comando = new OracleCommand("SELECT H.RUT,H.DV,H.NOMBRE,H.APELLIDO,H.TELEFONO,H.CORREO,H.CARGO,E.RUT AS RUT_EMPRESA FROM HUESPED H JOIN EMPRESA E ON(H.EMPRESA_ID = E.IDEMPRESA) WHERE H.RUT = :pRut", conexion.con);
+            OracleCommand comando = new OracleCommand("SELECT H.RUT,H.DV,H.NOMBRE,H.APELLIDO,H.TELEFONO,H.CORREO,H.CARGO,E.RUT AS RUT_EMPRESA, E.DV AS DV_EMPRESA FROM HUESPED H JOIN EMPRESA E ON(H.EMPRESA_ID = E.IDEMPRESA) WHERE H.RUT = :pRut", conexion.con);
             //Obtener información de los txt
             comando.Parameters.Add(":pRut", pRutH);
             OracleDataReader lector = comando.ExecuteReader();

@@ -35,7 +35,8 @@ namespace WFHostalAPPEscritorio
             try
             {
                 ManHuesped man = new ManHuesped();
-                DataTable dt = man.UnHueped(txRut.Text.Trim());
+                MetodosAPP APP = new MetodosAPP();
+                DataTable dt = man.UnHueped(APP.ObtenerRut(txRut.Text.Trim()));
                 dgvHuesped.DataSource = dt;
                 if (dt == null)
                 {
@@ -54,13 +55,13 @@ namespace WFHostalAPPEscritorio
                     else
                     {
                         DataRow row = dt.Rows[0];
-                        txRut.Text = row[0].ToString();
+                        txRut.Text = row[0].ToString() + "-" + row[1].ToString();
                         txNombre.Text = row[2].ToString();
                         txApellido.Text = row[3].ToString();
                         txTelefono.Text = row[4].ToString();
                         txCorreo.Text = row[5].ToString();
                         txCargo.Text = row[6].ToString();
-                        txRutEmp.Text = row[7].ToString();
+                        txRutEmp.Text = row[7].ToString() + "-" + row[8].ToString();
                         lbMsg.Text = "Heusped Encontrado";
                         txRut.Enabled = false;
 
