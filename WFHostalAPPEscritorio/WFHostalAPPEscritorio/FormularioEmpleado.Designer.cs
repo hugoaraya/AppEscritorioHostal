@@ -64,9 +64,9 @@
             this.LbBienvenida.AutoSize = true;
             this.LbBienvenida.Location = new System.Drawing.Point(57, 142);
             this.LbBienvenida.Name = "LbBienvenida";
-            this.LbBienvenida.Size = new System.Drawing.Size(35, 13);
+            this.LbBienvenida.Size = new System.Drawing.Size(11, 13);
             this.LbBienvenida.TabIndex = 14;
-            this.LbBienvenida.Text = "label1";
+            this.LbBienvenida.Text = "*";
             // 
             // picBLogo
             // 
@@ -103,14 +103,14 @@
             // cerrarSesiónToolStripMenuItem
             // 
             this.cerrarSesiónToolStripMenuItem.Name = "cerrarSesiónToolStripMenuItem";
-            this.cerrarSesiónToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.cerrarSesiónToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.cerrarSesiónToolStripMenuItem.Text = "Cerrar Sesión";
             this.cerrarSesiónToolStripMenuItem.Click += new System.EventHandler(this.cerrarSesiónToolStripMenuItem_Click);
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
@@ -266,7 +266,7 @@
             this.Controls.Add(this.picBLogo);
             this.Controls.Add(this.LbBienvenida);
             this.Name = "FormularioEmpleado";
-            this.Text = "FormularioEmpleado";
+            this.Text = "Formulario Empleado";
             ((System.ComponentModel.ISupportInitialize)(this.picBLogo)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

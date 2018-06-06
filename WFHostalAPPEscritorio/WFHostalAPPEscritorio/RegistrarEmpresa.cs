@@ -45,7 +45,7 @@ namespace WFHostalAPPEscritorio
             MetodosAPP APP = new MetodosAPP();
             if (APP.validarRut(txRut.Text)==false || txRut.Text.Length <= 3)
             {
-                lbMsg.Text = ("Ingrese Rut Valido");
+                lbMsg.Text = ("Ingrese Rut Válido");
                 txRut.Focus();
                 return;
             }
@@ -71,7 +71,7 @@ namespace WFHostalAPPEscritorio
             }
             if (APP.ValidacionEmail(txCorreo.Text)==false)
             {
-                lbMsg.Text = ("Ingrese la información CORREO valido");
+                lbMsg.Text = ("Ingrese la información CORREO válido");
                 txCorreo.Focus();
                 return;
             }

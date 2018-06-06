@@ -89,7 +89,7 @@ namespace WFHostalAPPEscritorio
                     else
                     {
                         Console.WriteLine("No rows found.");
-                        lbMsg.Text = "Usuario/Contraseña Invalido, intente nuevamente.";
+                        lbMsg.Text = "Usuario/Contraseña Inválido, intente nuevamente.";
                     }
 
                     lector.Close();

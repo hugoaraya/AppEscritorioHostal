@@ -35,6 +35,7 @@
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnEliminar = new System.Windows.Forms.Button();
             this.txContra = new System.Windows.Forms.TextBox();
             this.txNombre = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -42,14 +43,13 @@
             this.dgvUsuario = new System.Windows.Forms.DataGridView();
             this.txUpdate = new System.Windows.Forms.TextBox();
             this.btnEliminados = new System.Windows.Forms.Button();
-            this.btnEliminar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuario)).BeginInit();
             this.SuspendLayout();
             // 
             // btnActivos
             // 
-            this.btnActivos.Location = new System.Drawing.Point(233, 264);
+            this.btnActivos.Location = new System.Drawing.Point(233, 244);
             this.btnActivos.Name = "btnActivos";
             this.btnActivos.Size = new System.Drawing.Size(111, 23);
             this.btnActivos.TabIndex = 23;
@@ -62,23 +62,23 @@
             this.lbMsg.AutoSize = true;
             this.lbMsg.Location = new System.Drawing.Point(31, 328);
             this.lbMsg.Name = "lbMsg";
-            this.lbMsg.Size = new System.Drawing.Size(26, 13);
+            this.lbMsg.Size = new System.Drawing.Size(11, 13);
             this.lbMsg.TabIndex = 22;
-            this.lbMsg.Text = "msg";
+            this.lbMsg.Text = "*";
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(48, 292);
+            this.btnSalir.Location = new System.Drawing.Point(38, 283);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(75, 23);
             this.btnSalir.TabIndex = 21;
-            this.btnSalir.Text = "Cancelar";
+            this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // btnLimpiar
             // 
-            this.btnLimpiar.Location = new System.Drawing.Point(133, 292);
+            this.btnLimpiar.Location = new System.Drawing.Point(138, 283);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(75, 23);
             this.btnLimpiar.TabIndex = 20;
@@ -121,6 +121,16 @@
             this.groupBox1.TabIndex = 16;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos de Usuario:";
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Location = new System.Drawing.Point(168, 159);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(121, 23);
+            this.btnEliminar.TabIndex = 20;
+            this.btnEliminar.Text = "Eliminar Usuario";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // txContra
             // 
@@ -174,23 +184,13 @@
             // 
             // btnEliminados
             // 
-            this.btnEliminados.Location = new System.Drawing.Point(233, 293);
+            this.btnEliminados.Location = new System.Drawing.Point(233, 283);
             this.btnEliminados.Name = "btnEliminados";
             this.btnEliminados.Size = new System.Drawing.Size(111, 23);
             this.btnEliminados.TabIndex = 25;
             this.btnEliminados.Text = "Mostrar Eliminados";
             this.btnEliminados.UseVisualStyleBackColor = true;
             this.btnEliminados.Click += new System.EventHandler(this.btnEliminados_Click);
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.Location = new System.Drawing.Point(168, 159);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(121, 23);
-            this.btnEliminar.TabIndex = 20;
-            this.btnEliminar.Text = "Eliminar Usuario";
-            this.btnEliminar.UseVisualStyleBackColor = true;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // MantenedorUsuarios
             // 
@@ -206,7 +206,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgvUsuario);
             this.Name = "MantenedorUsuarios";
-            this.Text = "MantenedorUsuarios";
+            this.Text = "Mantenedor Usuarios";
             this.Load += new System.EventHandler(this.MantenedorUsuarios_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

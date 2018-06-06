@@ -56,7 +56,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(306, 195);
+            this.groupBox1.Size = new System.Drawing.Size(306, 172);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Empleado";
@@ -111,17 +111,17 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(33, 259);
+            this.btnCancel.Location = new System.Drawing.Point(49, 246);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 1;
-            this.btnCancel.Text = "Cancelar";
+            this.btnCancel.Text = "Salir";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click_1);
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(114, 259);
+            this.btnBuscar.Location = new System.Drawing.Point(49, 203);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(75, 23);
             this.btnBuscar.TabIndex = 2;
@@ -131,7 +131,7 @@
             // 
             // btnLimpiar
             // 
-            this.btnLimpiar.Location = new System.Drawing.Point(210, 259);
+            this.btnLimpiar.Location = new System.Drawing.Point(139, 246);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(75, 23);
             this.btnLimpiar.TabIndex = 3;
@@ -141,7 +141,7 @@
             // 
             // btnActualizar
             // 
-            this.btnActualizar.Location = new System.Drawing.Point(114, 230);
+            this.btnActualizar.Location = new System.Drawing.Point(139, 203);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(75, 23);
             this.btnActualizar.TabIndex = 4;
@@ -151,7 +151,7 @@
             // 
             // btnTodos
             // 
-            this.btnTodos.Location = new System.Drawing.Point(199, 230);
+            this.btnTodos.Location = new System.Drawing.Point(232, 203);
             this.btnTodos.Name = "btnTodos";
             this.btnTodos.Size = new System.Drawing.Size(86, 23);
             this.btnTodos.TabIndex = 5;
@@ -171,10 +171,11 @@
             // lblMsg
             // 
             this.lblMsg.AutoSize = true;
-            this.lblMsg.Location = new System.Drawing.Point(12, 306);
+            this.lblMsg.Location = new System.Drawing.Point(12, 294);
             this.lblMsg.Name = "lblMsg";
-            this.lblMsg.Size = new System.Drawing.Size(0, 13);
+            this.lblMsg.Size = new System.Drawing.Size(11, 13);
             this.lblMsg.TabIndex = 7;
+            this.lblMsg.Text = "*";
             // 
             // MantenedorEmpleados
             // 
@@ -190,7 +191,7 @@
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.groupBox1);
             this.Name = "MantenedorEmpleados";
-            this.Text = "MantenedorEmpleados";
+            this.Text = "Mantenedor Empleados";
             this.Load += new System.EventHandler(this.MantenedorEmpleados_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
