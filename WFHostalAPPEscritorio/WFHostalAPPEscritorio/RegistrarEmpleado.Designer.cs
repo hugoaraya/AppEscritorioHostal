@@ -149,10 +149,11 @@
             // lblMsg
             // 
             this.lblMsg.AutoSize = true;
-            this.lblMsg.Location = new System.Drawing.Point(42, 282);
+            this.lblMsg.Location = new System.Drawing.Point(20, 279);
             this.lblMsg.Name = "lblMsg";
-            this.lblMsg.Size = new System.Drawing.Size(0, 13);
+            this.lblMsg.Size = new System.Drawing.Size(11, 13);
             this.lblMsg.TabIndex = 19;
+            this.lblMsg.Text = "*";
             // 
             // Ingresar_Empleado
             // 

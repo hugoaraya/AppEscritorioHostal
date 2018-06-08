@@ -35,10 +35,10 @@
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txDatosHue = new System.Windows.Forms.TextBox();
             this.btnSalida = new System.Windows.Forms.Button();
             this.btnIngreso = new System.Windows.Forms.Button();
             this.lbMsg = new System.Windows.Forms.Label();
-            this.txDatosHue = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCheck)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -109,7 +109,18 @@
             this.groupBox1.Size = new System.Drawing.Size(292, 326);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Datos Huesped";
+            this.groupBox1.Text = "Datos Huésped";
+            // 
+            // txDatosHue
+            // 
+            this.txDatosHue.Location = new System.Drawing.Point(3, 16);
+            this.txDatosHue.Multiline = true;
+            this.txDatosHue.Name = "txDatosHue";
+            this.txDatosHue.ReadOnly = true;
+            this.txDatosHue.Size = new System.Drawing.Size(283, 270);
+            this.txDatosHue.TabIndex = 2;
+            this.txDatosHue.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txDatosHue.Visible = false;
             // 
             // btnSalida
             // 
@@ -139,17 +150,6 @@
             this.lbMsg.Size = new System.Drawing.Size(0, 13);
             this.lbMsg.TabIndex = 8;
             // 
-            // txDatosHue
-            // 
-            this.txDatosHue.Location = new System.Drawing.Point(3, 16);
-            this.txDatosHue.Multiline = true;
-            this.txDatosHue.Name = "txDatosHue";
-            this.txDatosHue.ReadOnly = true;
-            this.txDatosHue.Size = new System.Drawing.Size(283, 270);
-            this.txDatosHue.TabIndex = 2;
-            this.txDatosHue.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txDatosHue.Visible = false;
-            // 
             // CheckHuesped
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -164,7 +164,7 @@
             this.Controls.Add(this.btnBuscarOC);
             this.Controls.Add(this.dgvCheck);
             this.Name = "CheckHuesped";
-            this.Text = "CheckHuesped";
+            this.Text = "Chequeo Huésped";
             this.Load += new System.EventHandler(this.CheckHuesped_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCheck)).EndInit();
             this.groupBox1.ResumeLayout(false);

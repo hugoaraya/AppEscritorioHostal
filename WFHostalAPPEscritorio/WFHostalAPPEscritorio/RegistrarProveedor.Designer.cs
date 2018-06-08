@@ -141,7 +141,7 @@
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 2;
-            this.btnCancel.Text = "Cancelar";
+            this.btnCancel.Text = "Salir";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
@@ -161,6 +161,7 @@
             this.lbMsg.Name = "lbMsg";
             this.lbMsg.Size = new System.Drawing.Size(0, 13);
             this.lbMsg.TabIndex = 18;
+            this.lbMsg.Text = "*";
             // 
             // RegistrarProveedor
             // 
@@ -173,7 +174,7 @@
             this.Controls.Add(this.btnIngresar);
             this.Controls.Add(this.groupBox1);
             this.Name = "RegistrarProveedor";
-            this.Text = "RegistrarProveedor";
+            this.Text = "Registrar Proveedor";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

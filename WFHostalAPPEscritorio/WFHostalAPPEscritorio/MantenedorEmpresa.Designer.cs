@@ -197,7 +197,7 @@
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(75, 23);
             this.btnSalir.TabIndex = 12;
-            this.btnSalir.Text = "Cancelar";
+            this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
@@ -234,7 +234,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgvEmpresa);
             this.Name = "MantenedorEmpresa";
-            this.Text = "MantenedorEmpresa";
+            this.Text = "Mantenedor Empresa";
             this.Load += new System.EventHandler(this.MantenedorEmpresa_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpresa)).EndInit();
             this.groupBox1.ResumeLayout(false);

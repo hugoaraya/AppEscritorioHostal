@@ -88,10 +88,12 @@
             // lbMsg
             // 
             this.lbMsg.AutoSize = true;
+            this.lbMsg.ForeColor = System.Drawing.Color.Red;
             this.lbMsg.Location = new System.Drawing.Point(12, 268);
             this.lbMsg.Name = "lbMsg";
-            this.lbMsg.Size = new System.Drawing.Size(0, 13);
+            this.lbMsg.Size = new System.Drawing.Size(11, 13);
             this.lbMsg.TabIndex = 10;
+            this.lbMsg.Text = "*";
             this.lbMsg.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // picBLogo

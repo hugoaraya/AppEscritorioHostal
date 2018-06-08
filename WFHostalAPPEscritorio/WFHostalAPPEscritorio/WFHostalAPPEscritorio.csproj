@@ -232,8 +232,14 @@
     <EmbeddedResource Include="MantenedorOrdenDePedido.resx">
       <DependentUpon>MantenedorOrdenDePedido.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MantenedorProducto.resx">
+      <DependentUpon>MantenedorProducto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MantenedorProveedores.resx">
       <DependentUpon>MantenedorProveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RecepcionOrdenPedido.resx">
+      <DependentUpon>RecepcionOrdenPedido.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RegistrarEmpleado.resx">
       <DependentUpon>RegistrarEmpleado.cs</DependentUpon>
