@@ -29,33 +29,27 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txRutEmp = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.btnActualizar = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-<<<<<<< HEAD
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-=======
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txDv = new System.Windows.Forms.TextBox();
->>>>>>> master
             this.txCargo = new System.Windows.Forms.TextBox();
             this.txCorreo = new System.Windows.Forms.TextBox();
             this.txTelefono = new System.Windows.Forms.TextBox();
             this.txApellido = new System.Windows.Forms.TextBox();
             this.txNombre = new System.Windows.Forms.TextBox();
             this.txRut = new System.Windows.Forms.TextBox();
+            this.txRutEmp = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.dgvHuesped = new System.Windows.Forms.DataGridView();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnTodos = new System.Windows.Forms.Button();
-            this.btnBuscar = new System.Windows.Forms.Button();
             this.lbMsg = new System.Windows.Forms.Label();
-            this.btnActualizar = new System.Windows.Forms.Button();
             this.btnXRut = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHuesped)).BeginInit();
@@ -84,23 +78,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos de Huésped";
             // 
-            // txRutEmp
-<<<<<<< HEAD
-            // 
-            this.txRutEmp.Location = new System.Drawing.Point(472, 34);
-            this.txRutEmp.Name = "txRutEmp";
-            this.txRutEmp.Size = new System.Drawing.Size(152, 20);
-            this.txRutEmp.TabIndex = 15;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(390, 38);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(77, 13);
-            this.label8.TabIndex = 14;
-            this.label8.Text = "RUT Empresa:";
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -128,6 +105,16 @@
             this.label5.TabIndex = 11;
             this.label5.Text = "Teléfono:";
             // 
+            // btnActualizar
+            // 
+            this.btnActualizar.Location = new System.Drawing.Point(175, 250);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Size = new System.Drawing.Size(75, 23);
+            this.btnActualizar.TabIndex = 7;
+            this.btnActualizar.Text = "Actualizar";
+            this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -145,76 +132,16 @@
             this.label3.Size = new System.Drawing.Size(47, 13);
             this.label3.TabIndex = 9;
             this.label3.Text = "Nombre:";
-=======
             // 
-            this.txRutEmp.Location = new System.Drawing.Point(97, 260);
-            this.txRutEmp.Name = "txRutEmp";
-            this.txRutEmp.Size = new System.Drawing.Size(161, 20);
-            this.txRutEmp.TabIndex = 15;
+            // btnBuscar
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(13, 263);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(77, 13);
-            this.label8.TabIndex = 14;
-            this.label8.Text = "RUT Empresa:";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(13, 230);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(38, 13);
-            this.label7.TabIndex = 13;
-            this.label7.Text = "Cargo:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(13, 188);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(38, 13);
-            this.label6.TabIndex = 12;
-            this.label6.Text = "E-mail:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(10, 152);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(52, 13);
-            this.label5.TabIndex = 11;
-            this.label5.Text = "Teléfono:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(10, 117);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(47, 13);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "Apellido:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(10, 77);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(47, 13);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "Nombre:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(262, 35);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(10, 13);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "-";
->>>>>>> master
+            this.btnBuscar.Location = new System.Drawing.Point(256, 250);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscar.TabIndex = 5;
+            this.btnBuscar.Text = "Buscar RUT";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // label1
             // 
@@ -225,108 +152,72 @@
             this.label1.TabIndex = 7;
             this.label1.Text = "RUT:";
             // 
-<<<<<<< HEAD
             // txCargo
             // 
             this.txCargo.Location = new System.Drawing.Point(111, 213);
             this.txCargo.Name = "txCargo";
             this.txCargo.Size = new System.Drawing.Size(190, 20);
-=======
-            // txDv
-            // 
-            this.txDv.Location = new System.Drawing.Point(278, 32);
-            this.txDv.Name = "txDv";
-            this.txDv.Size = new System.Drawing.Size(30, 20);
-            this.txDv.TabIndex = 6;
-            // 
-            // txCargo
-            // 
-            this.txCargo.Location = new System.Drawing.Point(97, 227);
-            this.txCargo.Name = "txCargo";
-            this.txCargo.Size = new System.Drawing.Size(161, 20);
->>>>>>> master
             this.txCargo.TabIndex = 5;
             // 
             // txCorreo
             // 
-<<<<<<< HEAD
             this.txCorreo.Location = new System.Drawing.Point(111, 175);
             this.txCorreo.Name = "txCorreo";
             this.txCorreo.Size = new System.Drawing.Size(190, 20);
-=======
-            this.txCorreo.Location = new System.Drawing.Point(97, 188);
-            this.txCorreo.Name = "txCorreo";
-            this.txCorreo.Size = new System.Drawing.Size(161, 20);
->>>>>>> master
             this.txCorreo.TabIndex = 4;
             // 
             // txTelefono
             // 
-<<<<<<< HEAD
             this.txTelefono.Location = new System.Drawing.Point(111, 137);
             this.txTelefono.Name = "txTelefono";
             this.txTelefono.Size = new System.Drawing.Size(190, 20);
-=======
-            this.txTelefono.Location = new System.Drawing.Point(97, 152);
-            this.txTelefono.Name = "txTelefono";
-            this.txTelefono.Size = new System.Drawing.Size(161, 20);
->>>>>>> master
             this.txTelefono.TabIndex = 3;
             // 
             // txApellido
             // 
-<<<<<<< HEAD
             this.txApellido.Location = new System.Drawing.Point(111, 99);
             this.txApellido.Name = "txApellido";
             this.txApellido.Size = new System.Drawing.Size(190, 20);
-=======
-            this.txApellido.Location = new System.Drawing.Point(97, 111);
-            this.txApellido.Name = "txApellido";
-            this.txApellido.Size = new System.Drawing.Size(161, 20);
->>>>>>> master
             this.txApellido.TabIndex = 2;
             // 
             // txNombre
             // 
-<<<<<<< HEAD
             this.txNombre.Location = new System.Drawing.Point(111, 61);
             this.txNombre.Name = "txNombre";
             this.txNombre.Size = new System.Drawing.Size(190, 20);
-=======
-            this.txNombre.Location = new System.Drawing.Point(97, 74);
-            this.txNombre.Name = "txNombre";
-            this.txNombre.Size = new System.Drawing.Size(161, 20);
->>>>>>> master
             this.txNombre.TabIndex = 1;
             // 
             // txRut
             // 
-<<<<<<< HEAD
             this.txRut.Location = new System.Drawing.Point(111, 29);
             this.txRut.Name = "txRut";
             this.txRut.Size = new System.Drawing.Size(190, 20);
-=======
-            this.txRut.Location = new System.Drawing.Point(97, 32);
-            this.txRut.Name = "txRut";
-            this.txRut.Size = new System.Drawing.Size(161, 20);
->>>>>>> master
             this.txRut.TabIndex = 0;
+            // 
+            // txRutEmp
+            // 
+            this.txRutEmp.Location = new System.Drawing.Point(472, 34);
+            this.txRutEmp.Name = "txRutEmp";
+            this.txRutEmp.Size = new System.Drawing.Size(152, 20);
+            this.txRutEmp.TabIndex = 15;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(390, 38);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(77, 13);
+            this.label8.TabIndex = 14;
+            this.label8.Text = "RUT Empresa:";
             // 
             // dgvHuesped
             // 
             this.dgvHuesped.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-<<<<<<< HEAD
             this.dgvHuesped.Location = new System.Drawing.Point(391, 64);
             this.dgvHuesped.Name = "dgvHuesped";
             this.dgvHuesped.Size = new System.Drawing.Size(466, 298);
             this.dgvHuesped.TabIndex = 1;
             this.dgvHuesped.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHuesped_CellDoubleClick);
-=======
-            this.dgvHuesped.Location = new System.Drawing.Point(366, 13);
-            this.dgvHuesped.Name = "dgvHuesped";
-            this.dgvHuesped.Size = new System.Drawing.Size(388, 276);
-            this.dgvHuesped.TabIndex = 1;
->>>>>>> master
             // 
             // btnLimpiar
             // 
@@ -358,16 +249,6 @@
             this.btnTodos.UseVisualStyleBackColor = true;
             this.btnTodos.Click += new System.EventHandler(this.btnTodos_Click);
             // 
-            // btnBuscar
-            // 
-            this.btnBuscar.Location = new System.Drawing.Point(256, 250);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(75, 23);
-            this.btnBuscar.TabIndex = 5;
-            this.btnBuscar.Text = "Buscar RUT";
-            this.btnBuscar.UseVisualStyleBackColor = true;
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
-            // 
             // lbMsg
             // 
             this.lbMsg.AutoSize = true;
@@ -376,15 +257,6 @@
             this.lbMsg.Size = new System.Drawing.Size(11, 13);
             this.lbMsg.TabIndex = 6;
             this.lbMsg.Text = "*";
-            // 
-            // btnActualizar
-            // 
-            this.btnActualizar.Location = new System.Drawing.Point(175, 250);
-            this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(75, 23);
-            this.btnActualizar.TabIndex = 7;
-            this.btnActualizar.Text = "Actualizar";
-            this.btnActualizar.UseVisualStyleBackColor = true;
             // 
             // btnXRut
             // 

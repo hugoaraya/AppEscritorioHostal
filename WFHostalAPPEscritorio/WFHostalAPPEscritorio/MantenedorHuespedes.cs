@@ -146,5 +146,10 @@ namespace WFHostalAPPEscritorio
             txRut.ReadOnly = true;
             txRutEmp.ReadOnly = true;
         }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Pendiente de Desarrollo");
+        }
     }
 }
