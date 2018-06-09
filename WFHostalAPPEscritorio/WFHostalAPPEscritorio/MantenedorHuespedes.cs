@@ -91,16 +91,11 @@ namespace WFHostalAPPEscritorio
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
-            LimpiarDatos();
-        }
-
-        public void LimpiarDatos()
-        {
             txRut.Text = "";
             txNombre.Text = "";
             txApellido.Text = "";
             txTelefono.Text = "";
-            txCorreo.Text = "";            
+            txCorreo.Text = "";
             txRutEmp.Text = "";
             llenarGrilla();
             txRut.Focus();
@@ -108,8 +103,9 @@ namespace WFHostalAPPEscritorio
             lbMsg.Text = "";
             txRut.ReadOnly = false;
             txRutEmp.ReadOnly = false;
-
         }
+
+      
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
@@ -150,6 +146,7 @@ namespace WFHostalAPPEscritorio
             {
                 dgvHuesped.DataSource = "";
                 txRutEmp.ReadOnly = false;
+                txRutEmp.Focus();
                 lbMsg.Text = ("Empresa No Encontrada");
             }
             else {
@@ -157,12 +154,12 @@ namespace WFHostalAPPEscritorio
                 txRutEmp.ReadOnly = true;
                 lbMsg.Text = ("Empresa Encontrada");
             }
-           
+
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-
+            ManHuesped man = new ManHuesped();
             MetodosAPP APP = new MetodosAPP();
             if (APP.validarRut(txRut.Text) == false || txRut.Text.Length <= 3)
             {
@@ -214,7 +211,8 @@ namespace WFHostalAPPEscritorio
                 test.CORREO = pCORREO;
                 if (con.SaveChanges() > 0)
                 {
-                    LimpiarDatos();
+                    LimpiarDatosUpda();
+                    dgvHuesped.DataSource = man.GetHuespedesXRut(APP.ObtenerRut(txRutEmp.Text));
                     lbMsg.Text = "Registro Actualizado";
                 }
                 else
@@ -224,10 +222,44 @@ namespace WFHostalAPPEscritorio
 
                 }
             }
+        }
 
 
 
-            MessageBox.Show("Pendiente de Desarrollo");
+        public void LimpiarDatosUpda()
+        {
+            txRut.Text = "";
+            txNombre.Text = "";
+            txApellido.Text = "";
+            txTelefono.Text = "";
+            txCorreo.Text = "";
+            txRutEmp.Focus();
+            txRut.Enabled = true;
+            lbMsg.Text = "";
+            txRut.ReadOnly = false;
+            txRutEmp.ReadOnly = false;
+
+        }
+
+        //Validar que campos  sean numericos
+        private void tx_KeyPress_Numeric(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
         }
     }
 }

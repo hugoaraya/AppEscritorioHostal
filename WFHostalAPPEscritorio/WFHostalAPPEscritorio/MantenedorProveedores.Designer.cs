@@ -30,7 +30,6 @@
         {
             this.dgvProveedor = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txRubro = new System.Windows.Forms.TextBox();
             this.txDireccion = new System.Windows.Forms.TextBox();
             this.txNombre = new System.Windows.Forms.TextBox();
             this.txRut = new System.Windows.Forms.TextBox();
@@ -44,7 +43,7 @@
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.lbMsg = new System.Windows.Forms.Label();
-            this.btnEliminar = new System.Windows.Forms.Button();
+            this.cbxRubro = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProveedor)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -60,7 +59,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.txRubro);
+            this.groupBox1.Controls.Add(this.cbxRubro);
             this.groupBox1.Controls.Add(this.txDireccion);
             this.groupBox1.Controls.Add(this.txNombre);
             this.groupBox1.Controls.Add(this.txRut);
@@ -74,13 +73,6 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos de Proveedor";
-            // 
-            // txRubro
-            // 
-            this.txRubro.Location = new System.Drawing.Point(69, 129);
-            this.txRubro.Name = "txRubro";
-            this.txRubro.Size = new System.Drawing.Size(145, 20);
-            this.txRubro.TabIndex = 9;
             // 
             // txDireccion
             // 
@@ -141,7 +133,7 @@
             // 
             // btnTodos
             // 
-            this.btnTodos.Location = new System.Drawing.Point(219, 227);
+            this.btnTodos.Location = new System.Drawing.Point(218, 227);
             this.btnTodos.Name = "btnTodos";
             this.btnTodos.Size = new System.Drawing.Size(92, 23);
             this.btnTodos.TabIndex = 2;
@@ -161,7 +153,7 @@
             // 
             // btnActualizar
             // 
-            this.btnActualizar.Location = new System.Drawing.Point(112, 227);
+            this.btnActualizar.Location = new System.Drawing.Point(111, 227);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(92, 23);
             this.btnActualizar.TabIndex = 4;
@@ -171,7 +163,7 @@
             // 
             // btnLimpiar
             // 
-            this.btnLimpiar.Location = new System.Drawing.Point(129, 256);
+            this.btnLimpiar.Location = new System.Drawing.Point(114, 263);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(75, 23);
             this.btnLimpiar.TabIndex = 5;
@@ -181,7 +173,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(21, 256);
+            this.btnCancel.Location = new System.Drawing.Point(21, 263);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 6;
@@ -198,21 +190,20 @@
             this.lbMsg.TabIndex = 7;
             this.lbMsg.Text = "*";
             // 
-            // btnEliminar
+            // cbxRubro
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(236, 256);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
-            this.btnEliminar.TabIndex = 8;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.cbxRubro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxRubro.FormattingEnabled = true;
+            this.cbxRubro.Location = new System.Drawing.Point(70, 127);
+            this.cbxRubro.Name = "cbxRubro";
+            this.cbxRubro.Size = new System.Drawing.Size(145, 21);
+            this.cbxRubro.TabIndex = 9;
             // 
             // MantenedorProveedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(884, 331);
-            this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.lbMsg);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnLimpiar);
@@ -249,7 +240,6 @@
         private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Label lbMsg;
-        private System.Windows.Forms.Button btnEliminar;
-        private System.Windows.Forms.TextBox txRubro;
+        private System.Windows.Forms.ComboBox cbxRubro;
     }
 }

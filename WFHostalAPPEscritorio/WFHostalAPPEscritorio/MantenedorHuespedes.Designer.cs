@@ -152,6 +152,7 @@
             this.txTelefono.Name = "txTelefono";
             this.txTelefono.Size = new System.Drawing.Size(190, 20);
             this.txTelefono.TabIndex = 3;
+            this.txTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tx_KeyPress_Numeric);
             // 
             // txApellido
             // 

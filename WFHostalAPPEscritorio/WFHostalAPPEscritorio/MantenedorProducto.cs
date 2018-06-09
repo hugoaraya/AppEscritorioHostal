@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DAO;
+using WFHostalAPPEscritorio.Clases;
 
 namespace WFHostalAPPEscritorio
 {
@@ -16,5 +18,20 @@ namespace WFHostalAPPEscritorio
         {
             InitializeComponent();
         }
+
+        private void MantenedorProducto_Load(object sender, EventArgs e)
+        {
+            LlenarGrilla();
+        }
+
+        private void LlenarGrilla()
+        {
+            this.dgvProductos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            this.dgvProductos.MultiSelect = false;
+            this.dgvProductos.ReadOnly = true;
+            ManProducto man = new ManProducto();
+            dgvProductos.DataSource = man.TodosProductos();
+        }
+
     }
 }

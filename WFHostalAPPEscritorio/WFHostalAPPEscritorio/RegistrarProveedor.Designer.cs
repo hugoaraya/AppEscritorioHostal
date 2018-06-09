@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtRubro = new System.Windows.Forms.TextBox();
+            this.cbxRubros = new System.Windows.Forms.ComboBox();
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtRut = new System.Windows.Forms.TextBox();
@@ -46,7 +46,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.txtRubro);
+            this.groupBox1.Controls.Add(this.cbxRubros);
             this.groupBox1.Controls.Add(this.txtDireccion);
             this.groupBox1.Controls.Add(this.txtNombre);
             this.groupBox1.Controls.Add(this.txtRut);
@@ -61,12 +61,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ingrese Datos de Proveedor";
             // 
-            // txtRubro
+            // cbxRubros
             // 
-            this.txtRubro.Location = new System.Drawing.Point(68, 137);
-            this.txtRubro.Name = "txtRubro";
-            this.txtRubro.Size = new System.Drawing.Size(147, 20);
-            this.txtRubro.TabIndex = 9;
+            this.cbxRubros.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxRubros.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.cbxRubros.Location = new System.Drawing.Point(68, 134);
+            this.cbxRubros.Name = "cbxRubros";
+            this.cbxRubros.Size = new System.Drawing.Size(147, 21);
+            this.cbxRubros.TabIndex = 9;
+            this.cbxRubros.Tag = "-Seleccione Rubro-";
             // 
             // txtDireccion
             // 
@@ -92,7 +95,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(7, 137);
+            this.label5.Location = new System.Drawing.Point(7, 138);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(39, 13);
             this.label5.TabIndex = 4;
@@ -159,7 +162,7 @@
             this.lbMsg.AutoSize = true;
             this.lbMsg.Location = new System.Drawing.Point(23, 291);
             this.lbMsg.Name = "lbMsg";
-            this.lbMsg.Size = new System.Drawing.Size(0, 13);
+            this.lbMsg.Size = new System.Drawing.Size(11, 13);
             this.lbMsg.TabIndex = 18;
             this.lbMsg.Text = "*";
             // 
@@ -175,6 +178,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "RegistrarProveedor";
             this.Text = "Registrar Proveedor";
+            this.Load += new System.EventHandler(this.RegistrarProveedor_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -190,12 +194,12 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtRubro;
         private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Button btnIngresar;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.TextBox txResult;
         private System.Windows.Forms.Label lbMsg;
+        private System.Windows.Forms.ComboBox cbxRubros;
     }
 }

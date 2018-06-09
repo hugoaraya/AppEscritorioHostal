@@ -30,7 +30,6 @@ namespace WFHostalAPPEscritorio
             txRut.Text = "";
             txNombre.Text = "";
             txDireccion.Text = "";
-            txRubro.Text = "";
             txRut.Enabled = true;
             lbMsg.Text = "";
         }
@@ -75,7 +74,7 @@ namespace WFHostalAPPEscritorio
                             txRut.Text = row[0].ToString()+ "-" + row[1].ToString();
                             txNombre.Text = row[2].ToString();
                             txDireccion.Text = row[3].ToString();
-                            txRubro.Text = row[4].ToString();
+                            cbxRubro.Text = row[4].ToString();
                             txRut.Enabled = false;
                             lbMsg.Text = "Rut Encontrado";
                         }
@@ -101,6 +100,26 @@ namespace WFHostalAPPEscritorio
             this.dgvProveedor.MultiSelect = false;
             this.dgvProveedor.ReadOnly = true;
             LlenarGrilla();
+
+            ManProveedor man = new ManProveedor();
+            DataTable dtRubros = man.GetRubros();
+            if (dtRubros == null)
+            {
+                lbMsg.Text = "problema al cargar rubro";
+            }
+            else
+            {
+                for (int i = 0; i < dtRubros.Rows.Count; i++)
+                {
+                    DataRow row = dtRubros.Rows[i];
+                    cbxRubro.Items.Add(row[1]);
+                }
+            }
+            cbxRubro.Items.Insert(0, "-Seleccione Rubro-");
+            cbxRubro.SelectedIndex = 0;
+
+
+
         }
 
         private void dgvProveedor_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -114,12 +133,14 @@ namespace WFHostalAPPEscritorio
             txRut.Text = row.Cells[0].Value.ToString() + "-" + row.Cells[1].Value.ToString();
             txNombre.Text = row.Cells[2].Value.ToString();
             txDireccion.Text = row.Cells[3].Value.ToString();
-            txRubro.Text = row.Cells[4].Value.ToString();
+            cbxRubro.Text = row.Cells[4].Value.ToString();
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
             MetodosAPP APP = new MetodosAPP();
+            ManProveedor man = new ManProveedor();
+            string pRubro = "";
             if (APP.validarRut(txRut.Text) == false || txRut.Text.Length <= 3)
             {
                 lbMsg.Text = ("Ingrese Rut Válido");
@@ -139,17 +160,21 @@ namespace WFHostalAPPEscritorio
                 txDireccion.Focus();
                 return;
             }
-            if (string.IsNullOrEmpty(txRubro.Text))
+            if (cbxRubro.SelectedIndex == 0)
             {
-                lbMsg.Text = ("Ingrese la información RUBRO");
-                txRubro.Focus();
+                lbMsg.Text = ("Seleccione un Rubro");
+                cbxRubro.Focus();
                 return;
+            }
+            else
+            {
+                pRubro = cbxRubro.SelectedItem.ToString();
             }
 
             int pRUT = int.Parse(APP.ObtenerRut(txRut.Text));
             string pNOMBRE = txNombre.Text;
             string pDIRECC = txDireccion.Text;
-            string pRubro = txRubro.Text;
+            
 
             using (EntitiesHostal con = new EntitiesHostal())
             {
@@ -158,7 +183,7 @@ namespace WFHostalAPPEscritorio
                 Console.Write(test.NOMBRE.ToString());
                 test.NOMBRE = pNOMBRE;
                 test.DIRECCION = pDIRECC;
-                test.RUBRO_ID = 1;  // CORREGIR DATO DE RUBRO
+                test.RUBRO_ID = man.GetIDRubro(pRubro); 
                 if (con.SaveChanges() > 0)
                 {
                     lbMsg.Text = "Registro Actualizado";
@@ -171,6 +196,11 @@ namespace WFHostalAPPEscritorio
 
                 }
             }
+
+
+
+
+
 
         }
     }

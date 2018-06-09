@@ -43,6 +43,9 @@ namespace WFHostalAPPEscritorio
         private void btnIngresar_Click(object sender, EventArgs e)
         {
             MetodosAPP APP = new MetodosAPP();
+            string pRubro = "";
+
+
             if (APP.validarRut(txtRut.Text) == false || txtRut.Text.Length <= 3)
             {
                 lbMsg.Text = ("Ingrese Rut Valido");
@@ -62,16 +65,30 @@ namespace WFHostalAPPEscritorio
                 txtDireccion.Focus();
                 return;
             }
-            if (string.IsNullOrEmpty(txtRubro.Text))
+
+            Console.Write("RUBRO HUGO:::" + cbxRubros.Text + "::: ");
+            if (cbxRubros.SelectedIndex == 0)
             {
-                lbMsg.Text = ("Ingrese la información RUBRO");
-                txtRubro.Focus();
+                lbMsg.Text = ("Seleccione un Rubro");
+                cbxRubros.Focus();
                 return;
             }
+            else {
+                pRubro = cbxRubros.SelectedItem.ToString();
+            }
+            
+           
+          
+            //if (string.IsNullOrEmpty(txtRubro.Text))
+            //{
+            //    lbMsg.Text = ("Ingrese la información RUBRO");
+            //    txtRubro.Focus();
+            //    return;
+            //}
 
-            int id_usu = 0;
+                int id_usu = 0;
             ManProveedor man = new ManProveedor();
-
+            Console.Write("RUBRO HUGO:::" + pRubro + "::: ");
             if (man.validarRutProveedor(APP.ObtenerRut(txtRut.Text)))
             {
                 USUARIO usu = new USUARIO();
@@ -94,7 +111,7 @@ namespace WFHostalAPPEscritorio
                     prov.DV = APP.GenerarDV(APP.ObtenerRut(txtRut.Text));
                     prov.NOMBRE = txtNombre.Text;
                     prov.DIRECCION = txtDireccion.Text;
-                    prov.RUBRO_ID = 1; //CORREGIR DATO RUBRO
+                    prov.RUBRO_ID = man.GetIDRubro(pRubro); 
                     prov.USUARIO_ID = id_usu;
                     AddProveedor(prov);
                     btnCancel.Text = "Salir";
@@ -111,6 +128,7 @@ namespace WFHostalAPPEscritorio
 
                     txResult.Text += "**Informar datos al Proveedor";
 
+
                 }
 
             }
@@ -126,6 +144,25 @@ namespace WFHostalAPPEscritorio
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void RegistrarProveedor_Load(object sender, EventArgs e)
+        {
+
+            ManProveedor man = new ManProveedor();
+            DataTable dtRubros = man.GetRubros();            
+            if ( dtRubros == null)
+            {
+                lbMsg.Text = "problema al cargar rubro";
+            }
+            else {
+                for (int i = 0; i < dtRubros.Rows.Count; i++) {
+                    DataRow row = dtRubros.Rows[i];
+                    cbxRubros.Items.Add(row[1]);
+                }
+            }
+            cbxRubros.Items.Insert(0, "-Seleccione Rubro-");
+            cbxRubros.SelectedIndex = 0;
         }
     }
 }
