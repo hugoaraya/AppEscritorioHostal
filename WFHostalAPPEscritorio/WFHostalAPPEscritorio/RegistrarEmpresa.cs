@@ -63,7 +63,7 @@ namespace WFHostalAPPEscritorio
                 return;
             }
 
-            if (string.IsNullOrEmpty(txTelefono.Text))
+            if (string.IsNullOrEmpty(txTelefono.Text) || txTelefono.Text.Length >= 12)
             {
                 lbMsg.Text = ("Ingrese la información TELÉFONO");
                 txTelefono.Focus();

@@ -100,6 +100,7 @@ namespace WFHostalAPPEscritorio
 
             //E.ESTADO , U.RUT, U.DV, U.NOMBRE,U.APELLIDO,M.NOMBRE AS EMPRESA, O.NRO_ORDEN
             PRut = row.Cells[1].Value.ToString();
+            Console.Write("LOG HUGO PRut:" + row.Cells[1].Value.ToString());
             string pNroOrden = row.Cells[6].Value.ToString();
             if (PRut == "")
             {
@@ -158,6 +159,8 @@ namespace WFHostalAPPEscritorio
                 return;
             }
             DataTable data = new DataTable();
+            Console.Write("LOG HUGO pNroOrden:" + pNroOrden);
+            Console.Write("LOG HUGO PRut:" + PRut);
             data = man.getID_OCHuesped(pNroOrden, PRut);
             if (data.Rows.Count == 0)
             {
@@ -171,57 +174,59 @@ namespace WFHostalAPPEscritorio
                 //10.IDPLATO,11.IDSERVICIO txDatosHue.Visible = true;
                 int pIDHUESPED = int.Parse(rows[2].ToString());
                 int pIDHABITACION = int.Parse(rows[5].ToString());
-
                 using (EntitiesHostal con = new EntitiesHostal())
                 {
                     var test = con.HUESPED.Where(x => x.IDHUESPED == pIDHUESPED).FirstOrDefault();
-                    Console.Write(test);
-                    Console.Write(test.ESTADO_HUESPED.ToString());
                     test.ESTADO_HUESPED_ID = 1; //--HOSPEDADO
                     if (con.SaveChanges() > 0)
                     {
                         PRut = "";
                         lbMsg.Text = "Estado Huesped Actualizado.";
-                    }
-                    else
-                    {
-                        Console.Write("PREOBLEMAS AL ACTUALIZAR DATOS_:" + e);
-                        lbMsg.Text = "Problemas al actualizar. Revise los datos";
-                        return;
-                    }
-
-                    var test2 = con.HABITACION.Where(x => x.IDHABITACION == pIDHABITACION).FirstOrDefault();
-                    Console.Write(test2);
-                    Console.Write(test2.ESTADO_HABITACION_ID.ToString());
-                    test2.ESTADO_HABITACION_ID = 2; //--Ocupada
-                    if (con.SaveChanges() > 0)
-                    {
-                        PRut = "";
+                        txDatosHue.Text = "";
                         dgvCheck.DataSource = man.GetOrdenesxNro(int.Parse(pNroOrden));
-                        lbMsg.Text = "Estado Huesped y Habitacion Actualizado";
-                        txDatosHue.Visible = false;
                     }
                     else
                     {
-                        Console.Write("PREOBLEMAS AL ACTUALIZAR DATOS_:" + e);
+                        Console.Write("LOG HUGO: PREOBLEMAS AL ACTUALIZAR DATOS_:" + e);
                         lbMsg.Text = "Problemas al actualizar. Revise los datos";
+                        dgvCheck.DataSource = man.GetOrdenesxNro(int.Parse(pNroOrden));
                         return;
-
                     }
+
+                    //var test2 = con.HABITACION.Where(x => x.IDHABITACION == pIDHABITACION).FirstOrDefault();
+                    //Console.Write(test2);
+                    //Console.Write(test2.ESTADO_HABITACION_ID.ToString());
+                    //test2.ESTADO_HABITACION_ID = 2; //--Ocupada
+                    //if (con.SaveChanges() > 0)
+                    //{
+                    //    PRut = "";
+                    //    dgvCheck.DataSource = man.GetOrdenesxNro(int.Parse(pNroOrden));
+                    //    lbMsg.Text = "Estado Huesped y Habitacion Actualizado";
+                    //    txDatosHue.Visible = false;
+                    //}
+                    //else
+                    //{
+                    //    Console.Write("PREOBLEMAS AL ACTUALIZAR DATOS_:" + e);
+                    //    lbMsg.Text = "Problemas al actualizar. Revise los datos";
+                    //    return;
+
+                    //}
                 }
             }
         }
 
         private void btnSalida_Click(object sender, EventArgs e)
         {
-            string pNroOrden = txOrdenCom.Text;
             ManOrdenCompra man = new ManOrdenCompra();
+            string pNroOrden = txOrdenCom.Text;
             if (PRut == "" || pNroOrden == "")
             {
                 lbMsg.Text = "Seleccione un Huesped";
                 return;
             }
             DataTable data = new DataTable();
+            Console.Write("LOG HUGO SAL pNroOrden:" + pNroOrden);
+            Console.Write("LOG HUGO SAL PRut:" + PRut);
             data = man.getID_OCHuesped(pNroOrden, PRut);
             if (data.Rows.Count == 0)
             {
@@ -244,33 +249,36 @@ namespace WFHostalAPPEscritorio
                     test.ESTADO_HUESPED_ID = 2; //--CHECKOUT
                     if (con.SaveChanges() > 0)
                     {
-                        lbMsg.Text = "Estado Huesped Actualizado";
-                    }
-                    else
-                    {
-                        Console.Write("PREOBLEMAS AL ACTUALIZAR DATOS_:" + e);
-                        lbMsg.Text = "Problemas al actualizar. Revise los datos";
-                        return;
-                    }
-
-                    var test2 = con.HABITACION.Where(x => x.IDHABITACION == pIDHABITACION).FirstOrDefault();
-                    Console.Write(test2);
-                    Console.Write(test2.ESTADO_HABITACION_ID.ToString());
-                    test2.ESTADO_HABITACION_ID = 1; //--Diponible
-                    if (con.SaveChanges() > 0)
-                    {
                         PRut = "";
+                        lbMsg.Text = "Estado Huesped Actualizado";
                         dgvCheck.DataSource = man.GetOrdenesxNro(int.Parse(pNroOrden));
-                        lbMsg.Text = "Estado Huesped y Habitacion Actualizado";
-                        txDatosHue.Visible = false;
+                        txDatosHue.Text = "";
                     }
                     else
                     {
                         Console.Write("PREOBLEMAS AL ACTUALIZAR DATOS_:" + e);
                         lbMsg.Text = "Problemas al actualizar. Revise los datos";
                         return;
-
                     }
+
+                    //var test2 = con.HABITACION.Where(x => x.IDHABITACION == pIDHABITACION).FirstOrDefault();
+                    //Console.Write(test2);
+                    //Console.Write(test2.ESTADO_HABITACION_ID.ToString());
+                    //test2.ESTADO_HABITACION_ID = 1; //--Diponible
+                    //if (con.SaveChanges() > 0)
+                    //{
+                    //    PRut = "";
+                    //    dgvCheck.DataSource = man.GetOrdenesxNro(int.Parse(pNroOrden));
+                    //    lbMsg.Text = "Estado Huesped y Habitacion Actualizado";
+                    //    txDatosHue.Visible = false;
+                    //}
+                    //else
+                    //{
+                    //    Console.Write("PREOBLEMAS AL ACTUALIZAR DATOS_:" + e);
+                    //    lbMsg.Text = "Problemas al actualizar. Revise los datos";
+                    //    return;
+
+                    //}
                 }
             }
         }

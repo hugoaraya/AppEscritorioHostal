@@ -22,7 +22,6 @@ namespace DAO
     
         public decimal IDMINUTA { get; set; }
         public string NOMBRE_MINUTA { get; set; }
-        public string DESCRIPCION { get; set; }
         public System.DateTime FECHA_INICIO { get; set; }
         public System.DateTime FECHA_FIN { get; set; }
     

@@ -60,7 +60,6 @@ namespace WFHostalAPPEscritorio
                         txApellido.Text = row[3].ToString();
                         txTelefono.Text = row[4].ToString();
                         txCorreo.Text = row[5].ToString();
-                        txCargo.Text = row[6].ToString();
                         txRutEmp.Text = row[7].ToString() + "-" + row[8].ToString();
                         lbMsg.Text = "Heusped Encontrado";
                         txRut.Enabled = false;
@@ -101,8 +100,7 @@ namespace WFHostalAPPEscritorio
             txNombre.Text = "";
             txApellido.Text = "";
             txTelefono.Text = "";
-            txCorreo.Text = "";
-            txCargo.Text = "";
+            txCorreo.Text = "";            
             txRutEmp.Text = "";
             llenarGrilla();
             txRut.Focus();
@@ -132,7 +130,6 @@ namespace WFHostalAPPEscritorio
             txApellido.Text = row.Cells[3].Value.ToString();
             txTelefono.Text = row.Cells[4].Value.ToString();
             txCorreo.Text = row.Cells[5].Value.ToString();
-            txCargo.Text = row.Cells[6].Value.ToString();
             txRutEmp.Text = row.Cells[7].Value.ToString() + "-" + row.Cells[8].Value.ToString();
             txRut.ReadOnly = true;
             txRutEmp.ReadOnly = true;
@@ -142,13 +139,94 @@ namespace WFHostalAPPEscritorio
         {
             ManHuesped man = new ManHuesped();
             MetodosAPP APP = new MetodosAPP();
-            dgvHuesped.DataSource = man.GetHuespedesXRut(APP.ObtenerRut(txRutEmp.Text));
-            txRut.ReadOnly = true;
-            txRutEmp.ReadOnly = true;
+            if (APP.validarRut(txRutEmp.Text) == false || string.IsNullOrEmpty(txRutEmp.Text))
+            {
+                lbMsg.Text = ("Ingrese Rut Empresa valido");
+                txRutEmp.ReadOnly = false;
+                txRutEmp.Focus();
+                return;
+            }
+            if (man.ObtenerIDEmpresa(APP.ObtenerRut(txRutEmp.Text)) == 0)
+            {
+                dgvHuesped.DataSource = "";
+                txRutEmp.ReadOnly = false;
+                lbMsg.Text = ("Empresa No Encontrada");
+            }
+            else {
+                dgvHuesped.DataSource = man.GetHuespedesXRut(APP.ObtenerRut(txRutEmp.Text));
+                txRutEmp.ReadOnly = true;
+                lbMsg.Text = ("Empresa Encontrada");
+            }
+           
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
+
+            MetodosAPP APP = new MetodosAPP();
+            if (APP.validarRut(txRut.Text) == false || txRut.Text.Length <= 3)
+            {
+                lbMsg.Text = ("Ingrese Rut Valido");
+                txRut.ReadOnly = false;
+                txRut.Focus();
+                return;
+            }
+            if (string.IsNullOrEmpty(txNombre.Text))
+            {
+                lbMsg.Text = ("Ingrese la información NOMBRE");
+                txNombre.Focus();
+                return;
+            }
+            if (string.IsNullOrEmpty(txApellido.Text))
+            {
+                lbMsg.Text = ("Ingrese la información APELLIDO");
+                txApellido.Focus();
+                return;
+            }
+
+            if (string.IsNullOrEmpty(txTelefono.Text) || txTelefono.Text.Length >= 12)
+            {
+                lbMsg.Text = ("Ingrese la información TELÉFONO");
+                txTelefono.Focus();
+                return;
+            }
+            if (APP.ValidacionEmail(txCorreo.Text) == false)
+            {
+                lbMsg.Text = ("Ingrese la información CORREO valido");
+                txCorreo.Focus();
+                return;
+            }
+
+            int pRUT = int.Parse(APP.ObtenerRut(txRut.Text));
+            string pNOMBRE = txNombre.Text;
+            string pAPELLIDO = txApellido.Text;
+            Int64 pTELEFONO = Int64.Parse(txTelefono.Text);
+            string pCORREO = txCorreo.Text;
+
+            using (EntitiesHostal con = new EntitiesHostal())
+            {
+                var test = con.HUESPED.Where(x => x.RUT == pRUT).FirstOrDefault();
+                Console.Write(test);
+                Console.Write(test.NOMBRE.ToString());
+                test.NOMBRE = pNOMBRE;
+                test.APELLIDO = pAPELLIDO;
+                test.TELEFONO = pTELEFONO;
+                test.CORREO = pCORREO;
+                if (con.SaveChanges() > 0)
+                {
+                    LimpiarDatos();
+                    lbMsg.Text = "Registro Actualizado";
+                }
+                else
+                {
+                    Console.Write("PREOBLEMAS AL ACTUALIZAR DATOS_:" + e);
+                    lbMsg.Text = "Problemas al actualizar. Revise los datos";
+
+                }
+            }
+
+
+
             MessageBox.Show("Pendiente de Desarrollo");
         }
     }

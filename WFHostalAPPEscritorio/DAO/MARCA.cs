@@ -12,14 +12,18 @@ namespace DAO
     using System;
     using System.Collections.Generic;
     
-    public partial class RECEPCION_PRODUCTO
+    public partial class MARCA
     {
-        public decimal IDRECEPCION_PRODUCTO { get; set; }
-        public decimal NRO_RECEPCION { get; set; }
-        public Nullable<decimal> CODIGO_BARRA { get; set; }
-        public Nullable<decimal> PRODUCTO_ID { get; set; }
-        public Nullable<decimal> ESTADO_RECEPCION_ID { get; set; }
-        public Nullable<decimal> ORDEN_PEDIDO_ID { get; set; }
-        public System.DateTime FECHA { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public MARCA()
+        {
+            this.PRODUCTO = new HashSet<PRODUCTO>();
+        }
+    
+        public decimal IDMARCA { get; set; }
+        public string DESCRIPCION { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<PRODUCTO> PRODUCTO { get; set; }
     }
 }

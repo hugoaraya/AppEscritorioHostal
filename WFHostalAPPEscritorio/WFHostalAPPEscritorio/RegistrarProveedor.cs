@@ -94,7 +94,7 @@ namespace WFHostalAPPEscritorio
                     prov.DV = APP.GenerarDV(APP.ObtenerRut(txtRut.Text));
                     prov.NOMBRE = txtNombre.Text;
                     prov.DIRECCION = txtDireccion.Text;
-                    prov.RUBRO = txtRubro.Text;
+                    prov.RUBRO_ID = 1; //CORREGIR DATO RUBRO
                     prov.USUARIO_ID = id_usu;
                     AddProveedor(prov);
                     btnCancel.Text = "Salir";

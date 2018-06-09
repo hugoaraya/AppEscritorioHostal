@@ -4,52 +4,61 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="cc76584767414d48ab047c34f94001c3" Name="Diagram1">
-        <EntityTypeShape EntityType="Model.EMPLEADO" Width="1.5" PointX="5.25" PointY="3.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.EMPRESA" Width="1.5" PointX="5.25" PointY="6.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.ESTADO_HABITACION" Width="1.5" PointX="11.25" PointY="15" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.ESTADO_HUESPED" Width="1.5" PointX="8.25" PointY="4.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.ESTADO_ORDEN_PEDIDO" Width="1.5" PointX="5.25" PointY="15.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.ESTADO_RECEPCION" Width="1.5" PointX="10.5" PointY="3.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.FACTURA" Width="1.5" PointX="20.25" PointY="7" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.FECHAS_RESERVAS" Width="1.5" PointX="11.25" PointY="17.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.HABITACION" Width="1.5" PointX="13.5" PointY="15.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.HUESPED" Width="1.5" PointX="10.5" PointY="6.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.HUESPED_HABITACION" Width="1.5" PointX="15.75" PointY="7" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.MINUTA" Width="1.5" PointX="13.5" PointY="3" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.ORDEN_COMEDOR" Width="1.5" PointX="15.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.ORDEN_COMPRA" Width="1.5" PointX="18" PointY="6.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.ORDEN_PEDIDO" Width="1.5" PointX="7.5" PointY="6.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.PLATO" Width="1.5" PointX="13.5" PointY="10.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.PRODUCTO" Width="1.5" PointX="10.5" PointY="10.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.PROVEEDOR" Width="1.5" PointX="5.25" PointY="10.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.RECEPCION_PRODUCTO" Width="1.5" PointX="12.75" PointY="6.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.SERVICIO" Width="1.5" PointX="13.5" PointY="19.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.TIPO_USUARIO" Width="1.5" PointX="0.75" PointY="7.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.USUARIO" Width="1.5" PointX="3" PointY="6.875" IsExpanded="true" />
-        <AssociationConnector Association="Model.EMPLEADO_USUARIO_FK" ManuallyRouted="false" />
-        <AssociationConnector Association="Model.ORDEN_EMPLEADO_FK" ManuallyRouted="false" />
-        <AssociationConnector Association="Model.EMPRESA_USUARIO_FK" ManuallyRouted="false" />
-        <AssociationConnector Association="Model.HUESPED_EMPRESA_FK" ManuallyRouted="false" />
-        <AssociationConnector Association="Model.ORDEN_COMPRA_EMPRESA_FK" ManuallyRouted="false" />
-        <AssociationConnector Association="Model.HABITACION_ESTADO_FK" ManuallyRouted="false" />
-        <AssociationConnector Association="Model.HUESPED_ESTADO_HUESPED_FK" ManuallyRouted="false" />
-        <AssociationConnector Association="Model.ESTADO_ORDEN_PEDIDO_FK" ManuallyRouted="false" />
-        <AssociationConnector Association="Model.RECEPCION_ESTADO_FK" ManuallyRouted="false" />
-        <AssociationConnector Association="Model.FACTURA_ORDEN_FK" ManuallyRouted="false" />
-        <AssociationConnector Association="Model.HABITACION_FECHAS_RESERVAS_FK" ManuallyRouted="false" />
-        <AssociationConnector Association="Model.HABITACION_HUESPED_FK" ManuallyRouted="false" />
-        <AssociationConnector Association="Model.HUESPED_HABITACION_FK" ManuallyRouted="false" />
-        <AssociationConnector Association="Model.COMPRA_HUESPED_HABITACION_FK" ManuallyRouted="false" />
-        <AssociationConnector Association="Model.ORDEN_COMEDOR_MINUTA_FK" ManuallyRouted="false" />
-        <AssociationConnector Association="Model.COMPRA_ORDEN_COMEDOR_FK" ManuallyRouted="false" />
-        <AssociationConnector Association="Model.ORDEN_COMEDOR_PLATO_FK" ManuallyRouted="false" />
-        <AssociationConnector Association="Model.ORDEN_COMEDOR_SERVICIO_FK" ManuallyRouted="false" />
-        <AssociationConnector Association="Model.ORDEN_PROVEEDOR_FK" ManuallyRouted="false" />
-        <AssociationConnector Association="Model.RECEPCION_ORDEN_FK" ManuallyRouted="false" />
-        <AssociationConnector Association="Model.RECEPCION_PRODUCTO_FK" ManuallyRouted="false" />
-        <AssociationConnector Association="Model.PROVEEDOR_USUARIO_FK" ManuallyRouted="false" />
-        <AssociationConnector Association="Model.USUARIO_TIPO_FK" ManuallyRouted="false" />
+      <Diagram DiagramId="f699a648512445f7ad7550c0567027db" Name="Diagram1">
+        <EntityTypeShape EntityType="ModelHostal.CARGO" Width="1.5" PointX="5.25" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModelHostal.CODIGO_BARRA" Width="1.5" PointX="11.75" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModelHostal.EMPLEADO" Width="1.5" PointX="5.25" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModelHostal.EMPRESA" Width="1.5" PointX="5.25" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModelHostal.ESTADO_HABITACION" Width="1.5" PointX="5.25" PointY="16.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModelHostal.ESTADO_HUESPED" Width="1.5" PointX="5.25" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModelHostal.ESTADO_ORDEN_PEDIDO" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModelHostal.ESTADO_RECEPCION" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModelHostal.FACTURA" Width="1.5" PointX="15.25" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModelHostal.FAMILIA_PRODUCTO" Width="1.5" PointX="11.75" PointY="15.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModelHostal.FECHAS_RESERVAS" Width="1.5" PointX="5.25" PointY="18.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModelHostal.HABITACION" Width="1.5" PointX="7.5" PointY="16.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModelHostal.HUESPED" Width="1.5" PointX="7.5" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModelHostal.HUESPED_HABITACION" Width="1.5" PointX="9.75" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModelHostal.MARCA" Width="1.5" PointX="11.75" PointY="18" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModelHostal.MINUTA" Width="1.5" PointX="8.5" PointY="21.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModelHostal.ORDEN_COMEDOR" Width="1.5" PointX="10.75" PointY="24" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModelHostal.ORDEN_COMPRA" Width="1.5" PointX="13" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModelHostal.ORDEN_PEDIDO" Width="1.5" PointX="7.5" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModelHostal.PLATO" Width="1.5" PointX="8.5" PointY="24.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModelHostal.PRODUCTO" Width="1.5" PointX="14" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModelHostal.PROVEEDOR" Width="1.5" PointX="10.25" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModelHostal.RECEPCION_PRODUCTO" Width="1.5" PointX="0.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModelHostal.RUBRO" Width="1.5" PointX="8" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModelHostal.SERVICIO" Width="1.5" PointX="8.5" PointY="27" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModelHostal.TIPO_PRODUCTO" Width="1.5" PointX="11.75" PointY="20.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModelHostal.TIPO_USUARIO" Width="1.5" PointX="0.75" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModelHostal.USUARIO" Width="1.5" PointX="3" PointY="5.625" IsExpanded="true" />
+        <AssociationConnector Association="ModelHostal.HUESPED_CARGO_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="ModelHostal.PRODUCTO_CODIGO_BARRA_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="ModelHostal.EMPLEADO_USUARIO_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="ModelHostal.ORDEN_EMPLEADO_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="ModelHostal.EMPRESA_USUARIO_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="ModelHostal.HUESPED_EMPRESA_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="ModelHostal.ORDEN_COMPRA_EMPRESA_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="ModelHostal.HABITACION_ESTADO_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="ModelHostal.HUESPED_ESTADO_HUESPED_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="ModelHostal.ESTADO_ORDEN_PEDIDO_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="ModelHostal.FACTURA_ORDEN_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="ModelHostal.PRODUCTO_FAMILIA_PRODUCTO_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="ModelHostal.HABITACION_FECHAS_RESERVAS_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="ModelHostal.HABITACION_HUESPED_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="ModelHostal.HUESPED_HABITACION_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="ModelHostal.COMPRA_HUESPED_HABITACION_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="ModelHostal.MARCA_PRODUCTO_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="ModelHostal.ORDEN_COMEDOR_MINUTA_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="ModelHostal.COMPRA_ORDEN_COMEDOR_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="ModelHostal.ORDEN_COMEDOR_PLATO_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="ModelHostal.ORDEN_COMEDOR_SERVICIO_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="ModelHostal.ORDEN_PROVEEDOR_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="ModelHostal.PRODUCTO_TIPO_PRODUCTO_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="ModelHostal.PROVEEDOR_RUBRO_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="ModelHostal.PROVEEDOR_USUARIO_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="ModelHostal.USUARIO_TIPO_FK" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

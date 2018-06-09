@@ -27,10 +27,11 @@ namespace DAO
         public string APELLIDO { get; set; }
         public decimal TELEFONO { get; set; }
         public string CORREO { get; set; }
-        public string CARGO { get; set; }
         public Nullable<decimal> EMPRESA_ID { get; set; }
         public Nullable<decimal> ESTADO_HUESPED_ID { get; set; }
+        public Nullable<decimal> CARGO_ID { get; set; }
     
+        public virtual CARGO CARGO { get; set; }
         public virtual EMPRESA EMPRESA { get; set; }
         public virtual ESTADO_HUESPED ESTADO_HUESPED { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

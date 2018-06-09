@@ -33,6 +33,18 @@ namespace WFHostalAPPEscritorio
             lbMsg.Text = "";
         }
 
+
+        private void Limpiar()
+        {
+            txRut.Text = "";
+            txNombre.Text = "";
+            txDireccion.Text = "";
+            txTelefono.Text = "";
+            txCorreo.Text = "";
+            lbMsg.Text = "";
+            txRut.Enabled = true;
+        }
+
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             MetodosAPP APP = new MetodosAPP();
@@ -149,7 +161,7 @@ namespace WFHostalAPPEscritorio
                 return;
             }
 
-            if (string.IsNullOrEmpty(txTelefono.Text))
+            if (string.IsNullOrEmpty(txTelefono.Text) || txTelefono.Text.Length >= 12 )
             {
                 lbMsg.Text = ("Ingrese la información TELÉFONO");
                 txTelefono.Focus();
@@ -165,7 +177,7 @@ namespace WFHostalAPPEscritorio
             int pRUT = int.Parse(APP.ObtenerRut(txRut.Text));
             string pNOMBRE = txNombre.Text;
             string pDIRECC = txDireccion.Text;
-            int pTELEFONO = int.Parse(txTelefono.Text);
+            Int64 pTELEFONO = Int64.Parse(txTelefono.Text);
             string pCORREO = txCorreo.Text;
 
                 using (EntitiesHostal con = new EntitiesHostal())
@@ -179,9 +191,11 @@ namespace WFHostalAPPEscritorio
                     test.CORREO = pCORREO;
                     if (con.SaveChanges() > 0)
                     {
+                        
+                        LlenarGrilla();
+                        Limpiar();
                         lbMsg.Text = "Registro Actualizado";
-                        dgvEmpresa.DataSource = "";
-                   }
+                    }
                     else
                     {
                         Console.Write("PREOBLEMAS AL ACTUALIZAR DATOS_:" + e);
@@ -204,7 +218,8 @@ namespace WFHostalAPPEscritorio
             txDireccion.Text = row.Cells[3].Value.ToString();
             txTelefono.Text = row.Cells[4].Value.ToString();
             txCorreo.Text = row.Cells[5].Value.ToString();
-            
+            txRut.Enabled = false;
+
         }
     }
 }

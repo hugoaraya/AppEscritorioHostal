@@ -14,16 +14,7 @@ namespace DAO
     
     public partial class ESTADO_RECEPCION
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public ESTADO_RECEPCION()
-        {
-            this.RECEPCION_PRODUCTO = new HashSet<RECEPCION_PRODUCTO>();
-        }
-    
         public decimal IDESTADO_RECEPCION { get; set; }
         public string DESCRIPCION { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<RECEPCION_PRODUCTO> RECEPCION_PRODUCTO { get; set; }
     }
 }

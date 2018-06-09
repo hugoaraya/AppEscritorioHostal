@@ -158,7 +158,7 @@ namespace WFHostalAPPEscritorio
                 Console.Write(test.NOMBRE.ToString());
                 test.NOMBRE = pNOMBRE;
                 test.DIRECCION = pDIRECC;
-                test.RUBRO = pRubro;
+                test.RUBRO_ID = 1;  // CORREGIR DATO DE RUBRO
                 if (con.SaveChanges() > 0)
                 {
                     lbMsg.Text = "Registro Actualizado";

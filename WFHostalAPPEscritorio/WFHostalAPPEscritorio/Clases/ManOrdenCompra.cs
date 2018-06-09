@@ -106,7 +106,7 @@ namespace WFHostalAPPEscritorio.Clases
                                                             "FROM ORDEN_COMPRA O JOIN HUESPED_HABITACION H ON(O.HUESPED_HABITACION_ID = H.IDHUESPED_HABITACION) " +
                                                             "JOIN HUESPED U ON(H.HUESPED_ID = U.IDHUESPED) JOIN ESTADO_HUESPED E ON(U.ESTADO_HUESPED_ID = E.IDESTADO_HUESPED) " +
                                                             "JOIN EMPRESA M ON(U.EMPRESA_ID = M.IDEMPRESA) JOIN HABITACION A ON(H.HABITACION_ID = A.IDHABITACION) " +
-                                                            "JOIN ESTADO_HABITACION S ON(S.IDESTADO_HABITACION = A.ESTADO_HABITACION_ID) JOIN FECHAS_RESERVAS F ON(F.IDFECHAS_RESERVAS = A.FECHAS_RESERVAS_ID) " +
+                                                            "JOIN ESTADO_HABITACION S ON(S.IDESTADO_HABITACION = A.ESTADO_HABITACION_ID) JOIN FECHAS_RESERVAS F ON(F.IDFECHA_RESERVAS = A.FECHAS_RESERVAS_ID) " +
                                                             "JOIN ORDEN_COMEDOR R ON(O.ORDEN_COMEDOR_ID = R.IDORDEN_COMEDOR) JOIN SERVICIO V ON(R.SERVICIO_ID = V.IDSERVICIO) " +
                                                             "JOIN PLATO P ON(R.PLATO_ID = P.IDPLATO) JOIN MINUTA I ON(R.MINUTA_ID = I.IDMINUTA) " +
                                                             "WHERE O.NRO_ORDEN = :pRUT AND U.RUT = :pNROO ", conexion.con);
@@ -142,7 +142,9 @@ namespace WFHostalAPPEscritorio.Clases
             }
 
         }
-             public DataTable getID_OCHuesped(string pRut, string pNroOrden)
+
+
+        public DataTable getID_OCHuesped(string pNroOrden, string pRut)
         {
 
             DataTable dt = new DataTable();
@@ -150,21 +152,22 @@ namespace WFHostalAPPEscritorio.Clases
             conexion.Abrir();
             try
             {
-                OracleCommand comando = new OracleCommand("SELECT O.IDORDEN_COMPRA ,H.IDHUESPED_HABITACION, U.IDHUESPED, E.IDESTADO_HUESPED, M.IDEMPRESA, A.IDHABITACION,S.IDESTADO_HABITACION,F.IDFECHAS_RESERVAS,R.IDORDEN_COMEDOR,V.IDSERVICIO,P.IDPLATO,V.IDSERVICIO " +
+                OracleCommand comando = new OracleCommand(" SELECT O.IDORDEN_COMPRA ,H.IDHUESPED_HABITACION, U.IDHUESPED, E.IDESTADO_HUESPED, M.IDEMPRESA, A.IDHABITACION,S.IDESTADO_HABITACION,F.IDFECHA_RESERVAS,R.IDORDEN_COMEDOR,V.IDSERVICIO,P.IDPLATO,V.IDSERVICIO " +
                                                             "FROM ORDEN_COMPRA O JOIN HUESPED_HABITACION H ON(O.HUESPED_HABITACION_ID = H.IDHUESPED_HABITACION) " +
                                                             "JOIN HUESPED U ON(H.HUESPED_ID = U.IDHUESPED) JOIN ESTADO_HUESPED E ON(U.ESTADO_HUESPED_ID = E.IDESTADO_HUESPED) " +
                                                             "JOIN EMPRESA M ON(U.EMPRESA_ID = M.IDEMPRESA) JOIN HABITACION A ON(H.HABITACION_ID = A.IDHABITACION) " +
-                                                            "JOIN ESTADO_HABITACION S ON(S.IDESTADO_HABITACION = A.ESTADO_HABITACION_ID) JOIN FECHAS_RESERVAS F ON(F.IDFECHAS_RESERVAS = A.FECHAS_RESERVAS_ID) " +
+                                                            "JOIN ESTADO_HABITACION S ON(S.IDESTADO_HABITACION = A.ESTADO_HABITACION_ID) JOIN FECHAS_RESERVAS F ON(F.IDFECHA_RESERVAS = A.FECHAS_RESERVAS_ID) " +
                                                             "JOIN ORDEN_COMEDOR R ON(O.ORDEN_COMEDOR_ID = R.IDORDEN_COMEDOR) JOIN SERVICIO V ON(R.SERVICIO_ID = V.IDSERVICIO) " +
                                                             "JOIN PLATO P ON(R.PLATO_ID = P.IDPLATO) JOIN MINUTA I ON(R.MINUTA_ID = I.IDMINUTA) " +
-                                                            "WHERE O.NRO_ORDEN = :pRUT AND U.RUT = :pNROO ", conexion.con);
-                comando.Parameters.Add(":pRUT", int.Parse(pRut));
+                                                            "WHERE O.NRO_ORDEN = :pNROO AND U.RUT = :pRUT ", conexion.con);
                 comando.Parameters.Add(":pNROO", int.Parse(pNroOrden));
+                comando.Parameters.Add(":pRUT", int.Parse(pRut));
                 OracleDataReader lector = comando.ExecuteReader();
 
                 if (lector.HasRows)
                 {
                     dt.Load(lector);
+                    Console.Write("LOG HUGO DT:"+ dt);
                     conexion.Cerrar();
                     return dt;
                 }

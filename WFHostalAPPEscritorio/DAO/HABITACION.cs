@@ -28,6 +28,7 @@ namespace DAO
         public string NOMBRE { get; set; }
         public Nullable<decimal> ESTADO_HABITACION_ID { get; set; }
         public Nullable<decimal> FECHAS_RESERVAS_ID { get; set; }
+        public decimal CAPACIDAD { get; set; }
     
         public virtual ESTADO_HABITACION ESTADO_HABITACION { get; set; }
         public virtual FECHAS_RESERVAS FECHAS_RESERVAS { get; set; }

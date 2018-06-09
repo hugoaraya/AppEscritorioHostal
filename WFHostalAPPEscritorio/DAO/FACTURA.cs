@@ -18,6 +18,7 @@ namespace DAO
         public decimal NRO_FACTURA { get; set; }
         public Nullable<decimal> ORDEN_COMPRA_ID { get; set; }
         public System.DateTime FECHA { get; set; }
+        public decimal PRECIO_TOTAL { get; set; }
     
         public virtual ORDEN_COMPRA ORDEN_COMPRA { get; set; }
     }

@@ -18,7 +18,7 @@ namespace WFHostalAPPEscritorio.Clases
             conexion.Abrir();
             try
             {
-                OracleCommand comando = new OracleCommand("SELECT H.RUT, H.DV, H.NOMBRE, H.APELLIDO, H.TELEFONO, H.CORREO, H.CARGO, E.RUT AS RUT_EMPRESA, E.DV AS DV_EMPRESA FROM HUESPED H JOIN EMPRESA E ON(H.EMPRESA_ID = E.IDEMPRESA)", conexion.con);
+                OracleCommand comando = new OracleCommand("SELECT H.RUT, H.DV, H.NOMBRE, H.APELLIDO, H.TELEFONO, H.CORREO, C.DESCRIPCION, E.RUT AS RUT_EMPRESA, E.DV AS DV_EMPRESA FROM HUESPED H JOIN CARGO C ON(H.CARGO_ID = C.IDCARGO) JOIN EMPRESA E ON(H.EMPRESA_ID = E.IDEMPRESA)", conexion.con);
                 OracleDataReader lector = comando.ExecuteReader();
 
                 if (lector.HasRows)
@@ -55,7 +55,7 @@ namespace WFHostalAPPEscritorio.Clases
             Conectar conexion = new Conectar();
             conexion.Abrir();
 
-            OracleCommand comando = new OracleCommand("SELECT H.RUT,H.DV,H.NOMBRE,H.APELLIDO,H.TELEFONO,H.CORREO,H.CARGO,E.RUT AS RUT_EMPRESA, E.DV AS DV_EMPRESA FROM HUESPED H JOIN EMPRESA E ON(H.EMPRESA_ID = E.IDEMPRESA) WHERE H.RUT = :pRut", conexion.con);
+            OracleCommand comando = new OracleCommand("SELECT H.RUT,H.DV,H.NOMBRE,H.APELLIDO,H.TELEFONO,H.CORREO,C.DESCRIPCION AS CARGO,E.RUT AS RUT_EMPRESA, E.DV AS DV_EMPRESA FROM HUESPED H JOIN EMPRESA E ON(H.EMPRESA_ID = E.IDEMPRESA) JOIN CARGO C ON(H.CARGO_ID = C.IDCARGO) WHERE H.RUT = :pRut", conexion.con);
             //Obtener información de los txt
             comando.Parameters.Add(":pRut", pRutH);
             OracleDataReader lector = comando.ExecuteReader();
@@ -171,7 +171,7 @@ namespace WFHostalAPPEscritorio.Clases
             Conectar conexion = new Conectar();
             conexion.Abrir();
 
-            OracleCommand comando = new OracleCommand("SELECT H.RUT, H.DV, H.NOMBRE, H.APELLIDO, H.TELEFONO, H.CORREO, H.CARGO, E.RUT AS RUT_EMPRESA, E.DV AS DV_EMPRESA FROM HUESPED H JOIN EMPRESA E ON(H.EMPRESA_ID = E.IDEMPRESA) WHERE E.RUT = :pRut_Empresa", conexion.con);
+            OracleCommand comando = new OracleCommand("SELECT H.RUT, H.DV, H.NOMBRE, H.APELLIDO, H.TELEFONO, H.CORREO, C.DESCRIPCION AS CARGO, E.RUT AS RUT_EMPRESA, E.DV AS DV_EMPRESA FROM HUESPED H JOIN EMPRESA E ON(H.EMPRESA_ID = E.IDEMPRESA) JOIN CARGO C ON(H.CARGO_ID = C.IDCARGO) WHERE E.RUT = :pRut_Empresa", conexion.con);
             //Obtener información de los txt
             comando.Parameters.Add(":pRut_Empresa", pRutE);
             OracleDataReader lector = comando.ExecuteReader();

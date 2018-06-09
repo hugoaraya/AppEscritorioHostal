@@ -25,6 +25,8 @@ namespace DAO
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<CARGO> CARGO { get; set; }
+        public virtual DbSet<CODIGO_BARRA> CODIGO_BARRA { get; set; }
         public virtual DbSet<EMPLEADO> EMPLEADO { get; set; }
         public virtual DbSet<EMPRESA> EMPRESA { get; set; }
         public virtual DbSet<ESTADO_HABITACION> ESTADO_HABITACION { get; set; }
@@ -32,10 +34,12 @@ namespace DAO
         public virtual DbSet<ESTADO_ORDEN_PEDIDO> ESTADO_ORDEN_PEDIDO { get; set; }
         public virtual DbSet<ESTADO_RECEPCION> ESTADO_RECEPCION { get; set; }
         public virtual DbSet<FACTURA> FACTURA { get; set; }
+        public virtual DbSet<FAMILIA_PRODUCTO> FAMILIA_PRODUCTO { get; set; }
         public virtual DbSet<FECHAS_RESERVAS> FECHAS_RESERVAS { get; set; }
         public virtual DbSet<HABITACION> HABITACION { get; set; }
         public virtual DbSet<HUESPED> HUESPED { get; set; }
         public virtual DbSet<HUESPED_HABITACION> HUESPED_HABITACION { get; set; }
+        public virtual DbSet<MARCA> MARCA { get; set; }
         public virtual DbSet<MINUTA> MINUTA { get; set; }
         public virtual DbSet<ORDEN_COMEDOR> ORDEN_COMEDOR { get; set; }
         public virtual DbSet<ORDEN_COMPRA> ORDEN_COMPRA { get; set; }
@@ -44,7 +48,9 @@ namespace DAO
         public virtual DbSet<PRODUCTO> PRODUCTO { get; set; }
         public virtual DbSet<PROVEEDOR> PROVEEDOR { get; set; }
         public virtual DbSet<RECEPCION_PRODUCTO> RECEPCION_PRODUCTO { get; set; }
+        public virtual DbSet<RUBRO> RUBRO { get; set; }
         public virtual DbSet<SERVICIO> SERVICIO { get; set; }
+        public virtual DbSet<TIPO_PRODUCTO> TIPO_PRODUCTO { get; set; }
         public virtual DbSet<TIPO_USUARIO> TIPO_USUARIO { get; set; }
         public virtual DbSet<USUARIO> USUARIO { get; set; }
     }

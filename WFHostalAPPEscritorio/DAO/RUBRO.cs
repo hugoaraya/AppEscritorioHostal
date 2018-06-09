@@ -12,18 +12,18 @@ namespace DAO
     using System;
     using System.Collections.Generic;
     
-    public partial class PLATO
+    public partial class RUBRO
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public PLATO()
+        public RUBRO()
         {
-            this.ORDEN_COMEDOR = new HashSet<ORDEN_COMEDOR>();
+            this.PROVEEDOR = new HashSet<PROVEEDOR>();
         }
     
-        public decimal IDPLATO { get; set; }
-        public string NOMBRE_PLATO { get; set; }
+        public decimal IDRUBRO { get; set; }
+        public string DESCRIPCION { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ORDEN_COMEDOR> ORDEN_COMEDOR { get; set; }
+        public virtual ICollection<PROVEEDOR> PROVEEDOR { get; set; }
     }
 }

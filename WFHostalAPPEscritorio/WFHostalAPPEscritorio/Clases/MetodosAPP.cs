@@ -46,7 +46,7 @@ namespace WFHostalAPPEscritorio.Clases
             }
             catch (Exception)
             {
-                Console.Write("ERROR RUT");
+                Console.Write("ERROR RUT"+validacion);
             }
             return validacion;
         }

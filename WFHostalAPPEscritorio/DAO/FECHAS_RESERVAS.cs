@@ -20,7 +20,7 @@ namespace DAO
             this.HABITACION = new HashSet<HABITACION>();
         }
     
-        public decimal IDFECHAS_RESERVAS { get; set; }
+        public decimal IDFECHA_RESERVAS { get; set; }
         public System.DateTime FECHA_INGRESO { get; set; }
         public System.DateTime FECHA_SALIDA { get; set; }
     

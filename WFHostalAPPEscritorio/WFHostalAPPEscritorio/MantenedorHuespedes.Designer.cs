@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.btnActualizar = new System.Windows.Forms.Button();
@@ -37,7 +36,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.txCargo = new System.Windows.Forms.TextBox();
             this.txCorreo = new System.Windows.Forms.TextBox();
             this.txTelefono = new System.Windows.Forms.TextBox();
             this.txApellido = new System.Windows.Forms.TextBox();
@@ -57,7 +55,6 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.btnActualizar);
@@ -65,7 +62,6 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.btnBuscar);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.txCargo);
             this.groupBox1.Controls.Add(this.txCorreo);
             this.groupBox1.Controls.Add(this.txTelefono);
             this.groupBox1.Controls.Add(this.txApellido);
@@ -77,15 +73,6 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos de Huésped";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(68, 218);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(38, 13);
-            this.label7.TabIndex = 13;
-            this.label7.Text = "Cargo:";
             // 
             // label6
             // 
@@ -151,13 +138,6 @@
             this.label1.Size = new System.Drawing.Size(33, 13);
             this.label1.TabIndex = 7;
             this.label1.Text = "RUT:";
-            // 
-            // txCargo
-            // 
-            this.txCargo.Location = new System.Drawing.Point(111, 213);
-            this.txCargo.Name = "txCargo";
-            this.txCargo.Size = new System.Drawing.Size(190, 20);
-            this.txCargo.TabIndex = 5;
             // 
             // txCorreo
             // 
@@ -299,13 +279,11 @@
         private System.Windows.Forms.DataGridView dgvHuesped;
         private System.Windows.Forms.TextBox txRutEmp;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txCargo;
         private System.Windows.Forms.TextBox txCorreo;
         private System.Windows.Forms.TextBox txTelefono;
         private System.Windows.Forms.TextBox txApellido;
