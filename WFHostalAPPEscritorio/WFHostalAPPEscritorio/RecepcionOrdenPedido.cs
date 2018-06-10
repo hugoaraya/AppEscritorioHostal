@@ -16,5 +16,11 @@ namespace WFHostalAPPEscritorio
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MantenedorOrdenDePedido formulario = new MantenedorOrdenDePedido();
+            formulario.ShowDialog();
+        }
     }
 }

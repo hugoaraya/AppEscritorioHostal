@@ -61,6 +61,7 @@
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Oracle.DataAccess, Version=4.122.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=x86" />
     <Reference Include="Oracle.ManagedDataAccess, Version=4.122.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
       <HintPath>..\packages\Oracle.ManagedDataAccess.12.2.1100\lib\net40\Oracle.ManagedDataAccess.dll</HintPath>
@@ -220,6 +221,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormularioEmpleado.resx">
       <DependentUpon>FormularioEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IngresoOrdenPedido.resx">
+      <DependentUpon>IngresoOrdenPedido.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MantenedorEmpleados.resx">
       <DependentUpon>MantenedorEmpleados.cs</DependentUpon>

@@ -30,8 +30,12 @@ namespace WFHostalAPPEscritorio
             
             Conectar conexion = new Conectar();
             conexion.Abrir();
+
+            //TEMPORAL PARA PRUEBAS - BORRAR
             txtUsuario.Text = "admin";
             txtContra.Text= "admin";
+            //TEMPORAL PARA PRUEBAS - BORRAR
+
             if (txtUsuario.Text.Trim() == "")
             {
                 lbMsg.Text = "Asegúrese de ingresar Usuario";

@@ -11,7 +11,7 @@ namespace WFHostalAPPEscritorio.Clases
     public class ManProveedor
     {
 
-        public DataTable todosEmpleados() 
+        public DataTable todosProveedor() 
         {
             DataTable dt = new DataTable();
             Conectar conexion = new Conectar();
