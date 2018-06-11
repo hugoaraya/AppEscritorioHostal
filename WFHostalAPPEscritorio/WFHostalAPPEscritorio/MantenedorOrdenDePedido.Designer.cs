@@ -72,9 +72,8 @@
             this.dgvOP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvOP.Location = new System.Drawing.Point(294, 12);
             this.dgvOP.Name = "dgvOP";
-            this.dgvOP.Size = new System.Drawing.Size(397, 227);
+            this.dgvOP.Size = new System.Drawing.Size(668, 227);
             this.dgvOP.TabIndex = 1;
-            
             // 
             // btnBuscar
             // 
@@ -119,7 +118,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(703, 363);
+            this.ClientSize = new System.Drawing.Size(974, 363);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.lbMsg);
             this.Controls.Add(this.btnTodas);

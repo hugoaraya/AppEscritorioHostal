@@ -33,6 +33,8 @@ namespace WFHostalAPPEscritorio
             this.dgvProvee.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             this.dgvProvee.MultiSelect = false;
             this.dgvProvee.ReadOnly = true;
+            this.dgvProvee.AllowUserToAddRows = false;
+            this.dgvProvee.AllowUserToDeleteRows = false;
             ManOrdenPedido man = new ManOrdenPedido();
             dgvProvee.DataSource = man.ListaProveedor();
             txGrilla.Text = "Seleccione Proveedor (doble click)";
@@ -53,6 +55,7 @@ namespace WFHostalAPPEscritorio
             txRutProvee.Text = row.Cells[2].Value.ToString() + "-" + row.Cells[3].Value.ToString();
             txNombreProvee.Text = row.Cells[0].Value.ToString();
             txRubroProvee.Text = row.Cells[1].Value.ToString();
+            gboxProve.Text = "Proveedor Seleccionado";
             btnProvee.Visible = true;
         }
 
@@ -72,6 +75,8 @@ namespace WFHostalAPPEscritorio
             this.dgvProductos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             this.dgvProductos.MultiSelect = false;
             this.dgvProductos.ReadOnly = true;
+            this.dgvProductos.AllowUserToAddRows = false;
+            this.dgvProductos.AllowUserToDeleteRows = false;
             ManOrdenPedido man = new ManOrdenPedido();
             dgvProductos.DataSource = man.ListaProductos();
             GrillaProdSelec();
@@ -121,14 +126,9 @@ namespace WFHostalAPPEscritorio
             
             MessageBox.Show("Ingrese Cantidad al Producto");
             lbMsg.Text = "Ingrese Cantidad a los Productos";
+            btnGenerarOC.Visible = true;
             dgvProdSelec.Focus();
         }
-
-
-
-
-
-
 
         private void tx_KeyPress_Numeric(object sender, KeyPressEventArgs e)
         {
@@ -153,6 +153,76 @@ namespace WFHostalAPPEscritorio
         private void dgvProdSelec_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {
             MessageBox.Show("Ingrese un Numero en Cantidad");
+        }
+
+        private void btnGenerarOC_Click(object sender, EventArgs e)
+        {
+            //MessageBox.Show(dgvProdSelec.RowCount.ToString());
+           // dgvProdSelec.Rows.RemoveAt(dgv);
+
+            if (dgvProdSelec.RowCount > 1)
+            {
+                for( int i= 0; i <=  (dgvProdSelec.RowCount -2); i++)
+                {
+                    int valor = Convert.ToInt32(dgvProdSelec.Rows[i].Cells[0].Value);
+
+                    if ( valor == 0 ) 
+                    {
+                        MessageBox.Show("Ingrese valor de Cantidad mayor a 0");
+                        Console.WriteLine("valor = "+ valor+ "dgv" + dgvProdSelec.Rows[i].Cells[0].Value);
+                        return;
+                    }
+                }                
+
+                GenerarOrdenDePedido();
+            }
+            else
+            {
+                MessageBox.Show("Ingrese Productos");
+                dgvProductos.Focus();
+            };
+        }
+
+        private void GenerarOrdenDePedido()
+        {
+            ManOrdenPedido manOP = new ManOrdenPedido();
+            ORDEN_PEDIDO OP = new ORDEN_PEDIDO();
+            OP.NRO_ORDEN = manOP.get_NRO_ORDEN_Nuevo();
+            OP.EMPLEADO_ID = int.Parse(Global.usuarioKEY[0]);
+            OP.FECHA = DateTime.Today;
+            ManProveedor manP = new ManProveedor();
+            String rut = txRutProvee.Text;
+            OP.PROVEEDOR_ID = manP.ObtenerIDProveedor(rut.Substring(0, rut.Length - 2));
+            OP.ESTADO_ORDEN_PEDIDO_ID = 1; //estado PENDIENTE
+            Console.WriteLine("OP.NRO_ORDEN = "+ OP.NRO_ORDEN);
+            Console.WriteLine(" OP.EMPLEADO_ID = " + OP.EMPLEADO_ID);
+            Console.WriteLine(" OP.PROVEEDOR_ID = " + OP.PROVEEDOR_ID);
+            AddOrdenDePedido(OP);
+        }
+
+        public void AddOrdenDePedido(ORDEN_PEDIDO op)
+        {
+            using (EntitiesHostal con = new EntitiesHostal())
+            {
+                con.ORDEN_PEDIDO.Add(op);
+                con.SaveChanges();
+            }
+            btnGenerarOC.Visible = false;
+            dgvProdSelec.ReadOnly = true;
+            dgvProductos.Visible = false;
+            lblProductosSel.Text = "Productos Seleccionados";
+            txGrilla.Text = "DATOS CONFIRMACION:";
+            lblpro.Visible = false;
+            lbMsg.Text = "Orden de Pedido Registrada Correctamente.";
+
+
+            MessageBox.Show("Wena");
+            MessageBox.Show("PERO FALTA RECEPCION DE PEDIDO .. ");
+
+        }
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

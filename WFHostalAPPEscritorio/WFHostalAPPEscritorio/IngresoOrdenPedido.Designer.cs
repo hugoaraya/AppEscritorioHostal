@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.gboxProve = new System.Windows.Forms.GroupBox();
             this.btnProvee = new System.Windows.Forms.Button();
             this.txRubroProvee = new System.Windows.Forms.Label();
             this.txNombreProvee = new System.Windows.Forms.Label();
@@ -40,31 +40,33 @@
             this.txGrilla = new System.Windows.Forms.Label();
             this.dgvProductos = new System.Windows.Forms.DataGridView();
             this.dgvProdSelec = new System.Windows.Forms.DataGridView();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblProductosSel = new System.Windows.Forms.Label();
             this.lbMsg = new System.Windows.Forms.Label();
             this.lblpro = new System.Windows.Forms.Label();
             this.lbUsuario = new System.Windows.Forms.Label();
-            this.groupBox1.SuspendLayout();
+            this.btnGenerarOC = new System.Windows.Forms.Button();
+            this.btnSalir = new System.Windows.Forms.Button();
+            this.gboxProve.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProvee)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdSelec)).BeginInit();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // gboxProve
             // 
-            this.groupBox1.Controls.Add(this.btnProvee);
-            this.groupBox1.Controls.Add(this.txRubroProvee);
-            this.groupBox1.Controls.Add(this.txNombreProvee);
-            this.groupBox1.Controls.Add(this.txRutProvee);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 43);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(447, 131);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Seleccionne Proveedor";
+            this.gboxProve.Controls.Add(this.btnProvee);
+            this.gboxProve.Controls.Add(this.txRubroProvee);
+            this.gboxProve.Controls.Add(this.txNombreProvee);
+            this.gboxProve.Controls.Add(this.txRutProvee);
+            this.gboxProve.Controls.Add(this.label3);
+            this.gboxProve.Controls.Add(this.label2);
+            this.gboxProve.Controls.Add(this.label1);
+            this.gboxProve.Location = new System.Drawing.Point(12, 43);
+            this.gboxProve.Name = "gboxProve";
+            this.gboxProve.Size = new System.Drawing.Size(447, 121);
+            this.gboxProve.TabIndex = 0;
+            this.gboxProve.TabStop = false;
+            this.gboxProve.Text = "Seleccionne Proveedor";
             // 
             // btnProvee
             // 
@@ -152,7 +154,7 @@
             // dgvProductos
             // 
             this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProductos.Location = new System.Drawing.Point(471, 31);
+            this.dgvProductos.Location = new System.Drawing.Point(487, 31);
             this.dgvProductos.Name = "dgvProductos";
             this.dgvProductos.Size = new System.Drawing.Size(477, 417);
             this.dgvProductos.TabIndex = 3;
@@ -169,14 +171,14 @@
             this.dgvProdSelec.Visible = false;
             this.dgvProdSelec.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgvProdSelec_DataError);
             // 
-            // label4
+            // lblProductosSel
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(21, 167);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(98, 13);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Agregue Productos";
+            this.lblProductosSel.AutoSize = true;
+            this.lblProductosSel.Location = new System.Drawing.Point(14, 175);
+            this.lblProductosSel.Name = "lblProductosSel";
+            this.lblProductosSel.Size = new System.Drawing.Size(98, 13);
+            this.lblProductosSel.TabIndex = 4;
+            this.lblProductosSel.Text = "Agregue Productos";
             // 
             // lbMsg
             // 
@@ -206,25 +208,48 @@
             this.lbUsuario.TabIndex = 8;
             this.lbUsuario.Text = "Usuario Activo:";
             // 
+            // btnGenerarOC
+            // 
+            this.btnGenerarOC.Location = new System.Drawing.Point(328, 413);
+            this.btnGenerarOC.Name = "btnGenerarOC";
+            this.btnGenerarOC.Size = new System.Drawing.Size(131, 23);
+            this.btnGenerarOC.TabIndex = 9;
+            this.btnGenerarOC.Text = "Generar OC";
+            this.btnGenerarOC.UseVisualStyleBackColor = true;
+            this.btnGenerarOC.Visible = false;
+            this.btnGenerarOC.Click += new System.EventHandler(this.btnGenerarOC_Click);
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.Location = new System.Drawing.Point(13, 413);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(110, 23);
+            this.btnSalir.TabIndex = 10;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
             // IngresoOrdenPedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(976, 460);
+            this.Controls.Add(this.btnSalir);
+            this.Controls.Add(this.btnGenerarOC);
             this.Controls.Add(this.lbUsuario);
             this.Controls.Add(this.lblpro);
             this.Controls.Add(this.lbMsg);
             this.Controls.Add(this.dgvProdSelec);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.lblProductosSel);
             this.Controls.Add(this.dgvProductos);
             this.Controls.Add(this.txGrilla);
             this.Controls.Add(this.dgvProvee);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.gboxProve);
             this.Name = "IngresoOrdenPedido";
             this.Text = "IngresoOrdenPedido";
             this.Load += new System.EventHandler(this.IngresoOrdenPedido_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.gboxProve.ResumeLayout(false);
+            this.gboxProve.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProvee)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdSelec)).EndInit();
@@ -235,7 +260,7 @@
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox gboxProve;
         private System.Windows.Forms.DataGridView dgvProvee;
         private System.Windows.Forms.Label txRubroProvee;
         private System.Windows.Forms.Label txNombreProvee;
@@ -247,9 +272,11 @@
         private System.Windows.Forms.Button btnProvee;
         private System.Windows.Forms.DataGridView dgvProductos;
         private System.Windows.Forms.DataGridView dgvProdSelec;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblProductosSel;
         private System.Windows.Forms.Label lbMsg;
         private System.Windows.Forms.Label lblpro;
         private System.Windows.Forms.Label lbUsuario;
+        private System.Windows.Forms.Button btnGenerarOC;
+        private System.Windows.Forms.Button btnSalir;
     }
 }

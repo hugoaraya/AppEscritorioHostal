@@ -66,8 +66,9 @@ namespace WFHostalAPPEscritorio
 
                             //registros de Usuario
                             ManUsuario man = new ManUsuario();
-                            //List<string> listUsuario = man.traerUsuario(txtUsuario.Text);
-                            //Console.Write(listUsuario[0] + listUsuario[1] + listUsuario[2] + listUsuario[3] + listUsuario[4]);
+                        //List<string> listUsuario = man.traerUsuario(txtUsuario.Text);
+                        //Console.Write(listUsuario[0] + listUsuario[1] + listUsuario[2] + listUsuario[3] + listUsuario[4]);
+                        //USUARIO.IDUSUARIO, USUARIO.NOMBRE_USUARIO, USUARIO.CONTRASENIA, USUARIO.TIPO_USUARIO_ID, TIPO_USUARIO.DESCRIPCION
                             Global.usuarioKEY = man.traerUsuario(txtUsuario.Text);
 
                         if (tipo == 1)

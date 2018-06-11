@@ -11,7 +11,49 @@ namespace WFHostalAPPEscritorio.Clases
     public class ManOrdenPedido
     {
 
+    public int get_NRO_ORDEN_Nuevo()
+        {
+            int nro_orden = 0;
+            DataTable dt = new DataTable();
+            Conectar conexion = new Conectar();
+            conexion.Abrir();
+            try
+            {
+                OracleCommand comando = new OracleCommand("SELECT MAX(NRO_ORDEN) + 1  from ORDEN_PEDIDO ", conexion.con);
+                OracleDataReader lector = comando.ExecuteReader();
 
+                if (lector.HasRows)
+                {
+                    dt.Load(lector);
+                    DataRow row = dt.Rows[0];
+                    nro_orden = int.Parse(row[0].ToString());
+                    lector.Close();
+                    conexion.Cerrar();
+                    return nro_orden;
+                }
+                else
+                {
+                    Console.WriteLine("No rows found.");
+                    lector.Close();
+                    conexion.Cerrar();
+                    return 0;
+                }
+            }
+            catch (OracleException ex)
+            {
+                Console.WriteLine("ERROR SQL: " + ex);
+                conexion.Cerrar();
+                return 0;
+            }
+
+            catch (Exception ex)
+            {
+                Console.WriteLine("ERROR APP: " + ex);
+                conexion.Cerrar();
+                return 0;
+            }
+        }
+        
         public DataTable getEstructuraProducto()
         {
 

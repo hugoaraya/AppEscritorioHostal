@@ -136,6 +136,50 @@ namespace WFHostalAPPEscritorio.Clases
             }
         }
 
+        public int ObtenerIDProveedor(String rut)
+        {
+            int id_empresa = 0;
+            DataTable dt = new DataTable();
+            Conectar conexion = new Conectar();
+            conexion.Abrir();
+            try
+            {
+                OracleCommand comando = new OracleCommand("select IDPROVEEDOR from PROVEEDOR where RUT = :rut", conexion.con);
+                comando.Parameters.Add(":rut", rut);
+                OracleDataReader lector = comando.ExecuteReader();
+
+                if (lector.HasRows)
+                {
+                    dt.Load(lector);
+                    DataRow row = dt.Rows[0];
+                    id_empresa = int.Parse(row[0].ToString());
+                    lector.Close();
+                    conexion.Cerrar();
+                    return id_empresa;
+                }
+                else
+                {
+                    Console.WriteLine("No rows found.");
+                    lector.Close();
+                    conexion.Cerrar();
+                    return 0;
+                }
+            }
+            catch (OracleException ex)
+            {
+                Console.WriteLine("ERROR SQL: " + ex);
+                conexion.Cerrar();
+                return 0;
+            }
+
+            catch (Exception ex)
+            {
+                Console.WriteLine("ERROR APP: " + ex);
+                conexion.Cerrar();
+                return 0;
+            }
+        }
+
         public Boolean validarRutProveedor(String rut)
         {
             DataTable dt = new DataTable();
