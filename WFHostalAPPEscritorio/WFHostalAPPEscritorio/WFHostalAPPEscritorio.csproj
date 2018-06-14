@@ -139,6 +139,12 @@
     <Compile Include="MantenedorHuespedes.Designer.cs">
       <DependentUpon>MantenedorHuespedes.cs</DependentUpon>
     </Compile>
+    <Compile Include="RecepcionarODP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RecepcionarODP.Designer.cs">
+      <DependentUpon>RecepcionarODP.cs</DependentUpon>
+    </Compile>
     <Compile Include="RecepcionOrdenPedido.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -242,6 +248,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MantenedorProveedores.resx">
       <DependentUpon>MantenedorProveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RecepcionarODP.resx">
+      <DependentUpon>RecepcionarODP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RecepcionOrdenPedido.resx">
       <DependentUpon>RecepcionOrdenPedido.cs</DependentUpon>

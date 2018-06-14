@@ -246,7 +246,7 @@
             this.Controls.Add(this.dgvProvee);
             this.Controls.Add(this.gboxProve);
             this.Name = "IngresoOrdenPedido";
-            this.Text = "IngresoOrdenPedido";
+            this.Text = "Ingresar Orden de Pedido";
             this.Load += new System.EventHandler(this.IngresoOrdenPedido_Load);
             this.gboxProve.ResumeLayout(false);
             this.gboxProve.PerformLayout();

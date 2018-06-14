@@ -22,5 +22,11 @@ namespace WFHostalAPPEscritorio
             MantenedorOrdenDePedido formulario = new MantenedorOrdenDePedido();
             formulario.ShowDialog();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            RecepcionarODP formulario = new RecepcionarODP();
+            formulario.ShowDialog();
+        }
     }
 }

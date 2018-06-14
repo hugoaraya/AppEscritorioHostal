@@ -236,7 +236,7 @@ namespace WFHostalAPPEscritorio.Clases
             conexion.Abrir();
             try
             {
-                OracleCommand comando = new OracleCommand("SELECT OP.NRO_ORDEN, OP.FECHA, E.NOMBRE as NOMBRE_EMPLEADO,E.RUT as RUT_EMPLEADO,P.NOMBRE as NOMBRE_PROVEEDOR, P.RUT as RUT_PROVEEDOR,EO.DESCRIPCION AS ESTADO_ODP FROM ORDEN_PEDIDO OP JOIN EMPLEADO E ON (OP.EMPLEADO_ID = E.IDEMPLEADO) join PROVEEDOR P ON(OP.PROVEEDOR_ID=P.IDPROVEEDOR) JOIN ESTADO_ORDEN_PEDIDO EO ON (EO.IDESTADO_ORDEN_PEDIDO=OP.ESTADO_ORDEN_PEDIDO_ID) WHERE OP.NRO_ORDEN= :numodp order by fecha", conexion.con);
+                OracleCommand comando = new OracleCommand("SELECT EO.DESCRIPCION AS ESTADO, OP.NRO_ORDEN as NUMERO_ODP, OP.FECHA, P.RUT as RUT_PROVEEDOR, E.RUT as RUT_EMPLEADO FROM ORDEN_PEDIDO OP JOIN EMPLEADO E ON (OP.EMPLEADO_ID = E.IDEMPLEADO) join PROVEEDOR P ON(OP.PROVEEDOR_ID=P.IDPROVEEDOR) JOIN ESTADO_ORDEN_PEDIDO EO ON (EO.IDESTADO_ORDEN_PEDIDO=OP.ESTADO_ORDEN_PEDIDO_ID) WHERE OP.NRO_ORDEN= :numodp", conexion.con);
                 comando.Parameters.Add(":numodp", numero);
                 OracleDataReader lector = comando.ExecuteReader();
 

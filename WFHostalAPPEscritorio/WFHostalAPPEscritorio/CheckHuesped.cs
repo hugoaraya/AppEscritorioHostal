@@ -155,7 +155,7 @@ namespace WFHostalAPPEscritorio
             string pNroOrden = txOrdenCom.Text;
             if (PRut == "" || pNroOrden == "")
             {
-                lbMsg.Text = "Seleccione un Huesped";
+                lbMsg.Text = "Seleccione un Huésped";
                 return;
             }
             DataTable data = new DataTable();
@@ -282,5 +282,7 @@ namespace WFHostalAPPEscritorio
                 }
             }
         }
+
+ 
     }
 }
