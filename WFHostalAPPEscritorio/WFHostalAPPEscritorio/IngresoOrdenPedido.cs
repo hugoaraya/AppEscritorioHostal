@@ -89,7 +89,7 @@ namespace WFHostalAPPEscritorio
             this.dgvProdSelec.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             this.dgvProdSelec.MultiSelect = false;
             //this.dgvProdSelec.ReadOnly = true;
-            this.dgvProdSelec.ColumnCount = 4;
+            this.dgvProdSelec.ColumnCount = 5;
             this.dgvProdSelec.ColumnHeadersVisible = true;
             this.dgvProdSelec.Columns[0].ReadOnly = false;
             this.dgvProdSelec.Columns[0].ValueType = typeof(Int32);
@@ -102,6 +102,7 @@ namespace WFHostalAPPEscritorio
             this.dgvProdSelec.Columns[1].Name = "TIPO";
             this.dgvProdSelec.Columns[2].Name = "FAMILIA";
             this.dgvProdSelec.Columns[3].Name = "MARCA";
+            this.dgvProdSelec.Columns[4].Name = "IDPRODUCTO";
 
         }
 
@@ -113,19 +114,27 @@ namespace WFHostalAPPEscritorio
             }
             
             var row = (sender as DataGridView).CurrentRow;
-            
-            //T.DESCRIPCION AS TIPO, F.DESCRIPCION AS FAMILIA, M.DESCRIPCION AS MARCA, P.STOCK, P.STOCK_CRITICO " +        
+
+            //T.DESCRIPCION AS TIPO, F.DESCRIPCION AS FAMILIA, M.DESCRIPCION AS MARCA, P.STOCK, P.STOCK_CRITICO, P.IDPRODUCTO "
             //row.Cells[0].Value.ToString()
             int rowEscribir = dgvProdSelec.Rows.Count - 1;
             dgvProdSelec.Rows.Add(1);
             //INGRESAR CANTIDAD
-            dgvProdSelec.Rows[rowEscribir].Cells[0].Value = 0;
+            if (Convert.ToInt32(row.Cells[3].Value) < Convert.ToInt32(row.Cells[4].Value))
+            {
+                dgvProdSelec.Rows[rowEscribir].Cells[0].Value = Convert.ToInt32(row.Cells[4].Value) - Convert.ToInt32(row.Cells[3].Value);
+            }
+            else
+            {
+                dgvProdSelec.Rows[rowEscribir].Cells[0].Value = 0;
+            }
             dgvProdSelec.Rows[rowEscribir].Cells[1].Value = row.Cells[0].Value.ToString();
             dgvProdSelec.Rows[rowEscribir].Cells[2].Value = row.Cells[1].Value.ToString();
             dgvProdSelec.Rows[rowEscribir].Cells[3].Value = row.Cells[2].Value.ToString();
-            
-            MessageBox.Show("Ingrese Cantidad al Producto");
-            lbMsg.Text = "Ingrese Cantidad a los Productos";
+            dgvProdSelec.Rows[rowEscribir].Cells[4].Value = row.Cells[5].Value.ToString();
+
+            MessageBox.Show("Confirme la Cantidad de Productos");
+            lbMsg.Text = "Confirme la Cantidad de Productos";
             btnGenerarOC.Visible = true;
             dgvProdSelec.Focus();
         }
@@ -158,7 +167,6 @@ namespace WFHostalAPPEscritorio
         private void btnGenerarOC_Click(object sender, EventArgs e)
         {
             //MessageBox.Show(dgvProdSelec.RowCount.ToString());
-           // dgvProdSelec.Rows.RemoveAt(dgv);
 
             if (dgvProdSelec.RowCount > 1)
             {
@@ -172,9 +180,21 @@ namespace WFHostalAPPEscritorio
                         Console.WriteLine("valor = "+ valor+ "dgv" + dgvProdSelec.Rows[i].Cells[0].Value);
                         return;
                     }
-                }                
-
+                }
                 GenerarOrdenDePedido();
+                GenerarRecepcionProducto();
+                txResult.Visible = true;
+                txResult.Text = "\r\n \r\n \r\n \r\n";
+                txResult.Text += "Informar a Proveedor  " + txNombreProvee.Text + "\r\n \r\n";
+                txResult.Text += "Se genero la Orden de Pedido Nro: "+ txNroOrden.Text +"\r\n \r\n";
+
+                //txResult.Text += ("     Usuario: " + APP.ObtenerRut(txRut.Text) + "\r\n" +
+                //                  "     Clave: " + APP.GenerarClave(txNombre.Text, txRut.Text)) + "\r\n \r\n";
+                //txResult.Text += "Lo invitamos a disfrutar de nuestros Servicios.\r\n";
+                //txResult.Text += "Ingrese a www.HostalDonaClarita.cl \r\n \r\n \r\n";
+                //txResult.Text += "Saludos. Hostal Doña Clarita\r\n \r\n \r\n";
+                //txResult.Text += "**Enviar datos a " + txCorreo.Text;
+                MessageBox.Show("Orden de Pedido Nro: " + txNroOrden.Text);
             }
             else
             {
@@ -183,11 +203,14 @@ namespace WFHostalAPPEscritorio
             };
         }
 
+     
+
         private void GenerarOrdenDePedido()
         {
             ManOrdenPedido manOP = new ManOrdenPedido();
             ORDEN_PEDIDO OP = new ORDEN_PEDIDO();
             OP.NRO_ORDEN = manOP.get_NRO_ORDEN_Nuevo();
+            txNroOrden.Text = OP.NRO_ORDEN.ToString();
             OP.EMPLEADO_ID = int.Parse(Global.usuarioKEY[0]);
             OP.FECHA = DateTime.Today;
             ManProveedor manP = new ManProveedor();
@@ -215,11 +238,46 @@ namespace WFHostalAPPEscritorio
             lblpro.Visible = false;
             lbMsg.Text = "Orden de Pedido Registrada Correctamente.";
 
+           
+        }
 
-            MessageBox.Show("Wena");
-            MessageBox.Show("PERO FALTA RECEPCION DE PEDIDO .. ");
+
+        private void GenerarRecepcionProducto()
+        {
+            ManOrdenPedido man = new ManOrdenPedido();
+            int nroRecepcion = man.get_NRO_RECEPCION_Nuevo();
+            for (int i = 0; i <= (dgvProdSelec.RowCount - 2); i++)
+            {
+                RECEPCION_PRODUCTO RecProd = new RECEPCION_PRODUCTO();
+                RecProd.NRO_RECEPCION = nroRecepcion;
+                RecProd.PRODUCTO_ID = Convert.ToInt32(dgvProdSelec.Rows[i].Cells[4].Value);
+                RecProd.ESTADO_RECEPCION_ID = 1;
+                RecProd.ORDEN_PEDIDO_ID = man.GetIdOrdenPedido(txNroOrden.Text);
+                //RecProd.FECHA = NULL;
+                RecProd.CANTIDAD_P = Convert.ToInt32(dgvProdSelec.Rows[i].Cells[0].Value);
+                //Console.WriteLine("0- "+RecProd.NRO_RECEPCION);
+                //Console.WriteLine("1- " + RecProd.PRODUCTO_ID);
+                //Console.WriteLine("2- " + RecProd.ESTADO_RECEPCION_ID); 
+                //Console.WriteLine("3- " + RecProd.ORDEN_PEDIDO_ID); 
+                //Console.WriteLine("4- " + RecProd.CANTIDAD_P);
+                AddRecepcionProducto(RecProd);
+            }
+           
 
         }
+        public void AddRecepcionProducto(RECEPCION_PRODUCTO rp)
+        {
+            using (EntitiesHostal con = new EntitiesHostal())
+            {
+                con.RECEPCION_PRODUCTO.Add(rp);
+                con.SaveChanges();
+            }
+            lbMsg.Text = "Orden de Pedido Registrada Correctamente. (Recepcion de Producto Pendiente)";
+            
+        }
+
+
+
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();

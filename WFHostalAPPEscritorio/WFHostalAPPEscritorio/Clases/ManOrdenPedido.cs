@@ -11,7 +11,96 @@ namespace WFHostalAPPEscritorio.Clases
     public class ManOrdenPedido
     {
 
-    public int get_NRO_ORDEN_Nuevo()
+        public int GetIdOrdenPedido(String numero)
+        {
+            int id_OrdenPedido = 0;
+            DataTable dt = new DataTable();
+            Conectar conexion = new Conectar();
+            conexion.Abrir();
+            try
+            {
+                OracleCommand comando = new OracleCommand("SELECT IDORDEN_PEDIDO from ORDEN_PEDIDO WHERE NRO_ORDEN =:numPed ", conexion.con);
+                comando.Parameters.Add(":numPed", numero);
+                OracleDataReader lector = comando.ExecuteReader();
+
+                if (lector.HasRows)
+                {
+                    dt.Load(lector);
+                    DataRow row = dt.Rows[0];
+                    id_OrdenPedido = int.Parse(row[0].ToString());
+                    lector.Close();
+                    conexion.Cerrar();
+                    return id_OrdenPedido;
+                }
+                else
+                {
+                    Console.WriteLine("No rows found.");
+                    lector.Close();
+                    conexion.Cerrar();
+                    return 0;
+                }
+            }
+            catch (OracleException ex)
+            {
+                Console.WriteLine("ERROR SQL: " + ex);
+                conexion.Cerrar();
+                return 0;
+            }
+
+            catch (Exception ex)
+            {
+                Console.WriteLine("ERROR APP: " + ex);
+                conexion.Cerrar();
+                return 0;
+            }
+
+        }
+
+
+
+        public int get_NRO_RECEPCION_Nuevo()
+        {
+            int nro_recep = 0;
+            DataTable dt = new DataTable();
+            Conectar conexion = new Conectar();
+            conexion.Abrir();
+            try
+            {
+                OracleCommand comando = new OracleCommand("SELECT MAX(NRO_RECEPCION) + 1  from RECEPCION_PRODUCTO ", conexion.con);
+                OracleDataReader lector = comando.ExecuteReader();
+
+                if (lector.HasRows)
+                {
+                    dt.Load(lector);
+                    DataRow row = dt.Rows[0];
+                    nro_recep = int.Parse(row[0].ToString());
+                    lector.Close();
+                    conexion.Cerrar();
+                    return nro_recep;
+                }
+                else
+                {
+                    Console.WriteLine("No rows found.");
+                    lector.Close();
+                    conexion.Cerrar();
+                    return 0;
+                }
+            }
+            catch (OracleException ex)
+            {
+                Console.WriteLine("ERROR SQL: " + ex);
+                conexion.Cerrar();
+                return 0;
+            }
+
+            catch (Exception ex)
+            {
+                Console.WriteLine("ERROR APP: " + ex);
+                conexion.Cerrar();
+                return 0;
+            }
+        }
+        public int get_NRO_ORDEN_Nuevo()
         {
             int nro_orden = 0;
             DataTable dt = new DataTable();

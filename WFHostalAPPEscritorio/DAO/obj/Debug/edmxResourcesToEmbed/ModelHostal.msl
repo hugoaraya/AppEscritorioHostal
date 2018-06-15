@@ -235,6 +235,7 @@
     <EntitySetMapping Name="RECEPCION_PRODUCTO">
       <EntityTypeMapping TypeName="ModelHostal.RECEPCION_PRODUCTO">
         <MappingFragment StoreEntitySet="RECEPCION_PRODUCTO">
+          <ScalarProperty Name="CANTIDAD_P" ColumnName="CANTIDAD_P" />
           <ScalarProperty Name="IDRECEPCION_PRODUCTO" ColumnName="IDRECEPCION_PRODUCTO" />
           <ScalarProperty Name="NRO_RECEPCION" ColumnName="NRO_RECEPCION" />
           <ScalarProperty Name="CODIGO_BARRA" ColumnName="CODIGO_BARRA" />

@@ -46,6 +46,8 @@
             this.lbUsuario = new System.Windows.Forms.Label();
             this.btnGenerarOC = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
+            this.txNroOrden = new System.Windows.Forms.Label();
+            this.txResult = new System.Windows.Forms.TextBox();
             this.gboxProve.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProvee)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
@@ -229,11 +231,33 @@
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
+            // txNroOrden
+            // 
+            this.txNroOrden.AutoSize = true;
+            this.txNroOrden.Location = new System.Drawing.Point(929, 9);
+            this.txNroOrden.Name = "txNroOrden";
+            this.txNroOrden.Size = new System.Drawing.Size(0, 13);
+            this.txNroOrden.TabIndex = 11;
+            this.txNroOrden.Visible = false;
+            // 
+            // txResult
+            // 
+            this.txResult.Location = new System.Drawing.Point(504, 75);
+            this.txResult.Multiline = true;
+            this.txResult.Name = "txResult";
+            this.txResult.ReadOnly = true;
+            this.txResult.Size = new System.Drawing.Size(311, 251);
+            this.txResult.TabIndex = 17;
+            this.txResult.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txResult.Visible = false;
+            // 
             // IngresoOrdenPedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(976, 460);
+            this.Controls.Add(this.txResult);
+            this.Controls.Add(this.txNroOrden);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnGenerarOC);
             this.Controls.Add(this.lbUsuario);
@@ -278,5 +302,7 @@
         private System.Windows.Forms.Label lbUsuario;
         private System.Windows.Forms.Button btnGenerarOC;
         private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.Label txNroOrden;
+        private System.Windows.Forms.TextBox txResult;
     }
 }

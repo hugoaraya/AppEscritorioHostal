@@ -21,5 +21,10 @@ namespace DAO
         public Nullable<decimal> ESTADO_RECEPCION_ID { get; set; }
         public Nullable<decimal> ORDEN_PEDIDO_ID { get; set; }
         public System.DateTime FECHA { get; set; }
+        public Nullable<decimal> CANTIDAD_P { get; set; }
+    
+        public virtual ESTADO_RECEPCION ESTADO_RECEPCION { get; set; }
+        public virtual ORDEN_PEDIDO ORDEN_PEDIDO { get; set; }
+        public virtual PRODUCTO PRODUCTO { get; set; }
     }
 }

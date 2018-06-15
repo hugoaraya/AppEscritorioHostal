@@ -14,6 +14,12 @@ namespace DAO
     
     public partial class PRODUCTO
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public PRODUCTO()
+        {
+            this.RECEPCION_PRODUCTO = new HashSet<RECEPCION_PRODUCTO>();
+        }
+    
         public decimal IDPRODUCTO { get; set; }
         public System.DateTime FECHA_VENCIMIENTO { get; set; }
         public decimal PRECIO { get; set; }
@@ -28,5 +34,7 @@ namespace DAO
         public virtual FAMILIA_PRODUCTO FAMILIA_PRODUCTO { get; set; }
         public virtual MARCA MARCA { get; set; }
         public virtual TIPO_PRODUCTO TIPO_PRODUCTO { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<RECEPCION_PRODUCTO> RECEPCION_PRODUCTO { get; set; }
     }
 }

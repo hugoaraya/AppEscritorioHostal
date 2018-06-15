@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="ModelHostal.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="11.2" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="ModelHostal.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="11.2" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="CARGO">
           <Key>
             <PropertyRef Name="IDCARGO" />
@@ -225,6 +225,7 @@
           <Property Name="ESTADO_RECEPCION_ID" Type="number" Precision="38" Scale="0" />
           <Property Name="ORDEN_PEDIDO_ID" Type="number" Precision="38" Scale="0" />
           <Property Name="FECHA" Type="date" Nullable="false" />
+          <Property Name="CANTIDAD_P" Type="number" Precision="38" Scale="0" />
         </EntityType>
         <EntityType Name="RUBRO">
           <Key>
@@ -564,6 +565,42 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="RECEPCION_ESTADO_FK">
+          <End Role="ESTADO_RECEPCION" Type="Self.ESTADO_RECEPCION" Multiplicity="0..1" />
+          <End Role="RECEPCION_PRODUCTO" Type="Self.RECEPCION_PRODUCTO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ESTADO_RECEPCION">
+              <PropertyRef Name="IDESTADO_RECEPCION" />
+            </Principal>
+            <Dependent Role="RECEPCION_PRODUCTO">
+              <PropertyRef Name="ESTADO_RECEPCION_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="RECEPCION_ORDEN_FK">
+          <End Role="ORDEN_PEDIDO" Type="Self.ORDEN_PEDIDO" Multiplicity="0..1" />
+          <End Role="RECEPCION_PRODUCTO" Type="Self.RECEPCION_PRODUCTO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ORDEN_PEDIDO">
+              <PropertyRef Name="IDORDEN_PEDIDO" />
+            </Principal>
+            <Dependent Role="RECEPCION_PRODUCTO">
+              <PropertyRef Name="ORDEN_PEDIDO_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="RECEPCION_PRODUCTO_FK">
+          <End Role="PRODUCTO" Type="Self.PRODUCTO" Multiplicity="0..1" />
+          <End Role="RECEPCION_PRODUCTO" Type="Self.RECEPCION_PRODUCTO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PRODUCTO">
+              <PropertyRef Name="IDPRODUCTO" />
+            </Principal>
+            <Dependent Role="RECEPCION_PRODUCTO">
+              <PropertyRef Name="PRODUCTO_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="USUARIO_TIPO_FK">
           <End Role="TIPO_USUARIO" Type="Self.TIPO_USUARIO" Multiplicity="0..1" />
           <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="*" />
@@ -713,13 +750,24 @@
             <End Role="USUARIO" EntitySet="USUARIO" />
             <End Role="PROVEEDOR" EntitySet="PROVEEDOR" />
           </AssociationSet>
+          <AssociationSet Name="RECEPCION_ESTADO_FK" Association="Self.RECEPCION_ESTADO_FK">
+            <End Role="ESTADO_RECEPCION" EntitySet="ESTADO_RECEPCION" />
+            <End Role="RECEPCION_PRODUCTO" EntitySet="RECEPCION_PRODUCTO" />
+          </AssociationSet>
+          <AssociationSet Name="RECEPCION_ORDEN_FK" Association="Self.RECEPCION_ORDEN_FK">
+            <End Role="ORDEN_PEDIDO" EntitySet="ORDEN_PEDIDO" />
+            <End Role="RECEPCION_PRODUCTO" EntitySet="RECEPCION_PRODUCTO" />
+          </AssociationSet>
+          <AssociationSet Name="RECEPCION_PRODUCTO_FK" Association="Self.RECEPCION_PRODUCTO_FK">
+            <End Role="PRODUCTO" EntitySet="PRODUCTO" />
+            <End Role="RECEPCION_PRODUCTO" EntitySet="RECEPCION_PRODUCTO" />
+          </AssociationSet>
           <AssociationSet Name="USUARIO_TIPO_FK" Association="Self.USUARIO_TIPO_FK">
             <End Role="TIPO_USUARIO" EntitySet="TIPO_USUARIO" />
             <End Role="USUARIO" EntitySet="USUARIO" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="ModelHostal" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -798,6 +846,7 @@
           </Key>
           <Property Name="IDESTADO_RECEPCION" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
           <Property Name="DESCRIPCION" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="RECEPCION_PRODUCTO" Relationship="ModelHostal.RECEPCION_ESTADO_FK" FromRole="ESTADO_RECEPCION" ToRole="RECEPCION_PRODUCTO" />
         </EntityType>
         <EntityType Name="FACTURA">
           <Key>
@@ -934,6 +983,7 @@
           <NavigationProperty Name="EMPLEADO" Relationship="Self.ORDEN_EMPLEADO_FK" FromRole="ORDEN_PEDIDO" ToRole="EMPLEADO" />
           <NavigationProperty Name="ESTADO_ORDEN_PEDIDO" Relationship="Self.ESTADO_ORDEN_PEDIDO_FK" FromRole="ORDEN_PEDIDO" ToRole="ESTADO_ORDEN_PEDIDO" />
           <NavigationProperty Name="PROVEEDOR" Relationship="Self.ORDEN_PROVEEDOR_FK" FromRole="ORDEN_PEDIDO" ToRole="PROVEEDOR" />
+          <NavigationProperty Name="RECEPCION_PRODUCTO" Relationship="ModelHostal.RECEPCION_ORDEN_FK" FromRole="ORDEN_PEDIDO" ToRole="RECEPCION_PRODUCTO" />
         </EntityType>
         <EntityType Name="PLATO">
           <Key>
@@ -960,6 +1010,7 @@
           <NavigationProperty Name="FAMILIA_PRODUCTO" Relationship="Self.PRODUCTO_FAMILIA_PRODUCTO_FK" FromRole="PRODUCTO" ToRole="FAMILIA_PRODUCTO" />
           <NavigationProperty Name="MARCA" Relationship="Self.MARCA_PRODUCTO_FK" FromRole="PRODUCTO" ToRole="MARCA" />
           <NavigationProperty Name="TIPO_PRODUCTO" Relationship="Self.PRODUCTO_TIPO_PRODUCTO_FK" FromRole="PRODUCTO" ToRole="TIPO_PRODUCTO" />
+          <NavigationProperty Name="RECEPCION_PRODUCTO" Relationship="ModelHostal.RECEPCION_PRODUCTO_FK" FromRole="PRODUCTO" ToRole="RECEPCION_PRODUCTO" />
         </EntityType>
         <EntityType Name="PROVEEDOR">
           <Key>
@@ -987,6 +1038,10 @@
           <Property Name="ESTADO_RECEPCION_ID" Type="Decimal" Precision="38" Scale="0" />
           <Property Name="ORDEN_PEDIDO_ID" Type="Decimal" Precision="38" Scale="0" />
           <Property Name="FECHA" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="ESTADO_RECEPCION" Relationship="ModelHostal.RECEPCION_ESTADO_FK" FromRole="RECEPCION_PRODUCTO" ToRole="ESTADO_RECEPCION" />
+          <NavigationProperty Name="ORDEN_PEDIDO" Relationship="ModelHostal.RECEPCION_ORDEN_FK" FromRole="RECEPCION_PRODUCTO" ToRole="ORDEN_PEDIDO" />
+          <NavigationProperty Name="PRODUCTO" Relationship="ModelHostal.RECEPCION_PRODUCTO_FK" FromRole="RECEPCION_PRODUCTO" ToRole="PRODUCTO" />
+          <Property Name="CANTIDAD_P" Type="Decimal" Precision="38" Scale="0" />
         </EntityType>
         <EntityType Name="RUBRO">
           <Key>
@@ -1479,7 +1534,55 @@
             <End Role="TIPO_USUARIO" EntitySet="TIPO_USUARIO" />
             <End Role="USUARIO" EntitySet="USUARIO" />
           </AssociationSet>
+          <AssociationSet Name="RECEPCION_ESTADO_FK" Association="ModelHostal.RECEPCION_ESTADO_FK">
+            <End Role="ESTADO_RECEPCION" EntitySet="ESTADO_RECEPCION" />
+            <End Role="RECEPCION_PRODUCTO" EntitySet="RECEPCION_PRODUCTO" />
+          </AssociationSet>
+          <AssociationSet Name="RECEPCION_ORDEN_FK" Association="ModelHostal.RECEPCION_ORDEN_FK">
+            <End Role="ORDEN_PEDIDO" EntitySet="ORDEN_PEDIDO" />
+            <End Role="RECEPCION_PRODUCTO" EntitySet="RECEPCION_PRODUCTO" />
+          </AssociationSet>
+          <AssociationSet Name="RECEPCION_PRODUCTO_FK" Association="ModelHostal.RECEPCION_PRODUCTO_FK">
+            <End Role="PRODUCTO" EntitySet="PRODUCTO" />
+            <End Role="RECEPCION_PRODUCTO" EntitySet="RECEPCION_PRODUCTO" />
+          </AssociationSet>
         </EntityContainer>
+        <Association Name="RECEPCION_ESTADO_FK">
+          <End Type="ModelHostal.ESTADO_RECEPCION" Role="ESTADO_RECEPCION" Multiplicity="0..1" />
+          <End Type="ModelHostal.RECEPCION_PRODUCTO" Role="RECEPCION_PRODUCTO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ESTADO_RECEPCION">
+              <PropertyRef Name="IDESTADO_RECEPCION" />
+            </Principal>
+            <Dependent Role="RECEPCION_PRODUCTO">
+              <PropertyRef Name="ESTADO_RECEPCION_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="RECEPCION_ORDEN_FK">
+          <End Type="ModelHostal.ORDEN_PEDIDO" Role="ORDEN_PEDIDO" Multiplicity="0..1" />
+          <End Type="ModelHostal.RECEPCION_PRODUCTO" Role="RECEPCION_PRODUCTO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ORDEN_PEDIDO">
+              <PropertyRef Name="IDORDEN_PEDIDO" />
+            </Principal>
+            <Dependent Role="RECEPCION_PRODUCTO">
+              <PropertyRef Name="ORDEN_PEDIDO_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="RECEPCION_PRODUCTO_FK">
+          <End Type="ModelHostal.PRODUCTO" Role="PRODUCTO" Multiplicity="0..1" />
+          <End Type="ModelHostal.RECEPCION_PRODUCTO" Role="RECEPCION_PRODUCTO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PRODUCTO">
+              <PropertyRef Name="IDPRODUCTO" />
+            </Principal>
+            <Dependent Role="RECEPCION_PRODUCTO">
+              <PropertyRef Name="PRODUCTO_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1720,6 +1823,7 @@
           <EntitySetMapping Name="RECEPCION_PRODUCTO">
             <EntityTypeMapping TypeName="ModelHostal.RECEPCION_PRODUCTO">
               <MappingFragment StoreEntitySet="RECEPCION_PRODUCTO">
+                <ScalarProperty Name="CANTIDAD_P" ColumnName="CANTIDAD_P" />
                 <ScalarProperty Name="IDRECEPCION_PRODUCTO" ColumnName="IDRECEPCION_PRODUCTO" />
                 <ScalarProperty Name="NRO_RECEPCION" ColumnName="NRO_RECEPCION" />
                 <ScalarProperty Name="CODIGO_BARRA" ColumnName="CODIGO_BARRA" />

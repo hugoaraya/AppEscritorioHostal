@@ -171,7 +171,7 @@
             this.lbMsg.AutoSize = true;
             this.lbMsg.Location = new System.Drawing.Point(22, 295);
             this.lbMsg.Name = "lbMsg";
-            this.lbMsg.Size = new System.Drawing.Size(0, 13);
+            this.lbMsg.Size = new System.Drawing.Size(11, 13);
             this.lbMsg.TabIndex = 14;
             this.lbMsg.Text = "*";
             // 
@@ -180,6 +180,7 @@
             this.txResult.Location = new System.Drawing.Point(357, 34);
             this.txResult.Multiline = true;
             this.txResult.Name = "txResult";
+            this.txResult.ReadOnly = true;
             this.txResult.Size = new System.Drawing.Size(234, 256);
             this.txResult.TabIndex = 16;
             this.txResult.Visible = false;

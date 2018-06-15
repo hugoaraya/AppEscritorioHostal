@@ -14,6 +14,12 @@ namespace DAO
     
     public partial class ORDEN_PEDIDO
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public ORDEN_PEDIDO()
+        {
+            this.RECEPCION_PRODUCTO = new HashSet<RECEPCION_PRODUCTO>();
+        }
+    
         public decimal IDORDEN_PEDIDO { get; set; }
         public decimal NRO_ORDEN { get; set; }
         public Nullable<decimal> EMPLEADO_ID { get; set; }
@@ -25,5 +31,7 @@ namespace DAO
         public virtual EMPLEADO EMPLEADO { get; set; }
         public virtual ESTADO_ORDEN_PEDIDO ESTADO_ORDEN_PEDIDO { get; set; }
         public virtual PROVEEDOR PROVEEDOR { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<RECEPCION_PRODUCTO> RECEPCION_PRODUCTO { get; set; }
     }
 }

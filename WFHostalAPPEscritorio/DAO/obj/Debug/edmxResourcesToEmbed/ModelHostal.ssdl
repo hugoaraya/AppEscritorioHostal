@@ -220,6 +220,7 @@
     <Property Name="ESTADO_RECEPCION_ID" Type="number" Precision="38" Scale="0" />
     <Property Name="ORDEN_PEDIDO_ID" Type="number" Precision="38" Scale="0" />
     <Property Name="FECHA" Type="date" Nullable="false" />
+    <Property Name="CANTIDAD_P" Type="number" Precision="38" Scale="0" />
   </EntityType>
   <EntityType Name="RUBRO">
     <Key>
@@ -559,6 +560,42 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="RECEPCION_ESTADO_FK">
+    <End Role="ESTADO_RECEPCION" Type="Self.ESTADO_RECEPCION" Multiplicity="0..1" />
+    <End Role="RECEPCION_PRODUCTO" Type="Self.RECEPCION_PRODUCTO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ESTADO_RECEPCION">
+        <PropertyRef Name="IDESTADO_RECEPCION" />
+      </Principal>
+      <Dependent Role="RECEPCION_PRODUCTO">
+        <PropertyRef Name="ESTADO_RECEPCION_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RECEPCION_ORDEN_FK">
+    <End Role="ORDEN_PEDIDO" Type="Self.ORDEN_PEDIDO" Multiplicity="0..1" />
+    <End Role="RECEPCION_PRODUCTO" Type="Self.RECEPCION_PRODUCTO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ORDEN_PEDIDO">
+        <PropertyRef Name="IDORDEN_PEDIDO" />
+      </Principal>
+      <Dependent Role="RECEPCION_PRODUCTO">
+        <PropertyRef Name="ORDEN_PEDIDO_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RECEPCION_PRODUCTO_FK">
+    <End Role="PRODUCTO" Type="Self.PRODUCTO" Multiplicity="0..1" />
+    <End Role="RECEPCION_PRODUCTO" Type="Self.RECEPCION_PRODUCTO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PRODUCTO">
+        <PropertyRef Name="IDPRODUCTO" />
+      </Principal>
+      <Dependent Role="RECEPCION_PRODUCTO">
+        <PropertyRef Name="PRODUCTO_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="USUARIO_TIPO_FK">
     <End Role="TIPO_USUARIO" Type="Self.TIPO_USUARIO" Multiplicity="0..1" />
     <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="*" />
@@ -707,6 +744,18 @@
     <AssociationSet Name="PROVEEDOR_USUARIO_FK" Association="Self.PROVEEDOR_USUARIO_FK">
       <End Role="USUARIO" EntitySet="USUARIO" />
       <End Role="PROVEEDOR" EntitySet="PROVEEDOR" />
+    </AssociationSet>
+    <AssociationSet Name="RECEPCION_ESTADO_FK" Association="Self.RECEPCION_ESTADO_FK">
+      <End Role="ESTADO_RECEPCION" EntitySet="ESTADO_RECEPCION" />
+      <End Role="RECEPCION_PRODUCTO" EntitySet="RECEPCION_PRODUCTO" />
+    </AssociationSet>
+    <AssociationSet Name="RECEPCION_ORDEN_FK" Association="Self.RECEPCION_ORDEN_FK">
+      <End Role="ORDEN_PEDIDO" EntitySet="ORDEN_PEDIDO" />
+      <End Role="RECEPCION_PRODUCTO" EntitySet="RECEPCION_PRODUCTO" />
+    </AssociationSet>
+    <AssociationSet Name="RECEPCION_PRODUCTO_FK" Association="Self.RECEPCION_PRODUCTO_FK">
+      <End Role="PRODUCTO" EntitySet="PRODUCTO" />
+      <End Role="RECEPCION_PRODUCTO" EntitySet="RECEPCION_PRODUCTO" />
     </AssociationSet>
     <AssociationSet Name="USUARIO_TIPO_FK" Association="Self.USUARIO_TIPO_FK">
       <End Role="TIPO_USUARIO" EntitySet="TIPO_USUARIO" />
