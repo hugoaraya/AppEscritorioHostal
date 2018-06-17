@@ -16,7 +16,7 @@ namespace WFHostalAPPEscritorio
         public FormularioEmpleado()
         {
             InitializeComponent();
-            LbBienvenida.Text = ("Bienvenido " + Global.usuarioKEY[1] + ",   Tipo de Usuario: " + Global.usuarioKEY[4]);
+            LbBienvenida.Text = ("Bienvenido...  Usuario Activo: " + Global.usuarioKEY[1] + ",   Tipo de Usuario: " + Global.usuarioKEY[4]);
         }
 
 
@@ -36,24 +36,6 @@ namespace WFHostalAPPEscritorio
         private void mantenedorOrdenDeServiciosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MantenedorOrdenDeServicios formulario = new MantenedorOrdenDeServicios();
-            formulario.ShowDialog();
-        }
-
-        //private void mantenedorComedorToolStripMenuItem_Click(object sender, EventArgs e)
-        //{
-        //    MantenedorComedor formulario = new MantenedorComedor();
-        //    formulario.ShowDialog();
-        //}
-
-        private void mantenedorFacturasToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            MantenedorFacturas formulario = new MantenedorFacturas();
-            formulario.ShowDialog();
-        }
-
-        private void mantenedorUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            MantenedorUsuarios formulario = new MantenedorUsuarios();
             formulario.ShowDialog();
         }
 
@@ -88,32 +70,15 @@ namespace WFHostalAPPEscritorio
             this.Close();
         }
 
-        private void LbBienvenida_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void registrarEmpresaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             RegistrarEmpresa formulario = new RegistrarEmpresa();
             formulario.ShowDialog();
         }
 
-        private void registrarEmpleadoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Ingresar_Empleado formulario = new Ingresar_Empleado();
-            formulario.ShowDialog();
-        }
 
-        private void mantenedorHabitaciónToolStripMenuItem_Click(object sender, EventArgs e)
-        {
 
-        }
 
-        private void mantenedorHabitaciónToolStripMenuItem_Click_1(object sender, EventArgs e)
-        {
-
-        }
 
         private void mantenedorComedorToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -126,5 +91,48 @@ namespace WFHostalAPPEscritorio
             RegistrarProveedor formulario = new RegistrarProveedor();
             formulario.ShowDialog();
         }
+
+        private void checkINCheckOutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CheckHuesped formulario = new CheckHuesped();
+            formulario.ShowDialog();
+        }
+
+        private void mantenedorFacturasToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            MantenedorFacturas formulario = new MantenedorFacturas();
+            formulario.ShowDialog();
+        }
+
+        private void registrarEmpleadoToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            Ingresar_Empleado formulario = new Ingresar_Empleado();
+            formulario.ShowDialog();
+        }
+
+        private void mantenedorUsuariosToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            MantenedorUsuarios formulario = new MantenedorUsuarios();
+            formulario.ShowDialog();
+        }
+
+        private void ingresarOrdenDePedidoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            IngresoOrdenPedido formulario = new IngresoOrdenPedido();
+            formulario.ShowDialog();
+        }
+
+        private void recepciónDePedidoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RecepcionOrdenPedido formulario = new RecepcionOrdenPedido();
+            formulario.ShowDialog();
+        }
+
+        private void generarFacturasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GenerarFacturas formulario = new GenerarFacturas();
+            formulario.ShowDialog();
+        }
     }
 }
+

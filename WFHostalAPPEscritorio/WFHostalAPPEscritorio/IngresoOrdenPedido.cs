@@ -24,9 +24,10 @@ namespace WFHostalAPPEscritorio
         private void IngresoOrdenPedido_Load(object sender, EventArgs e)
         {
             GrillaProveedores();
-            dgvProvee.Focus();
             lbUsuario.Text += (" "+Global.usuarioKEY[1]);
+            dgvProvee.Focus();
         }
+
         private void GrillaProveedores()
         {
             dgvProvee.Visible = true;
@@ -51,7 +52,6 @@ namespace WFHostalAPPEscritorio
             var row = (sender as DataGridView).CurrentRow;
 
             //P.NOMBRE,F.DESCRIPCION AS RUBRO,P.RUT,P.DV
-
             txRutProvee.Text = row.Cells[2].Value.ToString() + "-" + row.Cells[3].Value.ToString();
             txNombreProvee.Text = row.Cells[0].Value.ToString();
             txRubroProvee.Text = row.Cells[1].Value.ToString();
@@ -211,8 +211,11 @@ namespace WFHostalAPPEscritorio
             ORDEN_PEDIDO OP = new ORDEN_PEDIDO();
             OP.NRO_ORDEN = manOP.get_NRO_ORDEN_Nuevo();
             txNroOrden.Text = OP.NRO_ORDEN.ToString();
-            OP.EMPLEADO_ID = int.Parse(Global.usuarioKEY[0]);
+            int idEmpleado = manOP.GetIdEmpleado(int.Parse(Global.usuarioKEY[0]));
+            OP.EMPLEADO_ID = idEmpleado;
+            Console.WriteLine(" OP.EEMPLEADO_ID " + OP.EMPLEADO_ID);
             OP.FECHA = DateTime.Today;
+            Console.WriteLine(" OP.FECHA " + OP.FECHA);
             ManProveedor manP = new ManProveedor();
             String rut = txRutProvee.Text;
             OP.PROVEEDOR_ID = manP.ObtenerIDProveedor(rut.Substring(0, rut.Length - 2));
@@ -220,14 +223,9 @@ namespace WFHostalAPPEscritorio
             Console.WriteLine("OP.NRO_ORDEN = "+ OP.NRO_ORDEN);
             Console.WriteLine(" OP.EMPLEADO_ID = " + OP.EMPLEADO_ID);
             Console.WriteLine(" OP.PROVEEDOR_ID = " + OP.PROVEEDOR_ID);
-            AddOrdenDePedido(OP);
-        }
-
-        public void AddOrdenDePedido(ORDEN_PEDIDO op)
-        {
             using (EntitiesHostal con = new EntitiesHostal())
             {
-                con.ORDEN_PEDIDO.Add(op);
+                con.ORDEN_PEDIDO.Add(OP);
                 con.SaveChanges();
             }
             btnGenerarOC.Visible = false;
@@ -237,10 +235,9 @@ namespace WFHostalAPPEscritorio
             txGrilla.Text = "DATOS CONFIRMACION:";
             lblpro.Visible = false;
             lbMsg.Text = "Orden de Pedido Registrada Correctamente.";
-
-           
         }
 
+      
 
         private void GenerarRecepcionProducto()
         {
@@ -267,13 +264,18 @@ namespace WFHostalAPPEscritorio
         }
         public void AddRecepcionProducto(RECEPCION_PRODUCTO rp)
         {
-            using (EntitiesHostal con = new EntitiesHostal())
+            try
             {
-                con.RECEPCION_PRODUCTO.Add(rp);
-                con.SaveChanges();
+                using (EntitiesHostal con = new EntitiesHostal())
+                {
+                    con.RECEPCION_PRODUCTO.Add(rp);
+                    con.SaveChanges();
+                }
+                lbMsg.Text = "Orden de Pedido Registrada Correctamente. (Recepcion de Producto Pendiente)";
             }
-            lbMsg.Text = "Orden de Pedido Registrada Correctamente. (Recepcion de Producto Pendiente)";
-            
+            catch {
+                Console.WriteLine("Error por fila de DataGridView");
+            }
         }
 
 

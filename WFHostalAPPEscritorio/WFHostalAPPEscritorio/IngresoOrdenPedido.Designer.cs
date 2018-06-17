@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.gboxProve = new System.Windows.Forms.GroupBox();
+            this.txRutProvee = new System.Windows.Forms.TextBox();
             this.btnProvee = new System.Windows.Forms.Button();
             this.txRubroProvee = new System.Windows.Forms.Label();
             this.txNombreProvee = new System.Windows.Forms.Label();
-            this.txRutProvee = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -56,10 +56,10 @@
             // 
             // gboxProve
             // 
+            this.gboxProve.Controls.Add(this.txRutProvee);
             this.gboxProve.Controls.Add(this.btnProvee);
             this.gboxProve.Controls.Add(this.txRubroProvee);
             this.gboxProve.Controls.Add(this.txNombreProvee);
-            this.gboxProve.Controls.Add(this.txRutProvee);
             this.gboxProve.Controls.Add(this.label3);
             this.gboxProve.Controls.Add(this.label2);
             this.gboxProve.Controls.Add(this.label1);
@@ -68,7 +68,16 @@
             this.gboxProve.Size = new System.Drawing.Size(447, 121);
             this.gboxProve.TabIndex = 0;
             this.gboxProve.TabStop = false;
-            this.gboxProve.Text = "Seleccionne Proveedor";
+            this.gboxProve.Text = "Seleccionne Proveedor ";
+            // 
+            // txRutProvee
+            // 
+            this.txRutProvee.Location = new System.Drawing.Point(145, 29);
+            this.txRutProvee.Name = "txRutProvee";
+            this.txRutProvee.ReadOnly = true;
+            this.txRutProvee.Size = new System.Drawing.Size(126, 20);
+            this.txRutProvee.TabIndex = 8;
+            this.txRutProvee.Text = "Seleccione Proveedor ->";
             // 
             // btnProvee
             // 
@@ -97,15 +106,6 @@
             this.txNombreProvee.Size = new System.Drawing.Size(19, 13);
             this.txNombreProvee.TabIndex = 5;
             this.txNombreProvee.Text = "-->";
-            // 
-            // txRutProvee
-            // 
-            this.txRutProvee.AutoSize = true;
-            this.txRutProvee.Location = new System.Drawing.Point(142, 32);
-            this.txRutProvee.Name = "txRutProvee";
-            this.txRutProvee.Size = new System.Drawing.Size(19, 13);
-            this.txRutProvee.TabIndex = 4;
-            this.txRutProvee.Text = "-->";
             // 
             // label3
             // 
@@ -288,7 +288,6 @@
         private System.Windows.Forms.DataGridView dgvProvee;
         private System.Windows.Forms.Label txRubroProvee;
         private System.Windows.Forms.Label txNombreProvee;
-        private System.Windows.Forms.Label txRutProvee;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
@@ -304,5 +303,6 @@
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Label txNroOrden;
         private System.Windows.Forms.TextBox txResult;
+        private System.Windows.Forms.TextBox txRutProvee;
     }
 }

@@ -29,27 +29,69 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnAceptadas = new System.Windows.Forms.Button();
+            this.btnRechazadas = new System.Windows.Forms.Button();
+            this.btnPendientes = new System.Windows.Forms.Button();
             this.txtNOP = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.dgvOP = new System.Windows.Forms.DataGridView();
-            this.btnBuscar = new System.Windows.Forms.Button();
             this.btnTodas = new System.Windows.Forms.Button();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.dgvOP = new System.Windows.Forms.DataGridView();
             this.lbMsg = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.btnLimpiar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOP)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnAceptadas);
+            this.groupBox1.Controls.Add(this.btnRechazadas);
+            this.groupBox1.Controls.Add(this.btnPendientes);
             this.groupBox1.Controls.Add(this.txtNOP);
             this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.btnTodas);
+            this.groupBox1.Controls.Add(this.btnBuscar);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(264, 227);
+            this.groupBox1.Size = new System.Drawing.Size(313, 250);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos de Orden de Pedido";
+            // 
+            // btnAceptadas
+            // 
+            this.btnAceptadas.Location = new System.Drawing.Point(157, 164);
+            this.btnAceptadas.Name = "btnAceptadas";
+            this.btnAceptadas.Size = new System.Drawing.Size(150, 23);
+            this.btnAceptadas.TabIndex = 6;
+            this.btnAceptadas.Text = "Mostrar Aceptadas";
+            this.btnAceptadas.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAceptadas.UseVisualStyleBackColor = true;
+            this.btnAceptadas.Click += new System.EventHandler(this.btnAceptadas_Click);
+            // 
+            // btnRechazadas
+            // 
+            this.btnRechazadas.Location = new System.Drawing.Point(157, 220);
+            this.btnRechazadas.Name = "btnRechazadas";
+            this.btnRechazadas.Size = new System.Drawing.Size(150, 23);
+            this.btnRechazadas.TabIndex = 5;
+            this.btnRechazadas.Text = "Mostrar Rechazadas";
+            this.btnRechazadas.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRechazadas.UseVisualStyleBackColor = true;
+            this.btnRechazadas.Click += new System.EventHandler(this.btnRechazadas_Click);
+            // 
+            // btnPendientes
+            // 
+            this.btnPendientes.Location = new System.Drawing.Point(157, 192);
+            this.btnPendientes.Name = "btnPendientes";
+            this.btnPendientes.Size = new System.Drawing.Size(150, 23);
+            this.btnPendientes.TabIndex = 4;
+            this.btnPendientes.Text = "Mostrar Pendientes";
+            this.btnPendientes.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnPendientes.UseVisualStyleBackColor = true;
+            this.btnPendientes.Click += new System.EventHandler(this.btnPendientes_Click);
             // 
             // txtNOP
             // 
@@ -67,33 +109,34 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Nº Orden Pedido:";
             // 
-            // dgvOP
+            // btnTodas
             // 
-            this.dgvOP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvOP.Location = new System.Drawing.Point(294, 12);
-            this.dgvOP.Name = "dgvOP";
-            this.dgvOP.Size = new System.Drawing.Size(668, 227);
-            this.dgvOP.TabIndex = 1;
+            this.btnTodas.Location = new System.Drawing.Point(157, 136);
+            this.btnTodas.Name = "btnTodas";
+            this.btnTodas.Size = new System.Drawing.Size(150, 23);
+            this.btnTodas.TabIndex = 3;
+            this.btnTodas.Text = "Mostrar Todas";
+            this.btnTodas.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnTodas.UseVisualStyleBackColor = true;
+            this.btnTodas.Click += new System.EventHandler(this.btnTodas_Click);
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(167, 255);
+            this.btnBuscar.Location = new System.Drawing.Point(127, 55);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(109, 23);
+            this.btnBuscar.Size = new System.Drawing.Size(87, 23);
             this.btnBuscar.TabIndex = 2;
             this.btnBuscar.Text = "Buscar Nº OP";
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
-            // btnTodas
+            // dgvOP
             // 
-            this.btnTodas.Location = new System.Drawing.Point(50, 255);
-            this.btnTodas.Name = "btnTodas";
-            this.btnTodas.Size = new System.Drawing.Size(87, 23);
-            this.btnTodas.TabIndex = 3;
-            this.btnTodas.Text = "Mostrar Todas";
-            this.btnTodas.UseVisualStyleBackColor = true;
-            this.btnTodas.Click += new System.EventHandler(this.btnTodas_Click);
+            this.dgvOP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvOP.Location = new System.Drawing.Point(331, 12);
+            this.dgvOP.Name = "dgvOP";
+            this.dgvOP.Size = new System.Drawing.Size(668, 339);
+            this.dgvOP.TabIndex = 1;
             // 
             // lbMsg
             // 
@@ -106,23 +149,32 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(50, 285);
+            this.btnCancel.Location = new System.Drawing.Point(12, 295);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 5;
-            this.btnCancel.Text = "Cancelar";
+            this.btnCancel.Text = "Salir";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.Location = new System.Drawing.Point(93, 295);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(75, 23);
+            this.btnLimpiar.TabIndex = 6;
+            this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // MantenedorOrdenDePedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(974, 363);
+            this.ClientSize = new System.Drawing.Size(1011, 363);
+            this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.lbMsg);
-            this.Controls.Add(this.btnTodas);
-            this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.dgvOP);
             this.Controls.Add(this.groupBox1);
             this.Name = "MantenedorOrdenDePedido";
@@ -146,5 +198,9 @@
         private System.Windows.Forms.Button btnTodas;
         private System.Windows.Forms.Label lbMsg;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button btnAceptadas;
+        private System.Windows.Forms.Button btnRechazadas;
+        private System.Windows.Forms.Button btnPendientes;
+        private System.Windows.Forms.Button btnLimpiar;
     }
 }

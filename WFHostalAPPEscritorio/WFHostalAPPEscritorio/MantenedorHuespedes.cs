@@ -63,7 +63,6 @@ namespace WFHostalAPPEscritorio
                         txRutEmp.Text = row[7].ToString() + "-" + row[8].ToString();
                         lbMsg.Text = "Heusped Encontrado";
                         txRut.Enabled = false;
-
                     }
 
                 }

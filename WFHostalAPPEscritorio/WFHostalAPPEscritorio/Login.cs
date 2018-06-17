@@ -32,8 +32,8 @@ namespace WFHostalAPPEscritorio
             conexion.Abrir();
 
             //TEMPORAL PARA PRUEBAS - BORRAR
-            txtUsuario.Text = "admin";
-            txtContra.Text= "admin";
+            //txtUsuario.Text = "admin";
+            //txtContra.Text= "admin";
             //TEMPORAL PARA PRUEBAS - BORRAR
 
             if (txtUsuario.Text.Trim() == "")

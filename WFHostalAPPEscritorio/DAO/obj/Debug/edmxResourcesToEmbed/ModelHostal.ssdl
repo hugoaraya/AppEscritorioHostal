@@ -219,7 +219,7 @@
     <Property Name="PRODUCTO_ID" Type="number" Precision="38" Scale="0" />
     <Property Name="ESTADO_RECEPCION_ID" Type="number" Precision="38" Scale="0" />
     <Property Name="ORDEN_PEDIDO_ID" Type="number" Precision="38" Scale="0" />
-    <Property Name="FECHA" Type="date" Nullable="false" />
+    <Property Name="FECHA" Type="date" />
     <Property Name="CANTIDAD_P" Type="number" Precision="38" Scale="0" />
   </EntityType>
   <EntityType Name="RUBRO">

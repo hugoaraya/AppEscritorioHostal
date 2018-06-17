@@ -16,9 +16,9 @@ namespace WFHostalAPPEscritorio
         public FormularioAdmin()
         {
             InitializeComponent();
-            
+
             //Datos de Bienvenida            
-            LbBienvenida.Text = ("Bienvenido "+ Global.usuarioKEY[1] + ", Tipo de Usuario: " +Global.usuarioKEY[4]);
+            LbBienvenida.Text = ("Bienvenido...  Usuario Activo: " + Global.usuarioKEY[1] + ",   Tipo de Usuario: " + Global.usuarioKEY[4]);
         }
 
         private void mantenedorEmpleadosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -39,20 +39,6 @@ namespace WFHostalAPPEscritorio
             MantenedorOrdenDeServicios formulario = new MantenedorOrdenDeServicios();
             formulario.ShowDialog();
         }
-
-        //private void mantenedorComedorToolStripMenuItem_Click(object sender, EventArgs e)
-        //{
-        //    MantenedorComedor formulario = new MantenedorComedor();
-        //    formulario.ShowDialog();
-        //}
-
-        private void mantenedorFacturasToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            MantenedorFacturas formulario = new MantenedorFacturas();
-            formulario.ShowDialog();
-        }
-
-     
 
         private void mantenedorOrdenDePedidoToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -85,11 +71,6 @@ namespace WFHostalAPPEscritorio
             this.Close();
         }
 
-        private void LbBienvenida_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void registrarEmpresaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             RegistrarEmpresa formulario = new RegistrarEmpresa();
@@ -98,15 +79,7 @@ namespace WFHostalAPPEscritorio
 
      
 
-        private void mantenedorHabitaciónToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void mantenedorHabitaciónToolStripMenuItem_Click_1(object sender, EventArgs e)
-        {
-          
-        }
+  
 
         private void mantenedorComedorToolStripMenuItem_Click(object sender, EventArgs e)
         {

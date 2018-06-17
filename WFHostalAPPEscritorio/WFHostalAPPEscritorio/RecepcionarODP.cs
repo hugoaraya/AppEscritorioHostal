@@ -25,7 +25,7 @@ namespace WFHostalAPPEscritorio
             MetodosAPP APP = new MetodosAPP();
             if (txODP.Text.Trim() == "")
             {
-                lbMsg.Text = ("Ingrese Número válido");
+                lbMsg.Text = ("Ingrese Número de Orden válido");
                 txODP.Focus();
             }
             else
@@ -34,10 +34,11 @@ namespace WFHostalAPPEscritorio
                 {
                     ManOrdenPedido man = new ManOrdenPedido();
                     DataTable dt = man.OPXNumero(txODP.Text);
-                    dgvODP.DataSource = dt;
+
+                    //dgvODP.DataSource = dt;
                     if (dt == null)
                     {
-                        lbMsg.Text = "NRO DE ORDEN No existe";
+                        lbMsg.Text = "Nro de Orden No existe";
                         dgvODP.DataSource = "";
                         txODP.Enabled = true;
                     }
@@ -50,79 +51,194 @@ namespace WFHostalAPPEscritorio
                         else
                         {
                             DataRow row = dt.Rows[0];
-                            txODP.Text = row[0].ToString();
-                            row[1].ToString();
-                            row[2].ToString();
-                            row[3].ToString();
-                            row[4].ToString();
-                            //row[5].ToString();
-                            //row[6].ToString();
-                            //row[7].ToString();
-                            txODP.Enabled = false;
-                            lbMsg.Text = "ODP Encontrada";
+                            // 0= OP.ESTADO_ORDEN_PEDIDO_ID AS ESTADO, EO.DESCRIPCION, OP.IDORDEN_PEDIDO AS ID_ODP, OP.NRO_ORDEN, OP.EMPLEADO_ID, E.NOMBRE AS EMPLEADO, OP.FECHA, OP.PROVEEDOR_ID, P.RUT , P.DV, P.NOMBRE AS PROVEEDOR, OP.COMENTARIO " +
+                            if (int.Parse(row[0].ToString()) == 2)
+                            {
+                                txODP.Text = row[3].ToString();
+                                txODP.ReadOnly = true;
+                                lbEstado.Text = "  " + row[1].ToString();
+                                lbProveedor.Text = "  " + row[10].ToString();
+                                lbIdODP.Text = row[2].ToString();
+                                lbMsg.Text = "ODP Encontrada";
+                                btnBuscarODP.Visible = false;
+
+                                this.dgvODP.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+                                this.dgvODP.MultiSelect = false;
+                                this.dgvODP.ReadOnly = true;
+                                this.dgvODP.AllowUserToAddRows = false;
+                                this.dgvODP.AllowUserToDeleteRows = false;
+                                dgvODP.DataSource = man.GetRecepcionProdXidPedido(lbIdODP.Text);
+                                lblGrilla.Text = "Seleccione Producto (doble click)";
+                                lbMsg.Text = "ODP Encontrada";
+                                btnBuscarODP.Visible = false;
+
+                            }
+                            else if (int.Parse(row[0].ToString()) == 1)
+                            {
+                                lbEstado.Text = "  " + row[1].ToString();
+                                lbProveedor.Text = "  " + row[10].ToString();
+                                MessageBox.Show("ODP con Estado Pendiente - Confirme Situación");
+                                lbMsg.Text = "ODP con Estado Pendiente - Confirme Situación";
+                            }
+                            else if (int.Parse(row[0].ToString()) == 3)
+                            {
+                                lbEstado.Text = "  " + row[1].ToString();
+                                lbProveedor.Text = "  " + row[10].ToString();
+                                MessageBox.Show("ODP con Estado Rechazado - Confirme Situación");
+                                lbMsg.Text = "ODP con Estado Rechazado - Confirme Situación";
+                            }
+                            else
+                            {
+                                lbMsg.Text = "ODP no encontrada - Confirme Situación";
+                            }
                         }
-
                     }
-
                 }
                 catch (Exception ex)
                 {
                     lbMsg.Text = "ERROR: " + ex;
-
                 }
-
             }
-        
-    }
+        }
 
         private void dgvODP_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-      {
-    //        ManOrdenPedido man = new ManOrdenPedido();
-    //        if (e.RowIndex <= -1)
-    //        {
-    //            return;
-    //        }
-    //        var row = (sender as DataGridView).CurrentRow;
+        {
+            ManOrdenPedido man = new ManOrdenPedido();
+            if (e.RowIndex <= -1)
+            {
+                return;
+            }
+            var row = (sender as DataGridView).CurrentRow;
 
-    //        //E.ESTADO , U.RUT, U.DV, U.NOMBRE,U.APELLIDO,M.NOMBRE AS EMPRESA, O.NRO_ORDEN
-    //        PRut = row.Cells[1].Value.ToString();
-    //        Console.Write("LOG HUGO PRut:" + row.Cells[1].Value.ToString());
-    //        string pNroOrden = row.Cells[6].Value.ToString();
-    //        if (PRut == "")
-    //        {
-    //            return;
-    //        }
-    //        DataTable data = new DataTable();
-    //        data = man.getOCHuesped(pNroOrden, PRut);
-    //        if (data.Rows.Count == 0)
-    //        {
-    //            return;
-    //        }
-    //        else
-    //        {
-    //            DataRow rows = data.Rows[0];
-    //            //0.ESTADO, 1.RUT, 2.DV, 3.NOMBRE,4.APELLIDO,5.NOMBRE_EMPRESA, 6.NRO_ORDEN, 7.DESCRIPCION AS HABITACION,
-    //            //8.FECHA_INGRESO, 9.FECHA_SALIDA,10.DESCRIPCION AS SERVICIO,11.NOMBRE_MINUTA,12.NOMBRE_PLATO 
-    //            txDatosHue.Visible = true;
-    //            txDatosHue.Text = "\r\n";
-    //            txDatosHue.Text += "Nro OC : " + rows[6].ToString() + "\r\n";
-    //            txDatosHue.Text += "Empresa : " + rows[5].ToString() + "\r\n";
-    //            txDatosHue.Text += "\r\n \r\n";
-    //            txDatosHue.Text += "RUT : " + rows[1].ToString() + "-" + rows[2].ToString() + "\r\n";
-    //            txDatosHue.Text += "Nombre : " + rows[3].ToString() + " " + rows[4].ToString() + "\r\n \r\n";
-    //            txDatosHue.Text += "\r\n \r\n";
-    //            txDatosHue.Text += "Habitacion : " + rows[7].ToString() + "\r\n";
-    //            txDatosHue.Text += "Comedor : " + rows[10].ToString() + "\r\n";
-    //            txDatosHue.Text += "\r\n \r\n";
-    //            txDatosHue.Text += "Fecha Ingreso : " + rows[8].ToString() + "\r\n";
-    //            txDatosHue.Text += "Fecha Salida : " + rows[9].ToString() + "\r\n \r\n";
-    //            txDatosHue.Text += "\r\n \r\n";
-    //            txDatosHue.Text += "Estado Huesped : " + rows[0].ToString();
-    //            txOrdenCom.ReadOnly = true;
-    //            lbMsg.Text = "Seleccione Ingreso o Salida del Huesped";
-    //        }
+            //ER.DESCRIPCION AS ESTADO,CB.CODIGO AS CODIGO_BARRA,P.IDPRODUCTO AS ID_PROD, TP.DESCRIPCION,RP.CANTIDAD_P,RP.NRO_RECEPCION,RP.IDRECEPCION_PRODUCTO AS ID_RECEP " +
+            //row.Cells[1].Value.ToString()
+            if (int.Parse(row.Cells[7].Value.ToString()) ==  2)
+            {
+                lbMsg.Text = "Seleccione Producto con estado Pendiente";
+                MessageBox.Show("Producto ya Recepcionado - Seleccione Otro");
+                return;
+            }
+            lbIDProd.Text = row.Cells[2].Value.ToString();
+            lbCodigoBarra.Text = row.Cells[1].Value.ToString();
+            lbDescripc.Text = row.Cells[3].Value.ToString();
+            lbCantidad.Text = row.Cells[4].Value.ToString();
+            lbIDRecep.Text = row.Cells[6].Value.ToString();
+            MessageBox.Show("Confirme Cantidad de Productos e Ingrese Fecha de Vencimiento");
+            gbProd.Visible = true;
+            btnConfirmar.Visible = true;
 
-        
-    }
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            txODP.ReadOnly = false;
+            txODP.Text = "";
+            btnBuscarODP.Visible = true;
+            lbProveedor.Text = "";
+            lbEstado.Text = "";
+            lbMsg.Text = "";
+            dgvODP.DataSource = "";
+            gbProd.Visible = false;
+
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnConfirmar_Click(object sender, EventArgs e)
+        {
+            ManOrdenPedido man = new ManOrdenPedido();
+            if (dtiVencimiento.Value < DateTime.Now)
+            {
+                MessageBox.Show("Fecha Vencimiento debe ser mayor a la Fecha actual");
+                lbMsg.Text = "Fecha Vencimiento debe ser mayor a la Fecha actual";
+                return;
+            }
+            else
+            {
+                ActualizarRecepcionProducto();
+                btnConfirmar.Visible = false;
+                dgvODP.DataSource = man.GetRecepcionProdXidPedido(lbIdODP.Text);
+                lbCodigoBarra.Text = "";
+                lbCantidad.Text = "";
+                lbIDProd.Text = "";
+                lbDescripc.Text = "";
+                dtiVencimiento.Value = DateTime.Now;
+                lbMsg.Text = "Producto Recepcionado - Seleccione otro Producto";
+                MessageBox.Show("Producto Recepcionado");
+            }
+        }
+        private void ActualizarRecepcionProducto()
+        {
+            Console.WriteLine("lbIDRecep.Text " + lbIDRecep.Text);
+            int idRecep = int.Parse(lbIDRecep.Text);
+            using (EntitiesHostal con = new EntitiesHostal())
+            {
+                var UpRecepProd = con.RECEPCION_PRODUCTO.Where(x => x.IDRECEPCION_PRODUCTO == idRecep).FirstOrDefault();
+                UpRecepProd.ESTADO_RECEPCION_ID = 2; //Cerrada
+                UpRecepProd.FECHA = DateTime.Now;
+                
+                if (con.SaveChanges() > 0)
+                {
+                    lbMsg.Text = "Estado Recepcion Actualizado.";
+                }
+                else
+                {
+                    Console.Write("LOG RECEP: PREOBLEMAS AL ACTUALIZAR DATOS_:");
+                    lbMsg.Text = "Problemas al actualizar. Revise los datos";
+                    return;
+                }
+            }
+
+            int IdProd = int.Parse(lbIDProd.Text);
+            using (EntitiesHostal con2 = new EntitiesHostal())
+            {
+                var test = con2.PRODUCTO.Where(x => x.IDPRODUCTO == IdProd).FirstOrDefault();
+                test.STOCK = test.STOCK + int.Parse(lbCantidad.Text);
+                test.FECHA_VENCIMIENTO = dtiVencimiento.Value;
+                if (con2.SaveChanges() > 0)
+                {
+                    lbMsg.Text = "STOCK y Fecha Vencimiento Producto Actualizado.";
+                }
+                else
+                {
+                    Console.Write("LOG RECEP PROD: PREOBLEMAS AL ACTUALIZAR DATOS_:");
+                    lbMsg.Text = "Problemas al actualizar. Revise los datos";
+                    return;
+                }
+            }
+            ManOrdenPedido man = new ManOrdenPedido();
+            CODIGO_BARRA cbProd = new CODIGO_BARRA();
+            Console.WriteLine("RE.::: "+man.SetCodigoBarra(lbIDRecep.Text));
+            Int64 dbText = Int64.Parse(man.SetCodigoBarra(lbIDRecep.Text));
+            var CodigoBarra = dbText;
+            cbProd.CODIGO = CodigoBarra;
+            using (EntitiesHostal con4 = new EntitiesHostal())
+            {
+                con4.CODIGO_BARRA.Add(cbProd);
+                con4.SaveChanges();
+            }
+
+
+            using (EntitiesHostal con3 = new EntitiesHostal())
+            {
+                var test2 = con3.PRODUCTO.Where(x => x.IDPRODUCTO == IdProd).FirstOrDefault();
+                test2.CODIGO_BARRA_ID = man.GetIdCodBarra(CodigoBarra);
+                if (con3.SaveChanges() > 0)
+                {
+                    lbMsg.Text = "Codigo Barra Actualizado.";
+                }
+                else
+                {
+                    Console.Write("LOG RECEP CODIGO BARRA: PREOBLEMAS AL ACTUALIZAR DATOS_:" );
+                    lbMsg.Text = "Problemas al actualizar. Revise los datos";
+                    return;
+                }
+            }
+
+
+        }
     }
 }
