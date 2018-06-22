@@ -142,6 +142,11 @@ namespace WFHostalAPPEscritorio
             }
         }
 
+        private void txtUsuario_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
         //private void PruebaConexion_Click(object sender, EventArgs e)
         //{
 
