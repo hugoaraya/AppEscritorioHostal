@@ -248,7 +248,7 @@ namespace WFHostalAPPEscritorio
             {
                 marca = cbxMarca.SelectedItem.ToString();
             }
-            
+
             PRODUCTO prod = new PRODUCTO();
             prod.FAMILIA_PRODUCTO_ID = man.GetIDFamilia(familia);
             prod.TIPO_PRODUCTO_ID = man.GetIDTipo(tipo);
@@ -256,6 +256,7 @@ namespace WFHostalAPPEscritorio
             prod.STOCK_CRITICO = int.Parse(txtSctockCri.Text);
             prod.PRECIO = int.Parse(txPrecioEst.Text);
             prod.STOCK = 0;
+            prod.CODIGO_BARRA_ID = 1;
 
             try
             {

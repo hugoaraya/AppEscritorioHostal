@@ -434,8 +434,7 @@ namespace WFHostalAPPEscritorio.Clases
                 OracleCommand comando = new OracleCommand("select T.DESCRIPCION AS TIPO, F.DESCRIPCION AS FAMILIA, M.DESCRIPCION AS MARCA, P.STOCK, P.STOCK_CRITICO, P.IDPRODUCTO " +
                                                             "from PRODUCTO P JOIN TIPO_PRODUCTO T ON(P.TIPO_PRODUCTO_ID = T.IDTIPO_PRODUCTO) " +
                                                             "JOIN FAMILIA_PRODUCTO F ON(P.FAMILIA_PRODUCTO_ID = F.IDFAMILIA_PRODUCTO) " +
-                                                            "JOIN MARCA M ON(P.MARCA_ID = M.IDMARCA) " +
-                                                            "JOIN CODIGO_BARRA C ON(P.CODIGO_BARRA_ID = C.IDCODIGO_BARRA)", conexion.con);
+                                                            "JOIN MARCA M ON(P.MARCA_ID = M.IDMARCA) " , conexion.con);
                 OracleDataReader lector = comando.ExecuteReader();
 
                 if (lector.HasRows)
