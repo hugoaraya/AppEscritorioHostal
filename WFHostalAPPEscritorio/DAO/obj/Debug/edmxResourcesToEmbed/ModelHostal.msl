@@ -186,13 +186,13 @@
     <EntitySetMapping Name="ORDEN_PEDIDO">
       <EntityTypeMapping TypeName="ModelHostal.ORDEN_PEDIDO">
         <MappingFragment StoreEntitySet="ORDEN_PEDIDO">
+          <ScalarProperty Name="COMENTARIOS" ColumnName="COMENTARIOS" />
           <ScalarProperty Name="IDORDEN_PEDIDO" ColumnName="IDORDEN_PEDIDO" />
           <ScalarProperty Name="NRO_ORDEN" ColumnName="NRO_ORDEN" />
           <ScalarProperty Name="EMPLEADO_ID" ColumnName="EMPLEADO_ID" />
           <ScalarProperty Name="FECHA" ColumnName="FECHA" />
           <ScalarProperty Name="PROVEEDOR_ID" ColumnName="PROVEEDOR_ID" />
           <ScalarProperty Name="ESTADO_ORDEN_PEDIDO_ID" ColumnName="ESTADO_ORDEN_PEDIDO_ID" />
-          <ScalarProperty Name="COMENTARIO" ColumnName="COMENTARIO" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

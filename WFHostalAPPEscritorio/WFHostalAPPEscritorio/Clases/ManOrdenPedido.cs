@@ -65,7 +65,7 @@ namespace WFHostalAPPEscritorio.Clases
             conexion.Abrir();
             try
             {
-                OracleCommand comando = new OracleCommand("SELECT OP.ESTADO_ORDEN_PEDIDO_ID AS ESTADO, EO.DESCRIPCION, OP.IDORDEN_PEDIDO AS ID_ODP, OP.NRO_ORDEN, OP.EMPLEADO_ID, E.NOMBRE AS EMPLEADO, OP.FECHA, OP.PROVEEDOR_ID, P.RUT , P.DV, P.NOMBRE AS PROVEEDOR, OP.COMENTARIO " +
+                OracleCommand comando = new OracleCommand("SELECT OP.ESTADO_ORDEN_PEDIDO_ID AS ESTADO, EO.DESCRIPCION, OP.IDORDEN_PEDIDO AS ID_ODP, OP.NRO_ORDEN, OP.EMPLEADO_ID, E.NOMBRE AS EMPLEADO, OP.FECHA, OP.PROVEEDOR_ID, P.RUT , P.DV, P.NOMBRE AS PROVEEDOR, OP.COMENTARIOS " +
                                                             "FROM ORDEN_PEDIDO OP JOIN EMPLEADO E ON(OP.EMPLEADO_ID = E.IDEMPLEADO) JOIN PROVEEDOR P ON(OP.PROVEEDOR_ID = P.IDPROVEEDOR) " +
                                                             "JOIN ESTADO_ORDEN_PEDIDO EO ON(EO.IDESTADO_ORDEN_PEDIDO = OP.ESTADO_ORDEN_PEDIDO_ID) WHERE OP.ESTADO_ORDEN_PEDIDO_ID = :numEstado ", conexion.con);
                 comando.Parameters.Add(":numEstado", estado);
@@ -519,7 +519,7 @@ namespace WFHostalAPPEscritorio.Clases
             conexion.Abrir();
             try
             {
-                OracleCommand comando = new OracleCommand("SELECT OP.ESTADO_ORDEN_PEDIDO_ID AS ESTADO, EO.DESCRIPCION, OP.IDORDEN_PEDIDO AS ID_ODP, OP.NRO_ORDEN, OP.EMPLEADO_ID, E.NOMBRE AS EMPLEADO, OP.FECHA, OP.PROVEEDOR_ID, P.RUT , P.DV, P.NOMBRE AS PROVEEDOR, OP.COMENTARIO " +
+                OracleCommand comando = new OracleCommand("SELECT OP.ESTADO_ORDEN_PEDIDO_ID AS ESTADO, EO.DESCRIPCION, OP.IDORDEN_PEDIDO AS ID_ODP, OP.NRO_ORDEN, OP.EMPLEADO_ID, E.NOMBRE AS EMPLEADO, OP.FECHA, OP.PROVEEDOR_ID, P.RUT , P.DV, P.NOMBRE AS PROVEEDOR, OP.COMENTARIOS " +
                                                           "FROM ORDEN_PEDIDO OP JOIN EMPLEADO E ON(OP.EMPLEADO_ID = E.IDEMPLEADO) JOIN PROVEEDOR P ON(OP.PROVEEDOR_ID = P.IDPROVEEDOR) " +
                                                           "JOIN ESTADO_ORDEN_PEDIDO EO ON(EO.IDESTADO_ORDEN_PEDIDO = OP.ESTADO_ORDEN_PEDIDO_ID) ", conexion.con);
                 OracleDataReader lector = comando.ExecuteReader();
@@ -559,7 +559,7 @@ namespace WFHostalAPPEscritorio.Clases
             conexion.Abrir();
             try
             {
-                OracleCommand comando = new OracleCommand("SELECT OP.ESTADO_ORDEN_PEDIDO_ID AS ESTADO, EO.DESCRIPCION, OP.IDORDEN_PEDIDO AS ID_ODP, OP.NRO_ORDEN, OP.EMPLEADO_ID, E.NOMBRE AS EMPLEADO, OP.FECHA, OP.PROVEEDOR_ID, P.RUT , P.DV, P.NOMBRE AS PROVEEDOR, OP.COMENTARIO "+
+                OracleCommand comando = new OracleCommand("SELECT OP.ESTADO_ORDEN_PEDIDO_ID AS ESTADO, EO.DESCRIPCION, OP.IDORDEN_PEDIDO AS ID_ODP, OP.NRO_ORDEN, OP.EMPLEADO_ID, E.NOMBRE AS EMPLEADO, OP.FECHA, OP.PROVEEDOR_ID, P.RUT , P.DV, P.NOMBRE AS PROVEEDOR, OP.COMENTARIOS "+
                                                             "FROM ORDEN_PEDIDO OP JOIN EMPLEADO E ON(OP.EMPLEADO_ID = E.IDEMPLEADO) JOIN PROVEEDOR P ON(OP.PROVEEDOR_ID = P.IDPROVEEDOR) "+
                                                             "JOIN ESTADO_ORDEN_PEDIDO EO ON(EO.IDESTADO_ORDEN_PEDIDO = OP.ESTADO_ORDEN_PEDIDO_ID) WHERE OP.NRO_ORDEN = :numodp ", conexion.con);
                 comando.Parameters.Add(":numodp", numero);

@@ -223,6 +223,7 @@ namespace WFHostalAPPEscritorio
             Console.WriteLine("OP.NRO_ORDEN = "+ OP.NRO_ORDEN);
             Console.WriteLine(" OP.EMPLEADO_ID = " + OP.EMPLEADO_ID);
             Console.WriteLine(" OP.PROVEEDOR_ID = " + OP.PROVEEDOR_ID);
+            
             using (EntitiesHostal con = new EntitiesHostal())
             {
                 con.ORDEN_PEDIDO.Add(OP);

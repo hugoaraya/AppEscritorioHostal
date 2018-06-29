@@ -101,3 +101,13 @@ C:\Users\Hugo\Desktop\GIT\AppEscritorioHostal\WFHostalAPPEscritorio\WFHostalAPPE
 C:\Users\Hugo\Desktop\GIT\AppEscritorioHostal\WFHostalAPPEscritorio\WFHostalAPPEscritorio\obj\x86\Debug\WFHostalAPPEscritorio.csproj.GenerateResource.Cache
 C:\Users\Hugo\Desktop\GIT\AppEscritorioHostal\WFHostalAPPEscritorio\WFHostalAPPEscritorio\obj\x86\Debug\WFHostalAPPEscritorio.exe
 C:\Users\Hugo\Desktop\GIT\AppEscritorioHostal\WFHostalAPPEscritorio\WFHostalAPPEscritorio\obj\x86\Debug\WFHostalAPPEscritorio.pdb
+C:\Users\Hugo\Desktop\WFHostalAPPEscritorio\WFHostalAPPEscritorio\obj\x86\Debug\WFHostalAPPEscritorio.CheckHuesped.resources
+C:\Users\Hugo\Desktop\WFHostalAPPEscritorio\WFHostalAPPEscritorio\obj\x86\Debug\WFHostalAPPEscritorio.IngresoOrdenPedido.resources
+C:\Users\Hugo\Desktop\WFHostalAPPEscritorio\WFHostalAPPEscritorio\obj\x86\Debug\WFHostalAPPEscritorio.MantenedorFacturas.resources
+C:\Users\Hugo\Desktop\WFHostalAPPEscritorio\WFHostalAPPEscritorio\obj\x86\Debug\WFHostalAPPEscritorio.MantenedorOrdenDePedido.resources
+C:\Users\Hugo\Desktop\WFHostalAPPEscritorio\WFHostalAPPEscritorio\obj\x86\Debug\WFHostalAPPEscritorio.MantenedorProducto.resources
+C:\Users\Hugo\Desktop\WFHostalAPPEscritorio\WFHostalAPPEscritorio\obj\x86\Debug\WFHostalAPPEscritorio.MantenedorProveedores.resources
+C:\Users\Hugo\Desktop\WFHostalAPPEscritorio\WFHostalAPPEscritorio\obj\x86\Debug\WFHostalAPPEscritorio.RecepcionarODP.resources
+C:\Users\Hugo\Desktop\WFHostalAPPEscritorio\WFHostalAPPEscritorio\obj\x86\Debug\WFHostalAPPEscritorio.RecepcionOrdenPedido.resources
+C:\Users\Hugo\Desktop\WFHostalAPPEscritorio\WFHostalAPPEscritorio\obj\x86\Debug\WFHostalAPPEscritorio.Ingresar_Empleado.resources
+C:\Users\Hugo\Desktop\WFHostalAPPEscritorio\WFHostalAPPEscritorio\obj\x86\Debug\WFHostalAPPEscritorio.RegistrarProveedor.resources

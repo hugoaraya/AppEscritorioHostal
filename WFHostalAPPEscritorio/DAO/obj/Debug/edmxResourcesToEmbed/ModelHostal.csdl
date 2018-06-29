@@ -208,11 +208,11 @@
     <Property Name="FECHA" Type="DateTime" Nullable="false" />
     <Property Name="PROVEEDOR_ID" Type="Decimal" Precision="38" Scale="0" />
     <Property Name="ESTADO_ORDEN_PEDIDO_ID" Type="Decimal" Precision="38" Scale="0" />
-    <Property Name="COMENTARIO" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="EMPLEADO" Relationship="Self.ORDEN_EMPLEADO_FK" FromRole="ORDEN_PEDIDO" ToRole="EMPLEADO" />
     <NavigationProperty Name="ESTADO_ORDEN_PEDIDO" Relationship="Self.ESTADO_ORDEN_PEDIDO_FK" FromRole="ORDEN_PEDIDO" ToRole="ESTADO_ORDEN_PEDIDO" />
     <NavigationProperty Name="PROVEEDOR" Relationship="Self.ORDEN_PROVEEDOR_FK" FromRole="ORDEN_PEDIDO" ToRole="PROVEEDOR" />
     <NavigationProperty Name="RECEPCION_PRODUCTO" Relationship="ModelHostal.RECEPCION_ORDEN_FK" FromRole="ORDEN_PEDIDO" ToRole="RECEPCION_PRODUCTO" />
+    <Property Name="COMENTARIOS" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="PLATO">
     <Key>

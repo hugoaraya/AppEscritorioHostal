@@ -174,7 +174,7 @@
     <Property Name="FECHA" Type="date" Nullable="false" />
     <Property Name="PROVEEDOR_ID" Type="number" Precision="38" Scale="0" />
     <Property Name="ESTADO_ORDEN_PEDIDO_ID" Type="number" Precision="38" Scale="0" />
-    <Property Name="COMENTARIO" Type="varchar2" MaxLength="255" />
+    <Property Name="COMENTARIOS" Type="varchar2" MaxLength="255" />
   </EntityType>
   <EntityType Name="PLATO">
     <Key>

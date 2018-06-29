@@ -51,7 +51,7 @@ namespace WFHostalAPPEscritorio
                         else
                         {
                             DataRow row = dt.Rows[0];
-                            // 0= OP.ESTADO_ORDEN_PEDIDO_ID AS ESTADO, EO.DESCRIPCION, OP.IDORDEN_PEDIDO AS ID_ODP, OP.NRO_ORDEN, OP.EMPLEADO_ID, E.NOMBRE AS EMPLEADO, OP.FECHA, OP.PROVEEDOR_ID, P.RUT , P.DV, P.NOMBRE AS PROVEEDOR, OP.COMENTARIO " +
+                            // 0= OP.ESTADO_ORDEN_PEDIDO_ID AS ESTADO, EO.DESCRIPCION, OP.IDORDEN_PEDIDO AS ID_ODP, OP.NRO_ORDEN, OP.EMPLEADO_ID, E.NOMBRE AS EMPLEADO, OP.FECHA, OP.PROVEEDOR_ID, P.RUT , P.DV, P.NOMBRE AS PROVEEDOR, OP.COMENTARIOS " +
                             if (int.Parse(row[0].ToString()) == 2)
                             {
                                 txODP.Text = row[3].ToString();
