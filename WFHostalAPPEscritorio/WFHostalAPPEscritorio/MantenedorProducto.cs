@@ -280,5 +280,50 @@ namespace WFHostalAPPEscritorio
             }
 
         }
+
+        private void dgvProductos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex <= -1)
+            {
+                return;
+            }
+            grbxCantidad.Visible = true;
+            var row = (sender as DataGridView).CurrentRow;
+            //
+            txCantidad.Text = row.Cells[4].Value.ToString();
+            lbIDProducCant.Text = row.Cells[0].Value.ToString();
+            MessageBox.Show("Actualice Cantidad de Productos y Guarde el cambio");
+        }
+
+        private void btnCantidad_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txCantidad.Text) || Int32.Parse(txCantidad.Text) <= 0)
+            {
+                lbMsg.Text = ("Ingrese Cantidad");
+                txCantidad.Focus();
+                return;
+            }
+            Int32 cantidad = Int32.Parse(txCantidad.Text);
+            Int32 IDProduc = Int32.Parse(lbIDProducCant.Text);
+            using (EntitiesHostal con = new EntitiesHostal())
+            {
+                var test = con.PRODUCTO.Where(x => x.IDPRODUCTO == IDProduc).FirstOrDefault();
+                Console.Write(test);
+                Console.Write(test.IDPRODUCTO.ToString());
+                test.STOCK = cantidad;
+                if (con.SaveChanges() > 0)
+                {
+                    grbxCantidad.Visible = false;
+                    LlenarGrilla();
+                    lbMsg.Text = "Stock de Producto Actualizado";
+                }
+                else
+                {
+                    Console.Write("PROBLEMAS AL ACTUALIZAR DATOS_:" + e);
+                    lbMsg.Text = "Problemas al actualizar. Revise los datos";
+
+                }
+            }
+        }
     }
 }
